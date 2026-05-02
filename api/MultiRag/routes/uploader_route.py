@@ -1,13 +1,15 @@
+from accelerate import logging
 import fastapi
 from fastapi import UploadFile, Request, BackgroundTasks
 import os
 import shutil
 import asyncio
 import logging
-from src.MultiRag.constants import CONTENT_PERSISTENT_TIME, DATA_FOLDER_PATH, DB_FOLDER_PATH
 from src.MultiRag.graph.builder import deleteThread
 from utils.asyncHandler import asyncHandler
 from src.MultiRag.nodes.retreiver_check_node import clear_cached_retriever
+
+from api.constants import CONTENT_PERSISTENT_TIME,DATA_FOLDER_PATH,DB_FOLDER_PATH
 router = fastapi.APIRouter()
 
 
@@ -65,8 +67,9 @@ async def post_content(
             f.write(await file.read())
 
         # start background delete timer
-        background_tasks.add_task(delete_folder_after_time, user_id)
+        # background_tasks.add_task(delete_folder_after_time, user_id)
 
+        logging.info(f"File uploaded succesfully file_path:{file_path}")
         return {"message": "File uploaded successfully"}
 
     except Exception as e:

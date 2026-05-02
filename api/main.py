@@ -33,23 +33,23 @@ app = FastAPI()
 #     response = await call_next(request)
 #     return response
 
-app.include_router(pages_route.router)
-app.include_router(prefix="/chat", router=chat_route.router)
-app.include_router(prefix="/uploader", router=uploader_route.router)
+# app.include_router(pages_route.router)
+app.include_router(prefix="/api/v1/chat", router=chat_route.router)
+app.include_router(prefix="/api/v1/uploader", router=uploader_route.router)
 
 
 
 
 
-# -------------------- Web -------------------------------
-app.include_router(page_route_web.router)
-app.include_router(prefix="/web",router=web_talk_routes.router)
+# # -------------------- Web -------------------------------
+# app.include_router(page_route_web.router)
+# app.include_router(prefix="/web",router=web_talk_routes.router)
 
 
 
 
 
-# ------------ Blog --------------------
-app.include_router(page_route_blog.router)
-app.include_router(prefix="/blog",router=blog_router.router)
+# # ------------ Blog --------------------
+# app.include_router(page_route_blog.router)
+# app.include_router(prefix="/blog",router=blog_router.router)
 
