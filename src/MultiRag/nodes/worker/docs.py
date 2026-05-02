@@ -1,35 +1,26 @@
 import logging
+from src.MultiRag.entity.config_entity import ContentEmbedderConfig
 from utils.asyncHandler import asyncHandler
 from src.MultiRag.models.worker_model import State
+from src.MultiRag.components.content_embedder import ContentEmbedder
+from src.MultiRag.entity.config_entity import ContentEmbedderConfig
+import os
 
 @asyncHandler
 async def docs_node(state: State) -> State:
-    file_path = state.file_path
+    logging.info("Starting DOCS worker node...")
+    content_embedder_config = ContentEmbedderConfig(
+        file_path=state.file_path,
+        vector_store_path=(f"db/{state.thread_id}/{os.path.basename(state.file_path)}"),
+    )
+    logging.info(f"Created ContentEmbedderConfig: {content_embedder_config}")
+    retreiver = await ContentEmbedder(content_embedder_config=content_embedder_config).embed_content()
 
-    result = """
-    Document: Advanced AIML Concepts
+    if retreiver.retreivar:
+        content = await retreiver.retreivar.retreive(state.plan_to_retrieve)
+        logging.info("Content embedding completed. Retrieving relevant information... retreived content is %s", content)
+    else:
+        logging.warning(f"Retriever could not be initialized for {state.file_path}. Skipping retrieval.")
+        content = [f"Error: Could not process file {state.file_path}. Ensure dependencies are installed."]
 
-    Section 1: Data Preprocessing
-    - Data Cleaning
-    - Handling Missing Values
-    - Feature Scaling
-
-    Section 2: Model Building
-    - Choosing the right algorithm
-    - Hyperparameter tuning
-    - Cross-validation
-
-    Section 3: Deployment
-    - Model packaging
-    - API creation
-    - Monitoring and logging
-
-    Section 4: MLOps
-    MLOps combines Machine Learning and DevOps practices to automate the lifecycle of ML models.
-
-    Summary:
-    Industrial AI systems require not just models, but pipelines, monitoring, and scalability.
-    """
-
-    state.analysis_result = result
-    return state
+    return {"worker_result": content}

@@ -1,30 +1,27 @@
 import logging
+from src.MultiRag.entity.config_entity import ContentEmbedderConfig
 from utils.asyncHandler import asyncHandler
 from src.MultiRag.models.worker_model import State
+from src.MultiRag.components.content_embedder import ContentEmbedder
+from src.MultiRag.entity.config_entity import ContentEmbedderConfig
+import os
 
 @asyncHandler
 async def txt_node(state: State) -> State:
-    file_path = state.file_path
+    logging.info("Starting TXT worker node...")
+    content_embedder_config = ContentEmbedderConfig(
+        file_path=state.file_path,
+        vector_store_path=(f"db/{state.thread_id}/{os.path.basename(state.file_path)}"),
+    )
+    logging.info(f"Created ContentEmbedderConfig: {content_embedder_config}")
+    retreiver = await ContentEmbedder(content_embedder_config=content_embedder_config).embed_content()
 
-    result = """
-    AIML Notes:
+    if retreiver.retreivar:
+        content = await retreiver.retreivar.retreive(state.plan_to_retrieve)
+        logging.info("Content embedding completed. Retrieving relevant information... retreived content is %s", content)
+    else:
+        logging.warning(f"Retriever could not be initialized for {state.file_path}. Skipping retrieval.")
+        content = [f"Error: Could not process file {state.file_path}. Ensure dependencies are installed."]
 
-    - AI stands for Artificial Intelligence
-    - ML is a subset of AI
-    - Data is the backbone of Machine Learning
-    - Models learn patterns from data
-    - Overfitting occurs when model memorizes instead of generalizing
-    - Underfitting occurs when model fails to capture patterns
-
-    Important Concepts:
-    - Training vs Testing
-    - Bias vs Variance
-    - Feature Engineering
-    - Model Evaluation Metrics (Accuracy, Precision, Recall)
-
-    Conclusion:
-    Understanding fundamentals is important before moving to advanced topics like Deep Learning and MLOps.
-    """
-
-    state.analysis_result = result
-    return state
+    return {"worker_result": content}
+    

@@ -50,15 +50,29 @@ Rules:
   - opinion
   - normal chat
 
-- You can select MULTIPLE workers if needed
+- You can select MULTIPLE workers if needed.
 
 - If workers are used:
   - choose appropriate worker names
   - rewrite the user request into a clean instruction
+  - provide the exact 'file_path' and 'file_type' (one of: pdf, txt, docs, png, url) from the provided list.
 
-Return structured output only.
-
-
+### IMPORTANT: Output Format
+You MUST return a JSON object with the following structure:
+{
+  "use_worker": boolean,
+  "reason": "explanation of why workers are used or not",
+  "confidence": float (0.0 to 1.0),
+  "tasks": [
+    {
+      "worker_name": "worker name from list",
+      "instruction": "clear instruction for the worker",
+      "file_path": "exact path from available files",
+      "file_type": "type from available files"
+    },
+    ...
+  ]
+}
 
 Available workers_name:
  - pdf_worker  (use to read from pdf)

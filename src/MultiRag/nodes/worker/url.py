@@ -1,33 +1,29 @@
 import logging
 from utils.asyncHandler import asyncHandler
 from src.MultiRag.models.worker_model import State
+from src.MultiRag.components.content_embedder import ContentEmbedder
+from src.MultiRag.entity.config_entity import ContentEmbedderConfig
+import os
+
 
 @asyncHandler
 async def url_node(state: State) -> State:
-    url = state.file_path
+    logging.info("Starting URL worker node...")
+    content_embedder_config = ContentEmbedderConfig(
+        file_path=state.file_path,
+        vector_store_path=(f"db/{state.thread_id}/{os.path.basename(state.file_path)}"),
+    )
+    logging.info(f"Created ContentEmbedderConfig: {content_embedder_config}")
+    retreiver = await ContentEmbedder(content_embedder_config=content_embedder_config).embed_content()
 
-    result = f"""
-    Web Page Content from: {url}
+    if retreiver.retreivar:
+        content = await retreiver.retreivar.retreive(state.plan_to_retrieve)
+        logging.info("Content embedding completed. Retrieving relevant information... retreived content is %s", content)
+    else:
+        logging.warning(f"Retriever could not be initialized for {state.file_path}. Skipping retrieval.")
+        content = [f"Error: Could not process URL {state.file_path}. Ensure URL is accessible."]
 
-    Title: What is Artificial Intelligence and Machine Learning?
+    return {"worker_result": content}
+    
 
-    Artificial Intelligence (AI) refers to the simulation of human intelligence in machines. These machines are programmed to think, learn, and adapt.
-
-    Machine Learning (ML) is a subset of AI that focuses on building systems that learn from data. Instead of being explicitly programmed, ML models improve their performance as they are exposed to more data.
-
-    Key Topics Covered:
-    - Supervised vs Unsupervised Learning
-    - Deep Learning and Neural Networks
-    - Real-world applications like chatbots, recommendation systems, and self-driving cars
-
-    Latest Trends:
-    - Generative AI (e.g., large language models)
-    - MLOps for production systems
-    - Edge AI for real-time processing
-
-    Conclusion:
-    AI and ML are rapidly evolving fields with significant impact on technology and society.
-    """
-
-    state.analysis_result = result
-    return state
+    

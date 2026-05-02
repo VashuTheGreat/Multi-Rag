@@ -19,7 +19,18 @@ DB_FOLDER_PATH="db"
 
 
 
-AVAILABLE_ANALYSIS=['pdf','txt','docs','png','url']
+AVAILABLE_ANALYSIS=['pdf','txt','docs','docx','png','url']
+
+
+
+# ====================== DB =======================
+DB_FOLDER_PATH="db"
+
+
+
+# ====================== Tool ======================
+SEARCH_MAX_RESULT=5
+SEARCH_TOPIC='general'
 
 
 
