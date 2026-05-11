@@ -6,6 +6,10 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from utils.asyncHandler import asyncHandler
 from src.MultiRag.constants import EMBEDDING_MODEL
 from src.MultiRag.constants import EXCEPTED_FILE_TYPE, RETREIVER_DEFAULT_K
+from langchain_classic.retrievers import EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
+from langchain_classic.retrievers.contextual_compression import ContextualCompressionRetriever
+from langchain_community.document_compressors import FlashrankRerank
 import logging
 
 # ---------------- Embedding Model ----------------
@@ -140,8 +144,36 @@ async def create_vector_store(path: str = "db", docs: str = "data"):
 # ---------------- Retriever ----------------
 @asyncHandler
 async def create_retreiver(vectorstore, k: int = RETREIVER_DEFAULT_K):
-    retriever = vectorstore.as_retriever(search_kwargs={"k": k})
-    return retriever
+    # 1. Extract documents from FAISS vectorstore to use with BM25
+    logging.info("Extracting documents from vectorstore for BM25...")
+    # FAISS stores documents in docstore._dict
+    documents = list(vectorstore.docstore._dict.values())
+
+    # 2. Vector search retriever
+    # We set a slightly higher k for base retrievers to give the reranker more options
+    base_k = max(k * 2, 20)
+    vector_retriever = vectorstore.as_retriever(search_kwargs={"k": base_k})
+
+    # 3. BM25 search retriever
+    bm25_retriever = BM25Retriever.from_documents(documents)
+    bm25_retriever.k = base_k
+
+    # 4. Hybrid Searching (Ensemble)
+    hybrid_retriever = EnsembleRetriever(
+        retrievers=[vector_retriever, bm25_retriever],
+        weights=[0.7, 0.3]
+    )
+
+    # 5. Reranker
+    compressor = FlashrankRerank(top_n=k)
+
+    # 6. Final Compression Retriever
+    compression_retriever = ContextualCompressionRetriever(
+        base_compressor=compressor,
+        base_retriever=hybrid_retriever
+    )
+
+    return compression_retriever
 
 
 # ---------------- Get Raw Documents ----------------

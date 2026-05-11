@@ -15,11 +15,11 @@ app.mount("/blog/images", StaticFiles(directory="images"), name="blog_images")
 os.makedirs(DATA_FOLDER_PATH, exist_ok=True)
 os.makedirs(DB_FOLDER_PATH, exist_ok=True)
 
-# if __name__ == "__main__":
-#     uv.run(
-#         "main:app",
-#         host="0.0.0.0",
-#         port=7860,
-#         reload=False,
-#         reload_excludes=["db/*", "data/*", "logs/*", "vector_db/*", ".venv/*"],
-#     )
+if __name__ == "__main__":
+    uv.run(
+        "main:app",
+        host="0.0.0.0",
+        port=7860,
+        reload=False,
+        reload_excludes=["db/*", "data/*", "logs/*", "vector_db/*", ".venv/*"],
+    )

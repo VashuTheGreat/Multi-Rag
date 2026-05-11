@@ -1,4 +1,4 @@
-name: Test
+name: Python Tests
 
 on:
   pull_request:
@@ -10,7 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Dummy Test
-        run: exit 1
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install Dependencies
+        run: uv sync
+
+      - name: Run Tests
+        run: uv run pytest -v

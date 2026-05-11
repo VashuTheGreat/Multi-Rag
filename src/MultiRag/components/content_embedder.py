@@ -21,7 +21,15 @@ class ContentRetreiver(Retreiver):
         self.retriever = retriever
 
     async def retreive(self, query: str):
-        return await self.retriever.ainvoke(query)
+        docs = await self.retriever.ainvoke(query)
+        # Ensure metadata is serializable (convert np.float32 to float)
+        for doc in docs:
+            if hasattr(doc, "metadata") and "relevance_score" in doc.metadata:
+                try:
+                    doc.metadata["relevance_score"] = float(doc.metadata["relevance_score"])
+                except (TypeError, ValueError):
+                    pass
+        return docs
 class ContentEmbedder:
     def __init__(self, content_embedder_config: ContentEmbedderConfig):
         self.content_embedder_config = content_embedder_config
