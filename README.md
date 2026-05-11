@@ -47,9 +47,28 @@ The worker sub-graph is responsible for specialized information retrieval from v
   - **TXT**: Plain text analysis.
   - **Images (OCR)**: Extraction of text from PNG/JPG using specialized loaders.
 - **🤖 Autonomous Orchestration**: Uses a Llama-3.3-70B model on **AWS Bedrock** with a manual JSON fallback mechanism for 100% reliable structured output.
-- **🔍 Hybrid Retrieval**: Combines local FAISS vector stores with real-time Google Search integration.
+- **🔍 Advanced Retrieval Pipeline**:
+  - **Hybrid Search**: Combines semantic vector search with keyword-based BM25 for maximum precision.
+  - **RRF (Reciprocal Rank Fusion)**: Merges multiple retrieval streams with mathematical rigor.
+  - **Reranking**: Uses `Flashrank` to re-score and filter the most relevant context before generation.
+  - **Multi-Query Expansion**: Generates multiple perspectives of a user query to capture hidden context.
 - **🧠 Persistence & Memory**: Full multi-turn conversation support with LangGraph checkpointers.
 - **⚡ Modern Tech Stack**: Built with `uv` for lightning-fast dependency management and `FastAPI` for a high-performance backend.
+
+---
+
+## 🔍 Advanced Retrieval Pipeline
+
+Multi-RAG doesn't just "search" — it employs a sophisticated multi-stage retrieval architecture to ensure the LLM receives the most accurate and relevant context possible.
+
+| Technique | Description | Benefit |
+| :--- | :--- | :--- |
+| **Hybrid Search** | Dual-path retrieval using **FAISS (Dense)** and **BM25 (Sparse)**. | Captures both deep semantic meaning and exact keyword matches. |
+| **Multi-Query** | The Orchestrator decomposes complex queries into multiple specialized sub-tasks. | Ensures no part of a complex request is overlooked. |
+| **RRF** | **Reciprocal Rank Fusion** algorithm to merge results from different retrievers. | Provides a unified, unbiased ranking of candidates. |
+| **Reranker** | **Flashrank-based cross-encoding** to re-evaluate the top-K results. | Drastically reduces "hallucinations" by filtering out low-relevance noise. |
+
+---
 
 ---
 
