@@ -1,7 +1,7 @@
 import logging
-from utils.asyncHandler import asyncHandler
+from src.utils.asyncHandler import asyncHandler
 from src.MultiRag.constants import EXCEPTED_FILE_TYPE
-from utils.ingestion_utils import create_vector_store
+from src.utils.ingestion_utils import create_vector_store
 from src.MultiRag.entity.ingestion_config import IngestionConfig
 from src.MultiRag.entity.artifacts import IngestionArtifact
 import os

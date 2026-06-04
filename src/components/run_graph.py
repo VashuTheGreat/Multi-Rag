@@ -1,5 +1,5 @@
 from src.graphs.builder import graph
-from utils.asyncHandler import asyncHandler
+from src.utils.asyncHandler import asyncHandler
 import logging
 
 class RunGraph:
@@ -7,8 +7,10 @@ class RunGraph:
         pass
 
     @asyncHandler
-    async def run(self, state: dict) -> dict:
+    async def run(self, state: dict, config: dict = None) -> dict:
         logging.info("Starting RunGraph component execution...")
-        result = await graph.ainvoke(state)
+        if config is None:
+            config = {"configurable": {"thread_id": "default_thread"}}
+        result = await graph.ainvoke(state, config=config)
         logging.info("RunGraph component execution completed.")
         return result

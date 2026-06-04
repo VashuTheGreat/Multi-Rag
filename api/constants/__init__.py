@@ -1,0 +1,1 @@
+PUBLIC_FOLDER_FILE_PATH:str="api/public"

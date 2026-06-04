@@ -1,8 +1,8 @@
-from utils.asyncHandler import asyncHandler
+from src.utils.asyncHandler import asyncHandler
 import logging
-from entity.config_entity import DataTransformationConfig, RetreiverConfig
-from entity.artifact_entity import DataTransformationArtifact, DataIngestionArtifact
-from retrievers.create_retreivers import Retreiver
+from src.entity.config_entity import DataTransformationConfig, RetreiverConfig
+from src.entity.artifact_entity import DataTransformationArtifact, DataIngestionArtifact
+from src.retrievers.create_retreivers import Retreiver
 
 class DataTransformation:
     def __init__(self, data_transformation_config: DataTransformationConfig, data_ingestion_artifact: DataIngestionArtifact):

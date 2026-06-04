@@ -4,7 +4,7 @@ from typing import List
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-from utils.asyncHandler import asyncHandler
+from src.utils.asyncHandler import asyncHandler
 from src.constants import EMBEDDING_MODEL
 from langchain_classic.retrievers import EnsembleRetriever
 from langchain_community.retrievers import BM25Retriever
@@ -13,7 +13,7 @@ from langchain_community.document_compressors import FlashrankRerank
 from unstructured.partition.pdf import partition_pdf
 from unstructured.chunking.title import chunk_by_title
 from langchain_core.documents import Document
-from entity.config_entity import RetreiverConfig
+from src.entity.config_entity import RetreiverConfig
 
 class CompatibleEmbeddings(HuggingFaceEmbeddings):
     def __call__(self, text: str):

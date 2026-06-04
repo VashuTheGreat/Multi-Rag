@@ -1,5 +1,6 @@
 import logging
-from utils.asyncHandler import asyncHandler
+import asyncio
+from src.utils.asyncHandler import asyncHandler
 from src.states.Main_State import State, Orchastrator_output
 from src.prompts.prompt_templates import QUERY_GENERATION_PROMPT as QueryGenerationPrompt, CHAT_PROMPT as ChatNodePrompt
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -29,10 +30,24 @@ async def retreiver_node(state: State) -> dict:
         logging.info("No retriever chain created because of empty or invalid paths")
         return {"retreived_results": []}
     queries = state.get("queries", [])
+    if not queries:
+        logging.info("No queries generated for retrieval")
+        return {"retreived_results": []}
     # we will update thes Queries fetchers using multiple threads
-    query = queries[0] if queries else ""
-    logging.info(f"Retrieving context for query: {query}")
-    results = retriever_chain.invoke(query)
+    tasks = [retriever_chain.ainvoke(q) for q in queries]
+    results_list = await asyncio.gather(*tasks)
+    results = []
+    seen_contents = set()
+    for query_results in results_list:
+        for doc in query_results:
+            if doc.page_content not in seen_contents:
+                seen_contents.add(doc.page_content)
+                if "relevance_score" in doc.metadata:
+                    doc.metadata["relevance_score"] = float(doc.metadata["relevance_score"])
+                results.append({
+                    "page_content": doc.page_content,
+                    "metadata": doc.metadata
+                })
     logging.info(f"Retrieved {len(results)} results")
     return {"retreived_results": results}
 
@@ -40,7 +55,10 @@ async def retreiver_node(state: State) -> dict:
 async def chat_node(state: State) -> dict:
     logging.info("Running chat node")
     docs = state.get("retreived_results", [])
-    context = "\n\n".join([doc.page_content for doc in docs])
+    context = "\n\n".join([
+        doc.get("page_content", "") if isinstance(doc, dict) else getattr(doc, "page_content", "")
+        for doc in docs
+    ])
     context_msg = SystemMessage(content=f"Retrieved Context:\n{context}")
     prompt = [SystemMessage(content=ChatNodePrompt)] + state.get("messages", []) + [context_msg]
     res = llm.invoke(prompt)

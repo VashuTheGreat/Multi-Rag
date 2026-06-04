@@ -1,9 +1,9 @@
 
-from utils.asyncHandler import asyncHandler
+from src.utils.asyncHandler import asyncHandler
 import logging
-from entity.config_entity import DataIngestionConfig
-from utils.ingestion_utils import text_to_pdf,image_to_pdf,docs_to_pdf
-from entity.artifact_entity import DataIngestionArtifact
+from src.entity.config_entity import DataIngestionConfig
+from src.utils.ingestion_utils import text_to_pdf,image_to_pdf,docs_to_pdf
+from src.entity.artifact_entity import DataIngestionArtifact
 import shutil
 import os
 
