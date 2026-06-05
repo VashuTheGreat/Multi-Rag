@@ -6,7 +6,7 @@ from api.states.user_state import User
 class AuthenticateMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         path=request.url.path
-        if path.startswith('/api/v1/user/login'):
+        if path.startswith('/api/v1/user/login') or path in ["/","/static"]:
             return await call_next(request)
         thread_id = request.cookies.get("thread_id")
         if not thread_id:

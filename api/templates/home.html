@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="relative min-h-[calc(100vh-12rem)] flex flex-col justify-center py-6 sm:py-12">
+    <!-- Hero Section Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Side: Interactive Copy -->
+        <div class="lg:col-span-7 space-y-8 text-left">
+            <!-- Awesome badges -->
+            <div class="inline-flex items-center space-x-2 bg-indigo-500/10 text-indigo-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-indigo-500/20">
+                <span>⚡ Next-Gen Multi-Modal Agentic RAG</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-none">
+                Make RAG Great Again. <br>
+                <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    Vectorize Everything.
+                </span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
+                Upload PDFs, clinical datasets, brain scans, audio logs, or your deepest existential thoughts. 
+                Our AI vectorizes them into neat 384-dimensional math, builds a mind-bending knowledge graph, 
+                and lets you chat with it. 
+                <span class="text-slate-500 italic block mt-2 text-xs">
+                    *Disclaimer: We are not responsible if the LLM starts giving life advice or questioning your queries.
+                </span>
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="/api/v1/user/login" class="inline-flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-extrabold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 text-center">
+                    Start Your First RAG 🚀
+                </a>
+                <a href="#features" class="inline-flex items-center justify-center px-6 py-3.5 bg-slate-900/60 hover:bg-slate-800/80 text-slate-300 hover:text-white font-bold rounded-xl border border-white/10 hover:border-white/20 backdrop-blur-sm transition-all duration-200 text-center">
+                    How it works (or magic?)
+                </a>
+            </div>
+
+            <!-- Quick stats banner -->
+            <div class="pt-6 border-t border-white/5 flex flex-wrap gap-8 text-sm">
+                <div>
+                    <span class="block text-2xl font-extrabold text-indigo-400">0.04ms</span>
+                    <span class="text-slate-500 font-semibold">Average Retrieval Latency</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-extrabold text-pink-400">100%</span>
+                    <span class="text-slate-500 font-semibold">Hallucination Mitigation*</span>
+                </div>
+                <div>
+                    <span class="block text-2xl font-extrabold text-purple-400">Multi</span>
+                    <span class="text-slate-500 font-semibold">Modal Support</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Beautiful 3D AI Atom Orbit Animation -->
+        <div class="lg:col-span-5 flex items-center justify-center py-8 lg:py-0 relative">
+            <!-- Background Glow Circle -->
+            <div class="absolute w-72 h-72 rounded-full bg-purple-500/10 blur-3xl -z-10 animate-pulse"></div>
+            
+            <!-- Atom Container with 3D Perspective -->
+            <div class="relative w-80 h-80 flex items-center justify-center" style="perspective: 1000px; transform-style: preserve-3d;">
+                
+                <!-- Central Nucleus: Glowing Core containing "AI" -->
+                <div class="relative z-10 w-24 h-24 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center border border-white/20 shadow-[0_0_60px_rgba(99,102,241,0.7)] select-none">
+                    <div class="absolute inset-1 rounded-full bg-slate-950/80 backdrop-blur-sm flex items-center justify-center">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-purple-400 font-black text-3xl tracking-wider animate-pulse">
+                            AI
+                        </span>
+                    </div>
+                    <!-- Outer orbit rotation accent -->
+                    <div class="absolute inset-0.5 rounded-full border border-white/10 animate-spin" style="animation-duration: 3s;"></div>
+                </div>
+
+                <!-- Orbit Ring 1 (X Axis) -->
+                <div class="absolute w-72 h-72 border border-indigo-400/20 rounded-full animate-orbit-x flex items-center justify-center" style="transform-style: preserve-3d;">
+                    <!-- Orbiting Electron -->
+                    <div class="absolute top-0 w-4.5 h-4.5 rounded-full bg-indigo-400 shadow-[0_0_15px_#818cf8] border border-white/30">
+                        <div class="w-full h-full rounded-full bg-white animate-ping opacity-60"></div>
+                    </div>
+                </div>
+
+                <!-- Orbit Ring 2 (Y Axis) -->
+                <div class="absolute w-72 h-72 border border-pink-400/20 rounded-full animate-orbit-y flex items-center justify-center" style="transform-style: preserve-3d;">
+                    <!-- Orbiting Electron -->
+                    <div class="absolute top-0 w-4.5 h-4.5 rounded-full bg-pink-400 shadow-[0_0_15px_#f472b6] border border-white/30">
+                        <div class="w-full h-full rounded-full bg-white animate-ping opacity-60"></div>
+                    </div>
+                </div>
+
+                <!-- Orbit Ring 3 (Z Axis) -->
+                <div class="absolute w-72 h-72 border border-purple-400/20 rounded-full animate-orbit-z flex items-center justify-center" style="transform-style: preserve-3d;">
+                    <!-- Orbiting Electron -->
+                    <div class="absolute top-0 w-4.5 h-4.5 rounded-full bg-purple-400 shadow-[0_0_15px_#c084fc] border border-white/30">
+                        <div class="w-full h-full rounded-full bg-white animate-ping opacity-60"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Feature Grid Section -->
+    <div id="features" class="mt-24 pt-16 border-t border-white/5 space-y-12">
+        <div class="text-center max-w-2xl mx-auto space-y-4">
+            <h2 class="text-3xl font-extrabold text-white">How The Magic Works</h2>
+            <p class="text-slate-400 text-sm sm:text-base">We took the boring parts of Retrieval-Augmented Generation, sprinkled some high-speed agentic loops, and wrapped it in code.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-indigo-500/30 transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-6 font-black text-xl group-hover:scale-110 transition-transform">
+                    📥
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Ingest & Chunk</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    Upload clinical CSVs, images, or standard PDFs. Our pipeline ingests and chunks them, ready to feed the vectors.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-purple-500/30 transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-6 font-black text-xl group-hover:scale-110 transition-transform">
+                    🧠
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Vectorize & Connect</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    Powered by all-MiniLM-L6-v2, converting unstructured text into dense math vectors, establishing links instantly.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5 hover:border-pink-500/30 transition-all duration-300 group hover:-translate-y-1">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-6 font-black text-xl group-hover:scale-110 transition-transform">
+                    💬
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2">Graph Retrieval Chat</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                    Query your agent. Using stateful LangGraph chains, the system navigates nodes to fetch context and streams back accurate answers.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
