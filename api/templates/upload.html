@@ -357,8 +357,13 @@ document.querySelectorAll(".time-btn").forEach(btn => {
 
       if (!res.ok) throw new Error(data.error || "Login failed");
 
-      /* ✅ session started */
-      startGlobalTimer(secs);
+      /* ✅ session started — persist for all pages via localStorage */
+      localStorage.setItem('multirag_session_start',    Date.now().toString());
+      localStorage.setItem('multirag_session_duration', secs.toString());
+
+      /* kick the global navbar timer (already attached by base.html) */
+      if (window.__startNavTimer) window.__startNavTimer();
+
       showPhase("phase-upload");
 
     } catch(err) {

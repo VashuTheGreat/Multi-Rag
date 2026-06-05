@@ -88,6 +88,73 @@
     </footer>
 
 {% block extra_scripts %}{% endblock %}
+
+<!-- ═══════════════════════════════════════════════════════
+     GLOBAL SESSION TIMER  — runs on every page
+     Reads from localStorage so it survives navigation.
+     Upload page saves: multirag_session_start (epoch ms)
+                        multirag_session_duration (seconds)
+══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  const STORAGE_START    = 'multirag_session_start';     // epoch ms when login happened
+  const STORAGE_DURATION = 'multirag_session_duration';  // total session seconds
+
+  const wrapper   = document.getElementById('global-timer-wrapper');
+  const badge     = document.getElementById('global-timer-badge');
+  const badgeSpan = badge ? badge.querySelector('span') : null;
+
+  function fmtTime(s) {
+    if (s <= 0) return '00:00';
+    const h   = Math.floor(s / 3600);
+    const m   = Math.floor((s % 3600) / 60);
+    const sec = s % 60;
+    if (h > 0)
+      return h + ':' + String(m).padStart(2,'0') + ':' + String(sec).padStart(2,'0');
+    return String(m).padStart(2,'0') + ':' + String(sec).padStart(2,'0');
+  }
+
+  function startNavTimer() {
+    const start    = parseInt(localStorage.getItem(STORAGE_START), 10);
+    const duration = parseInt(localStorage.getItem(STORAGE_DURATION), 10);
+    if (!start || !duration) return;  // no session saved yet
+
+    const expiresAt = start + duration * 1000;  // epoch ms
+
+    if (wrapper) wrapper.classList.remove('hidden');
+
+    let interval;
+
+    function tick() {
+      const remaining = Math.max(0, Math.round((expiresAt - Date.now()) / 1000));
+      if (badgeSpan) badgeSpan.textContent = fmtTime(remaining);
+
+      if (remaining <= 60) {
+        badge.classList.remove('bg-indigo-500/20','text-indigo-400','border-indigo-500/30');
+        badge.classList.add('bg-red-500/20','text-red-400','border-red-500/40');
+      }
+
+      if (remaining <= 0) {
+        clearInterval(interval);
+        if (badgeSpan) badgeSpan.textContent = 'EXPIRED';
+        badge.classList.add('opacity-60');
+        // clean up storage so timer doesn't haunt the next session
+        localStorage.removeItem(STORAGE_START);
+        localStorage.removeItem(STORAGE_DURATION);
+      }
+    }
+
+    tick();
+    interval = setInterval(tick, 1000);
+  }
+
+  // Auto-start on every page as soon as DOM is ready
+  startNavTimer();
+
+  // Also expose so upload.html can call it after saving to localStorage
+  window.__startNavTimer = startNavTimer;
+})();
+</script>
 </body>
 
 </html>
