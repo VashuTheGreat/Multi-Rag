@@ -5,7 +5,8 @@ from api.middlewares.Authenticate_middleware import AuthenticateMiddleware
 from api.routes.upload_router import router as upload_router
 from api.routes.user_router import router as user_router
 from api.routes.ingest_docs_router import router as ingest_router
-# from api.routes.chat_router import router as chat_router
+from api.routes.chat_router import router as chat_router
+from api.routes.load_conversation_router import router as load_conversation_router
 
 app = FastAPI( 
     description="This is a MultiRag App",
@@ -29,7 +30,8 @@ async def hello():
     return {"Hello": True}
 
 
-app.include_router(upload_router,prefix="/api/upload")
-app.include_router(user_router,prefix="/api/user")
-app.include_router(ingest_router,prefix="/api/ingest")
-# app.include_router(chat_router,prefix="/api")
+app.include_router(upload_router,prefix="/api/v1/upload")
+app.include_router(user_router,prefix="/api/v1/user")
+app.include_router(ingest_router,prefix="/api/v1/ingest")
+app.include_router(chat_router,prefix="/api/v1/chat")
+app.include_router(load_conversation_router,prefix="/api/v1/conversation")

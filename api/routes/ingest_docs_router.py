@@ -9,14 +9,15 @@ from src.entity.config_entity import (
     DataIngestionConfig, 
     ContentEmbedderConfig, 
     DataTransformationConfig, 
-    ContentTransformationConfig
+    ContentTransformationConfig,
+    RetreiverConfig
 )
 
 from src.constants import ARTIFACT_DIR, INGESTION_FOLDER_NAME, TRANSFORMATION_FOLDER_NAME
-
+from src.retrievers.create_retreivers import Retreiver
 router = APIRouter()
 
-@router.get("/", tags=['File'])
+@router.get("", tags=['File'])
 async def ingest_docs(request: Request):
     try:
         user = request.scope.get("user")
@@ -57,11 +58,16 @@ async def ingest_docs(request: Request):
 
         result = await vectorizer_pipeline.initiate(thread_id=thread_id)
         logging.info(f"Vectorizer Pipeline Result: {result}")
+        vector_store_paths = [art.vector_store_path for art in result.data_transformation_artifacts]
 
+        retreiver_config = RetreiverConfig()
+        retreiver = Retreiver(retreiver_config=retreiver_config)
+        all_docs = await retreiver.get_all_documents(vector_store_paths)
         return JSONResponse(
             content={
                 "message": "Ingestion completed successfully",
-                "files_processed": len(files)
+                "files_processed": len(files),
+                "all_docs":all_docs
             },
             status_code=200
         )

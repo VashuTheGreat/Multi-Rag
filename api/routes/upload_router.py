@@ -7,7 +7,7 @@ from api.constants import PUBLIC_FOLDER_FILE_PATH
 
 router = APIRouter()
 
-@router.post("/", tags=["File"])
+@router.post("", tags=["File"])
 async def upload_file(request: Request, file: UploadFile = File(...)):
     try:
         user = request.scope.get("user")

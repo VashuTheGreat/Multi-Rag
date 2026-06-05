@@ -149,7 +149,23 @@ class Retreiver:
         )
         return hybrid_retriever
 
-        
+    
+    @asyncHandler
+    async def get_all_documents(self, vector_store_paths: List[str]):
+        documents = []
+        for path in vector_store_paths:
+            if os.path.exists(path):
+                vectorstore = FAISS.load_local(
+                    path, 
+                    embedding_model, 
+                    allow_dangerous_deserialization=True
+                )
+                for doc in vectorstore.docstore._dict.values():
+                    documents.append({
+                        "page_content": doc.page_content,
+                        "metadata": doc.metadata
+                    })
+        return documents
 
     @asyncHandler
     async def merge_vector_stores(self, vector_store_paths: List[str]):

@@ -10,7 +10,7 @@ from src.constants import ARTIFACT_DIR, TRANSFORMATION_FOLDER_NAME
 
 router = APIRouter()
 
-@router.post("/chat", tags=['Chat'])
+@router.post("", tags=['Chat'])
 async def chat_endpoint(request: Request, chat_request: ChatRequest):
     try:
         user = request.scope.get("user")
