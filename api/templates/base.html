@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-RAG Studio</title>
+    <title>{% block title %}Multi-RAG Studio{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body class="bg-slate-950 text-slate-100 flex flex-col min-h-screen relative overflow-x-hidden selection:bg-indigo-600 selection:text-white">
@@ -43,6 +44,18 @@
 
                 <div class="flex items-center space-x-4">
                     <a href="#" class="text-slate-400 hover:text-white transition text-sm font-semibold hidden sm:inline-block">Docs</a>
+
+                    <!-- Global session countdown timer (hidden until a session starts) -->
+                    <div id="global-timer-wrapper" class="hidden">
+                        <div id="global-timer-badge"
+                            class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 text-sm font-extrabold tabular-nums tracking-wide">
+                            <svg class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>--:--</span>
+                        </div>
+                    </div>
+
                     <button class="relative group overflow-hidden bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg shadow-indigo-500/25 transition-all duration-300">
                         <span class="relative z-10">New Chat</span>
                         <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -74,6 +87,7 @@
         </div>
     </footer>
 
+{% block extra_scripts %}{% endblock %}
 </body>
 
 </html>
