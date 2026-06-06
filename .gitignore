@@ -215,3 +215,8 @@ scratch/
 docs/
 artifacts/
 
+data/
+
+api/public/
+
+logs/

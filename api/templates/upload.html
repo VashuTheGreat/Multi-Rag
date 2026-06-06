@@ -539,8 +539,22 @@ async function startIngestion() {
     $("stat-docs").textContent   = Array.isArray(data.all_docs) ? data.all_docs.length : (data.all_docs ?? "—");
     $("stat-status").textContent = "✅";
 
-    /* unlock "go to chat" */
-    $("btn-go-chat").classList.remove("hidden");
+    /* ── auto-redirect to chat with 3s countdown ── */
+    appendLog("🚀 Redirecting to Chat in 3 seconds…", "text-indigo-300");
+    const goBtn = $("btn-go-chat");
+    goBtn.classList.remove("hidden");
+    let countdown = 3;
+    goBtn.textContent = `🚀 Opening Chat in ${countdown}s — click to go now`;
+    const countTimer = setInterval(() => {
+      countdown--;
+      if (countdown <= 0) {
+        clearInterval(countTimer);
+        window.location.href = URLS.chat;
+      } else {
+        goBtn.textContent = `🚀 Opening Chat in ${countdown}s — click to go now`;
+      }
+    }, 1000);
+    goBtn.onclick = () => { clearInterval(countTimer); window.location.href = URLS.chat; };
 
   } catch(err) {
     clearInterval(dripInterval);
@@ -550,9 +564,7 @@ async function startIngestion() {
   }
 }
 
-$("btn-go-chat").addEventListener("click", () => {
-  window.location.href = URLS.chat;
-});
+/* btn-go-chat click is wired dynamically inside startIngestion() */
 
 </script>
 {% endblock %}

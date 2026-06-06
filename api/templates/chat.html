@@ -1,0 +1,584 @@
+{% extends "base.html" %}
+{% block title %}Chat — Multi-RAG Studio{% endblock %}
+
+{% block extra_head %}
+<style>
+/* ── layout ── */
+#chat-page { height: calc(100vh - 8rem); display:flex; flex-direction:column; }
+
+/* ── tab bar ── */
+.tab-btn { transition: all .2s; }
+.tab-btn.active {
+  background: rgba(99,102,241,.15);
+  border-color: rgba(99,102,241,.6);
+  color: #a5b4fc;
+}
+
+/* ── message bubbles ── */
+.msg-user { animation: slideR .22s ease both; }
+.msg-ai   { animation: slideL .22s ease both; }
+@keyframes slideR { from{opacity:0;transform:translateX(12px)} to{opacity:1;transform:none} }
+@keyframes slideL { from{opacity:0;transform:translateX(-12px)} to{opacity:1;transform:none} }
+
+/* ── AI markdown rendering ── */
+.ai-content h1,h2,h3 { color:#e2e8f0; font-weight:700; margin:.5em 0 .25em; }
+.ai-content p  { margin:.35em 0; line-height:1.65; }
+.ai-content ul,ol { padding-left:1.4em; margin:.3em 0; }
+.ai-content li { margin:.2em 0; }
+.ai-content code {
+  background:rgba(99,102,241,.15); color:#c7d2fe;
+  padding:.1em .35em; border-radius:.3em; font-size:.82em;
+}
+.ai-content pre { background:#0f1221; border:1px solid rgba(255,255,255,.07);
+  border-radius:.75em; padding:1em; overflow-x:auto; margin:.5em 0; }
+.ai-content pre code { background:none; color:#94a3b8; }
+.ai-content table { width:100%; border-collapse:collapse; margin:.5em 0; font-size:.82em; }
+.ai-content th { background:rgba(99,102,241,.2); color:#c7d2fe; padding:.4em .7em; text-align:left; }
+.ai-content td { border-top:1px solid rgba(255,255,255,.06); padding:.4em .7em; color:#94a3b8; }
+
+/* ── typing dots ── */
+.typing-dot { animation: blink 1.2s infinite; }
+.typing-dot:nth-child(2) { animation-delay:.2s; }
+.typing-dot:nth-child(3) { animation-delay:.4s; }
+@keyframes blink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+
+/* ── doc card ── */
+.doc-card { animation: fadeUp .25s ease both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+.doc-card img { max-width:100%; border-radius:.5em; margin:.5em 0; border:1px solid rgba(255,255,255,.06); }
+
+/* ── scroll bars ── */
+::-webkit-scrollbar { width:4px; height:4px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:rgba(99,102,241,.35); border-radius:99px; }
+
+/* ── textarea auto-grow ── */
+#chat-input { resize:none; min-height:44px; max-height:160px; overflow-y:auto; }
+</style>
+{% endblock %}
+
+{% block main %}
+<div id="chat-page" class="max-w-5xl mx-auto w-full">
+
+  {# ── Tab Bar ── #}
+  <div class="flex items-center gap-3 mb-4 pt-2">
+    <button id="tab-chat" class="tab-btn active flex items-center gap-2 px-5 py-2 rounded-xl border border-white/10 text-slate-300 text-sm font-bold" onclick="switchTab('chat')">
+      💬 Chat
+    </button>
+    <button id="tab-docs" class="tab-btn flex items-center gap-2 px-5 py-2 rounded-xl border border-white/10 text-slate-400 text-sm font-bold" onclick="switchTab('docs')">
+      📄 View Ingested Docs
+    </button>
+    <div class="flex-1"></div>
+    <a href="{{ urls.upload_page }}" class="text-xs text-slate-500 hover:text-indigo-400 transition font-semibold">← Upload more</a>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     PANEL 1 — CHAT
+  ══════════════════════════════════════════════ #}
+  <div id="panel-chat" class="flex flex-col flex-1 min-h-0" style="height:calc(100vh - 11rem)">
+
+    {# Message list #}
+    <div id="msg-list" class="flex-1 overflow-y-auto space-y-5 pr-1 pb-4">
+      {# welcome stub #}
+      <div id="welcome-stub" class="flex flex-col items-center justify-center h-full text-center space-y-4 py-16">
+        <div class="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-3xl">🧠</div>
+        <p class="text-white font-extrabold text-xl">Knowledge base is ready</p>
+        <p class="text-slate-500 text-sm max-w-xs">Ask anything about the documents you ingested. The graph-powered RAG will find the answer.</p>
+      </div>
+    </div>
+
+    {# Input bar #}
+    <div class="border-t border-white/5 pt-4 pb-1">
+      <div class="flex items-end gap-3 bg-slate-900/60 border border-white/8 rounded-2xl px-4 py-3">
+        <textarea
+          id="chat-input"
+          rows="1"
+          placeholder="Ask your knowledge base…"
+          class="flex-1 bg-transparent text-slate-100 text-sm placeholder-slate-600 outline-none leading-relaxed"
+        ></textarea>
+        <button id="btn-send"
+          class="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+          title="Send (Enter)">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/>
+          </svg>
+        </button>
+      </div>
+      <p class="text-slate-700 text-xs mt-1.5 ml-1">Enter to send · Shift+Enter for newline</p>
+    </div>
+  </div>
+
+  {# ══════════════════════════════════════════════
+     PANEL 2 — VIEW INGESTED DOCS
+  ══════════════════════════════════════════════ #}
+  <div id="panel-docs" class="hidden flex-col" style="height:calc(100vh - 11rem)">
+
+    {# Toolbar #}
+    <div class="flex items-center gap-3 mb-4">
+      <input id="doc-search" type="text" placeholder="Search documents…"
+        class="flex-1 bg-slate-900/60 border border-white/8 rounded-xl px-4 py-2 text-sm text-slate-300 placeholder-slate-600 outline-none focus:border-indigo-500/50 transition"/>
+      <button id="btn-reload-docs"
+        class="px-4 py-2 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-bold hover:bg-indigo-500/20 transition flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m0 0A8.001 8.001 0 0112 4c4.418 0 8 3.582 8 8h-2m-2 5.418A8.001 8.001 0 014 12H2"/>
+        </svg>
+        Reload
+      </button>
+      <span id="doc-count" class="text-xs text-slate-600 font-semibold"></span>
+    </div>
+
+    {# Doc grid #}
+    <div id="doc-grid" class="flex-1 overflow-y-auto space-y-3 pr-1"></div>
+
+    {# Doc loading states #}
+    <div id="docs-loading" class="hidden flex-1 flex items-center justify-center">
+      <div class="flex flex-col items-center gap-3 text-slate-500">
+        <svg class="animate-spin w-8 h-8 text-indigo-500" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+        </svg>
+        <p class="text-sm">Loading ingested documents…</p>
+      </div>
+    </div>
+    <div id="docs-empty" class="hidden flex-1 flex items-center justify-center text-slate-600 text-sm">
+      No documents found. Go back and ingest files first.
+    </div>
+  </div>
+
+</div>
+
+{# ── Doc detail modal ── #}
+<div id="doc-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4" style="background:rgba(0,0,0,.75); backdrop-filter:blur(8px)">
+  <div class="relative w-full max-w-3xl max-h-[90vh] flex flex-col bg-slate-900 border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/5 shrink-0">
+      <h3 id="modal-title" class="text-white font-extrabold text-base truncate max-w-[80%]"></h3>
+      <button onclick="closeModal()" class="text-slate-500 hover:text-white transition text-2xl leading-none">×</button>
+    </div>
+    <div id="modal-body" class="overflow-y-auto flex-1 p-6 space-y-5 text-sm text-slate-300"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+/* ── Jinja constants ── */
+const URLS = {
+  chat:              "{{ urls.chat }}",
+  load_conversation: "{{ urls.load_conversation }}",
+  ingest:            "{{ urls.ingest }}",
+  upload_page:       "{{ urls.upload_page }}"
+};
+
+/* ══════════════════════════════════════════
+   TABS
+══════════════════════════════════════════ */
+function switchTab(tab) {
+  const isChat = tab === 'chat';
+  document.getElementById('panel-chat').classList.toggle('hidden', !isChat);
+  document.getElementById('panel-docs').classList.toggle('hidden', isChat);
+  document.getElementById('tab-chat').classList.toggle('active', isChat);
+  document.getElementById('tab-docs').classList.toggle('active', !isChat);
+  if (!isChat && !docsLoaded) loadDocs();
+}
+
+/* ══════════════════════════════════════════
+   CHAT
+══════════════════════════════════════════ */
+let messages = [];   // {role:'user'|'ai', text:string}
+let waiting  = false;
+
+const msgList  = document.getElementById('msg-list');
+const input    = document.getElementById('chat-input');
+const btnSend  = document.getElementById('btn-send');
+const welcome  = document.getElementById('welcome-stub');
+
+/* auto-grow textarea */
+input.addEventListener('input', () => {
+  input.style.height = 'auto';
+  input.style.height = Math.min(input.scrollHeight, 160) + 'px';
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+});
+btnSend.addEventListener('click', sendMessage);
+
+function appendBubble(role, html) {
+  welcome.style.display = 'none';
+  const isUser = role === 'user';
+  const wrap = document.createElement('div');
+  wrap.className = isUser
+    ? 'msg-user flex justify-end'
+    : 'msg-ai flex justify-start items-start gap-3';
+
+  if (!isUser) {
+    wrap.innerHTML = `
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-sm shrink-0 mt-0.5">🧠</div>
+      <div class="ai-content max-w-[82%] bg-slate-900/60 border border-white/8 rounded-2xl rounded-tl-sm px-5 py-4 text-slate-300 text-sm leading-relaxed">${html}</div>`;
+  } else {
+    wrap.innerHTML = `
+      <div class="max-w-[75%] bg-gradient-to-br from-indigo-600/80 to-purple-700/80 border border-indigo-500/30 rounded-2xl rounded-tr-sm px-5 py-3 text-white text-sm">${escHtml(html)}</div>`;
+  }
+  msgList.appendChild(wrap);
+  msgList.scrollTop = msgList.scrollHeight;
+  return wrap;
+}
+
+function showTyping() {
+  const wrap = document.createElement('div');
+  wrap.id = 'typing-indicator';
+  wrap.className = 'msg-ai flex justify-start items-center gap-3';
+  wrap.innerHTML = `
+    <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-sm shrink-0">🧠</div>
+    <div class="bg-slate-900/60 border border-white/8 rounded-2xl rounded-tl-sm px-5 py-3 flex items-center gap-1.5">
+      <span class="typing-dot w-2 h-2 rounded-full bg-indigo-400 inline-block"></span>
+      <span class="typing-dot w-2 h-2 rounded-full bg-indigo-400 inline-block"></span>
+      <span class="typing-dot w-2 h-2 rounded-full bg-indigo-400 inline-block"></span>
+    </div>`;
+  msgList.appendChild(wrap);
+  msgList.scrollTop = msgList.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typing-indicator');
+  if (t) t.remove();
+}
+
+async function sendMessage() {
+  const text = input.value.trim();
+  if (!text || waiting) return;
+  waiting = true;
+  btnSend.disabled = true;
+  input.value = '';
+  input.style.height = 'auto';
+
+  appendBubble('user', text);
+  showTyping();
+
+  try {
+    const res  = await fetch(URLS.chat, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text })
+    });
+    const data = await res.json();
+    removeTyping();
+
+    if (!res.ok) {
+      appendBubble('ai', `<span class="text-red-400">❌ ${data.error || 'Something went wrong'}</span>`);
+    } else {
+      appendBubble('ai', renderMarkdown(data.response || 'No response.'));
+    }
+  } catch (err) {
+    removeTyping();
+    appendBubble('ai', `<span class="text-red-400">❌ Network error: ${escHtml(err.message)}</span>`);
+  }
+
+  waiting = false;
+  btnSend.disabled = false;
+  input.focus();
+}
+
+/* ══════════════════════════════════════════
+   VIEW DOCS
+══════════════════════════════════════════ */
+let docsLoaded = false;
+let allDocs    = [];
+
+async function loadDocs() {
+  const grid    = document.getElementById('doc-grid');
+  const loading = document.getElementById('docs-loading');
+  const empty   = document.getElementById('docs-empty');
+
+  grid.innerHTML = '';
+  loading.classList.remove('hidden');
+  loading.classList.add('flex');
+  empty.classList.add('hidden');
+
+  try {
+    const res  = await fetch(URLS.ingest, { method: 'GET', credentials: 'include' });
+    const data = await res.json();
+    loading.classList.add('hidden');
+    loading.classList.remove('flex');
+
+    if (!res.ok || !Array.isArray(data.all_docs) || data.all_docs.length === 0) {
+      empty.classList.remove('hidden');
+      return;
+    }
+
+    allDocs = data.all_docs;
+    docsLoaded = true;
+    renderDocGrid(allDocs);
+
+  } catch (err) {
+    loading.classList.add('hidden');
+    loading.classList.remove('flex');
+    empty.textContent = '⚠️ Failed to load docs: ' + err.message;
+    empty.classList.remove('hidden');
+  }
+}
+
+function renderDocGrid(docs) {
+  const grid = document.getElementById('doc-grid');
+  grid.innerHTML = '';
+  document.getElementById('doc-count').textContent = `${docs.length} chunk${docs.length !== 1 ? 's' : ''}`;
+
+  docs.forEach((doc, idx) => {
+    const meta    = doc.metadata || {};
+    const content = doc.page_content || doc.content || '';
+    const source  = meta.source || meta.file_name || `Document ${idx + 1}`;
+    const page    = meta.page !== undefined ? `p.${meta.page + 1}` : '';
+    const types   = String(meta.types || meta.type || meta.content_type || 'text');
+
+    /* detect from metadata fields the pipeline actually sets */
+    const hasImage = meta.has_images === true || meta.has_images === 'true'
+                   || !!(meta.images && String(meta.images).length > 50)
+                   || types.includes('image');
+    const hasTable = !!(meta.tables && String(meta.tables).trim().length > 0)
+                   || types.includes('table');
+
+    /* build a small image thumbnail preview for cards */
+    const imgSrc = buildImgSrc(meta.images || meta.image_path || '');
+
+    const card = document.createElement('div');
+    card.className = 'doc-card bg-slate-900/50 border border-white/6 rounded-2xl p-5 hover:border-indigo-500/30 transition-all cursor-pointer group';
+    card.innerHTML = `
+      <div class="flex items-start justify-between gap-3 mb-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="text-xl shrink-0">${hasImage ? '🖼️' : hasTable ? '📊' : '📄'}</span>
+          <div class="min-w-0">
+            <p class="text-white font-bold text-sm truncate">${escHtml(source)}</p>
+            <p class="text-slate-600 text-xs">${escHtml(page)} ${types ? '· ' + escHtml(types) : ''}</p>
+          </div>
+        </div>
+        <div class="flex gap-1.5 shrink-0 flex-wrap justify-end">
+          ${hasTable ? '<span class="text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 font-semibold">TABLE</span>' : ''}
+          ${hasImage ? '<span class="text-xs px-2 py-0.5 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20 font-semibold">IMAGE</span>' : ''}
+          <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-semibold">CHUNK ${idx + 1}</span>
+        </div>
+      </div>
+
+      ${imgSrc ? `<img src="${imgSrc}" alt="chunk image" class="w-full max-h-40 object-contain rounded-xl border border-white/8 mb-3 bg-slate-950/40"/>` : ''}
+
+      <p class="text-slate-500 text-xs leading-relaxed line-clamp-3 font-mono">${escHtml(content.slice(0, 280))}${content.length > 280 ? '…' : ''}</p>
+      <div class="mt-3 flex items-center justify-between">
+        <div class="flex flex-wrap gap-2">
+          ${Object.entries(meta)
+            .filter(([k]) => !['images','tables','image_path'].includes(k))
+            .slice(0, 4)
+            .map(([k, v]) =>
+              `<span class="text-xs text-slate-600 bg-slate-800/60 border border-white/5 px-2 py-0.5 rounded-lg font-mono"><b class="text-slate-500">${escHtml(k)}:</b> ${escHtml(String(v).slice(0, 30))}</span>`
+            ).join('')}
+        </div>
+        <span class="text-indigo-400 text-xs font-bold opacity-0 group-hover:opacity-100 transition ml-3 shrink-0">View full →</span>
+      </div>`;
+
+    card.addEventListener('click', () => openModal(doc, idx));
+    grid.appendChild(card);
+  });
+}
+
+/* search */
+document.getElementById('doc-search').addEventListener('input', function () {
+  const q = this.value.toLowerCase();
+  if (!q) { renderDocGrid(allDocs); return; }
+  renderDocGrid(allDocs.filter(d => {
+    const text = (d.page_content || d.content || '') + JSON.stringify(d.metadata || {});
+    return text.toLowerCase().includes(q);
+  }));
+});
+
+document.getElementById('btn-reload-docs').addEventListener('click', () => {
+  docsLoaded = false;
+  loadDocs();
+});
+
+/* ── helpers ── */
+
+/**
+ * Given a value from meta.images or meta.image_path,
+ * return a usable src string (data URI or URL).
+ * The pipeline encodes images as base64 strings.
+ */
+function buildImgSrc(raw) {
+  if (!raw) return '';
+  const s = String(raw).trim();
+  if (!s || s.length < 20) return '';
+  /* already a data URI */
+  if (s.startsWith('data:')) return s;
+  /* plain base64 — guess JPEG (most common for extracted images) */
+  if (/^[A-Za-z0-9+/=]{20,}$/.test(s.replace(/\s/g,''))) {
+    return 'data:image/jpeg;base64,' + s.replace(/\s/g,'');
+  }
+  /* URL path */
+  return s;
+}
+
+/**
+ * Try to render a table value:
+ *  - HTML string → inject directly
+ *  - JSON array of arrays / objects → build <table>
+ *  - CSV-ish text → build <table>
+ */
+function renderTableValue(raw) {
+  if (!raw) return '';
+  const s = String(raw).trim();
+  if (!s) return '';
+
+  /* HTML table already */
+  if (/<table/i.test(s)) return s;
+
+  /* Try JSON */
+  try {
+    const parsed = JSON.parse(s);
+    if (Array.isArray(parsed) && parsed.length) {
+      const isObjArray = typeof parsed[0] === 'object' && !Array.isArray(parsed[0]);
+      if (isObjArray) {
+        const keys = Object.keys(parsed[0]);
+        return `<table class="ai-content">
+          <thead><tr>${keys.map(k => `<th>${escHtml(k)}</th>`).join('')}</tr></thead>
+          <tbody>${parsed.map(row =>
+            `<tr>${keys.map(k => `<td>${escHtml(String(row[k] ?? ''))}</td>`).join('')}</tr>`
+          ).join('')}</tbody></table>`;
+      }
+      if (Array.isArray(parsed[0])) {
+        const [head, ...rows] = parsed;
+        return `<table class="ai-content">
+          <thead><tr>${head.map(h => `<th>${escHtml(String(h))}</th>`).join('')}</tr></thead>
+          <tbody>${rows.map(r =>
+            `<tr>${r.map(c => `<td>${escHtml(String(c ?? ''))}</td>`).join('')}</tr>`
+          ).join('')}</tbody></table>`;
+      }
+    }
+  } catch { /* not JSON */ }
+
+  /* Fallback: render as preformatted */
+  return `<pre class="text-slate-400 text-xs whitespace-pre-wrap">${escHtml(s)}</pre>`;
+}
+
+function openModal(doc, idx) {
+  const meta    = doc.metadata || {};
+  const content = doc.page_content || doc.content || '';
+  const source  = meta.source || meta.file_name || `Document ${idx + 1}`;
+
+  document.getElementById('modal-title').textContent = source + ` — Chunk ${idx + 1}`;
+
+  let body = '';
+
+  /* ── Metadata table (skip raw images/tables keys) ── */
+  const SKIP_KEYS = new Set(['images', 'tables', 'image_path']);
+  const metaEntries = Object.entries(meta).filter(([k]) => !SKIP_KEYS.has(k));
+  if (metaEntries.length) {
+    body += `<div>
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Metadata</p>
+      <table class="w-full text-xs border-collapse">
+        <thead><tr>
+          <th class="text-left px-3 py-2 bg-slate-800/60 text-slate-400 font-semibold w-1/3">Key</th>
+          <th class="text-left px-3 py-2 bg-slate-800/60 text-slate-400 font-semibold">Value</th>
+        </tr></thead>
+        <tbody>
+          ${metaEntries.map(([k, v]) => `
+            <tr class="border-t border-white/5">
+              <td class="px-3 py-2 text-slate-500 font-mono">${escHtml(k)}</td>
+              <td class="px-3 py-2 text-slate-300 font-mono break-all">${escHtml(String(v))}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>`;
+  }
+
+  /* ── Images (decode base64 or use path) ── */
+  const imgRaw = meta.images || meta.image_path || '';
+  const imgSrc = buildImgSrc(imgRaw);
+  if (imgSrc) {
+    body += `<div>
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">🖼️ Embedded Image</p>
+      <img src="${imgSrc}" alt="Embedded image"
+        class="rounded-xl border border-white/8 max-h-80 w-full object-contain bg-slate-950/40"
+        onerror="this.parentElement.innerHTML='<p class=text-slate-600 text-xs>Image could not be displayed.</p>'"/>
+    </div>`;
+  }
+
+  /* ── Tables ── */
+  const tableRaw = meta.tables || '';
+  if (tableRaw && String(tableRaw).trim().length > 0) {
+    body += `<div>
+      <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">📊 Embedded Table</p>
+      <div class="overflow-x-auto rounded-xl border border-white/6 bg-slate-950/40 p-3">
+        ${renderTableValue(tableRaw)}
+      </div>
+    </div>`;
+  }
+
+  /* ── Content ── */
+  body += `<div>
+    <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Content</p>
+    <div class="bg-slate-950/60 border border-white/6 rounded-xl p-4 text-slate-300 text-xs font-mono leading-relaxed whitespace-pre-wrap max-h-64 overflow-y-auto">${escHtml(content)}</div>
+  </div>`;
+
+  document.getElementById('modal-body').innerHTML = body;
+  document.getElementById('doc-modal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('doc-modal').classList.add('hidden');
+}
+
+/* close on backdrop click */
+document.getElementById('doc-modal').addEventListener('click', function (e) {
+  if (e.target === this) closeModal();
+});
+
+/* ══════════════════════════════════════════
+   HELPERS
+══════════════════════════════════════════ */
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/* Very lightweight markdown → HTML (no deps) */
+function renderMarkdown(md) {
+  return md
+    /* code blocks */
+    .replace(/```(\w*)\n?([\s\S]*?)```/g, (_, lang, code) =>
+      `<pre><code class="lang-${lang}">${escHtml(code.trim())}</code></pre>`)
+    /* inline code */
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    /* bold */
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    /* italic */
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    /* headings */
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm,  '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm,   '<h1>$1</h1>')
+    /* unordered list */
+    .replace(/^\s*[-*] (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>[\s\S]+?<\/li>)/g, '<ul>$1</ul>')
+    /* line breaks */
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^(?!<[hup])/gm, '')
+    .replace(/(.+)/gs, s => s.startsWith('<') ? s : `<p>${s}</p>`);
+}
+
+/* Load history on page open */
+(async function loadHistory() {
+  try {
+    const res  = await fetch(URLS.load_conversation, { credentials: 'include' });
+    const data = await res.json();
+    if (!res.ok || !Array.isArray(data.messages)) return;
+    data.messages.forEach(m => {
+      if (m.type === 'human' || m.role === 'user')
+        appendBubble('user', m.content || m.text || '');
+      else if (m.type === 'ai' || m.role === 'assistant')
+        appendBubble('ai', renderMarkdown(m.content || m.text || ''));
+    });
+  } catch { /* fresh session, no history */ }
+})();
+</script>
+{% endblock %}
