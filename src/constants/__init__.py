@@ -12,3 +12,7 @@ PUBLIC_FOLDER_FILE_PATH:str="public"
 ARTIFACT_DIR = "artifacts"
 
 
+# ======================= Web Search Constants ====================
+SEARCH_MAX_RESULT, SEARCH_TOPIC = 5, "general"
+
+

@@ -6,7 +6,7 @@ import logging
 from exception import MyException
 from PIL import Image
 from fpdf import FPDF
-from docx2pdf import convert
+from docx import Document
 
 
 
@@ -63,10 +63,31 @@ async def txt_to_pdf(txt_path, output_pdf_path):
 
 
 
-async def docs_to_pdf(docs_path:str,output_pdf_path:str):
+async def docs_to_pdf(docs_path: str, output_pdf_path: str):
     try:
-        convert(input_path=docs_path,output_path=output_pdf_path)
-    
+        doc = Document(docs_path)
+
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+
+        for para in doc.paragraphs:
+            line = para.text.strip()
+            line = (
+                line
+                .replace('\u2018', "'")
+                .replace('\u2019', "'")
+                .replace('\u201c', '"')
+                .replace('\u201d', '"')
+                .replace('\u2013', '-')
+                .replace('\u2014', '--')
+            )
+            if line:
+                pdf.multi_cell(0, 8, txt=line)
+            else:
+                pdf.ln(4)
+
+        pdf.output(output_pdf_path)
+
     except Exception as e:
         raise MyException(e)
-            
