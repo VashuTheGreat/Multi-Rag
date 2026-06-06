@@ -1,15 +1,19 @@
 FROM python:3.12-slim
-sudo apt-get update && sudo apt-get      │ │
-│ │ install -y tesseract-ocr                 │ │
-│ │ libtesseract-dev poppler-utils           │ │
-│ │ libmagic-dev      
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    tesseract-ocr \
+    libtesseract-dev \
+    poppler-utils \
+    libmagic-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Copy dependency files first (better caching)
+# Copy dependency files first
 COPY requirements.txt pyproject.toml ./
 
-# Install dependencies
+# Install dependencies using pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy rest of the application
