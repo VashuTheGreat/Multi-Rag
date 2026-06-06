@@ -27,9 +27,7 @@ set -e
 git config --global user.name "jenkins"
 git config --global user.email "jenkins@local"
 export PATH=$HOME/.local/bin:$PATH
-if ! command -v hf &> /dev/null; then
-    pip3 install --user -U huggingface_hub
-fi
+pip3 install --user --break-system-packages -U "huggingface_hub[cli]"
 '''
             }
         }
@@ -40,7 +38,7 @@ fi
                 sh '''#!/bin/bash
 set -e
 export PATH=$HOME/.local/bin:$PATH
-hf auth login --token "$HF_TOKEN"
+python3 -m huggingface_hub.cli.hf auth login --token "$HF_TOKEN"
 '''
             }
         }
@@ -76,7 +74,7 @@ mv "$TEMP_README" README.md
                 sh '''#!/bin/bash
 set -e
 export PATH=$HOME/.local/bin:$PATH
-hf repos create "$HF_USERNAME/$SPACE_NAME" --type space --space-sdk docker || true
+python3 -m huggingface_hub.cli.hf repos create "$SPACE_NAME" --type space --space-sdk docker || true
 '''
             }
         }
@@ -87,7 +85,7 @@ hf repos create "$HF_USERNAME/$SPACE_NAME" --type space --space-sdk docker || tr
                 sh '''#!/bin/bash
 set -e
 export PATH=$HOME/.local/bin:$PATH
-hf upload "$HF_USERNAME/$SPACE_NAME" . --repo-type=space
+python3 -m huggingface_hub.cli.hf upload "$HF_USERNAME/$SPACE_NAME" . --repo-type space
 '''
             }
         }
