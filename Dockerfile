@@ -1,4 +1,8 @@
 FROM python:3.12-slim
+sudo apt-get update && sudo apt-get      │ │
+│ │ install -y tesseract-ocr                 │ │
+│ │ libtesseract-dev poppler-utils           │ │
+│ │ libmagic-dev      
 
 WORKDIR /app
 

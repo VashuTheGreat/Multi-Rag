@@ -9,7 +9,4 @@ class MyException(Exception):
 
         logging.exception(error_message)
     def __str__(self) -> str:
-        """
-        Returns the string representation of the error message.
-        """
-        return self.args[0]
+        return str(self.args[0])

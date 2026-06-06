@@ -1,55 +1,38 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import JSONResponse
-from api.MultiRag.routes import chat_route, uploader_route, pages_route,get_all_thread_route,load_conversation_route,get_available_file_fomates_route, delete_thread_route
-app = FastAPI()
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from api.middlewares.Authenticate_middleware import AuthenticateMiddleware
 
-@app.middleware("http")
-async def check_user_id(request: Request, call_next):
-    # Skip middleware for static files and page routes to allow initial connection
-    public_routes = [
-        "/",
-        "/chat",
-        "/web",
-        "/blog",
-        "/docs",
-        "/redoc",
-        "/openapi.json",
-        "/favicon.ico",
-    ]
-    if request.url.path.startswith("/static") or request.url.path.startswith("/blog/images") or request.url.path in public_routes:
-        return await call_next(request)
+from api.routes.upload_router import router as upload_router
+from api.routes.user_router import router as user_router
+from api.routes.ingest_docs_router import router as ingest_router
+from api.routes.chat_router import router as chat_router
+from api.routes.load_conversation_router import router as load_conversation_router
+from api.routes.frontend_router import router as frontend_router
+app = FastAPI( 
+    description="This is a MultiRag App",
+    title="Multi-Rag App",
+    version="0.0.1",
+    )
 
-    user_id = request.headers.get("user_id") or request.query_params.get("user_id")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+app.add_middleware(AuthenticateMiddleware)
 
-    if not user_id:
-        return JSONResponse(
-            status_code=401,
-            content={"message": "user_id header missing"}
-        )
-
-    response = await call_next(request)
-    return response
-
-app.include_router(pages_route.router)
-app.include_router(prefix="/api/v1/chat", router=chat_route.router)
-app.include_router(prefix="/api/v1/uploader", router=uploader_route.router)
-app.include_router(prefix="/api/v1/thread", router=get_all_thread_route.router)
-app.include_router(prefix="/api/v1/thread", router=delete_thread_route.router)
-app.include_router(prefix="/api/v1/conversation", router=load_conversation_route.router)
-app.include_router(prefix="/api/v1/file_formats", router=get_available_file_fomates_route.router)
-
-
-
-
-# # -------------------- Web -------------------------------
-# app.include_router(page_route_web.router)
-# app.include_router(prefix="/web",router=web_talk_routes.router)
+app.mount("/static", StaticFiles(directory="api/static"), name="static")
 
 
 
 
 
-# # ------------ Blog --------------------
-# app.include_router(page_route_blog.router)
-# app.include_router(prefix="/blog",router=blog_router.router)
-
+app.include_router(frontend_router,prefix="")
+app.include_router(upload_router,prefix="/api/v1/upload")
+app.include_router(user_router,prefix="/api/v1/user")
+app.include_router(ingest_router,prefix="/api/v1/ingest")
+app.include_router(chat_router,prefix="/api/v1/chat")
+app.include_router(load_conversation_router,prefix="/api/v1/conversation")

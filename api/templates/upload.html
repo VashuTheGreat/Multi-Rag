@@ -1,0 +1,570 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Files — Multi-RAG Studio{% endblock %}
+
+{% block extra_head %}
+<style>
+  /* ── Drop Zone ── */
+  #drop-zone {
+    border: 2px dashed rgba(99,102,241,0.35);
+    transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  }
+  #drop-zone.drag-over {
+    border-color: rgba(99,102,241,0.9);
+    background: rgba(99,102,241,0.06);
+    transform: scale(1.01);
+  }
+
+  /* ── File chip ── */
+  .file-chip {
+    animation: chipIn 0.25s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  @keyframes chipIn {
+    from { opacity:0; transform:scale(0.7) translateY(6px); }
+    to   { opacity:1; transform:scale(1)   translateY(0);   }
+  }
+
+  /* ── Progress bar shimmer ── */
+  .shimmer {
+    background: linear-gradient(90deg,
+      rgba(99,102,241,0.0) 0%,
+      rgba(99,102,241,0.6) 50%,
+      rgba(99,102,241,0.0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+  }
+
+  /* ── Step pill ── */
+  .step-pill {
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+  }
+  .step-pill.active  { background:rgba(99,102,241,0.18); border-color:rgba(99,102,241,0.6); color:#a5b4fc; }
+  .step-pill.done    { background:rgba(34,197,94,0.12);  border-color:rgba(34,197,94,0.4);  color:#86efac; }
+
+  /* ── Ingestion log line ── */
+  .log-line { animation: logIn 0.2s ease both; }
+  @keyframes logIn {
+    from { opacity:0; transform:translateX(-8px); }
+    to   { opacity:1; transform:translateX(0); }
+  }
+
+  /* ── Pulsing dot ── */
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  .blink { animation: blink 1s step-end infinite; }
+
+  /* ── Timer badge ── */
+  #global-timer-badge {
+    font-variant-numeric: tabular-nums;
+    min-width: 80px;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+
+{# ─── PHASE 1 : Login / Time Selection ──────────────────────────────────── #}
+<section id="phase-login" class="flex items-center justify-center min-h-[calc(100vh-12rem)]">
+  <div class="w-full max-w-md space-y-8">
+
+    <div class="text-center space-y-2">
+      <div class="inline-flex items-center space-x-2 bg-indigo-500/10 text-indigo-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border border-indigo-500/20">
+        <span>⏱ Session Setup</span>
+      </div>
+      <h1 class="text-3xl font-black text-white tracking-tight">How long do you need?</h1>
+      <p class="text-slate-400 text-sm">Your session — and all its data — will be auto-wiped after the timer ends.</p>
+    </div>
+
+    {# Time options injected by Jinja from Python constants #}
+    <div class="grid gap-3" id="time-options">
+      {% for opt in time_options %}
+      <button
+        class="time-btn group relative w-full flex items-center justify-between px-6 py-4 rounded-2xl bg-slate-900/50 border border-white/8 hover:border-indigo-500/50 hover:bg-slate-800/60 transition-all duration-200 text-left"
+        data-seconds="{{ opt.seconds }}">
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg font-extrabold group-hover:scale-110 transition-transform">
+            {{ opt.icon }}
+          </div>
+          <div>
+            <p class="text-white font-bold text-sm">{{ opt.label }}</p>
+            <p class="text-slate-500 text-xs">{{ opt.description }}</p>
+          </div>
+        </div>
+        <span class="text-indigo-400 font-black text-lg opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+      </button>
+      {% endfor %}
+    </div>
+
+    <div id="login-status" class="hidden text-center space-y-2">
+      <div class="inline-flex items-center space-x-2 text-indigo-400 text-sm font-semibold">
+        <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+        </svg>
+        <span>Starting your session…</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ─── PHASE 2 : File Upload ──────────────────────────────────────────────── #}
+<section id="phase-upload" class="hidden min-h-[calc(100vh-12rem)] flex flex-col justify-center py-10">
+  <div class="max-w-2xl mx-auto w-full space-y-8">
+
+    {# Steps indicator #}
+    <div class="flex items-center space-x-2 text-xs font-bold">
+      <span class="step-pill active px-3 py-1 rounded-full border" id="step-upload-pill">1. Upload</span>
+      <span class="flex-1 h-px bg-white/10"></span>
+      <span class="step-pill px-3 py-1 rounded-full border border-white/10 text-slate-500" id="step-ingest-pill">2. Ingest</span>
+      <span class="flex-1 h-px bg-white/10"></span>
+      <span class="step-pill px-3 py-1 rounded-full border border-white/10 text-slate-500" id="step-chat-pill">3. Chat</span>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-2xl font-extrabold text-white">Upload your files</h2>
+      <p class="text-slate-400 text-sm">PDFs, CSVs, text, images — any format, any quantity.</p>
+    </div>
+
+    {# Drop zone #}
+    <div
+      id="drop-zone"
+      class="relative rounded-2xl p-12 flex flex-col items-center justify-center space-y-4 cursor-pointer bg-slate-900/30 text-center select-none">
+      <input type="file" id="file-input" multiple class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
+      <div class="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-3xl pointer-events-none">
+        📂
+      </div>
+      <div class="pointer-events-none">
+        <p class="text-white font-bold text-base">Drag & drop files here</p>
+        <p class="text-slate-500 text-xs mt-1">or click anywhere in this box to browse</p>
+      </div>
+      <div class="pointer-events-none text-xs text-slate-600 border border-white/5 px-3 py-1 rounded-full bg-slate-900/40">
+        All file types · No size limit
+      </div>
+    </div>
+
+    {# File list #}
+    <div id="file-list" class="space-y-2 hidden">
+      <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Queued files</p>
+      <div id="file-chips" class="space-y-2 max-h-56 overflow-y-auto pr-1"></div>
+    </div>
+
+    {# Upload progress #}
+    <div id="upload-progress-wrapper" class="hidden space-y-2">
+      <div class="flex items-center justify-between text-xs text-slate-400">
+        <span id="upload-progress-label">Uploading…</span>
+        <span id="upload-progress-pct">0%</span>
+      </div>
+      <div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+        <div id="upload-progress-bar" class="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-300" style="width:0%"></div>
+      </div>
+    </div>
+
+    {# Action buttons #}
+    <div class="flex gap-3">
+      <button id="btn-clear" class="hidden px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white text-sm font-semibold transition-all duration-200 border border-white/5">
+        Clear all
+      </button>
+      <button id="btn-continue-upload"
+        class="flex-1 inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-extrabold shadow-lg shadow-indigo-500/30 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:from-indigo-600 disabled:hover:to-purple-600"
+        disabled>
+        Continue →
+      </button>
+    </div>
+
+  </div>
+</section>
+
+{# ─── PHASE 3 : Ingestion ───────────────────────────────────────────────── #}
+<section id="phase-ingest" class="hidden min-h-[calc(100vh-12rem)] flex flex-col justify-center py-10">
+  <div class="max-w-2xl mx-auto w-full space-y-8">
+
+    {# Steps indicator #}
+    <div class="flex items-center space-x-2 text-xs font-bold">
+      <span class="step-pill done px-3 py-1 rounded-full border" id="step-upload-pill2">✓ Upload</span>
+      <span class="flex-1 h-px bg-white/10"></span>
+      <span class="step-pill active px-3 py-1 rounded-full border" id="step-ingest-pill2">2. Ingesting</span>
+      <span class="flex-1 h-px bg-white/10"></span>
+      <span class="step-pill px-3 py-1 rounded-full border border-white/10 text-slate-500">3. Chat</span>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-2xl font-extrabold text-white flex items-center gap-3">
+        <span id="ingest-title">Data Ingestion Starting…</span>
+        <span id="ingest-spinner" class="inline-flex">
+          <svg class="animate-spin w-5 h-5 text-indigo-400" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+          </svg>
+        </span>
+      </h2>
+      <p class="text-slate-400 text-sm">Vectorizing, embedding, building knowledge graph… grab a chai ☕</p>
+    </div>
+
+    {# Big animated status orb #}
+    <div class="flex justify-center py-4">
+      <div class="relative w-32 h-32 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full bg-indigo-500/10 animate-ping" style="animation-duration:2s;"></div>
+        <div class="absolute inset-2 rounded-full bg-indigo-500/15 animate-ping" style="animation-duration:2.5s; animation-delay:0.5s;"></div>
+        <div class="relative w-20 h-20 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-[0_0_40px_rgba(99,102,241,0.6)]">
+          <span id="ingest-orb-icon" class="text-3xl">🧠</span>
+        </div>
+      </div>
+    </div>
+
+    {# Live log terminal #}
+    <div class="rounded-2xl bg-slate-950/70 border border-white/8 p-5 space-y-3 font-mono text-xs">
+      <div class="flex items-center space-x-2 pb-2 border-b border-white/5">
+        <div class="w-3 h-3 rounded-full bg-red-500/60"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500/60"></div>
+        <span class="text-slate-600 ml-2">ingestion.log</span>
+        <span id="live-dot" class="ml-auto text-green-400 blink">●</span>
+      </div>
+      <div id="ingest-log" class="space-y-1 min-h-[80px] max-h-48 overflow-y-auto"></div>
+    </div>
+
+    {# Stats row #}
+    <div id="ingest-stats" class="hidden grid grid-cols-3 gap-4">
+      <div class="rounded-xl bg-slate-900/50 border border-white/5 p-4 text-center space-y-1">
+        <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Files</p>
+        <p id="stat-files" class="text-2xl font-black text-white">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/50 border border-white/5 p-4 text-center space-y-1">
+        <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Docs</p>
+        <p id="stat-docs" class="text-2xl font-black text-indigo-400">—</p>
+      </div>
+      <div class="rounded-xl bg-slate-900/50 border border-white/5 p-4 text-center space-y-1">
+        <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider">Status</p>
+        <p id="stat-status" class="text-2xl font-black text-yellow-400">⚙️</p>
+      </div>
+    </div>
+
+    {# Continue to chat #}
+    <button id="btn-go-chat"
+      class="hidden w-full inline-flex items-center justify-center px-6 py-4 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-extrabold shadow-lg shadow-green-500/30 transition-all duration-300 text-lg"
+      >
+      🚀 Continue to Chat
+    </button>
+
+  </div>
+</section>
+
+{% endblock %}
+
+
+{% block extra_scripts %}
+<script>
+/* ════════════════════════════════════════════════════════
+   CONSTANTS — injected by Jinja (never hard-code URLs here)
+   ════════════════════════════════════════════════════════ */
+const URLS = {
+  login  : "{{ urls.login_base }}",   /* /api/v1/user/login/{seconds} */
+  upload : "{{ urls.upload }}",        /* /api/v1/upload                */
+  ingest : "{{ urls.ingest }}",        /* /api/v1/ingest                */
+  chat   : "{{ urls.chat_page }}"      /* /chat                         */
+};
+
+/* ════════════════════════════════════════════════════════
+   STATE
+   ════════════════════════════════════════════════════════ */
+let selectedFiles   = [];     /* FileList → Array */
+let sessionSeconds  = 0;
+let timerInterval   = null;
+
+/* ════════════════════════════════════════════════════════
+   HELPERS
+   ════════════════════════════════════════════════════════ */
+const $ = id => document.getElementById(id);
+
+function showPhase(phase) {
+  ["phase-login","phase-upload","phase-ingest"].forEach(p => {
+    $(p).classList.toggle("hidden", p !== phase);
+  });
+}
+
+function fmtBytes(b) {
+  if (b < 1024)       return b + " B";
+  if (b < 1048576)    return (b/1024).toFixed(1)  + " KB";
+  return (b/1048576).toFixed(1) + " MB";
+}
+
+function fmtTime(s) {
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+  if (h > 0) return `${h}:${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
+  return `${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}`;
+}
+
+function appendLog(msg, color="text-slate-400") {
+  const log  = $("ingest-log");
+  const line = document.createElement("div");
+  line.className = `log-line flex items-start space-x-2 ${color}`;
+  line.innerHTML = `<span class="text-slate-600 select-none">${new Date().toLocaleTimeString()}</span><span>${msg}</span>`;
+  log.appendChild(line);
+  log.scrollTop = log.scrollHeight;
+}
+
+/* ════════════════════════════════════════════════════════
+   GLOBAL TIMER  (navbar badge)
+   ════════════════════════════════════════════════════════ */
+function startGlobalTimer(totalSeconds) {
+  sessionSeconds = totalSeconds;
+  let remaining  = totalSeconds;
+
+  /* reveal the badge wrapper in the navbar */
+  const wrapper = document.getElementById("global-timer-wrapper");
+  if (wrapper) wrapper.classList.remove("hidden");
+
+  const badge    = document.getElementById("global-timer-badge");
+  /* target just the text <span>, not the whole div (which contains an SVG) */
+  const badgeSpan = badge ? badge.querySelector("span") : null;
+
+  function tick() {
+    const txt = fmtTime(remaining);
+    if (badgeSpan) badgeSpan.textContent = txt;
+    if (remaining <= 60) {
+      badge.classList.remove("bg-indigo-500/20","text-indigo-400","border-indigo-500/30");
+      badge.classList.add("bg-red-500/20","text-red-400","border-red-500/40");
+    }
+    if (remaining <= 0) {
+      clearInterval(timerInterval);
+      if (badgeSpan) badgeSpan.textContent = "EXPIRED";
+      badge.classList.add("opacity-60");
+    }
+    remaining--;
+  }
+  tick();
+  timerInterval = setInterval(tick, 1000);
+}
+
+/* ════════════════════════════════════════════════════════
+   PHASE 1 — Login
+   ════════════════════════════════════════════════════════ */
+document.querySelectorAll(".time-btn").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const secs = parseInt(btn.dataset.seconds, 10);
+
+    /* dim all buttons, show spinner */
+    document.querySelectorAll(".time-btn").forEach(b => b.disabled = true);
+    $("login-status").classList.remove("hidden");
+
+    try {
+      const res  = await fetch(`${URLS.login}/${secs}`, { method:"GET", credentials:"include" });
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Login failed");
+
+      /* ✅ session started — persist for all pages via localStorage */
+      localStorage.setItem('multirag_session_start',    Date.now().toString());
+      localStorage.setItem('multirag_session_duration', secs.toString());
+
+      /* kick the global navbar timer (already attached by base.html) */
+      if (window.__startNavTimer) window.__startNavTimer();
+
+      showPhase("phase-upload");
+
+    } catch(err) {
+      $("login-status").innerHTML = `<p class="text-red-400 text-sm font-semibold">❌ ${err.message}</p>`;
+      document.querySelectorAll(".time-btn").forEach(b => b.disabled = false);
+    }
+  });
+});
+
+/* ════════════════════════════════════════════════════════
+   PHASE 2 — File Upload
+   ════════════════════════════════════════════════════════ */
+const dropZone  = $("drop-zone");
+const fileInput = $("file-input");
+
+/* Drag & Drop events */
+["dragenter","dragover"].forEach(evt =>
+  dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add("drag-over"); })
+);
+["dragleave","drop"].forEach(evt =>
+  dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove("drag-over"); })
+);
+dropZone.addEventListener("drop", e => addFiles(e.dataTransfer.files));
+fileInput.addEventListener("change", () => addFiles(fileInput.files));
+
+function addFiles(fileList) {
+  Array.from(fileList).forEach(f => {
+    if (!selectedFiles.find(s => s.name === f.name && s.size === f.size))
+      selectedFiles.push(f);
+  });
+  renderFileList();
+}
+
+function renderFileList() {
+  const chips = $("file-chips");
+  chips.innerHTML = "";
+  selectedFiles.forEach((f, i) => {
+    const chip = document.createElement("div");
+    chip.className = "file-chip flex items-center justify-between bg-slate-900/60 border border-white/8 rounded-xl px-4 py-2.5";
+    chip.innerHTML = `
+      <div class="flex items-center space-x-3 min-w-0">
+        <span class="text-lg shrink-0">${fileIcon(f.name)}</span>
+        <div class="min-w-0">
+          <p class="text-sm text-white font-semibold truncate max-w-[260px]">${f.name}</p>
+          <p class="text-xs text-slate-500">${fmtBytes(f.size)}</p>
+        </div>
+      </div>
+      <button class="ml-3 text-slate-600 hover:text-red-400 transition-colors shrink-0 text-lg" data-idx="${i}">×</button>`;
+    chip.querySelector("button").addEventListener("click", () => {
+      selectedFiles.splice(i, 1);
+      renderFileList();
+    });
+    chips.appendChild(chip);
+  });
+
+  const hasFiles = selectedFiles.length > 0;
+  $("file-list").classList.toggle("hidden", !hasFiles);
+  $("btn-clear").classList.toggle("hidden", !hasFiles);
+  $("btn-continue-upload").disabled = !hasFiles;
+}
+
+function fileIcon(name) {
+  const ext = name.split(".").pop().toLowerCase();
+  const map = { pdf:"📄", csv:"📊", xlsx:"📊", xls:"📊", png:"🖼️", jpg:"🖼️", jpeg:"🖼️", gif:"🖼️",
+                mp3:"🎵", wav:"🎵", mp4:"🎬", txt:"📝", json:"🗂️", zip:"📦", tar:"📦", gz:"📦" };
+  return map[ext] || "📎";
+}
+
+$("btn-clear").addEventListener("click", () => {
+  selectedFiles = [];
+  fileInput.value = "";
+  renderFileList();
+});
+
+/* Upload all files sequentially then trigger ingest */
+$("btn-continue-upload").addEventListener("click", async () => {
+  if (!selectedFiles.length) return;
+
+  $("btn-continue-upload").disabled = true;
+  $("btn-clear").disabled = true;
+  $("file-input").disabled = true;
+
+  const wrapper = $("upload-progress-wrapper");
+  const bar     = $("upload-progress-bar");
+  const pct     = $("upload-progress-pct");
+  const label   = $("upload-progress-label");
+  wrapper.classList.remove("hidden");
+
+  let done = 0;
+  let allOk = true;
+
+  for (const file of selectedFiles) {
+    label.textContent = `Uploading ${file.name}…`;
+    const fd = new FormData();
+    fd.append("file", file);
+    try {
+      const res = await fetch(URLS.upload, { method:"POST", body:fd, credentials:"include" });
+      if (!res.ok) { allOk = false; }
+    } catch { allOk = false; }
+
+    done++;
+    const p = Math.round((done / selectedFiles.length) * 100);
+    bar.style.width = p + "%";
+    pct.textContent = p + "%";
+  }
+
+  if (!allOk) {
+    label.textContent = "⚠️ Some files failed. Continuing anyway…";
+    label.classList.add("text-yellow-400");
+  } else {
+    label.textContent = "✅ All files uploaded!";
+    label.classList.add("text-green-400");
+  }
+
+  /* short pause so user can read the status */
+  await new Promise(r => setTimeout(r, 800));
+
+  /* → Move to ingestion phase */
+  showPhase("phase-ingest");
+  startIngestion();
+});
+
+/* ════════════════════════════════════════════════════════
+   PHASE 3 — Ingestion
+   ════════════════════════════════════════════════════════ */
+async function startIngestion() {
+  const FAKE_LOGS = [
+    ["🔍 Scanning uploaded files…",              "text-slate-300"],
+    ["📦 Chunking documents into passages…",     "text-slate-300"],
+    ["🧬 Embedding with all-MiniLM-L6-v2…",      "text-indigo-300"],
+    ["🕸️  Building knowledge graph edges…",      "text-purple-300"],
+    ["🗄️  Persisting vector store to disk…",     "text-slate-300"],
+    ["⚡ Optimising HNSW index…",               "text-yellow-300"],
+  ];
+
+  $("ingest-log").innerHTML = "";
+  $("ingest-stats").classList.add("hidden");
+  $("btn-go-chat").classList.add("hidden");
+  $("ingest-title").textContent = "Data Ingestion Starting…";
+
+  /* drip fake progress logs while waiting for real response */
+  let logIdx = 0;
+  const dripInterval = setInterval(() => {
+    if (logIdx < FAKE_LOGS.length) {
+      const [msg, cls] = FAKE_LOGS[logIdx++];
+      appendLog(msg, cls);
+    }
+  }, 900);
+
+  try {
+    const res  = await fetch(URLS.ingest, { method:"GET", credentials:"include" });
+    const data = await res.json();
+
+    clearInterval(dripInterval);
+    $("live-dot").classList.remove("blink");
+
+    if (!res.ok) {
+      appendLog(`❌ Error: ${data.error || "Ingestion failed"}`, "text-red-400");
+      $("ingest-title").textContent = "Ingestion Failed";
+      $("ingest-spinner").innerHTML = '<span class="text-red-400 text-xl">❌</span>';
+      return;
+    }
+
+    /* ✅ success */
+    appendLog("✅ Ingestion complete! Knowledge base is ready.", "text-green-400");
+    $("ingest-title").textContent = "Ingestion Complete!";
+    $("ingest-spinner").innerHTML = '<span class="text-green-400 text-xl">✓</span>';
+    $("ingest-orb-icon").textContent = "✅";
+
+    /* show stats */
+    $("ingest-stats").classList.remove("hidden");
+    $("stat-files").textContent  = data.files_processed  ?? "—";
+    $("stat-docs").textContent   = Array.isArray(data.all_docs) ? data.all_docs.length : (data.all_docs ?? "—");
+    $("stat-status").textContent = "✅";
+
+    /* ── auto-redirect to chat with 3s countdown ── */
+    appendLog("🚀 Redirecting to Chat in 3 seconds…", "text-indigo-300");
+    const goBtn = $("btn-go-chat");
+    goBtn.classList.remove("hidden");
+    let countdown = 3;
+    goBtn.textContent = `🚀 Opening Chat in ${countdown}s — click to go now`;
+    const countTimer = setInterval(() => {
+      countdown--;
+      if (countdown <= 0) {
+        clearInterval(countTimer);
+        window.location.href = URLS.chat;
+      } else {
+        goBtn.textContent = `🚀 Opening Chat in ${countdown}s — click to go now`;
+      }
+    }, 1000);
+    goBtn.onclick = () => { clearInterval(countTimer); window.location.href = URLS.chat; };
+
+  } catch(err) {
+    clearInterval(dripInterval);
+    appendLog(`❌ Network error: ${err.message}`, "text-red-400");
+    $("ingest-title").textContent = "Ingestion Failed";
+    $("ingest-spinner").innerHTML = '<span class="text-red-400 text-xl">❌</span>';
+  }
+}
+
+/* btn-go-chat click is wired dynamically inside startIngestion() */
+
+</script>
+{% endblock %}
