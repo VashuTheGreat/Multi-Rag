@@ -61,15 +61,18 @@ CHAT_PAGE_URLS = {
 
 @router.get("/", tags=["frontend"])
 async def home_route(request: Request):
-    return template.TemplateResponse("home.html", {"request": request})
+    return template.TemplateResponse(
+        request=request,
+        name="home.html"
+    )
 
 
 @router.get("/upload", tags=["frontend"])
 async def upload_route(request: Request):
     return template.TemplateResponse(
-        "upload.html",
-        {
-            "request":      request,
+        request=request,
+        name="upload.html",
+        context={
             "time_options": TIME_OPTIONS,
             "urls":         UPLOAD_PAGE_URLS,
         },
@@ -79,9 +82,9 @@ async def upload_route(request: Request):
 @router.get("/chat", tags=["frontend"])
 async def chat_route(request: Request):
     return template.TemplateResponse(
-        "chat.html",
-        {
-            "request": request,
+        request=request,
+        name="chat.html",
+        context={
             "urls":    CHAT_PAGE_URLS,
         },
     )
