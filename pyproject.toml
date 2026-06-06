@@ -41,3 +41,10 @@ dependencies = [
     "docx2pdf>=0.1.8",
     "fpdf>=1.7.2",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["src/tests"]
+python_files = ["*_pytest.py", "test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-s -v"
