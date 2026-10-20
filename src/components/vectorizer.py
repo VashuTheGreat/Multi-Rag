@@ -68,8 +68,8 @@ class DataTransformationPipeline:
 
 class VectiorizerPipeline:
     def __init__(self, content_embedder_config: ContentEmbedderConfig,content_transformation_config: ContentTransformationConfig):
-        self.content_embedder_config=content_embedder_config
-        self.content_transformation_config=content_transformation_config
+        self.content_embedder_config = content_embedder_config
+        self.content_transformation_config = content_transformation_config
         
 
     @asyncHandler

@@ -1,65 +1,61 @@
-import logging
 import os
-from logging.handlers import RotatingFileHandler
+import sys
+import atexit
+import logging
+from queue import Queue
 from datetime import datetime
+from logging.handlers import RotatingFileHandler, QueueHandler, QueueListener
 from src.constants import LOGS_DIR
 
-# Log File Configuration
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-MAX_FOLDER_SIZE = 2 * 1024 * 1024  # 2MB
-MAX_LOG_SIZE = 5 * 1024 * 1024    # This is still needed for RotatingFileHandler if a single run exceeds 5MB
+MAX_LOG_SIZE = 5 * 1024 * 1024  # 5 MB
+BACKUP_COUNT = 3
 
+os.makedirs(LOGS_DIR, exist_ok=True)
 log_file_path = os.path.join(LOGS_DIR, LOG_FILE)
 
-def cleanup_logs():
-    """Removes oldest log files if the total folder size exceeds MAX_FOLDER_SIZE."""
-    if not os.path.exists(LOGS_DIR):
-        return
 
-    files = [os.path.join(LOGS_DIR, f) for f in os.listdir(LOGS_DIR) if f.endswith(".log")]
-    files.sort(key=os.path.getmtime)  # Sort by modification time (oldest first)
-
-    total_size = sum(os.path.getsize(f) for f in files)
-
-    while total_size > MAX_FOLDER_SIZE and files:
-        oldest_file = files.pop(0)
-        file_size = os.path.getsize(oldest_file)
-        try:
-            os.remove(oldest_file)
-            total_size -= file_size
-            logging.info(f"Deleted old log file: {oldest_file}")
-        except Exception as e:
-            logging.error(f"Error deleting old log file {oldest_file}: {e}")
-            break
-
-def configure_logger():
-    # Ensure logs directory exists
-    os.makedirs(LOGS_DIR, exist_ok=True)
-    
-    # Run cleanup before creating new log
-    cleanup_logs()
-
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
-
+def configure_non_blocking_logger():
+    # 1. Main Logger instance
+    _logger = logging.getLogger("app")
+    _logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter("[ %(asctime)s ] %(name)s - %(levelname)s - %(message)s")
 
-    # File Handler
-    file_handler = RotatingFileHandler(log_file_path, maxBytes=MAX_LOG_SIZE, backupCount=3)
+    # 2. Worker Handlers (Inko direct logger me nahi jodna, ye background thread chalayega)
+    file_handler = RotatingFileHandler(
+        log_file_path,
+        maxBytes=MAX_LOG_SIZE,
+        backupCount=BACKUP_COUNT,
+        encoding="utf-8"
+    )
     file_handler.setFormatter(formatter)
     file_handler.setLevel(logging.DEBUG)
 
-    # Console Handler
-    console_handler = logging.StreamHandler()
+    console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setFormatter(formatter)
     console_handler.setLevel(logging.INFO)
 
-    # Avoid duplicate handlers if the logger is re-initialized
-    logger.handlers.clear()
+    # 3. Lock-free in-memory Queue
+    log_queue = Queue(-1)
 
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    # 4. Logger par SIRF QueueHandler lagega (Main thread sirf RAM me object push karega)
+    queue_handler = QueueHandler(log_queue)
+    _logger.handlers.clear()
+    _logger.addHandler(queue_handler)
 
-# Automatically configure on import
-configure_logger()
-logging.info(f"Logger initialized. Logging to {log_file_path}")
+    # 5. Dedicated Background Worker Thread jo Terminal & File dono handle karega
+    listener = QueueListener(
+        log_queue,
+        file_handler,
+        console_handler,
+        respect_handler_level=True
+    )
+    listener.start()
+
+    # Server shutdown par queue properly flush hokar close ho
+    atexit.register(listener.stop)
+
+    return _logger
+
+
+logger = configure_non_blocking_logger()

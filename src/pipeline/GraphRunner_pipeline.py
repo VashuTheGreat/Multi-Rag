@@ -7,7 +7,7 @@ class RunGraphPipeline:
         pass
     
     @asyncHandler
-    async def run_graph(self, state: dict, config: dict = None) -> dict:
+    async def intiate(self, state: dict, config: dict = None) -> dict:
         logging.info("Running graph pipeline...")
         runner = RunGraph()
         response = await runner.run(state, config=config)

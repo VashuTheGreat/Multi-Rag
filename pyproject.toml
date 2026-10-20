@@ -40,11 +40,54 @@ dependencies = [
     "youtube-transcript-api>=1.2.4",
     "docx2pdf>=0.1.8",
     "fpdf>=1.7.2",
+    "llama-index>=0.14.25",
+    "llama-parse>=0.5.20",
+    "langchain-text-splitters>=1.1.1",
+    "llama-cloud>=2.16.0",
+    "llama-index-vector-stores-faiss>=0.7.0",
+    "llama-index-vector-stores-pinecone>=0.9.0",
+    "llama-index-vector-stores-chroma>=0.6.0",
+    "pymupdf>=2.0",
 ]
 
+
+
 [tool.pytest.ini_options]
-testpaths = ["src/tests"]
-python_files = ["*_pytest.py", "test_*.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
-addopts = "-s -v"
+pythonpath = "."
+testpaths = ["app/tests"]
+asyncio_mode = "auto"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.scripts]
+start = "main:start"
+dev = "main:dev"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchaudio = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+

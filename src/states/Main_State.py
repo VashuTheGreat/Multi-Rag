@@ -1,11 +1,12 @@
-from typing import Any, List, Literal
+from typing import Any, List, Literal, Optional
 
 from langgraph.graph.message import MessagesState
 from pydantic import BaseModel
 
 
 class State(MessagesState):
-    vector_store_file_paths: List[str]
+    file_paths: Optional[List[str]]
+    has_uploaded_file: bool = False
 
     require_db_search: bool
 
@@ -13,7 +14,6 @@ class State(MessagesState):
 
     retreived_results: List[Any]
 
-    refined_results: List[Any]
 
     relevance: Literal[
         "CORRECT",
@@ -23,7 +23,6 @@ class State(MessagesState):
 
     web_search_results: List[Any]
 
-    docs_feed_to_llm: str
 
     ai_response: str
 

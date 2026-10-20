@@ -1,0 +1,56 @@
+import os
+import shutil
+from typing import List
+from fastapi import Request, UploadFile, File, HTTPException
+import logging
+
+logger = logging.getLogger(__name__)
+
+PUBLIC_TEMP_DIR = "artifacts/temp"
+os.makedirs(PUBLIC_TEMP_DIR, exist_ok=True)
+
+async def multer_middleware(
+    request: Request,
+    files: List[UploadFile] = File(default=None),
+):
+    saved_paths: List[str] = []
+    try:
+        if not files:
+            logger.info("multer_middleware: no files in request")
+            yield []
+            return
+
+        thread_id = getattr(request.state, "thread_id", "default")
+
+        dest_dir = os.path.join(PUBLIC_TEMP_DIR, str(thread_id))
+        os.makedirs(dest_dir, exist_ok=True)
+        for file in files:
+            if not file or not file.filename:
+                continue
+            file_path = os.path.join(dest_dir, file.filename)
+            logger.info("multer_middleware: saving file to %s", file_path)
+            with open(file_path, "wb") as f:
+                shutil.copyfileobj(file.file, f)
+            saved_paths.append(file_path)
+            logger.info("multer_middleware: saved %s", file_path)
+
+        logger.info("multer_middleware: %d file(s) saved", len(saved_paths))
+        yield saved_paths
+
+    except Exception as e:
+        logger.error("multer_middleware: error saving files: %s", str(e))
+        raise HTTPException(status_code=500, detail=str(e))
+
+    finally:
+        for file_path in saved_paths:
+            try:
+                if os.path.exists(file_path):
+                    os.remove(file_path)
+                    logger.info("multer_middleware: cleaned up %s", file_path)
+            except Exception as clean_err:
+                logger.error("multer_middleware: failed to clean up %s: %s", file_path, clean_err)
+        
+        if saved_paths:
+            dest_dir = os.path.dirname(saved_paths[0])
+            if os.path.exists(dest_dir) and not os.listdir(dest_dir):
+                os.rmdir(dest_dir)

@@ -11,14 +11,8 @@ BASE_FOLDER_NAME=f"artifacts/{time.time()}"
 
 @dataclass
 class DataIngestionConfig:
-    input_file_path: str
-    save_file_path: str = field(default=None)
-
-    def __post_init__(self):
-        if self.save_file_path is None:
-            # Generate a random UUID for the ingested file name
-            random_name = f"{uuid.uuid4()}.pdf"
-            self.save_file_path = os.path.join(BASE_FOLDER_NAME, INGESTION_FOLDER_NAME, random_name)
+    file_path: str = field(default=None)
+    thread_id:str = field(default_factory=lambda: str(uuid.uuid4()))
 
 @dataclass
 class ContentEmbedderConfig:

@@ -4,20 +4,28 @@ from src.memory import memory
 from src.states.Main_State import State
 
 from src.nodes.main_nodes import (
+    
     orchastrator_node,
     query_generation_node,
     retreiver_node,
+    document_normaliser_node,
     is_retreived_data_enough,
     web_search_node,
     document_refiner,
     get_chat_node_content,
     chat_node
 )
+from src.nodes.user_nodes import ingestion_node
 
 
 graph = StateGraph(State)
 
 # ===================== Adding Nodes =====================
+graph.add_node(
+    "ingestion",
+    ingestion_node
+)
+
 graph.add_node(
     "orchastrator",
     orchastrator_node
@@ -31,6 +39,11 @@ graph.add_node(
 graph.add_node(
     "retreiver",
     retreiver_node
+)
+
+graph.add_node(
+    "document_normaliser",
+    document_normaliser_node
 )
 
 graph.add_node(
@@ -59,9 +72,21 @@ graph.add_node(
 )
 
 # ===================== Adding Edges =====================
+graph.set_conditional_entry_point(
+    lambda state: (
+        "ingestion"
+        if state.get("file_paths")
+        else "orchastrator"
+    ),
+    {
+        "ingestion": "ingestion",
+        "orchastrator": "orchastrator"
+    }
+)
+
 graph.add_edge(
-    START,
-    "orchastrator"
+    "ingestion",
+    END
 )
 
 
@@ -69,7 +94,7 @@ graph.add_conditional_edges(
     "orchastrator",
     lambda state: (
         "query_generation"
-        if state["require_db_search"]
+        if state.get("require_db_search")
         else "chat"
     ),
     {
@@ -86,6 +111,11 @@ graph.add_edge(
 
 graph.add_edge(
     "retreiver",
+    "document_normaliser"
+)
+
+graph.add_edge(
+    "document_normaliser",
     "relevance_checker"
 )
 

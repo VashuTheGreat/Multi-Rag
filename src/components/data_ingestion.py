@@ -1,47 +1,36 @@
-
 from src.utils.asyncHandler import asyncHandler
 import logging
-from src.entity.config_entity import DataIngestionConfig
-from src.utils.ingestion_utils import text_to_pdf,image_to_pdf,docs_to_pdf
-from src.entity.artifact_entity import DataIngestionArtifact
-import shutil
 import os
 
+from src.entity.config_entity import DataIngestionConfig, RetreiverConfig
+from src.entity.artifact_entity import DataTransformationArtifact, DataIngestionArtifact
+from src.retrievers.create_retreivers import Retreiver
+from src.constants import INGESTION_STRATEGY_NAME
+from src.retrievers.strategies.ingestion_strategy import get_ingestion_strategy
 
 class DataIngestion:
-    def __init__(self,data_ingestion_config:DataIngestionConfig):
-        self.data_ingestion_config=data_ingestion_config
-        
-    
+    def __init__(self, data_ingestion_config: DataIngestionConfig, data_ingestion_artifact: DataIngestionArtifact):
+        self.data_ingestion_artifact = data_ingestion_artifact
+        self.data_ingestion_config = data_ingestion_config
+
+        retreiver_config = RetreiverConfig(
+            vector_store_path=self.data_transformation_config.vector_store_path
+        )
+        self.retreiver = Retreiver(retreiver_config=retreiver_config)
+
     @asyncHandler
-    async def ingest_data(self)->DataIngestionArtifact:
-        logging.info(f"Ensuring directory exists for: {self.data_ingestion_config.save_file_path}")
-        os.makedirs(os.path.dirname(self.data_ingestion_config.save_file_path), exist_ok=True)
+    async def initiate_data_transformation(self) -> DataTransformationArtifact:
+        logging.info("Initiating data transformation...")
 
-        match (self.data_ingestion_config.input_file_path.split(".")[-1]):
-            
-            case "docx":
-                await docs_to_pdf(docs_path=self.data_ingestion_config.input_file_path,output_pdf_path=self.data_ingestion_config.save_file_path)
+        # Use Strategy Pattern for loosely coupled ingestion techniques
+        strategy = get_ingestion_strategy(INGESTION_STRATEGY_NAME)
 
-            case "txt":
-                await text_to_pdf(file_path=self.data_ingestion_config.input_file_path,output_file_path=self.data_ingestion_config.save_file_path)
+        # The strategy handles parsing AND saving to its respective native vector store
+        # to avoid costly O(n) document conversions.
+        vector_store_path = await strategy.execute(
+            file_path=self.data_ingestion_artifact.ingested_file_path,
+            retriever=self.retreiver
+        )
 
-            case "png":
-                await image_to_pdf(imge_path=self.data_ingestion_config.input_file_path,output_pdf_path=self.data_ingestion_config.save_file_path)
-            case "jpg":
-                await image_to_pdf(imge_path=self.data_ingestion_config.input_file_path,output_pdf_path=self.data_ingestion_config.save_file_path)
-            case "webp":
-                await image_to_pdf(imge_path=self.data_ingestion_config.input_file_path,output_pdf_path=self.data_ingestion_config.save_file_path)
-            
-            case "pdf":
-                shutil.copy(src=self.data_ingestion_config.input_file_path, dst=self.data_ingestion_config.save_file_path)
-
-        return  DataIngestionArtifact(ingested_file_path=self.data_ingestion_config.save_file_path)        
-
-
-
-
-
-
-
-
+        logging.info("Data transformation completed successfully.")
+        return DataTransformationArtifact(vector_store_path=vector_store_path)
