@@ -1,8 +1,9 @@
 import sys
-import logging
+from app.core.logger import logger
+
 
 def error_message_detail(error: Exception, error_detail: sys) -> str:
-   
+
     _, _, exc_tb = error_detail.exc_info()
 
     # Get the file name where the exception occurred
@@ -11,10 +12,14 @@ def error_message_detail(error: Exception, error_detail: sys) -> str:
     # Create a formatted error message string with file name, line number, and the actual error
     line_number = exc_tb.tb_lineno
     error_message = f"Error occurred in python script: [{file_name}] at line number [{line_number}]: {str(error)}"
-    
-    # Log the error for better tracking
-    logging.error(error_message)
-    
+
+    logger.error(
+        "Exception raised",
+        file=file_name,
+        line=line_number,
+        error=str(error),
+    )
+
     return error_message
 
 
