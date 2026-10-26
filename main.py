@@ -1,16 +1,18 @@
-
 from dotenv import load_dotenv
+
 load_dotenv()
-import logger
 
 import sys
 import subprocess
-from api.main import app
+from src.core.logger import logger
+from api.app import app
+
 
 def dev():
+    logger.info("🚀 Starting Multi-RAG development server with hot-reload", host="0.0.0.0", port=7860)
     cmd = [
         "uvicorn",
-        "api.main:app",
+        "api.app:app",
         "--host",
         "0.0.0.0",
         "--port",
@@ -20,14 +22,15 @@ def dev():
     try:
         sys.exit(subprocess.run(cmd).returncode)
     except KeyboardInterrupt:
-        print("\nShutting down server gracefully...")
+        logger.info("🛑 Shutting down server gracefully")
         sys.exit(0)
 
 
 def start():
+    logger.info("🚀 Starting Multi-RAG production server", host="0.0.0.0", port=7860)
     cmd = [
         "uvicorn",
-        "api.main:app",
+        "api.app:app",
         "--host",
         "0.0.0.0",
         "--port",
@@ -36,8 +39,9 @@ def start():
     try:
         sys.exit(subprocess.run(cmd).returncode)
     except KeyboardInterrupt:
-        print("\nShutting down server gracefully...")
+        logger.info("🛑 Shutting down server gracefully")
         sys.exit(0)
+
 
 if __name__ == "__main__":
     dev()

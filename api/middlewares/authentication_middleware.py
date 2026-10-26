@@ -1,44 +1,50 @@
 from fastapi import Request, HTTPException
-import logging
+from src.core.logger import logger
 
-logger = logging.getLogger(__name__)
 
 async def authenticate_user(request: Request, user_id: str | None = None, thread_id: str | None = None):
-    try:
-        user_id = user_id or request.query_params.get("user_id") or request.headers.get("user_id") or request.headers.get("x-user-id")
-        thread_id = thread_id or request.query_params.get("thread_id") or request.headers.get("thread_id") or request.headers.get("x-thread-id")
+    with logger.span("🔐 Authenticating user and thread session"):
+        try:
+            user_id = user_id or request.query_params.get("user_id") or request.headers.get("user_id") or request.headers.get("x-user-id")
+            thread_id = thread_id or request.query_params.get("thread_id") or request.headers.get("thread_id") or request.headers.get("x-thread-id")
 
-        if not user_id or not thread_id:
+            if not user_id or not thread_id:
+                logger.warning("⚠️ Authentication rejected: missing user_id or thread_id", user_id=user_id, thread_id=thread_id)
+                raise HTTPException(
+                    status_code=401,
+                    detail={"success": False, "message": "user_id and thread_id are required", "data": None},
+                )
+            request.state.user_id = user_id
+            request.state.thread_id = thread_id
+            logger.info("✅ Authentication successful", user_id=user_id, thread_id=thread_id)
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error("❌ Authentication error encountered", error=str(e))
             raise HTTPException(
                 status_code=401,
-                detail={"success": False, "message": "user_id and thread_id are required", "data": None}
+                detail={"success": False, "message": "Authentication failed", "data": None},
             )
-        request.state.user_id = user_id
-        request.state.thread_id = thread_id
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error("Authentication error: %s", e)
-        raise HTTPException(
-            status_code=401,
-            detail={"success": False, "message": "Authentication failed", "data": None}
-        )
+
 
 async def authenticate_only_user(request: Request, user_id: str | None = None):
-    try:
-        user_id = user_id or request.query_params.get("user_id") or request.headers.get("user_id") or request.headers.get("x-user-id")
+    with logger.span("🔐 Authenticating user"):
+        try:
+            user_id = user_id or request.query_params.get("user_id") or request.headers.get("user_id") or request.headers.get("x-user-id")
 
-        if not user_id:
+            if not user_id:
+                logger.warning("⚠️ Authentication rejected: missing user_id", user_id=user_id)
+                raise HTTPException(
+                    status_code=401,
+                    detail={"success": False, "message": "user_id is required", "data": None},
+                )
+            request.state.user_id = user_id
+            logger.info("✅ User authenticated successfully", user_id=user_id)
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error("❌ Authentication error encountered", error=str(e))
             raise HTTPException(
                 status_code=401,
-                detail={"success": False, "message": "user_id is required", "data": None}
+                detail={"success": False, "message": "Authentication failed", "data": None},
             )
-        request.state.user_id = user_id
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error("Authentication error: %s", e)
-        raise HTTPException(
-            status_code=401,
-            detail={"success": False, "message": "Authentication failed", "data": None}
-        )

@@ -50,13 +50,14 @@ dependencies = [
     "pymupdf>=2.0",
     "logfire>=5.2.0",
     "logfire[system-metrics]>=5.2.0",
+    "qdrant-client>=1.20.0",
 ]
 
 
 
 [tool.pytest.ini_options]
 pythonpath = "."
-testpaths = ["app/tests"]
+testpaths = ["src/tests"]
 asyncio_mode = "auto"
 filterwarnings = [
     "ignore::DeprecationWarning",
