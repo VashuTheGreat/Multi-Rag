@@ -1,4 +1,5 @@
 from src.service.llm_provider.groq import get_llm
+from langchain_core.runnables import RunnableConfig
 from ..models.state import AgentState
 from ..models.structure import PlannerStructure
 from ..prompts import PLANNER_PROMPT
@@ -9,12 +10,13 @@ import sys
 
 observe = traceable
 
-llm = get_llm()
 
 
 @observe(name="planner_node", run_type="chain")
-async def planner_node(state: AgentState):
+async def planner_node(state: AgentState, config: RunnableConfig | None = None):
     """Plan the routing process along with quries generation if retriver node is choosen"""
+    model = (config or {}).get("configurable", {}).get("model")
+    llm = get_llm(model=model)
     user_message = state.get("user_message")
     with logger.span("Planner node execution", user_message=user_message):
         try:

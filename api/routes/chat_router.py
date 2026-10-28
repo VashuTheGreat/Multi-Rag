@@ -8,6 +8,7 @@ from api.schemas.chat_schema import ChatRequest
 from src.core.logger import logger
 from src.agents.graph import get_graph
 from src.service.memory.async_sql import get_checkpointer
+from src.service.llm_provider.groq import AVAILABLE_MODELS, DEFAULT_MODEL
 
 router = APIRouter(dependencies=[Depends(authenticate_only_thread)],tags=["Chat"])
 
@@ -30,7 +31,11 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
             "queries":None
 
         }
-        config = {"configurable": {"thread_id": thread_id}}
+        model = (metadata or {}).get("model", DEFAULT_MODEL)
+        if model not in AVAILABLE_MODELS:
+            yield f"data:{json.dumps({'type': 'error', 'message': 'Unsupported model selection'})}\n\n"
+            return
+        config = {"configurable": {"thread_id": thread_id, "model": model}}
 
         async for event in active_graph.astream_events(initial_state, config=config, version="v2"):
             event_type = event.get("event")
@@ -150,6 +155,14 @@ async def run_workflow(request: Request, payload: ChatRequest):
         try:
             logger.info("chat endpoint invoked: thread_id={thread_id}", thread_id=thread_id)
 
+            metadata = payload.metadata or {}
+            model = metadata.get("model", DEFAULT_MODEL)
+            if model not in AVAILABLE_MODELS:
+                return JSONResponse(
+                    content={"error": "Unsupported model selection"},
+                    status_code=422,
+                )
+
             active_graph = get_graph(get_checkpointer())
 
             if active_graph is None:
@@ -159,7 +172,7 @@ async def run_workflow(request: Request, payload: ChatRequest):
                     status_code=500,
                 )
 
-            config = {"configurable": {"thread_id": thread_id}} if thread_id else None
+            config = {"configurable": {"thread_id": thread_id, "model": model}} if thread_id else {"configurable": {"model": model}}
 
             # if stream is False direct answer
             if getattr(payload, "stream", True) is False:
@@ -193,7 +206,7 @@ async def run_workflow(request: Request, payload: ChatRequest):
                 stream_chat(
                     message=payload.message,
                     thread_id=thread_id,
-                    metadata=getattr(payload, "metadata", {}),
+                    metadata=metadata,
                 ),
                 media_type="text/event-stream",
                 headers={

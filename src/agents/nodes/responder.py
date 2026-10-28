@@ -1,4 +1,5 @@
 from src.service.llm_provider.groq import get_llm
+from langchain_core.runnables import RunnableConfig
 from langchain_core.messages import AIMessage, HumanMessage
 from ..models.state import AgentState
 from ..prompts import RESPONDER_GENERAL_PROMPT, RESPONDER_RETREIVED_PROMPT
@@ -9,12 +10,14 @@ import sys
 
 observe = traceable
 
-llm = get_llm()
 
 
 @observe(name="responder_node", run_type="chain")
-async def responder_node(state: AgentState):
+async def responder_node(state: AgentState, config: RunnableConfig | None = None):
     """The main node which chats to the user initiate SSE"""
+    model = (config or {}).get("configurable", {}).get("model")
+    llm = get_llm(model=model)
+
     conversation_history = state.get("messages")
     user_message = state.get("user_message")
     retreived_content = state.get("retreived_content")

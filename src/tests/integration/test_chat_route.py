@@ -79,7 +79,7 @@ def test_chat_streaming_success(client):
     fake_llm = FakeStreamingChatModel()
 
     with patch("src.agents.graph.planner_node", side_effect=mock_planner), \
-         patch("src.agents.nodes.responder.llm", fake_llm), \
+            patch("src.agents.nodes.responder.get_llm", return_value=fake_llm) as mock_get_llm, \
          patch("src.agents.graph.retreived_node", side_effect=mock_retriever):
 
         test_graph = create_agent_graph()
@@ -87,7 +87,11 @@ def test_chat_streaming_success(client):
             response = client.post(
                 "/api/v1/chat",
                 headers={"x-user-id": "usr_123", "x-thread-id": "thr_456"},
-                json={"message": "How does ingress work?", "stream": True},
+                json={
+                    "message": "How does ingress work?",
+                    "stream": True,
+                    "metadata": {"model": "openai/gpt-oss-20b"},
+                },
             )
 
             assert response.status_code == 200
@@ -114,6 +118,7 @@ def test_chat_streaming_success(client):
             final_payload = next(p for p in payloads if p.get("type") == "final")
             assert "This is the final response." in final_payload.get("ai_response", "")
             assert final_payload.get("state") == "completed"
+            mock_get_llm.assert_called_once_with(model="openai/gpt-oss-20b")
 
 
 def test_chat_non_streaming_success(client):

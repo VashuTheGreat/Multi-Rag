@@ -91,6 +91,29 @@
                 </div>
             </div>
             <div class="top-bar-actions">
+                <label class="model-picker" for="modelSelector">
+                    <span>Model</span>
+                    <select id="modelSelector" aria-label="Choose chat model">
+                        <optgroup label="Alibaba Cloud">
+                            <option value="qwen/qwen3.8-27b">qwen/qwen3.8-27b</option>
+                        </optgroup>
+                        <optgroup label="Canopy Labs">
+                            <option value="canopylabs/orpheus-arabic-saudi">canopylabs/orpheus-arabic-saudi</option>
+                            <option value="canopylabs/orpheus-v1-english">canopylabs/orpheus-v1-english</option>
+                        </optgroup>
+                        <optgroup label="Meta">
+                            <option value="meta-llama/llama-prompt-guard-2-22m">meta-llama/llama-prompt-guard-2-22m</option>
+                            <option value="meta-llama/llama-prompt-guard-2-86m">meta-llama/llama-prompt-guard-2-86m</option>
+                        </optgroup>
+                        <optgroup label="OpenAI">
+                            <option value="openai/gpt-oss-120b">openai/gpt-oss-120b</option>
+                            <option value="openai/gpt-oss-20b">openai/gpt-oss-20b</option>
+                            <option value="openai/gpt-oss-safeguard-20b">openai/gpt-oss-safeguard-20b</option>
+                            <option value="whisper-large-v3">whisper-large-v3</option>
+                            <option value="whisper-large-v3-turbo">whisper-large-v3-turbo</option>
+                        </optgroup>
+                    </select>
+                </label>
                 <button class="btn btn-outline btn-sm" id="topIngestBtn">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                     <span>Ingest Docs</span>

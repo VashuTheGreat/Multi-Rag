@@ -14,7 +14,7 @@ async def test_planner_node_success():
     mock_llm = MagicMock()
     mock_llm.with_structured_output.return_value = RunnableLambda(lambda x: mock_res)
 
-    with patch("src.agents.nodes.planner.llm", mock_llm):
+    with patch("src.agents.nodes.planner.get_llm", return_value=mock_llm):
         state = {
             "messages": [HumanMessage(content="Hello")],
             "user_message": "How do I configure kubernetes ingress?",
@@ -31,7 +31,7 @@ async def test_responder_node_general():
         additional_kwargs={"reasoning_content": "The user asked for a definition."},
     ))
 
-    with patch("src.agents.nodes.responder.llm", mock_llm):
+    with patch("src.agents.nodes.responder.get_llm", return_value=mock_llm):
         state = {
             "messages": [],
             "user_message": "What is Docker?",
@@ -48,7 +48,7 @@ async def test_responder_node_general():
 async def test_responder_node_retrieved():
     mock_llm = RunnableLambda(lambda x: AIMessage(content="Based on retrieved context, pod is the smallest unit."))
 
-    with patch("src.agents.nodes.responder.llm", mock_llm):
+    with patch("src.agents.nodes.responder.get_llm", return_value=mock_llm):
         state = {
             "messages": [],
             "user_message": "What is a Pod?",

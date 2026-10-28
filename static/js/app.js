@@ -60,6 +60,8 @@
     // State Store
     // =========================================================================
     const STORAGE_KEY_THEME = 'multi_rag_theme';
+    const STORAGE_KEY_MODEL = 'multi_rag_model';
+    const DEFAULT_MODEL = 'openai/gpt-oss-120b';
 
     let threads = [];
     let activeThreadId = null;
@@ -80,6 +82,7 @@
         activeThreadBadge: document.getElementById('activeThreadBadge'),
         activeThreadShortId: document.getElementById('activeThreadShortId'),
         chatTitle: document.getElementById('chatTitle'),
+        modelSelector: document.getElementById('modelSelector'),
         clearChatBtn: document.getElementById('clearChatBtn'),
         chatScrollContainer: document.getElementById('chatScrollContainer'),
         emptyState: document.getElementById('emptyState'),
@@ -142,6 +145,17 @@
             const next = current === 'dark' ? 'light' : 'dark';
             applyTheme(next);
             localStorage.setItem(STORAGE_KEY_THEME, next);
+        });
+    }
+
+    function initModelSelector() {
+        const savedModel = localStorage.getItem(STORAGE_KEY_MODEL);
+        const modelIsAvailable = Array.from(DOM.modelSelector.options)
+            .some(option => option.value === savedModel);
+        DOM.modelSelector.value = modelIsAvailable ? savedModel : DEFAULT_MODEL;
+
+        DOM.modelSelector.addEventListener('change', () => {
+            localStorage.setItem(STORAGE_KEY_MODEL, DOM.modelSelector.value);
         });
     }
 
@@ -660,7 +674,8 @@
                     stream: true,
                     metadata: {
                         thread_id: activeThreadId,
-                        user_id: 'guest-user'
+                        user_id: 'guest-user',
+                        model: DOM.modelSelector.value || DEFAULT_MODEL
                     }
                 }),
                 signal: activeAbortController.signal
@@ -1049,6 +1064,7 @@
     function init() {
         setupMarked();
         initTheme();
+        initModelSelector();
         initThreads();
         initIngestModal();
         initUIEvents();
