@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import AsyncMock, patch
 from langchain_core.messages import HumanMessage, AIMessage
-from src.agents.graph import create_agent_graph, route_decision, graph
+from src.agents.graph import create_agent_graph, route_decision
 
 
 def test_graph_structure():

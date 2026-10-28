@@ -36,6 +36,7 @@ class QdrantVectorStore(BaseVectorStore):
             self._async_client = AsyncQdrantClient(
                 url=self.url,
                 api_key=self.api_key,
+                timeout=60
             )
         return self._async_client
 
@@ -48,7 +49,7 @@ class QdrantVectorStore(BaseVectorStore):
         return self._sync_client
 
     async def ensure_collection(self) -> None:
-        with logger.span("📦 Ensuring Qdrant collection: {collection}", collection=self.collection_name):
+        with logger.span("qdrant.ensure_collection", collection=self.collection_name):
             try:
                 client = self.get_async_client()
                 exists = await client.collection_exists(collection_name=self.collection_name)
@@ -58,24 +59,24 @@ class QdrantVectorStore(BaseVectorStore):
                         collection_name=self.collection_name,
                         vectors_config=VectorParams(size=dim, distance=Distance.COSINE),
                     )
-                    logger.info("📦 Created Qdrant collection", collection=self.collection_name, dim=dim)
+                    logger.info("qdrant.collection_created", collection=self.collection_name, dim=dim)
                 else:
-                    logger.debug("📦 Qdrant collection already exists", collection=self.collection_name)
-            except Exception as e:
-                logger.error("❌ Failed to ensure collection in Qdrant", collection=self.collection_name, error=str(e))
-                raise MyException(e, sys)
+                    logger.debug("qdrant.collection_exists", collection=self.collection_name)
+            except Exception:
+                logger.exception("qdrant.collection_ensure_failed", collection=self.collection_name)
+                raise MyException(sys.exc_info()[1], sys)
 
     async def upsert(self, documents: Union[Document, List[Document]], **kwargs) -> Any:
         if isinstance(documents, Document):
             documents = [documents]
 
         if not documents:
-            logger.debug("⚠️ No documents to upsert to Qdrant")
+            logger.debug("qdrant.empty_upsert", collection=self.collection_name)
             return True
 
-        with logger.span("📤 Upserting documents to Qdrant: {collection}", collection=self.collection_name, count=len(documents)):
+        with logger.span("qdrant.upsert", collection=self.collection_name, count=len(documents)):
             try:
-                logger.info("📤 Preparing documents for Qdrant upsert", collection=self.collection_name, count=len(documents))
+                logger.info("qdrant.upsert_started", collection=self.collection_name, count=len(documents))
                 await self.ensure_collection()
 
                 texts = [
@@ -109,16 +110,16 @@ class QdrantVectorStore(BaseVectorStore):
                     collection_name=self.collection_name,
                     points=points,
                 )
-                logger.info("✅ Documents upserted to Qdrant successfully", collection=self.collection_name, count=len(points))
+                logger.info("qdrant.upsert_completed", collection=self.collection_name, count=len(points))
                 return result or True
-            except Exception as e:
-                logger.error("❌ Failed to upsert documents to Qdrant", collection=self.collection_name, error=str(e))
-                raise MyException(e, sys)
+            except Exception:
+                logger.exception("qdrant.upsert_failed", collection=self.collection_name, count=len(documents))
+                raise MyException(sys.exc_info()[1], sys)
 
     async def similarity_search(self, query: str, k: int = 4, **kwargs) -> List[Document]:
-        with logger.span("🔎 Qdrant similarity search: {collection}", collection=self.collection_name, k=k):
+        with logger.span("qdrant.similarity_search", collection=self.collection_name, k=k):
             try:
-                logger.info("🔎 Searching in Qdrant", collection=self.collection_name, query_preview=query[:50], k=k)
+                logger.info("qdrant.search_started", collection=self.collection_name, query_preview=query[:50], k=k)
                 client = self.get_async_client()
                 query_vector = self.embedder.embed_query(query)
 
@@ -134,11 +135,11 @@ class QdrantVectorStore(BaseVectorStore):
                     payload = point.payload or {}
                     content = payload.pop("page_content", "")
                     documents.append(Document(page_content=content, metadata=payload))
-                logger.info("✅ Qdrant search returned matches", collection=self.collection_name, results_count=len(documents))
+                logger.info("qdrant.search_completed", collection=self.collection_name, results_count=len(documents))
                 return documents
-            except Exception as e:
-                logger.error("❌ Similarity search failed in Qdrant", collection=self.collection_name, error=str(e))
-                raise MyException(e, sys)
+            except Exception:
+                logger.exception("qdrant.search_failed", collection=self.collection_name, k=k)
+                raise MyException(sys.exc_info()[1], sys)
 
     def __getattr__(self, name):
         return getattr(self.get_async_client(), name)

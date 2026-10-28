@@ -11,18 +11,18 @@ class TextLoader(BaseLoader):
         self.file_path = file_path
 
     def lazy_load(self) -> Iterator[Document]:
-        with logger.span("📝 Lazy loading text file: {file_path}", file_path=self.file_path):
+        with logger.span("Lazy loading text file: {file_path}", file_path=self.file_path):
             f = None
             try:
-                logger.info("📝 Opening text file", file_path=self.file_path)
+                logger.info("Opening text file", file_path=self.file_path)
                 f = open(file=self.file_path, encoding="utf-8", errors="ignore")
                 content = f.read()
-                logger.info("📄 Text file read successfully", file_path=self.file_path, char_count=len(content))
+                logger.info("Text file read successfully", file_path=self.file_path, char_count=len(content))
                 yield Document(page_content=content, metadata={"source": self.file_path, "page": 0})
-                logger.info("✅ Text lazy load complete", file_path=self.file_path)
+                logger.info("Text lazy load complete", file_path=self.file_path)
 
             except Exception as e:
-                logger.error("❌ Failed to lazy load text file", file_path=self.file_path, error=str(e))
+                logger.error("Failed to lazy load text file", file_path=self.file_path, error=str(e))
                 raise MyException(e, sys)
 
             finally:
@@ -30,26 +30,26 @@ class TextLoader(BaseLoader):
                     f.close()
 
     def load(self) -> List[Document]:
-        with logger.span("📝 Loading text file into memory: {file_path}", file_path=self.file_path):
+        with logger.span("Loading text file into memory: {file_path}", file_path=self.file_path):
             try:
                 docs = list(self.lazy_load())
-                logger.info("✅ Text file load complete", file_path=self.file_path, doc_count=len(docs))
+                logger.info("Text file load complete", file_path=self.file_path, doc_count=len(docs))
                 return docs
 
             except Exception as e:
-                logger.error("❌ Failed to load text file", file_path=self.file_path, error=str(e))
+                logger.error("Failed to load text file", file_path=self.file_path, error=str(e))
                 raise MyException(e, sys)
 
 
 async def text_loader(file_path: str):
-    with logger.span("🚀 Async text loader: {file_path}", file_path=file_path):
+    with logger.span("Async text loader: {file_path}", file_path=file_path):
         try:
-            logger.info("📝 Initiating text file load", file_path=file_path)
+            logger.info("Initiating text file load", file_path=file_path)
             loader = TextLoader(file_path=file_path)
             docs = await loader.aload()
-            logger.info("✅ Async text load finished", file_path=file_path, doc_count=len(docs))
+            logger.info("Async text load finished", file_path=file_path, doc_count=len(docs))
             return docs
 
         except Exception as e:
-            logger.error("❌ Async text loader failed", file_path=file_path, error=str(e))
+            logger.error("Async text loader failed", file_path=file_path, error=str(e))
             raise MyException(e, sys)

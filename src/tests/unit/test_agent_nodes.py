@@ -26,7 +26,10 @@ async def test_planner_node_success():
 
 @pytest.mark.asyncio
 async def test_responder_node_general():
-    mock_llm = RunnableLambda(lambda x: AIMessage(content="Docker is a containerization platform."))
+    mock_llm = RunnableLambda(lambda x: AIMessage(
+        content="Docker is a containerization platform.",
+        additional_kwargs={"reasoning_content": "The user asked for a definition."},
+    ))
 
     with patch("src.agents.nodes.responder.llm", mock_llm):
         state = {
@@ -38,6 +41,7 @@ async def test_responder_node_general():
         assert len(res["messages"]) == 2
         assert res["messages"][0].content == "What is Docker?"
         assert res["messages"][1].content == "Docker is a containerization platform."
+        assert res["messages"][1].additional_kwargs["reasoning_content"] == "The user asked for a definition."
 
 
 @pytest.mark.asyncio

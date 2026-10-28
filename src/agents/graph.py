@@ -1,25 +1,23 @@
+from functools import lru_cache
+
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.state import CompiledStateGraph
+from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+
 from src.agents.models.state import AgentState
 from src.agents.nodes.planner import planner_node
 from src.agents.nodes.responder import responder_node
 from src.agents.nodes.retreiver import retreived_node
 from src.core.logger import logger
-from functools import lru_cache
-from src.service.memory.inmemory import get_memory
-
-
-
-memory  = get_memory()
 
 
 
 def route_decision(state: AgentState) -> str:
     route = state.get("route_to", "responder")
     if route == "retriever":
-        logger.info("🔀 Routing to retriever node", route=route)
+        logger.info("Routing to retriever node", route=route)
         return "retriever"
-    logger.info("🔀 Routing directly to responder node", route=route)
+    logger.info("Routing directly to responder node", route=route)
     return "responder"
 
 
@@ -46,14 +44,15 @@ def create_agent_graph(checkpointer=None) -> CompiledStateGraph:
     return builder.compile(checkpointer=checkpointer)
 
 
+@lru_cache(maxsize=2)
+def get_graph(checkpointer: AsyncSqliteSaver | None) -> CompiledStateGraph:
+    cp = checkpointer
+    if cp is None:
+        raise RuntimeError("The checkpointer must be initialized before creating the agent graph.")
 
-@lru_cache
-def get_graph() -> CompiledStateGraph:
-    with logger.span("🕸️ Compiling multi-agent RAG graph"):
-        logger.info("🕸️ Initializing agent StateGraph builder")
-        compiled = create_agent_graph(checkpointer=memory)
-        logger.info("✅ Multi-agent RAG graph compiled successfully")
-        return compiled
+    with logger.span("Compiling multi-agent RAG graph", has_checkpointer=cp is not None):
+        logger.info("Initializing agent StateGraph builder", checkpointer=type(cp).__name__)
+        graph = create_agent_graph(checkpointer=cp)
+        logger.info("Multi-agent RAG graph compiled successfully")
+        return graph
 
-
-graph = get_graph()

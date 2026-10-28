@@ -6,7 +6,7 @@ import operator
 class AgentState(TypedDict, total=False):
     messages: Annotated[List[BaseMessage], operator.add]
     user_message: str
-    route_to: str
+    route_to: str # route on the basis of condition to (eg. respond_node or retreiver_node)
     queries: str | None
     retreived_content: List[Any] | None
     

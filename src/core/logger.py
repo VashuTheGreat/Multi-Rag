@@ -5,6 +5,7 @@ from functools import lru_cache
 
 @lru_cache
 def initialise_logger():
+    """initialise logger for monitoring system with pydantic logfire"""
     app_config = get_app_config()
     logfire.configure(
         send_to_logfire="if-token-present",
@@ -13,7 +14,7 @@ def initialise_logger():
     )
     logfire.instrument_pydantic()
     logfire.instrument_system_metrics()
-    logfire.info("🔥 Logfire logger initialised successfully", service=app_config.service_name or "multi-rag")
+    logfire.info("logger.initialized", service=app_config.service_name or "multi-rag")
     return logfire
 
 

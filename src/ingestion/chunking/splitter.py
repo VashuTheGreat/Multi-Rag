@@ -7,17 +7,17 @@ import sys
 
 
 def split(documents: List[Document]) -> List[Document]:
-    with logger.span("✂️ Splitting documents into chunks", doc_count=len(documents)):
+    with logger.span("Splitting documents into chunks", doc_count=len(documents)):
         try:
-            logger.info("✂️ Beginning chunking process", doc_count=len(documents))
+            logger.info("Beginning chunking process", doc_count=len(documents))
             splitter = RecursiveCharacterTextSplitter(
                 separators=["\n\n", "\n", " ", ""],
                 chunk_size=100,
                 chunk_overlap=0,
             )
             chunks = splitter.split_documents(documents=documents)
-            logger.info("✅ Document splitting complete", input_docs=len(documents), output_chunks=len(chunks))
+            logger.info("Document splitting complete", input_docs=len(documents), output_chunks=len(chunks))
             return chunks
         except Exception as e:
-            logger.error("❌ Document splitting failed", error=str(e))
+            logger.error("Document splitting failed", error=str(e))
             raise MyException(e, sys)

@@ -16,14 +16,15 @@ vector_store_service: QdrantVectorStore = get_qdrant_service(collection_name=app
 
 @observe(name="retriever_node", run_type="retriever")
 async def retreived_node(state: AgentState):
+    """Fetching relevant similar dcuments according to query"""
     queries = state.get("queries")
-    with logger.span("🔎 Retriever node execution", queries=queries):
+    with logger.span("Retriever node execution", queries=queries):
         try:
-            logger.info("🔎 Querying vector store for documents", queries=queries)
+            logger.info("Querying vector store for documents", queries=queries)
             documents = await vector_store_service.similarity_search(query=queries)
             doc_count = len(documents) if documents else 0
-            logger.info("✅ Documents retrieved successfully", count=doc_count)
+            logger.info("Documents retrieved successfully", count=doc_count)
             return {"retreived_content": documents}
         except Exception as e:
-            logger.error("❌ Document retrieval failed", error=str(e))
+            logger.error("Document retrieval failed", error=str(e))
             raise MyException(e, sys)

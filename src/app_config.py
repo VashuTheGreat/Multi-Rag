@@ -14,8 +14,9 @@ class AppConfig(BaseSettings):
     embedding_model:Optional[str] = Field(None,validation_alias="EMBEDDING_MODEL")
     embedding_dim:Optional[str] = Field(None,validation_alias="EMBEDDING_DIM")
     pydantic_logfire_api_key:Optional[str] = Field(None, validation_alias="PYDANTIC_LOGFIRE_API_KEY")
+    ingestion_password: str = Field("aloo", validation_alias="INGESTION_PASSWORD")
+    checkpoint_db_path: str = Field("data/checkpoints.db", validation_alias="CHECKPOINT_DB_PATH")
 
-    # app validations
     model_config = SettingsConfigDict(
         env_file=".env",
         env_ignore_empty=True,

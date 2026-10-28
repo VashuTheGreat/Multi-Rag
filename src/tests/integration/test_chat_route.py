@@ -14,7 +14,6 @@ class FakeStreamingChatModel(BaseChatModel):
         raise NotImplementedError()
 
     async def _agenerate(self, messages, stop=None, run_manager=None, **kwargs):
-        # 1. Emit reasoning content chunk
         chunk_reasoning = ChatGenerationChunk(
             message=AIMessageChunk(
                 content="",
@@ -24,7 +23,6 @@ class FakeStreamingChatModel(BaseChatModel):
         if run_manager:
             await run_manager.on_llm_new_token("", chunk=chunk_reasoning)
 
-        # 2. Emit content tokens with think tags and final response
         tokens = ["<think>", "Internal deliberations", "</think>", "This is the final response."]
         for t in tokens:
             chunk = ChatGenerationChunk(message=AIMessageChunk(content=t))
@@ -85,7 +83,7 @@ def test_chat_streaming_success(client):
          patch("src.agents.graph.retreived_node", side_effect=mock_retriever):
 
         test_graph = create_agent_graph()
-        with patch("api.routes.chat_router.graph", test_graph):
+        with patch("api.routes.chat_router.get_graph", return_value=test_graph):
             response = client.post(
                 "/api/v1/chat",
                 headers={"x-user-id": "usr_123", "x-thread-id": "thr_456"},
@@ -99,23 +97,19 @@ def test_chat_streaming_success(client):
             payloads = [ev[1] for ev in events if isinstance(ev[1], dict)]
             payload_types = [p.get("type") for p in payloads]
 
-            # Verify reasoning/thinking events are emitted
             assert "reasoning" in payload_types
             reasoning_contents = [p.get("content") for p in payloads if p.get("type") == "reasoning"]
             assert any("analyzing" in c.lower() for c in reasoning_contents)
 
-            # Verify tool_start and tool_end events are emitted
             assert "tool_start" in payload_types
             assert any(p.get("tool") == "retriever" for p in payloads if p.get("type") == "tool_start")
             assert "tool_end" in payload_types
             assert any(p.get("tool") == "retriever" for p in payloads if p.get("type") == "tool_end")
 
-            # Verify token stream events are emitted
             assert "token" in payload_types
             token_contents = "".join([p.get("content", "") for p in payloads if p.get("type") == "token"])
             assert "This is the final response." in token_contents
 
-            # Verify final event
             assert "final" in payload_types
             final_payload = next(p for p in payloads if p.get("type") == "final")
             assert "This is the final response." in final_payload.get("ai_response", "")
@@ -139,7 +133,7 @@ def test_chat_non_streaming_success(client):
          patch("src.agents.graph.responder_node", side_effect=mock_responder):
 
         test_graph = create_agent_graph()
-        with patch("api.routes.chat_router.graph", test_graph):
+        with patch("api.routes.chat_router.get_graph", return_value=test_graph):
             response = client.post(
                 "/api/v1/chat",
                 headers={"x-user-id": "usr_123", "x-thread-id": "thr_456"},
@@ -154,8 +148,7 @@ def test_chat_non_streaming_success(client):
 
 def test_chat_graph_unconfigured(client):
     """Chat endpoint should handle missing graph configuration gracefully."""
-    with patch("api.routes.chat_router.graph", None), \
-         patch("api.routes.chat_router.get_graph", side_effect=Exception("Config error")):
+    with patch("api.routes.chat_router.get_graph", side_effect=Exception("Config error")):
 
         response = client.post(
             "/api/v1/chat",

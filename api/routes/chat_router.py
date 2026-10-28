@@ -7,21 +7,18 @@ from api.middlewares.authentication_middleware import authenticate_only_thread
 from api.schemas.chat_schema import ChatRequest
 from src.core.logger import logger
 from src.agents.graph import get_graph
+from src.service.memory.async_sql import get_checkpointer
 
 router = APIRouter(dependencies=[Depends(authenticate_only_thread)],tags=["Chat"])
 
-graph = get_graph()
-
-
+# metadata is additonal info for collection appart from user_message from end user
 async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> AsyncGenerator[str, None]:
     try:
-        logger.info("🌊 stream_chat started: thread_id={thread_id}", thread_id=thread_id)
-        active_graph = graph
-        if active_graph is None:
-            active_graph = get_graph()
+        logger.info("stream_chat started: thread_id={thread_id}", thread_id=thread_id)
+        active_graph = get_graph(get_checkpointer())
 
         if active_graph is None:
-            logger.error("❌ Graph runner is not configured")
+            logger.error("Graph runner is not configured")
             err_payload = json.dumps({"type": "error", "message": "Graph engine not configured"})
             yield f"data:{err_payload}\n\n"
             return
@@ -39,37 +36,40 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
             event_type = event.get("event")
 
             match event_type:
-                # 1. Tool execution start (e.g. solver tool requested or retriever)
+                # Tool execution start along with name
                 case "on_tool_start":
                     tool_name = event.get("name")
                     tool_input = event.get("data", {}).get("input")
                     payload = json.dumps({"type": "tool_start", "tool": tool_name, "input": tool_input})
                     yield f"data:{payload}\n\n"
 
+                # yielding retreiver node call input text
                 case "on_chain_start" if event.get("name") in {"retriever", "retriever_node"}:
                     tool_input = event.get("data", {}).get("input")
                     payload = json.dumps({"type": "tool_start", "tool": "retriever", "input": tool_input})
                     yield f"data:{payload}\n\n"
 
-                # 2. Tool execution end (tool completed)
+                # Tool execution end
                 case "on_tool_end":
                     tool_name = event.get("name")
                     tool_output = str(event.get("data", {}).get("output"))
                     payload = json.dumps({"type": "tool_end", "tool": tool_name, "output": tool_output})
                     yield f"data:{payload}\n\n"
 
+                # the retreiver node ends
                 case "on_chain_end" if event.get("name") in {"retriever", "retriever_node"}:
                     tool_output = str(event.get("data", {}).get("output"))
                     payload = json.dumps({"type": "tool_end", "tool": "retriever", "output": tool_output})
                     yield f"data:{payload}\n\n"
 
+                # for custom event yielding using dispatch etc
                 case "on_custom_event" if event.get("name") == "agent_stream":
                     data = event.get("data", {})
                     if isinstance(data, dict) and data.get("type"):
                         payload = json.dumps(data)
                         yield f"data:{payload}\n\n"
 
-                # 3. Model token stream (only stream tokens from response nodes to the user UI)
+                # model token stream (only stream tokens from response_node to the user UI)
                 case "on_chat_model_stream":
                     langgraph_node = event.get("metadata", {}).get("langgraph_node")
                     # Ignore internal background node LLM streams (e.g. orchestrator_node, summary_node, query_generation_node, planner)
@@ -94,7 +94,7 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
                                 payload = json.dumps({"type": "token", "content": content})
                                 yield f"data:{payload}\n\n"
 
-                # 4. Final chain completed
+                # Final chain completed final output in one shot
                 case "on_chain_end" if event.get("name") in {"chat_node", "agent_node", "responder", "responder_node"}:
                     output = event.get("data", {}).get("output", {})
                     ai_response = None
@@ -114,9 +114,9 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
                 case _:
                     pass
 
-        logger.info("✅ stream_chat completed: thread_id={thread_id}", thread_id=thread_id)
+        logger.info("stream_chat completed: thread_id={thread_id}", thread_id=thread_id)
     except Exception as e:
-        logger.error("❌ stream_chat error: {error}", error=str(e))
+        logger.error("stream_chat error: {error}", error=str(e))
         err_payload = json.dumps({"type": "error", "message": str(e)})
         yield f"data:{err_payload}\n\n"
 
@@ -142,21 +142,18 @@ async def run_workflow(request: Request, payload: ChatRequest):
 
     ### Response
     `Content-Type: text/event-stream` — consume as SSE.
+
+    handles both cases Stream = True / False acc to payload enduser
     """
     thread_id = getattr(request.state, "thread_id", None)
-    with logger.span("💬 Processing chat request", thread_id=thread_id):
+    with logger.span("Processing chat request", thread_id=thread_id):
         try:
-            logger.info("💬 chat endpoint invoked: thread_id={thread_id}", thread_id=thread_id)
+            logger.info("chat endpoint invoked: thread_id={thread_id}", thread_id=thread_id)
 
-            active_graph = graph
-            if active_graph is None:
-                try:
-                    active_graph = get_graph()
-                except Exception:
-                    active_graph = None
+            active_graph = get_graph(get_checkpointer())
 
             if active_graph is None:
-                logger.error("❌ Graph runner is not configured")
+                logger.error("Graph runner is not configured")
                 return JSONResponse(
                     content={"error": "Graph engine not configured"},
                     status_code=500,
@@ -164,8 +161,9 @@ async def run_workflow(request: Request, payload: ChatRequest):
 
             config = {"configurable": {"thread_id": thread_id}} if thread_id else None
 
+            # if stream is False direct answer
             if getattr(payload, "stream", True) is False:
-                logger.info("⏳ Processing non-streaming chat request: thread_id={thread_id}", thread_id=thread_id)
+                logger.info("Processing non-streaming chat request: thread_id={thread_id}", thread_id=thread_id)
                 initial_state = {
                     "user_message": payload.message,
                 }
@@ -180,7 +178,7 @@ async def run_workflow(request: Request, payload: ChatRequest):
                 if ai_response == "No response generated" and isinstance(result, dict) and "ai_response" in result:
                     ai_response = result["ai_response"]
 
-                logger.info("✅ Chat response generated successfully: thread_id={thread_id}", thread_id=thread_id)
+                logger.info("Chat response generated successfully: thread_id={thread_id}", thread_id=thread_id)
                 return JSONResponse(
                     content={
                         "success": True,
@@ -189,7 +187,8 @@ async def run_workflow(request: Request, payload: ChatRequest):
                     status_code=200,
                 )
 
-            logger.info("🌊 Streaming chat response started: thread_id={thread_id}", thread_id=thread_id)
+            # stream is True yield SSE Responses
+            logger.info("Streaming chat response started: thread_id={thread_id}", thread_id=thread_id)
             return StreamingResponse(
                 stream_chat(
                     message=payload.message,
@@ -205,5 +204,5 @@ async def run_workflow(request: Request, payload: ChatRequest):
                 },
             )
         except Exception as e:
-            logger.error("❌ chat endpoint failed: {error}", error=str(e))
+            logger.error("chat endpoint failed: {error}", error=str(e))
             return JSONResponse(content={"error": str(e)}, status_code=500)

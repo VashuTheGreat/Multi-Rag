@@ -4,7 +4,6 @@ from src.service.vector_store.base import BaseVectorStore
 from src.service.vector_store.qdrant import QdrantVectorStore, get_qdrant_service
 from src.service.vector_store.pinecone import PineconeVectorStore, get_pinecone_service
 
-# Aliases
 VectorStoreClient = QdrantVectorStore
 get_client = get_qdrant_service
 
