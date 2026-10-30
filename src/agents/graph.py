@@ -5,11 +5,19 @@ from langgraph.graph.state import CompiledStateGraph
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
 
 from src.agents.models.state import AgentState
+from src.agents.nodes.guardrail import guardrail_node, blocked_responder_node
 from src.agents.nodes.planner import planner_node
 from src.agents.nodes.responder import responder_node
 from src.agents.nodes.retreiver import retreived_node
 from src.core.logger import logger
 
+
+def guardrail_decision(state: AgentState) -> str:
+    if state.get("is_blocked"):
+        logger.warning("Guardrail blocked execution, routing to blocked_responder")
+        return "blocked_responder"
+    logger.info("Guardrail passed, routing to planner")
+    return "planner"
 
 
 def route_decision(state: AgentState) -> str:
@@ -21,15 +29,25 @@ def route_decision(state: AgentState) -> str:
     return "responder"
 
 
-
 def create_agent_graph(checkpointer=None) -> CompiledStateGraph:
     builder = StateGraph(AgentState)
 
+    builder.add_node("guardrail", guardrail_node)
+    builder.add_node("blocked_responder", blocked_responder_node)
     builder.add_node("planner", planner_node)
     builder.add_node("retriever", retreived_node)
     builder.add_node("responder", responder_node)
 
-    builder.add_edge(START, "planner")
+    builder.add_edge(START, "guardrail")
+    builder.add_conditional_edges(
+        "guardrail",
+        guardrail_decision,
+        {
+            "blocked_responder": "blocked_responder",
+            "planner": "planner",
+        },
+    )
+    builder.add_edge("blocked_responder", END)
     builder.add_conditional_edges(
         "planner",
         route_decision,
@@ -42,6 +60,7 @@ def create_agent_graph(checkpointer=None) -> CompiledStateGraph:
     builder.add_edge("responder", END)
 
     return builder.compile(checkpointer=checkpointer)
+
 
 
 @lru_cache(maxsize=2)

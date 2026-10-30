@@ -780,6 +780,159 @@ body.theme-light .model-picker select {
     background-color: var(--bg-code);
 }
 
+/* Techstack Pipeline Flow Accordion & Vertical Line Timeline */
+.techstack-flow-accordion {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--accent-chai);
+    border-radius: var(--radius-sm);
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all var(--transition-fast);
+}
+
+.techstack-flow-accordion[open] {
+    border-color: var(--border-main);
+    border-left-color: var(--accent-amber);
+}
+
+.techstack-summary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    background: transparent;
+}
+
+.techstack-summary::-webkit-details-marker {
+    display: none;
+}
+
+.techstack-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.techstack-status-badge {
+    font-size: 10.5px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.techstack-status-badge.completed {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+.techstack-status-badge.blocked {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.techstack-chevron {
+    transition: transform var(--transition-fast);
+    color: var(--text-muted);
+}
+
+.techstack-flow-accordion[open] .techstack-chevron {
+    transform: rotate(90deg);
+}
+
+.techstack-content {
+    padding: 10px 14px 12px 14px;
+    border-top: 1px solid var(--border-subtle);
+    background-color: var(--bg-surface-elevated, var(--bg-surface));
+}
+
+.techstack-timeline {
+    position: relative;
+    padding: 6px 0 6px 26px;
+    margin-left: 8px;
+    border-left: 2px solid var(--border-subtle);
+}
+
+.techstack-step {
+    position: relative;
+    margin-bottom: 14px;
+    animation: fadeIn 0.2s ease;
+}
+
+.techstack-step:last-child {
+    margin-bottom: 2px;
+}
+
+.techstack-step-marker {
+    position: absolute;
+    left: -33px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-subtle);
+    transition: all 0.25s ease;
+}
+
+.techstack-step.running .techstack-step-marker {
+    border-color: var(--accent-amber);
+    background: var(--accent-amber);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+    animation: pulseMarker 1.4s infinite;
+}
+
+.techstack-step.completed .techstack-step-marker {
+    border-color: #10b981;
+    background: #10b981;
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.4);
+}
+
+.techstack-step.blocked .techstack-step-marker {
+    border-color: #ef4444;
+    background: #ef4444;
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes pulseMarker {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+}
+
+.techstack-step-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.techstack-step-desc {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    line-height: 1.4;
+}
+
+
 /* Active streaming cursor */
 .streaming-cursor {
     display: inline-block;

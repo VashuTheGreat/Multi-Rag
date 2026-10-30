@@ -469,6 +469,83 @@
         return row;
     }
 
+    function createTechstackAccordion() {
+        const details = document.createElement('details');
+        details.className = 'techstack-flow-accordion';
+        details.open = true;
+
+        const summary = document.createElement('summary');
+        summary.className = 'techstack-summary';
+        summary.innerHTML = `
+            <span class="pulsing-amber-dot"></span>
+            <span class="techstack-label">
+                <span>⚡ Pipeline Execution Trace</span>
+                <span class="techstack-status-badge">Running</span>
+            </span>
+            <svg class="techstack-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        `;
+
+        const content = document.createElement('div');
+        content.className = 'techstack-content';
+
+        const timeline = document.createElement('div');
+        timeline.className = 'techstack-timeline';
+        content.appendChild(timeline);
+
+        details.appendChild(summary);
+        details.appendChild(content);
+
+        return {
+            element: details,
+            timeline: timeline,
+            summary: summary,
+            statusBadge: summary.querySelector('.techstack-status-badge'),
+            addOrUpdateStep: function(nodeId, title, desc, status = 'running') {
+                let step = timeline.querySelector(`[data-node="${nodeId}"]`);
+                if (!step) {
+                    step = document.createElement('div');
+                    step.className = `techstack-step ${status}`;
+                    step.setAttribute('data-node', nodeId);
+                    step.innerHTML = `
+                        <div class="techstack-step-marker"></div>
+                        <div class="techstack-step-info">
+                            <div class="techstack-step-title">${escapeHtml(title)}</div>
+                            <div class="techstack-step-desc">${escapeHtml(desc)}</div>
+                        </div>
+                    `;
+                    timeline.appendChild(step);
+                } else {
+                    step.className = `techstack-step ${status}`;
+                    const titleEl = step.querySelector('.techstack-step-title');
+                    const descEl = step.querySelector('.techstack-step-desc');
+                    if (titleEl) titleEl.textContent = title;
+                    if (descEl) descEl.textContent = desc;
+                }
+
+                if (status === 'running') {
+                    this.statusBadge.textContent = 'Running';
+                    this.statusBadge.className = 'techstack-status-badge';
+                } else if (status === 'blocked') {
+                    this.statusBadge.textContent = 'Blocked';
+                    this.statusBadge.className = 'techstack-status-badge blocked';
+                }
+            },
+            complete: function(isBlocked = false) {
+                if (isBlocked) {
+                    this.statusBadge.textContent = 'Blocked';
+                    this.statusBadge.className = 'techstack-status-badge blocked';
+                } else {
+                    this.statusBadge.textContent = 'Completed';
+                    this.statusBadge.className = 'techstack-status-badge completed';
+                }
+                // Auto toggle off after response arrives so user can manually view
+                details.open = false;
+            }
+        };
+    }
+
     function createThinkingAccordion(reasoningText, isOpen = true) {
         const details = document.createElement('details');
         details.className = 'thinking-accordion';
@@ -636,9 +713,13 @@
         toolsContainer.className = 'tools-list-container';
         contentWrapper.appendChild(toolsContainer);
 
+        // Techstack Flow & Guardrail Timeline Block (live visual only)
+        let techstackBlock = null;
+
         // Reasoning Block (hidden initially)
         let reasoningBlock = null;
         let reasoningAccumulator = '';
+
 
         // Live Message Body
         const messageBody = document.createElement('div');
@@ -714,6 +795,21 @@
                     try {
                         const event = JSON.parse(rawData);
 
+                        // 0. Techstack Pipeline & Guardrail Node Flow Event
+                        if (event.type === 'node_flow') {
+                            if (!techstackBlock) {
+                                techstackBlock = createTechstackAccordion();
+                                contentWrapper.insertBefore(techstackBlock.element, messageBody);
+                            }
+                            const nodeId = event.node || 'step';
+                            const title = event.title || 'Pipeline Node';
+                            const desc = event.description || '';
+                            const status = event.status || 'running';
+                            techstackBlock.addOrUpdateStep(nodeId, title, desc, status);
+                            setStreamingMode(true, `${title}...`);
+                            scrollToBottom();
+                        }
+
                         // 1. Reasoning Event
                         if (event.reasoning || event.type === 'reasoning') {
                             const rText = event.reasoning || event.content || '';
@@ -786,6 +882,12 @@
                 }
             }
 
+            // Auto toggle off techstack accordion once response arrives so user can view it manually
+            if (techstackBlock) {
+                const isBlocked = !!contentWrapper.querySelector('.techstack-step.blocked');
+                techstackBlock.complete(isBlocked);
+            }
+
             // Clean up cursor after stream completes
             messageBody.innerHTML = renderMarkdown(tokenAccumulator || '(No response received)');
             enhanceCodeBlocks(messageBody);
@@ -802,6 +904,9 @@
             saveThreads();
 
         } catch (streamErr) {
+            if (techstackBlock) {
+                techstackBlock.complete(false);
+            }
             if (streamErr.name === 'AbortError') {
                 messageBody.innerHTML = renderMarkdown(tokenAccumulator + '\n\n*(Generation stopped by user)*');
             } else {

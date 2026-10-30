@@ -10,6 +10,9 @@ from src.agents.graph import get_graph
 from src.service.memory.async_sql import get_checkpointer
 from src.service.llm_provider.groq import AVAILABLE_MODELS, DEFAULT_MODEL
 
+
+
+# ============== used emoji for frontend view =============================
 router = APIRouter(dependencies=[Depends(authenticate_only_thread)],tags=["Chat"])
 
 # metadata is additonal info for collection appart from user_message from end user
@@ -39,8 +42,138 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
 
         async for event in active_graph.astream_events(initial_state, config=config, version="v2"):
             event_type = event.get("event")
+            event_name = event.get("name")
+            lg_node = event.get("metadata", {}).get("langgraph_node") or event_name
 
             match event_type:
+                # Node flow lifecycle events
+                case "on_chain_start" if lg_node in {"guardrail", "guardrail_node"}:
+                    payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "guardrail",
+                        "status": "running",
+                        "title": "🛡️ Guardrails Invoked",
+                        "description": "Checking input safety, injection patterns & topic scope..."
+                    })
+                    yield f"data:{payload}\n\n"
+
+                case "on_chain_end" if lg_node in {"guardrail", "guardrail_node"}:
+                    out = event.get("data", {}).get("output", {})
+                    is_blocked = bool(out.get("is_blocked")) if isinstance(out, dict) else False
+                    if is_blocked:
+                        payload = json.dumps({
+                            "type": "node_flow",
+                            "node": "guardrail",
+                            "status": "blocked",
+                            "title": "🛑 Guardrail Blocked",
+                            "description": "Query blocked by security or domain policy."
+                        })
+                    else:
+                        payload = json.dumps({
+                            "type": "node_flow",
+                            "node": "guardrail",
+                            "status": "completed",
+                            "title": "🛡️ Guardrail Passed",
+                            "description": "Input verified & approved for processing."
+                        })
+                    yield f"data:{payload}\n\n"
+
+                case "on_chain_start" if lg_node in {"planner", "planner_node"}:
+                    payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "planner",
+                        "status": "running",
+                        "title": "📋 Planner Invoked",
+                        "description": "Analyzing intent & determining execution path..."
+                    })
+                    yield f"data:{payload}\n\n"
+
+                case "on_chain_end" if lg_node in {"planner", "planner_node"}:
+                    out = event.get("data", {}).get("output", {})
+                    route_to = out.get("route_to", "responder") if isinstance(out, dict) else "responder"
+                    desc = "Routed to Knowledge Base Retriever" if route_to == "retriever" else "Direct LLM Responder selected"
+                    payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "planner",
+                        "status": "completed",
+                        "title": "📋 Planner Decided",
+                        "description": desc
+                    })
+                    yield f"data:{payload}\n\n"
+
+                case "on_chain_start" if lg_node in {"retriever", "retriever_node"}:
+                    tool_input = event.get("data", {}).get("input")
+                    payload = json.dumps({"type": "tool_start", "tool": "retriever", "input": tool_input})
+                    yield f"data:{payload}\n\n"
+                    flow_payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "retriever",
+                        "status": "running",
+                        "title": "🔍 Retriever Invoked",
+                        "description": "Searching hybrid vector & keyword knowledge base..."
+                    })
+                    yield f"data:{flow_payload}\n\n"
+
+                case "on_chain_end" if lg_node in {"retriever", "retriever_node"}:
+                    tool_output = str(event.get("data", {}).get("output"))
+                    payload = json.dumps({"type": "tool_end", "tool": "retriever", "output": tool_output})
+                    yield f"data:{payload}\n\n"
+                    flow_payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "retriever",
+                        "status": "completed",
+                        "title": "🔍 Retrieval Completed",
+                        "description": "Relevant documents fetched and reranked."
+                    })
+                    yield f"data:{flow_payload}\n\n"
+
+                case "on_chain_start" if lg_node in {"responder", "responder_node"}:
+                    payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "responder",
+                        "status": "running",
+                        "title": "✍️ Responder Invoked",
+                        "description": "Generating answer..."
+                    })
+                    yield f"data:{payload}\n\n"
+
+                case "on_chain_start" if lg_node in {"blocked_responder", "blocked_responder_node"}:
+                    payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "blocked_responder",
+                        "status": "running",
+                        "title": "🛑 Policy Handler Invoked",
+                        "description": "Preparing policy refusal explanation..."
+                    })
+                    yield f"data:{payload}\n\n"
+
+                case "on_chain_end" if lg_node in {"blocked_responder", "blocked_responder_node"}:
+                    output = event.get("data", {}).get("output", {})
+                    ai_response = None
+                    if isinstance(output, dict):
+                        ai_response = output.get("ai_response")
+                        if not ai_response:
+                            msgs = output.get("messages", [])
+                            if isinstance(msgs, list):
+                                for m in reversed(msgs):
+                                    if isinstance(m, AIMessage) or getattr(m, "type", "") == "ai":
+                                        ai_response = m.content
+                                        break
+                    if not ai_response:
+                        ai_response = "I cannot fulfill this request as it is outside the supported DevOps domain or violates safety policies."
+                    token_payload = json.dumps({"type": "token", "content": ai_response})
+                    yield f"data:{token_payload}\n\n"
+                    final_payload = json.dumps({"type": "final", "ai_response": ai_response, "state": "completed"})
+                    yield f"data:{final_payload}\n\n"
+                    flow_payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "blocked_responder",
+                        "status": "completed",
+                        "title": "🛑 Refusal Sent",
+                        "description": "Policy refusal response delivered."
+                    })
+                    yield f"data:{flow_payload}\n\n"
+
                 # Tool execution start along with name
                 case "on_tool_start":
                     tool_name = event.get("name")
@@ -48,23 +181,11 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
                     payload = json.dumps({"type": "tool_start", "tool": tool_name, "input": tool_input})
                     yield f"data:{payload}\n\n"
 
-                # yielding retreiver node call input text
-                case "on_chain_start" if event.get("name") in {"retriever", "retriever_node"}:
-                    tool_input = event.get("data", {}).get("input")
-                    payload = json.dumps({"type": "tool_start", "tool": "retriever", "input": tool_input})
-                    yield f"data:{payload}\n\n"
-
                 # Tool execution end
                 case "on_tool_end":
                     tool_name = event.get("name")
                     tool_output = str(event.get("data", {}).get("output"))
                     payload = json.dumps({"type": "tool_end", "tool": tool_name, "output": tool_output})
-                    yield f"data:{payload}\n\n"
-
-                # the retreiver node ends
-                case "on_chain_end" if event.get("name") in {"retriever", "retriever_node"}:
-                    tool_output = str(event.get("data", {}).get("output"))
-                    payload = json.dumps({"type": "tool_end", "tool": "retriever", "output": tool_output})
                     yield f"data:{payload}\n\n"
 
                 # for custom event yielding using dispatch etc
@@ -77,7 +198,7 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
                 # model token stream (only stream tokens from response_node to the user UI)
                 case "on_chat_model_stream":
                     langgraph_node = event.get("metadata", {}).get("langgraph_node")
-                    # Ignore internal background node LLM streams (e.g. orchestrator_node, summary_node, query_generation_node, planner)
+                    # Ignore internal background node LLM streams (e.g. guardrail, planner)
                     if langgraph_node and langgraph_node not in {"chat_node", "agent_node", "responder", "responder_node"}:
                         continue
 
@@ -115,6 +236,15 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
                     if ai_response:
                         payload = json.dumps({"type": "final", "ai_response": ai_response, "state": "completed"})
                         yield f"data:{payload}\n\n"
+                    flow_payload = json.dumps({
+                        "type": "node_flow",
+                        "node": "responder",
+                        "status": "completed",
+                        "title": "✍️ Responder Finished",
+                        "description": "Answer generated successfully."
+                    })
+                    yield f"data:{flow_payload}\n\n"
+
 
                 case _:
                     pass

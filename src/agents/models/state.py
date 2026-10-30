@@ -9,4 +9,8 @@ class AgentState(TypedDict, total=False):
     route_to: str # route on the basis of condition to (eg. respond_node or retreiver_node)
     queries: str | None
     retreived_content: List[Any] | None
+    is_blocked: bool
+    block_reason: str | None
+    ai_response: str | None
+
     
