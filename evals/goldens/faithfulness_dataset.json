@@ -1,0 +1,101 @@
+[
+  {
+    "inputs": {
+      "user_input": "what is a multi-stage docker build and why does it make images smaller?"
+    },
+    "outputs": {
+      "reference_contexts": [
+        "stages Lets see the image is created from the Docker file What makes a Docker file a Docker file It becomes yours The image is the image you have now. 1.01 GB has such a large image that If a container is made, it will also be very big. Analyze your Docker file. what happens inside it that from It happens that from that, he picked up a base image. Let's see the base image now. The image is of Python which is 994 AB so your base image is the same 994 Now it is your code then Snip then your requirements files and All these libraries together have so many GB So if I were to measure the size of this thing If you want to reduce then the biggest one is I can reduce the base image to that. Yes, but sometimes what happens is that this base image is v im docker file ye jo base image 3.7 Sometimes it is required To install libraries, every Sometimes we cannot use small images. Requires library installed But only the library to Required to install stall to run libraries or Then to run the application,",
+        "installed But only the library to Required to install stall to run libraries or Then to run the application, Why do you need a larger image? What can you do? every time you pick a base image that is a stage okay this is the stage so like you From Wrote python3.7 then in the whole code If from is not written anywhere then this from python3.7 this is a stage As much as your base image can be in one stage The size is that much plus the total size in front If it happens then your total size right now The base image of stage one is If it is of 994 AB then the total size will be Around Ruffle 1.04 GB will be fine Now this base image is called I'll give you Edge Edge, meaning nickname Alias ​​Edge. I would have written the back end or the builder. So I named this stage Builder Stage So what is Builder Stage This is just the stage in which you Libraries and packages will be built and Then what I'll do is I'll go to this builder stage I'll stop it here and start a new stage Let me create stage two"
+      ]
+    },
+    "metadata": {
+      "golden_id": "f001",
+      "source_sessions": [
+        "Docker"
+      ]
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "why are docker containers lighter than virtual machines?"
+    },
+    "outputs": {
+      "reference_contexts": [
+        "may be another Docker-like tool available. Whose name is Pod Man Pod Man Ke Bhi There is another tool called Container D Container D can also be his so Both containers and virtual machines What difference does it make? What difference does it make? I tell you Let me tell you about virtual machines. They use what is called Hypervisor: So what does a hypervisor do? is the hypervisor from your operating system Space resources allocate everything and run your operating system on top of it Is your operating system mean Windows or Yours or yours So consider that I have this viz machine. It is above me Docker Engine What does Docker Engine do itself? It does not have an operating system of the host. Lets use the operating system If this is my Windows and I So what happens to this one that creates its own container? It becomes very light weight. It means that if you have If you have 8GB of RAM, you can run one or two virtual machines. You can drive comfortably before he runs out of rum. It starts"
+      ]
+    },
+    "metadata": {
+      "golden_id": "f002",
+      "source_sessions": [
+        "Docker"
+      ]
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "what's the difference between a deployment and a replicaset in kubernetes?"
+    },
+    "outputs": {
+      "reference_contexts": [
+        "stateful set that each one Pods can be created and deleted at any time. His information could be lost at any time. The stateful set is what each pod says I will give you the numbering, number one number Number three, number four, and so on in each pod. Key state maintained in a by-number sequence If it remains then that state is fully set and The third is diploid diploid and rept The set remains almost the same, in that too you You can only make reps but deploy you a Rolling works great Updates Rolling updates mean if your Four pods were formed, four repts were formed, you have your If you change the image of the pod then the rept set In this, everything will change completely and What is the problem that your application The blue application is running You have to click update so that it becomes yellow in colour. So the whole application converts from blue to yellow. It is happening in between, there will be down time in between If the application stops and starts again, it There is a"
+      ]
+    },
+    "metadata": {
+      "golden_id": "f003",
+      "source_sessions": [
+        "Kubernetes"
+      ]
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "why does argo cd treat git as the single source of truth?"
+    },
+    "outputs": {
+      "reference_contexts": [
+        "source of truth Give. Single Source of Truth. Single Source of Truth. Meaning, it should not be the case that if tomorrow I got a cluster of Cubanetis. This is a cluster of cubes in production. It's running, it shouldn't be like this tomorrow. That the user can come here and do something in the cluster itself. Make the changes. This shouldn't happen tomorrow. That the user went to the cluster and started this application This did not happen tomorrow. It will happen that the user comes and installs this application. I turned it down. I don't want that. What do we need? If the source code is in single source of Truth Complete Your Cubanetis App Yamail The files are located here. Application code Yes, the infrastructure is all here. This should be your operations. That's why Git is considered a single source of truth. assume that operations are performed on it. This thing is called git ops. Meaning, if You should use the application in Cubinetis. What to do if you want to increase the replica",
+        "will happen that the user comes and installs this application. I turned it down. I don't want that. What do we need? If the source code is in single source of Truth Complete Your Cubanetis App Yamail The files are located here. Application code Yes, the infrastructure is all here. This should be your operations. That's why Git is considered a single source of truth. assume that operations are performed on it. This thing is called git ops. Meaning, if You should use the application in Cubinetis. What to do if you want to increase the replica as well? So what about Cubinetis in the Ghub? This is the y file of the application, update it. update it. end if update in git Only if this happens will it be applied to the cluster. You will not go here and apply manually. You will not apply in any other way. You will only do it on the git. Why brother? Why should we pay so much? to Git? The first thing Git does is your version Control. So you can see which one is currently The version of your app"
+      ]
+    },
+    "metadata": {
+      "golden_id": "f004",
+      "source_sessions": [
+        "Argo CD"
+      ]
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "which port does jenkins use and what firewall change is needed on aws?"
+    },
+    "outputs": {
+      "reference_contexts": [
+        "keeps turning He is roaming around and saying Kant Why does B. Reese know because Jenkins is What's up for now is his Joe Port The number is 808 and it is currently blocked by the firewall. So they go to the firewall and we have to open it. Go to security if you have to. After going to security, you can go to security Go to the group, security group means fire There is a wall, okay, and go into the fire wall. By editing these rules, i.e., incoming traffic I've made two edits, now add a new rule. Add a new rule to port number 8080 Custom TCP on 8080 means custom Transmission Control Protocol Anywhere and IPV means anyone So if you want, someone can access You can also give me access or give me my IP If possible, just your IP address That's where you'll have access to Jenkins, and so on. As soon as you save it, you saved it. And if you go back to port number 8080 You'll go and hit refresh, okay side. Can't provide okay never mind again Hit refresh what's going on fix it Let's open a new one"
+      ]
+    },
+    "metadata": {
+      "golden_id": "f005",
+      "source_sessions": [
+        "Jenkins"
+      ]
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "how many resumes does ats reject and how long should a fresher's resume be?"
+    },
+    "outputs": {
+      "reference_contexts": [
+        "people have faced this thing? He uploaded the review somewhere and Immediately within a few minutes they will receive an email. It is stated that you are not eligible for this review. Can't Be Shortlisted and Bet Alright Next One of the reasons behind this is that we'll get back to you in time. Reason is 75% of the resumes are rejected. Not by a human but by a tool which is known Edge ATS. So there is a tool which is known as ATS. is also known as epicentre tracking system Who rejects your resume again and again It is being done friends and here you You will have to understand that you have to make yourself a royal That has to be ATS friendly. I understand What's come? Epicenter Tracking System or ATS processes over 75% of resumes He rejects it instantly. So now How many people understood why brother? I'm not getting a call? How many people I understood it, tell me in chat brother. Because 75% Of the Rejuve How much? 75 taka 75 V is a lot. Okay. Such bad handwriting, brother. Ok. This is",
+        "was not interested. The rejection came immediately. In 6 seconds. Third fact brother Tell me one more fact. Maybe this third thing. It would also be something that I would be doing or Maybe she will help. If you are a fresher from zero to three Years of experience zero to two years of Experience to One Page Resume is industry standard. If your resume is more than one page If it goes then it gets automatically rejected. Yes. Why? The first thing ATS was told The One Page Resume if you are a fresher is the industry standard. If you are a If you are an experienced person then one to two pages resume When is this? 3 plus years One to Two Pages and Zero to One Years for One page for . This is the industry standard Is. This is the industry standard. How many people who thinks these three They're basically stuck on the facts, or So my ATS sends my resume 70% of the time Rejecting. Either three to 8 seconds If someone is looking at my resume I'm not able to impress. Or maybe I've made a mistake."
+      ]
+    },
+    "metadata": {
+      "golden_id": "f006",
+      "source_sessions": [
+        "Resume & ATS"
+      ]
+    }
+  }
+]

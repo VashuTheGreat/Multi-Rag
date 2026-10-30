@@ -225,6 +225,42 @@ Navigate to `http://localhost:8000`
 
 ---
 
+## Conversation History API
+
+`GET /api/v1/conversations/{thread_id}` returns messages serialized with LangChain's `messages_to_dict`. Each entry has a message `type` and a `data` object. AI reasoning and tool-call metadata are included in `data` when the model provides them.
+
+```json
+{
+       "success": true,
+       "thread_id": "thread-123",
+       "count": 2,
+       "messages": [
+              {
+                     "type": "human",
+                     "data": {
+                            "content": "Explain this result",
+                            "type": "human"
+                     }
+              },
+              {
+                     "type": "ai",
+                     "data": {
+                            "content": "Here is the explanation.",
+                            "type": "ai",
+                            "additional_kwargs": {
+                                   "reasoning_content": "I will interpret the retrieved information."
+                            },
+                            "tool_calls": []
+                     }
+              }
+       ]
+}
+```
+
+The frontend reads the assistant content from `message.data.content` and, when present, reads reasoning from `message.data.reasoning` or `message.data.additional_kwargs.reasoning_content`, `reasoning`, or `thinking`. It renders that reasoning in the expandable thought-process section. These fields are model-dependent and may be absent.
+
+---
+
 ## 🐳 Docker
 
 ```bash

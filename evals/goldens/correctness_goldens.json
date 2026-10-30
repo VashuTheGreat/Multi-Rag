@@ -1,0 +1,74 @@
+[
+  {
+    "inputs": {
+      "user_input": "i'm a fresher, how long should my devops resume be and why?"
+    },
+    "outputs": {
+      "reference": "Keep it to one page. The instructor says a one-page resume is the industry standard for freshers (roughly 0 to 2 years of experience), while people with 3+ years can use one to two pages. ATS rejects most resumes and a recruiter spends only about 6 seconds on one, so a longer resume risks being rejected."
+    },
+    "metadata": {
+      "golden_id": "C001",
+      "source_session": "Resume & ATS"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "how do i get jenkins running on aws and open it in my browser?"
+    },
+    "outputs": {
+      "reference": "Launch an EC2 instance (the instructor uses t2.medium with 4 GB RAM and 2 CPUs; t2.micro works on the free tier), install and enable Jenkins so it starts with the system, then add an inbound Custom TCP rule for port 8080 in the security group and open the instance's public IP on port 8080."
+    },
+    "metadata": {
+      "golden_id": "C002",
+      "source_session": "Jenkins"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "i have three ebs volumes of 10gb, 12gb and 14gb. how does lvm let me use them together?"
+    },
+    "outputs": {
+      "reference": "Convert each volume into a physical volume, combine them into one volume group (10+12+14 = 36 GB), then carve logical volumes out of that group, for example 10 GB each. Logical volumes can later be extended or reduced as needed. LVM commands need root or sudo."
+    },
+    "metadata": {
+      "golden_id": "C003",
+      "source_session": "Linux (LVM)"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "what's the difference between latency, jitter and packet loss?"
+    },
+    "outputs": {
+      "reference": "Latency is the delay in data travelling across the network. Jitter is the variation in latency. Packet loss means some data segments are dropped, usually because of congestion. In a live class they show up as lag, freezing or words dropping out even though the data was sent."
+    },
+    "metadata": {
+      "golden_id": "C004",
+      "source_session": "Computer Networking"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "what are the three phases of the eks auto mode project?"
+    },
+    "outputs": {
+      "reference": "Phase 1 covers the project architecture and infrastructure setup (with Terraform). Phase 2 covers understanding Kubernetes and deploying the application on EKS Auto Mode. Phase 3 is the GitOps deployment using Argo CD and GitHub Actions."
+    },
+    "metadata": {
+      "golden_id": "C005",
+      "source_session": "EKS Project"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "what exactly is an ai agent and which frameworks can i build one with?"
+    },
+    "outputs": {
+      "reference": "An AI agent is a piece of code (for example Python) that talks to an LLM and has tools the LLM can use, such as a tool that returns the current time or runs Docker commands. Frameworks mentioned include CrewAI, LangChain, Strands Agents (open source from AWS), OpenAI Agents and Google ADK."
+    },
+    "metadata": {
+      "golden_id": "C006",
+      "source_session": "AI Agents"
+    }
+  }
+]

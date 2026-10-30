@@ -1,0 +1,74 @@
+[
+  {
+    "inputs": {
+      "user_input": "what port does jenkins run on and what do i need to change in aws to open it?"
+    },
+    "outputs": {
+      "reference": "Jenkins runs on port 8080. In the EC2 security group you edit the inbound rules and add a Custom TCP rule for port 8080, allowing either anywhere or only your own IP address, then refresh the page."
+    },
+    "metadata": {
+      "golden_id": "g001",
+      "source": "Jenkins"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "docker image itna bada kyu ho jata hai aur multi stage build usko kaise chhota karta hai?"
+    },
+    "outputs": {
+      "reference": "In the demo the Flask app image was about 1.01 GB, mostly because the Python 3.7 base image alone is about 994 MB. A multi-stage build uses that large image only in a builder stage to install libraries, then starts a new stage from a slim base image (around 400 MB) and copies just the installed packages and app code, so the final image is much smaller."
+    },
+    "metadata": {
+      "golden_id": "g002",
+      "source": "Docker"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "what is a runner in gitlab ci and how is it different from shared runners?"
+    },
+    "outputs": {
+      "reference": "Runners are the processes that pick up and execute GitLab CI/CD jobs, similar to agents in Jenkins. Project runners are your own self-hosted runners that you set up on your own instance, while shared runners are servers that GitLab itself provides."
+    },
+    "metadata": {
+      "golden_id": "g003",
+      "source": "GitLab CI"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "what does #!/bin/bash at the top of a shell script do?"
+    },
+    "outputs": {
+      "reference": "It is the shebang. As the first line of the script it tells the system which shell or interpreter should run the script, here /bin/bash."
+    },
+    "metadata": {
+      "golden_id": "g004",
+      "source": "Shell Scripting"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "why am i not getting any calls even after applying to so many devops jobs?"
+    },
+    "outputs": {
+      "reference": "The instructor says over 75% of resumes are rejected by ATS (Applicant Tracking System) before a human sees them, and a recruiter spends only about 6 seconds on a resume. So the resume must be ATS-friendly and, for freshers, kept to one page."
+    },
+    "metadata": {
+      "golden_id": "g005",
+      "source": "Resume & ATS"
+    }
+  },
+  {
+    "inputs": {
+      "user_input": "how does a developer's code commit reach the eks cluster in the gitops project?"
+    },
+    "outputs": {
+      "reference": "Infrastructure is provisioned with Terraform. When a developer commits code, GitHub Actions builds the image and pushes it to a private ECR repository, and Helm with Argo CD deploys it to the EKS cluster. Git stays the single source of truth, so changes are made through Git rather than manually on the cluster."
+    },
+    "metadata": {
+      "golden_id": "g006",
+      "source": "EKS Project + Argo CD"
+    }
+  }
+]
