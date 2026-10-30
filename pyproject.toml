@@ -38,6 +38,7 @@ dependencies = [
     "unstructured-inference>=1.6.11",
     "unstructured-pytesseract>=0.3.15",
     "youtube-transcript-api>=1.2.4",
+    "yt-dlp>=2025.1.15",
     "docx2pdf>=0.1.8",
     "fpdf>=1.7.2",
     "llama-index>=0.14.25",
@@ -53,6 +54,8 @@ dependencies = [
     "qdrant-client>=1.20.0",
     "langsmith>=0.14.4",
     "langgraph-checkpoint-sqlite>=3.1.2",
+    "deepeval>=4.3.2",
+    "ragas>=0.4.3",
 ]
 
 
@@ -71,6 +74,8 @@ dev = [
     "pytest-asyncio>=1.4.0",
     "pytest-cov>=7.1.0",
 ]
+
+
 
 [build-system]
 requires = ["setuptools>=61.0"]

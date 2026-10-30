@@ -2,10 +2,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-import sys
 import subprocess
+import sys
+
 from src.core.logger import logger
-from api.app import app
 
 
 def dev():
@@ -20,7 +20,7 @@ def dev():
         "--reload",
     ]
     try:
-        sys.exit(subprocess.run(cmd).returncode)
+        sys.exit(subprocess.run(cmd,check=False).returncode)
     except KeyboardInterrupt:
         logger.info("🛑 Shutting down server gracefully")
         sys.exit(0)
@@ -37,7 +37,7 @@ def start():
         "7860",
     ]
     try:
-        sys.exit(subprocess.run(cmd).returncode)
+        sys.exit(subprocess.run(cmd,check=False).returncode)
     except KeyboardInterrupt:
         logger.info("🛑 Shutting down server gracefully")
         sys.exit(0)
