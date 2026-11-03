@@ -1,3 +1,4 @@
+import asyncio
 import json
 from typing import Any, AsyncGenerator
 from fastapi import APIRouter, HTTPException, Depends, Request
@@ -9,15 +10,54 @@ from src.core.logger import logger
 from src.agents.graph import get_graph
 from src.service.memory.async_sql import get_checkpointer
 from src.service.llm_provider.groq import AVAILABLE_MODELS, DEFAULT_MODEL
-
+from src.guardrails.rails import guard
 
 
 # ============== used emoji for frontend view =============================
 router = APIRouter(dependencies=[Depends(authenticate_only_thread)],tags=["Chat"])
 
+
+def _json_default(value: Any) -> Any:
+    model_dump = getattr(value, "model_dump", None)
+    if callable(model_dump):
+        return model_dump(mode="json")
+    return str(value)
+
+
 # metadata is additonal info for collection appart from user_message from end user
 async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> AsyncGenerator[str, None]:
     try:
+        payload = json.dumps({
+            "type": "node_flow",
+            "node": "guardrail",
+            "status": "running",
+            "title": "🛡️ Guardrails Invoked",
+            "description": "Checking input safety, injection patterns & topic scope..."
+        })
+        yield f"data:{payload}\n\n"
+
+        is_blocked, response = await asyncio.to_thread(guard, message)
+        if is_blocked:
+            payload = json.dumps({
+                "type": "node_flow",
+                "node": "guardrail",
+                "status": "blocked",
+                "title": "🛑 Guardrail Blocked",
+                "description": "Query blocked by security or domain policy."
+            })
+            yield f"data:{payload}\n\n"
+            yield f"data:{json.dumps({'type': 'blocked', 'message': response})}\n\n"
+            return
+
+        payload = json.dumps({
+            "type": "node_flow",
+            "node": "guardrail",
+            "status": "completed",
+            "title": "🛡️ Guardrail Passed",
+            "description": "Input verified & approved for processing."
+        })
+        yield f"data:{payload}\n\n"
+
         logger.info("stream_chat started: thread_id={thread_id}", thread_id=thread_id)
         active_graph = get_graph(get_checkpointer())
 
@@ -103,7 +143,10 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
 
                 case "on_chain_start" if lg_node in {"retriever", "retriever_node"}:
                     tool_input = event.get("data", {}).get("input")
-                    payload = json.dumps({"type": "tool_start", "tool": "retriever", "input": tool_input})
+                    payload = json.dumps(
+                        {"type": "tool_start", "tool": "retriever", "input": tool_input},
+                        default=_json_default,
+                    )
                     yield f"data:{payload}\n\n"
                     flow_payload = json.dumps({
                         "type": "node_flow",
@@ -178,7 +221,10 @@ async def stream_chat(message: str, thread_id: str, metadata: dict = {}) -> Asyn
                 case "on_tool_start":
                     tool_name = event.get("name")
                     tool_input = event.get("data", {}).get("input")
-                    payload = json.dumps({"type": "tool_start", "tool": tool_name, "input": tool_input})
+                    payload = json.dumps(
+                        {"type": "tool_start", "tool": tool_name, "input": tool_input},
+                        default=_json_default,
+                    )
                     yield f"data:{payload}\n\n"
 
                 # Tool execution end
@@ -321,11 +367,18 @@ async def run_workflow(request: Request, payload: ChatRequest):
                 if ai_response == "No response generated" and isinstance(result, dict) and "ai_response" in result:
                     ai_response = result["ai_response"]
 
+                retrieved_contexts = result.get("retreived_content", []) if isinstance(result, dict) else []
+                retrieved_contexts = [
+                    context if isinstance(context, str) else getattr(context, "page_content", str(context))
+                    for context in (retrieved_contexts or [])
+                ]
+
                 logger.info("Chat response generated successfully: thread_id={thread_id}", thread_id=thread_id)
                 return JSONResponse(
                     content={
                         "success": True,
                         "response": ai_response,
+                        "data": {"retreived_content": retrieved_contexts},
                     },
                     status_code=200,
                 )

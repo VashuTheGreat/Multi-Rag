@@ -281,6 +281,20 @@ docker run -p 7860:7860 --env-file .env multi-rag
 
 ---
 
+## 📊 RAG Evaluation Results
+
+Latest recorded evaluation: [metrics_results_3.json](evals/results/metrics_results_3.json), based on six samples in [generated_dataset.json](evals/generated_dataset.json).
+
+| Metric | Mean score | Observation |
+|---|---:|---|
+| Answer relevancy | 0.868 | Responses generally address the question. |
+| Answer correctness | 0.449 | Answers only partially match the references. |
+| Faithfulness | 0.087 | Many answer claims are not supported by retrieved context. |
+| Context precision | 0.000 | The evaluator found no retrieved context relevant across these samples. |
+| Context recall | 0.000 | The retrieved context did not cover the reference information in these samples. |
+
+In the inspected samples, retrieved passages are often short transcript fragments that omit details listed in the references. Some generated answers then add generic or inferred details not present in those passages. This points to two areas to investigate: retrieval/context coverage and answer grounding. The zero context scores are a warning from this six-sample run, not conclusive proof of a retriever defect; verify that the evaluation references, retrieved contexts, and metric inputs are aligned before drawing a system-wide conclusion.
+
 ## 🧩 Key Design Decisions
 
 - **Adaptive Routing** — The orchestrator decides per-query whether vector search is needed, avoiding unnecessary DB calls for greetings/small talk.

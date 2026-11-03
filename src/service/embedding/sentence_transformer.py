@@ -20,12 +20,19 @@ class SentenceTransformerEmbedding(BaseEmbeddingService):
                 try:
                     from sentence_transformers import SentenceTransformer
                     logger.info("Loading SentenceTransformer model weights", model=self.model_name)
-                    self._model = SentenceTransformer(self.model_name)
+                    try:
+                        self._model = SentenceTransformer(self.model_name, local_files_only=True)
+                    except Exception:
+                        logger.info("Embedding model not found in local cache; downloading", model=self.model_name)
+                        self._model = SentenceTransformer(self.model_name)
                     logger.info("SentenceTransformer model ready", model=self.model_name)
                 except Exception as e:
                     logger.error("Failed to load SentenceTransformer model", model=self.model_name, error=str(e))
                     raise MyException(e, sys)
         return self._model
+
+    def warmup(self):
+        self._get_model()
 
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         if not texts:

@@ -810,6 +810,14 @@
                             scrollToBottom();
                         }
 
+                        // Guardrail blocks carry their reply in a dedicated event.
+                        if (event.type === 'blocked') {
+                            tokenAccumulator = event.message || 'This request was blocked by the guardrails.';
+                            messageBody.innerHTML = renderMarkdown(tokenAccumulator);
+                            enhanceCodeBlocks(messageBody);
+                            scrollToBottom();
+                        }
+
                         // 1. Reasoning Event
                         if (event.reasoning || event.type === 'reasoning') {
                             const rText = event.reasoning || event.content || '';

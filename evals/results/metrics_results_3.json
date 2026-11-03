@@ -1,0 +1,132 @@
+{
+    "faithfulness": [
+        {
+            "question": "What Docker concepts and features does the transcript cover?",
+            "faithfulness": 0.316
+        },
+        {
+            "question": "Which automation topics are covered in the shell-scripting lesson?",
+            "faithfulness": 0.0
+        },
+        {
+            "question": "Which Kubernetes workload, networking, and operations topics are mentioned in the lesson?",
+            "faithfulness": 0.167
+        },
+        {
+            "question": "What Jenkins pipeline and operations features does the lesson demonstrate?",
+            "faithfulness": 0.036
+        },
+        {
+            "question": "Which Argo CD deployment and security capabilities are covered?",
+            "faithfulness": 0.0
+        },
+        {
+            "question": "Which GitLab CI/CD project features are included in the lesson?",
+            "faithfulness": 0.0
+        }
+    ],
+    "answer_relevancy": [
+        {
+            "question": "What Docker concepts and features does the transcript cover?",
+            "answer_relevancy": 0.721
+        },
+        {
+            "question": "Which automation topics are covered in the shell-scripting lesson?",
+            "answer_relevancy": 0.903
+        },
+        {
+            "question": "Which Kubernetes workload, networking, and operations topics are mentioned in the lesson?",
+            "answer_relevancy": 0.967
+        },
+        {
+            "question": "What Jenkins pipeline and operations features does the lesson demonstrate?",
+            "answer_relevancy": 0.879
+        },
+        {
+            "question": "Which Argo CD deployment and security capabilities are covered?",
+            "answer_relevancy": 1.0
+        },
+        {
+            "question": "Which GitLab CI/CD project features are included in the lesson?",
+            "answer_relevancy": 0.737
+        }
+    ],
+    "context_precision": [
+        {
+            "question": "What Docker concepts and features does the transcript cover?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "Which automation topics are covered in the shell-scripting lesson?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "Which Kubernetes workload, networking, and operations topics are mentioned in the lesson?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "What Jenkins pipeline and operations features does the lesson demonstrate?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "Which Argo CD deployment and security capabilities are covered?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "Which GitLab CI/CD project features are included in the lesson?",
+            "context_precision": 0.0
+        }
+    ],
+    "context_recall": [
+        {
+            "question": "What Docker concepts and features does the transcript cover?",
+            "context_recall": 0.0
+        },
+        {
+            "question": "Which automation topics are covered in the shell-scripting lesson?",
+            "context_recall": 0.0
+        },
+        {
+            "question": "Which Kubernetes workload, networking, and operations topics are mentioned in the lesson?",
+            "context_recall": 0.0
+        },
+        {
+            "question": "What Jenkins pipeline and operations features does the lesson demonstrate?",
+            "context_recall": 0.0
+        },
+        {
+            "question": "Which Argo CD deployment and security capabilities are covered?",
+            "context_recall": 0.0
+        },
+        {
+            "question": "Which GitLab CI/CD project features are included in the lesson?",
+            "context_recall": 0.0
+        }
+    ],
+    "answer_correctness": [
+        {
+            "question": "What Docker concepts and features does the transcript cover?",
+            "answer_correctness": 0.237
+        },
+        {
+            "question": "Which automation topics are covered in the shell-scripting lesson?",
+            "answer_correctness": 0.384
+        },
+        {
+            "question": "Which Kubernetes workload, networking, and operations topics are mentioned in the lesson?",
+            "answer_correctness": 0.615
+        },
+        {
+            "question": "What Jenkins pipeline and operations features does the lesson demonstrate?",
+            "answer_correctness": 0.316
+        },
+        {
+            "question": "Which Argo CD deployment and security capabilities are covered?",
+            "answer_correctness": 0.482
+        },
+        {
+            "question": "Which GitLab CI/CD project features are included in the lesson?",
+            "answer_correctness": 0.658
+        }
+    ]
+}

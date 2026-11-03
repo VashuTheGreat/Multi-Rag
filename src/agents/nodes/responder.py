@@ -32,7 +32,10 @@ async def responder_node(state: AgentState, config: RunnableConfig | None = None
                 logger.info("General response generated successfully")
                 return {"messages": [HumanMessage(content=user_message), res]}
 
-            retreived_content = "".join([(f"{i}. " + getattr(x, "page_content", "") + "\n") for i, x in enumerate(retreived_content)])
+            retreived_content = "".join(
+                f"{i}. {(x if isinstance(x, str) else getattr(x, 'page_content', ''))}\n"
+                for i, x in enumerate(retreived_content)
+            )
             logger.info("Generating response using retrieved context", user_message=user_message, doc_count=len(retreived_content) if isinstance(retreived_content, list) else 1)
             chain = RESPONDER_RETREIVED_PROMPT | llm
             res = await chain.ainvoke(input={"conversation_history": conversation_history, "user_message": user_message, "retreived_content": retreived_content})

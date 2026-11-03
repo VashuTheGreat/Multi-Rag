@@ -32,22 +32,23 @@ def route_decision(state: AgentState) -> str:
 def create_agent_graph(checkpointer=None) -> CompiledStateGraph:
     builder = StateGraph(AgentState)
 
-    builder.add_node("guardrail", guardrail_node)
-    builder.add_node("blocked_responder", blocked_responder_node)
+    # builder.add_node("guardrail", guardrail_node)
+    # builder.add_node("blocked_responder", blocked_responder_node)
     builder.add_node("planner", planner_node)
     builder.add_node("retriever", retreived_node)
     builder.add_node("responder", responder_node)
 
-    builder.add_edge(START, "guardrail")
-    builder.add_conditional_edges(
-        "guardrail",
-        guardrail_decision,
-        {
-            "blocked_responder": "blocked_responder",
-            "planner": "planner",
-        },
-    )
-    builder.add_edge("blocked_responder", END)
+    # builder.add_edge(START, "guardrail")
+    # builder.add_conditional_edges(
+    #     "guardrail",
+    #     guardrail_decision,
+    #     {
+    #         "blocked_responder": "blocked_responder",
+    #         "planner": "planner",
+    #     },
+    # )
+    # builder.add_edge("blocked_responder", END)
+    builder.add_edge(START, "planner")
     builder.add_conditional_edges(
         "planner",
         route_decision,

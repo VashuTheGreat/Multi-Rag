@@ -131,7 +131,10 @@ def test_chat_non_streaming_success(client):
             "messages": [
                 HumanMessage(content=state.get("user_message")),
                 AIMessage(content="Direct JSON answer"),
-            ]
+            ],
+            "retreived_content": [
+                type("FakeDocument", (), {"page_content": "Retrieved DevOps context"})()
+            ],
         }
 
     with patch("src.agents.graph.planner_node", side_effect=mock_planner), \
@@ -149,6 +152,7 @@ def test_chat_non_streaming_success(client):
             data = response.json()
             assert data.get("success") is True
             assert data.get("response") == "Direct JSON answer"
+            assert data.get("data", {}).get("retreived_content") == ["Retrieved DevOps context"]
 
 
 def test_chat_graph_unconfigured(client):

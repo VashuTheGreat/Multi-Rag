@@ -57,6 +57,7 @@ dependencies = [
     "deepeval>=4.3.2",
     "ragas>=0.4.3",
     "langchain-nvidia-ai-endpoints>=1.5.0",
+    "nemoguardrails",
 ]
 
 

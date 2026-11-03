@@ -40,6 +40,30 @@ def test_sentence_transformer_mocked():
     mock_model.encode.assert_called_once_with("test query")
 
 
+def test_sentence_transformer_loads_cached_model_without_hub_requests():
+    embedder = SentenceTransformerEmbedding(model_name="dummy-model")
+    mock_model = MagicMock()
+
+    with patch("sentence_transformers.SentenceTransformer", return_value=mock_model) as model_loader:
+        assert embedder._get_model() is mock_model
+
+    model_loader.assert_called_once_with("dummy-model", local_files_only=True)
+
+
+def test_sentence_transformer_downloads_model_when_not_cached():
+    embedder = SentenceTransformerEmbedding(model_name="dummy-model")
+    mock_model = MagicMock()
+
+    with patch(
+        "sentence_transformers.SentenceTransformer",
+        side_effect=[OSError("model is not cached"), mock_model],
+    ) as model_loader:
+        assert embedder._get_model() is mock_model
+
+    assert model_loader.call_args_list[0].kwargs == {"local_files_only": True}
+    assert model_loader.call_args_list[1].args == ("dummy-model",)
+
+
 def test_vector_store_abc():
     """Verify that BaseVectorStore enforces abstract methods."""
     class IncompleteVectorStore(BaseVectorStore):

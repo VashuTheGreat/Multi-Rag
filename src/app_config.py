@@ -1,6 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
-from typing import List, Optional, Union
+from typing import Optional, Union
 from pydantic import Field
 
 class AppConfig(BaseSettings):

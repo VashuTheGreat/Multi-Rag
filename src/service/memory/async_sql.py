@@ -2,6 +2,7 @@ import os
 import aiosqlite
 from typing import Optional
 from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
+from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
 from src.core.logger import logger
 from src.app_config import get_app_config
 
@@ -22,7 +23,10 @@ async def init_checkpointer(db_path: Optional[str] = None) -> AsyncSqliteSaver:
     os.makedirs(os.path.dirname(os.path.abspath(db_path)), exist_ok=True)
     logger.info("Initializing AsyncSqliteSaver database connection", db_path=db_path)
     _connection = await aiosqlite.connect(db_path)
-    _checkpointer = AsyncSqliteSaver(_connection)
+    _checkpointer = AsyncSqliteSaver(
+        _connection,
+        serde=JsonPlusSerializer(pickle_fallback=True),
+    )
     await _checkpointer.setup()
     logger.info("AsyncSqliteSaver checkpointer setup complete", db_path=db_path)
     return _checkpointer

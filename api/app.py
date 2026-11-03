@@ -1,4 +1,5 @@
 from pathlib import Path
+import asyncio
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
@@ -10,6 +11,8 @@ from src.core.logger import initialise_logger, logger
 from src.service.memory.async_sql import init_checkpointer, close_checkpointer
 from src.agents.graph import get_graph
 from src.constants import DATA_BASE_FOLDER_NAME
+from src.service.embedding.sentence_transformer import get_embedding_service
+from src.guardrails.rails import get_guardrails
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR = BASE_DIR / "static"
@@ -21,6 +24,8 @@ async def lifespan(app: FastAPI):
     logger.info("🚀 Multi-RAG API starting up")
     checkpointer = await init_checkpointer(db_path=DATA_BASE_FOLDER_NAME)
     get_graph(checkpointer)
+    get_guardrails()
+    await asyncio.to_thread(get_embedding_service().warmup)
     yield
     await close_checkpointer()
     logger.info("🛑 Multi-RAG API shutting down")
