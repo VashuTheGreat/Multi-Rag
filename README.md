@@ -225,6 +225,42 @@ Navigate to `http://localhost:8000`
 
 ---
 
+## Conversation History API
+
+`GET /api/v1/conversations/{thread_id}` returns messages serialized with LangChain's `messages_to_dict`. Each entry has a message `type` and a `data` object. AI reasoning and tool-call metadata are included in `data` when the model provides them.
+
+```json
+{
+       "success": true,
+       "thread_id": "thread-123",
+       "count": 2,
+       "messages": [
+              {
+                     "type": "human",
+                     "data": {
+                            "content": "Explain this result",
+                            "type": "human"
+                     }
+              },
+              {
+                     "type": "ai",
+                     "data": {
+                            "content": "Here is the explanation.",
+                            "type": "ai",
+                            "additional_kwargs": {
+                                   "reasoning_content": "I will interpret the retrieved information."
+                            },
+                            "tool_calls": []
+                     }
+              }
+       ]
+}
+```
+
+The frontend reads the assistant content from `message.data.content` and, when present, reads reasoning from `message.data.reasoning` or `message.data.additional_kwargs.reasoning_content`, `reasoning`, or `thinking`. It renders that reasoning in the expandable thought-process section. These fields are model-dependent and may be absent.
+
+---
+
 ## 🐳 Docker
 
 ```bash
@@ -244,6 +280,20 @@ docker run -p 7860:7860 --env-file .env multi-rag
 | `.png / .jpg / .heif` | `Pillow` → PDF |
 
 ---
+
+## 📊 RAG Evaluation Results
+
+Latest recorded evaluation: [metrics_results_3.json](evals/results/metrics_results_3.json), based on six samples in [generated_dataset.json](evals/generated_dataset.json).
+
+| Metric | Mean score | Observation |
+|---|---:|---|
+| Answer relevancy | 0.868 | Responses generally address the question. |
+| Answer correctness | 0.449 | Answers only partially match the references. |
+| Faithfulness | 0.087 | Many answer claims are not supported by retrieved context. |
+| Context precision | 0.000 | The evaluator found no retrieved context relevant across these samples. |
+| Context recall | 0.000 | The retrieved context did not cover the reference information in these samples. |
+
+In the inspected samples, retrieved passages are often short transcript fragments that omit details listed in the references. Some generated answers then add generic or inferred details not present in those passages. This points to two areas to investigate: retrieval/context coverage and answer grounding. The zero context scores are a warning from this six-sample run, not conclusive proof of a retriever defect; verify that the evaluation references, retrieved contexts, and metric inputs are aligned before drawing a system-wide conclusion.
 
 ## 🧩 Key Design Decisions
 

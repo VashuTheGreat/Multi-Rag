@@ -220,3 +220,10 @@ data/
 api/public/
 
 logs/
+
+
+*.db
+*.db-shm
+*.db-wal
+
+ss/

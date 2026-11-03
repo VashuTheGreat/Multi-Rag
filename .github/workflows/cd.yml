@@ -1,0 +1,70 @@
+name: CD Deployment to Hugging Face Spaces
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT_NAME: "Multi-Rag"
+      SPACE_NAME: "Multi-Rag"
+      HF_USERNAME: "VashuTheGreat2"
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Dependencies
+        run: |
+          echo "🔧 Setting git identity and installing HF CLI..."
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          pip install -U "huggingface_hub[cli]"
+
+      - name: Authenticate Hugging Face
+        run: |
+          echo "🔐 Logging into Hugging Face..."
+          python -m huggingface_hub.cli.hf auth login --token "$HF_TOKEN"
+
+      - name: Configure Space Meta
+        run: |
+          echo "📝 Injecting HF Spaces configuration into README.md..."
+          TEMP_README=$(mktemp)
+          cat << EOF > "$TEMP_README"
+          ---
+          title: $PROJECT_NAME
+          emoji: 🤖
+          colorFrom: blue
+          colorTo: green
+          sdk: docker
+          app_file: main.py
+          pinned: false
+          short_description: This is the Multi-Rag Agent
+          ---
+
+          EOF
+          cat README.md >> "$TEMP_README"
+          mv "$TEMP_README" README.md
+
+      - name: Create App Space
+        run: |
+          echo "🚀 Creating HF Space if it doesn't exist..."
+          python -m huggingface_hub.cli.hf repos create "$SPACE_NAME" --type space --space-sdk docker || true
+
+      - name: Upload to HF Space
+        run: |
+          echo "📤 Uploading project files..."
+          python -m huggingface_hub.cli.hf upload "$HF_USERNAME/$SPACE_NAME" . --repo-type space
