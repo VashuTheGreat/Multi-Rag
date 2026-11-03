@@ -13,6 +13,7 @@ def pytest_configure():
 
     logfire.configure = configure_for_tests
     logfire.instrument_system_metrics = lambda: None
+    logfire.instrument_fastapi = lambda app: None
 
 
 @pytest.fixture
