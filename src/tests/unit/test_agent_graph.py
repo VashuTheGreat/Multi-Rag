@@ -7,8 +7,8 @@ from src.agents.graph import create_agent_graph, route_decision, guardrail_decis
 def test_graph_structure():
     compiled_graph = create_agent_graph()
     nodes = list(compiled_graph.nodes.keys())
-    assert "guardrail" in nodes
-    assert "blocked_responder" in nodes
+    assert "guardrail" not in nodes
+    assert "blocked_responder" not in nodes
     assert "planner" in nodes
     assert "retriever" in nodes
     assert "responder" in nodes
@@ -92,11 +92,16 @@ async def test_graph_execution_retriever_flow():
 
 
 @pytest.mark.asyncio
-async def test_graph_execution_blocked_flow():
-    async def mock_guardrail(state):
-        return {"is_blocked": True, "block_reason": "Blocked out of scope."}
+async def test_graph_execution_out_of_scope_input_uses_planner_route():
+    async def mock_planner(state):
+        return {"route_to": "responder"}
 
-    with patch("src.agents.graph.guardrail_node", side_effect=mock_guardrail):
+    async def mock_responder(state):
+        user_msg = state.get("user_message")
+        return {"messages": [HumanMessage(content=user_msg), AIMessage(content="Mocked response")]}
+
+    with patch("src.agents.graph.planner_node", side_effect=mock_planner), \
+         patch("src.agents.graph.responder_node", side_effect=mock_responder):
         test_graph = create_agent_graph()
         result = await test_graph.ainvoke({
             "user_message": "Tell me a birthday speech",
@@ -104,7 +109,7 @@ async def test_graph_execution_blocked_flow():
         })
 
         assert "messages" in result
-        assert len(result["messages"]) == 1
-        assert "Blocked out of scope" in result["messages"][0].content
+        assert len(result["messages"]) == 2
+        assert result["messages"][1].content == "Mocked response"
 
 

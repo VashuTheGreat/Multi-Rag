@@ -76,5 +76,5 @@ async def test_retriever_node_success():
         res = await retreived_node(state)
         assert res["retreived_content"] == mock_docs
         assert all(isinstance(document, Document) for document in res["retreived_content"])
-        mock_search.assert_awaited_once_with(query="CI/CD best practices")
+        mock_search.assert_awaited_once_with(query="CI/CD best practices", k=15)
         mock_reranker.assert_awaited_once_with(query="CI/CD best practices", documents=mock_docs)

@@ -2,12 +2,12 @@ import pytest
 
 
 def test_index_page(client):
-    """GET / should render the Jinja2 index template with 200 OK and Chai Prep theme elements."""
+    """GET / should render the Jinja2 index template with the current app branding."""
     response = client.get("/")
     assert response.status_code == 200
     assert "text/html" in response.headers.get("content-type", "")
     content = response.text
-    assert "Chai Prep" in content
+    assert "DevOps Prep Multi-RAG" in content
     assert "Multi-RAG" in content
     assert "New Thread" in content
     assert "Ingest Documents" in content

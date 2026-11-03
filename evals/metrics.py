@@ -66,7 +66,7 @@ def _build_judge():
     
     # Ollama ka local OpenAI-compatible endpoint
     async_client = AsyncOpenAI(
-        api_key="ba3d454424674024ac30f25fe7b548a9.6rEuskvmK7hK8n6-AVZBXIQh",  # Ollama ko real API key ki zaroorat nahi hoti
+        api_key=os.getenv("OLLAMA_API_KEY"),
         base_url="http://localhost:11434/v1"
     )
     
