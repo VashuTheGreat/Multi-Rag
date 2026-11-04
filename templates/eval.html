@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block title %}Evaluation Lab • Multi-RAG{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/eval.css?v=1.0">
+{% endblock %}
+
+{% block content %}
+<main class="eval-page">
+    <header class="eval-topbar">
+        <a class="eval-brand" href="/" aria-label="Return to Multi-RAG chat">
+            <span class="brand-mark">MR</span>
+            <span>Multi-RAG <span class="brand-divider">/</span> Evaluation</span>
+        </a>
+        <a class="back-link" href="/">← Chat workspace</a>
+    </header>
+
+    <div class="eval-content">
+        <section class="eval-heading" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">QUALITY REPORT <span>·</span> RUN 04</p>
+                <h1 id="page-title">Evaluation results</h1>
+                <p class="heading-copy">RAG response quality and guardrail behavior across the recorded evaluation set.</p>
+            </div>
+            <div class="run-stamp">
+                <span class="run-indicator"></span>
+                <span>Six RAG samples</span>
+                <span class="stamp-divider">/</span>
+                <span>{{ guardrail_total }} safety checks</span>
+            </div>
+        </section>
+
+        <section class="metrics-section" aria-labelledby="rag-metrics-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">RETRIEVAL-AUGMENTED GENERATION</p>
+                    <h2 id="rag-metrics-title">RAG scorecard</h2>
+                </div>
+                <span class="source-label">{{ metrics_file }}</span>
+            </div>
+            <div class="matrix-legend" aria-label="Score color legend">
+                <span><i class="legend-dot score-low"></i> Needs attention <b>&lt; 0.40</b></span>
+                <span><i class="legend-dot score-mid"></i> Mixed <b>0.40–0.69</b></span>
+                <span><i class="legend-dot score-high"></i> Strong <b>≥ 0.70</b></span>
+            </div>
+            <div class="matrix-scroll">
+                <table class="score-matrix">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="question-column">Question</th>
+                            {% for metric in metrics %}
+                            <th scope="col">{{ metric.label }}</th>
+                            {% endfor %}
+                            <th scope="col" class="average-column">Avg.</th>
+                            <th scope="col">Trace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sample in samples %}
+                        <tr>
+                            <th scope="row" class="question-cell">
+                                <span class="question-number">{{ "%02d"|format(sample.id or loop.index) }}</span>
+                                <span class="question-text">{{ sample.question }}</span>
+                                <span class="domain-tag">{{ sample.domain|replace("_", " ") }}</span>
+                            </th>
+                            {% for metric in sample.metrics %}
+                            <td>
+                                {% if metric.value is not none %}
+                                <span class="score-chip {% if metric.value < 0.40 %}score-low{% elif metric.value < 0.70 %}score-mid{% else %}score-high{% endif %}">{{ "%.3f"|format(metric.value) }}</span>
+                                {% else %}
+                                <span class="score-chip score-missing">N/A</span>
+                                {% endif %}
+                            </td>
+                            {% endfor %}
+                            <td class="average-cell">
+                                {% if sample.average is not none %}
+                                <span class="score-chip {% if sample.average < 0.40 %}score-low{% elif sample.average < 0.70 %}score-mid{% else %}score-high{% endif %}">{{ "%.3f"|format(sample.average) }}</span>
+                                {% else %}
+                                <span class="score-chip score-missing">N/A</span>
+                                {% endif %}
+                            </td>
+                            <td><a class="trace-link" href="#trace-{{ sample.id }}" aria-label="Jump to trace for question {{ sample.id }}">View</a></td>
+                        </tr>
+                        {% else %}
+                        <tr><td colspan="8" class="empty-state">No RAG samples were found in this dataset.</td></tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" class="average-label">Average score</th>
+                            {% for metric in metrics %}
+                            <td><span class="score-chip {% if metric.mean < 0.40 %}score-low{% elif metric.mean < 0.70 %}score-mid{% else %}score-high{% endif %}">{{ metric.display }}</span></td>
+                            {% endfor %}
+                            <td class="average-cell"><span class="score-chip {% if overall_average < 0.40 %}score-low{% elif overall_average < 0.70 %}score-mid{% else %}score-high{% endif %}">{{ "%.3f"|format(overall_average) }}</span></td>
+                            <td class="average-note">{{ samples|length }} samples</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section class="samples-section" aria-labelledby="samples-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">QUESTION-LEVEL BREAKDOWN</p>
+                    <h2 id="samples-title">RAG traces <span class="count-badge">{{ samples|length }}</span></h2>
+                </div>
+                <span class="source-label">{{ dataset_file }}</span>
+            </div>
+
+            <div class="sample-list">
+                {% for sample in samples %}
+                <details class="sample-row" id="trace-{{ sample.id }}">
+                    <summary>
+                        <span class="sample-index">{{ "%02d"|format(sample.id or loop.index) }}</span>
+                        <span class="sample-question">{{ sample.question }}</span>
+                        <span class="domain-tag">{{ sample.domain|replace("_", " ") }}</span>
+                        <span class="disclosure" aria-hidden="true">+</span>
+                    </summary>
+                    <div class="sample-detail">
+                        <div class="sample-metrics">
+                            {% for metric in sample.metrics %}
+                            <div class="sample-metric">
+                                <span>{{ metric.label }}</span>
+                                {% if metric.value is not none %}
+                                <strong>{{ "%.3f"|format(metric.value) }}</strong>
+                                <span class="mini-track"><i style="width: {{ metric.value * 100 }}%"></i></span>
+                                {% else %}
+                                <strong class="missing-score">N/A</strong>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="evidence-grid">
+                            <section class="evidence-block">
+                                <h3>Reference answer</h3>
+                                <p>{{ sample.reference or "No reference recorded." }}</p>
+                            </section>
+                            <section class="evidence-block answer-block">
+                                <h3>Generated answer</h3>
+                                <p>{{ sample.answer or "No generated answer recorded." }}</p>
+                            </section>
+                        </div>
+                        <section class="contexts-block">
+                            <h3>Retrieved context <span>{{ sample.contexts|length }} passages</span></h3>
+                            {% if sample.contexts %}
+                            <ol>
+                                {% for context in sample.contexts %}
+                                <li>{{ context }}</li>
+                                {% endfor %}
+                            </ol>
+                            {% else %}
+                            <p class="empty-context">No retrieved passages recorded.</p>
+                            {% endif %}
+                        </section>
+                    </div>
+                </details>
+                {% else %}
+                <p class="empty-state">No RAG samples were found in this dataset.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="guardrails-section" aria-labelledby="guardrails-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">SAFETY & SCOPE</p>
+                    <h2 id="guardrails-title">Guardrails <span class="pass-rate">{{ guardrail_correct }} / {{ guardrail_total }} correct</span></h2>
+                </div>
+                <span class="source-label">{{ guardrails_file }}</span>
+            </div>
+            <div class="guardrail-summary" aria-label="Guardrail result counts">
+                <div><strong>{{ guardrail_counts.TP }}</strong><span>True positives</span></div>
+                <div><strong>{{ guardrail_counts.TN }}</strong><span>True negatives</span></div>
+                <div><strong>{{ guardrail_counts.FP }}</strong><span>False positives</span></div>
+                <div><strong>{{ guardrail_counts.FN }}</strong><span>False negatives</span></div>
+            </div>
+            <div class="table-scroll">
+                <table class="guardrail-table">
+                    <thead>
+                        <tr><th>Case</th><th>Category</th><th>Input</th><th>Expected</th><th>Actual</th><th>Result</th></tr>
+                    </thead>
+                    <tbody>
+                        {% for item in guardrails %}
+                        <tr>
+                            <td class="case-id">{{ item.id }}</td>
+                            <td><span class="type-tag">{{ item.type|replace("_", " ") }}</span></td>
+                            <td class="guardrail-input">{{ item.input }}</td>
+                            <td>{{ "Blocked" if item.expected_blocked else "Allowed" }}</td>
+                            <td>{{ "Blocked" if item.actual_blocked else "Allowed" }}</td>
+                            <td><span class="result-tag result-{{ item.result|lower }}">{{ item.result }}</span></td>
+                        </tr>
+                        {% else %}
+                        <tr><td colspan="6" class="empty-state">No guardrail results were found.</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer class="eval-footer">
+            <span>Multi-RAG evaluation artifacts</span>
+            <span>{{ dataset_file }} · {{ metrics_file }} · {{ guardrails_file }}</span>
+        </footer>
+    </div>
+</main>
+{% endblock %}
