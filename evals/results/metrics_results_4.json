@@ -1,0 +1,132 @@
+{
+    "faithfulness": [
+        {
+            "question": "What is the difference between a web server and an application server, and what examples are given?",
+            "faithfulness": 0.727
+        },
+        {
+            "question": "How does DNS find the IP address for a domain, and which servers are involved?",
+            "faithfulness": 0.765
+        },
+        {
+            "question": "What is an AI agent in the DevOps lesson and which DevOps problems is it meant to solve?",
+            "faithfulness": 0.5
+        },
+        {
+            "question": "What does EKS Auto Mode do and in what order does the Terraform project create its resources?",
+            "faithfulness": 0.786
+        },
+        {
+            "question": "How do you find out why a Docker container is not running, and how does Docker Compose simplify the build and run steps?",
+            "faithfulness": 0.645
+        },
+        {
+            "question": "What is a Kubernetes Job, and how does it differ from a long-running workload?",
+            "faithfulness": 0.571
+        }
+    ],
+    "answer_relevancy": [
+        {
+            "question": "What is the difference between a web server and an application server, and what examples are given?",
+            "answer_relevancy": 0.974
+        },
+        {
+            "question": "How does DNS find the IP address for a domain, and which servers are involved?",
+            "answer_relevancy": 0.917
+        },
+        {
+            "question": "What is an AI agent in the DevOps lesson and which DevOps problems is it meant to solve?",
+            "answer_relevancy": 0.989
+        },
+        {
+            "question": "What does EKS Auto Mode do and in what order does the Terraform project create its resources?",
+            "answer_relevancy": 0.977
+        },
+        {
+            "question": "How do you find out why a Docker container is not running, and how does Docker Compose simplify the build and run steps?",
+            "answer_relevancy": 0.901
+        },
+        {
+            "question": "What is a Kubernetes Job, and how does it differ from a long-running workload?",
+            "answer_relevancy": 0.999
+        }
+    ],
+    "context_precision": [
+        {
+            "question": "What is the difference between a web server and an application server, and what examples are given?",
+            "context_precision": 1.0
+        },
+        {
+            "question": "How does DNS find the IP address for a domain, and which servers are involved?",
+            "context_precision": 0.589
+        },
+        {
+            "question": "What is an AI agent in the DevOps lesson and which DevOps problems is it meant to solve?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "What does EKS Auto Mode do and in what order does the Terraform project create its resources?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "How do you find out why a Docker container is not running, and how does Docker Compose simplify the build and run steps?",
+            "context_precision": 0.0
+        },
+        {
+            "question": "What is a Kubernetes Job, and how does it differ from a long-running workload?",
+            "context_precision": 0.325
+        }
+    ],
+    "context_recall": [
+        {
+            "question": "What is the difference between a web server and an application server, and what examples are given?",
+            "context_recall": 1.0
+        },
+        {
+            "question": "How does DNS find the IP address for a domain, and which servers are involved?",
+            "context_recall": 1.0
+        },
+        {
+            "question": "What is an AI agent in the DevOps lesson and which DevOps problems is it meant to solve?",
+            "context_recall": 0.0
+        },
+        {
+            "question": "What does EKS Auto Mode do and in what order does the Terraform project create its resources?",
+            "context_recall": 0.5
+        },
+        {
+            "question": "How do you find out why a Docker container is not running, and how does Docker Compose simplify the build and run steps?",
+            "context_recall": 0.5
+        },
+        {
+            "question": "What is a Kubernetes Job, and how does it differ from a long-running workload?",
+            "context_recall": 0.75
+        }
+    ],
+    "answer_correctness": [
+        {
+            "question": "What is the difference between a web server and an application server, and what examples are given?",
+            "answer_correctness": 0.731
+        },
+        {
+            "question": "How does DNS find the IP address for a domain, and which servers are involved?",
+            "answer_correctness": 0.563
+        },
+        {
+            "question": "What is an AI agent in the DevOps lesson and which DevOps problems is it meant to solve?",
+            "answer_correctness": 0.483
+        },
+        {
+            "question": "What does EKS Auto Mode do and in what order does the Terraform project create its resources?",
+            "answer_correctness": 0.493
+        },
+        {
+            "question": "How do you find out why a Docker container is not running, and how does Docker Compose simplify the build and run steps?",
+            "answer_correctness": 0.339
+        },
+        {
+            "question": "What is a Kubernetes Job, and how does it differ from a long-running workload?",
+            "answer_correctness": 0.474
+        }
+    ]
+}

@@ -6,7 +6,7 @@ from src.core.exception import MyException
 import sys
 
 
-reranker_compressor = FlashrankRerank()
+reranker_compressor = FlashrankRerank(top_n=5)
 
 async def flaskreranker(query:str,documents:list[Document]):
     """Rerank the retrieved documents based on relevance to the query"""

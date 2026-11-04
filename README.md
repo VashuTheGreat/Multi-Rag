@@ -283,17 +283,17 @@ docker run -p 7860:7860 --env-file .env multi-rag
 
 ## 📊 RAG Evaluation Results
 
-Latest recorded evaluation: [metrics_results_3.json](evals/results/metrics_results_3.json), based on six samples in [generated_dataset.json](evals/generated_dataset.json).
+Latest recorded evaluation: [metrics_results_4.json](evals/results/metrics_results_4.json), based on six samples.
 
 | Metric | Mean score | Observation |
 |---|---:|---|
-| Answer relevancy | 0.868 | Responses generally address the question. |
-| Answer correctness | 0.449 | Answers only partially match the references. |
-| Faithfulness | 0.087 | Many answer claims are not supported by retrieved context. |
-| Context precision | 0.000 | The evaluator found no retrieved context relevant across these samples. |
-| Context recall | 0.000 | The retrieved context did not cover the reference information in these samples. |
+| Answer relevancy | 0.960 | Responses generally address the question. |
+| Answer correctness | 0.514 | Answers match some, but not all, reference details. |
+| Faithfulness | 0.666 | Answers are partly supported by the retrieved context. |
+| Context precision | 0.319 | Relevant context appears inconsistently among retrieved passages. |
+| Context recall | 0.625 | Retrieved context covers some, but not all, reference information. |
 
-In the inspected samples, retrieved passages are often short transcript fragments that omit details listed in the references. Some generated answers then add generic or inferred details not present in those passages. This points to two areas to investigate: retrieval/context coverage and answer grounding. The zero context scores are a warning from this six-sample run, not conclusive proof of a retriever defect; verify that the evaluation references, retrieved contexts, and metric inputs are aligned before drawing a system-wide conclusion.
+In this six-sample run, answers are highly relevant, but correctness and faithfulness are more moderate. The context scores suggest retrieved passages cover some reference details, though relevant context is inconsistent. Investigate retrieval coverage and answer grounding, and verify that evaluation references, retrieved contexts, and metric inputs are aligned before drawing system-wide conclusions.
 
 ### Guardrails Evaluation Metrics
 

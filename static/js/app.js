@@ -62,6 +62,7 @@
     const STORAGE_KEY_THEME = 'multi_rag_theme';
     const STORAGE_KEY_MODEL = 'multi_rag_model';
     const DEFAULT_MODEL = 'openai/gpt-oss-120b';
+    const MAX_INGEST_FILES = 4;
 
     let threads = [];
     let activeThreadId = null;
@@ -1017,6 +1018,10 @@
             const ext = '.' + file.name.split('.').pop().toLowerCase();
             if (allowedExtensions.includes(ext)) {
                 if (!selectedFiles.some(f => f.name === file.name && f.size === file.size)) {
+                    if (selectedFiles.length >= MAX_INGEST_FILES) {
+                        showIngestAlert('error', `You can select a maximum of ${MAX_INGEST_FILES} files per ingestion.`);
+                        break;
+                    }
                     selectedFiles.push(file);
                 }
             } else {
@@ -1075,42 +1080,57 @@
         DOM.startIngestBtn.disabled = true;
         DOM.ingestProgress.style.display = 'flex';
         DOM.ingestAlert.style.display = 'none';
-        DOM.ingestProgressStatus.textContent = 'Uploading documents to ingestion pipeline...';
-
-        const formData = new FormData();
-        selectedFiles.forEach(file => {
-            formData.append('file', file);
-        });
+        const filesToIngest = [...selectedFiles];
+        DOM.ingestProgressStatus.textContent = `Uploading ${filesToIngest.length} document(s) in parallel...`;
 
         try {
-            const response = await fetch('/api/v1/ingest', {
-                method: 'POST',
-                headers: {
-                    'x-ingestion-password': ingestionPassword,
-                    'x-thread-id': activeThreadId,
-                    'thread_id': activeThreadId,
-                    'x-user-id': 'guest-user',
-                    'user_id': 'guest-user'
-                },
-                body: formData
-            });
+            const results = await Promise.allSettled(filesToIngest.map(async (file) => {
+                const formData = new FormData();
+                formData.append('file', file);
 
-            if (!response.ok) {
-                let errText = `Ingestion failed (${response.status})`;
-                try {
-                    const errJson = await response.json();
-                    if (errJson && errJson.detail) {
-                        errText = typeof errJson.detail === 'string' ? errJson.detail : JSON.stringify(errJson.detail);
-                    }
-                } catch (_) {}
-                throw new Error(errText);
-            }
+                const response = await fetch('/api/v1/ingest', {
+                    method: 'POST',
+                    headers: {
+                        'x-ingestion-password': ingestionPassword,
+                        'x-thread-id': activeThreadId,
+                        'thread_id': activeThreadId,
+                        'x-user-id': 'guest-user',
+                        'user_id': 'guest-user'
+                    },
+                    body: formData
+                });
 
-            const data = await response.json();
+                if (!response.ok) {
+                    let errText = `Ingestion failed (${response.status})`;
+                    try {
+                        const errJson = await response.json();
+                        if (errJson && errJson.detail) {
+                            errText = typeof errJson.detail === 'string' ? errJson.detail : JSON.stringify(errJson.detail);
+                        }
+                    } catch (_) {}
+                    throw new Error(`${file.name}: ${errText}`);
+                }
+
+                return file;
+            }));
+
+            const failedUploads = results
+                .filter(result => result.status === 'rejected')
+                .map(result => result.reason.message);
+            const successfulCount = results.length - failedUploads.length;
+
+            selectedFiles = filesToIngest.filter((_, index) => results[index].status === 'rejected');
             DOM.ingestProgress.style.display = 'none';
-            showIngestAlert('success', `Successfully indexed ${selectedFiles.length} file(s) into the knowledge base!`);
-            selectedFiles = [];
             renderSelectedFiles();
+
+            if (failedUploads.length === 0) {
+                showIngestAlert('success', `Successfully indexed ${successfulCount} file(s) into the knowledge base!`);
+            } else {
+                showIngestAlert(
+                    'error',
+                    `Indexed ${successfulCount} file(s); ${failedUploads.length} failed: ${failedUploads.join('; ')}`
+                );
+            }
 
         } catch (e) {
             console.error('Ingestion error:', e);

@@ -1,12 +1,11 @@
 {
-  "rag_samples": [
-    {
+  "rag_samples":[{
       "id": 1,
-      "domain": "docker",
-      "question": "What Docker concepts and features does the transcript cover?",
-      "reference": "It covers Docker images and containers, networking, volumes and storage, Docker Compose, registries, multi-stage builds, monitoring and logging, plus an introduction to Kubernetes.",
+      "domain": "linux",
+      "question": "What is the difference between a web server and an application server, and what examples are given?",
+      "reference": "A web server generally serves static pages, with Nginx given as the example, while an application server runs dynamic application logic such as a Java or Node.js application. The lesson also separates standalone applications from web applications.",
       "relevant_contexts": [
-        "The transcript lists Docker images, containers, networking, volume storage, Docker Compose, registries, multi-stage Docker builds, monitoring and logging, and an introduction to Kubernetes."
+        "The transcript explains that web servers generally serve static data, for example Nginx serving static pages, while application servers handle dynamic services such as a Java or Node.js application running on a server. It also distinguishes standalone applications from web applications."
       ],
       "expected_tools": ["retrieve_documents"],
       "actual_response": "",
@@ -14,11 +13,11 @@
     },
     {
       "id": 2,
-      "domain": "shell_scripting",
-      "question": "Which automation topics are covered in the shell-scripting lesson?",
-      "reference": "The lesson covers loops, user input, variables, ownership changes, cron jobs and automation, log extraction, networking, backups, file creation, project builds, and error handling.",
+      "domain": "networking",
+      "question": "How does DNS find the IP address for a domain, and which servers are involved?",
+      "reference": "DNS is a database of domain names and IP address information that lets computers locate the correct IP address for a URL. The lookup does not return an IP directly: it goes from the root DNS server to the top-level domain (TLD) server and then to the authoritative server, where the response is verified.",
       "relevant_contexts": [
-        "The transcript describes shell-script loops, user input and variables, changing ownership, cron jobs and automation, extracting logs, networking, backups, file creation, project builds, and error handling."
+        "The transcript describes DNS as a database of domain names and IP address information used to locate the correct IP for a URL. It explains that the request goes through the root DNS server, the top-level domain server and the authoritative server, and each server has a different job, including checking that the response comes from the correct authority."
       ],
       "expected_tools": ["retrieve_documents"],
       "actual_response": "",
@@ -26,11 +25,11 @@
     },
     {
       "id": 3,
-      "domain": "kubernetes",
-      "question": "Which Kubernetes workload, networking, and operations topics are mentioned in the lesson?",
-      "reference": "The lesson mentions Pods and namespaces; StatefulSets, DaemonSets, ReplicaSets, and CronJobs; networking, services, and Ingress; persistent storage; horizontal and vertical autoscaling; resource limits and probes; RBAC; and monitoring.",
+      "domain": "ai_agents_devops",
+      "question": "What is an AI agent in the DevOps lesson and which DevOps problems is it meant to solve?",
+      "reference": "An AI agent is a piece of code, for example written in Python, that uses an LLM such as a model run through Ollama. It is meant to help with daily DevOps work like checking containers with docker ps and docker logs, analysing failed pipelines, and incident response, with a human in the loop (HITL).",
       "relevant_contexts": [
-        "The transcript lists Pods and namespaces, StatefulSets, DaemonSets, ReplicaSets and CronJobs, networking, Services and Ingress, persistent volumes and storage classes, horizontal and vertical autoscaling, limits, probes, role-based access control, and monitoring."
+        "The transcript explains that an agent is code that uses an LLM, with an Ollama model used to create a simple agent. It lists DevOps pain points such as logging in to servers to run docker ps and docker logs, pipelines that fail without anyone knowing why, and incident response and analysis, and it mentions human in the loop (HITL)."
       ],
       "expected_tools": ["retrieve_documents"],
       "actual_response": "",
@@ -38,11 +37,11 @@
     },
     {
       "id": 4,
-      "domain": "jenkins_cicd",
-      "question": "What Jenkins pipeline and operations features does the lesson demonstrate?",
-      "reference": "It covers Jenkins setup on virtual machines or AWS, freestyle jobs, declarative pipelines, multi-agent and multi-node setups, shared libraries, role-based access, a CI/CD project, and email notifications when a pipeline fails.",
+      "domain": "kubernetes_eks_terraform",
+      "question": "What does EKS Auto Mode do and in what order does the Terraform project create its resources?",
+      "reference": "EKS Auto Mode scales the EC2 worker nodes automatically up and down with load, and a cluster can be created quickly, in under about 10 minutes. In the Terraform project the dependencies run in order: the VPC is created first, then the EKS cluster, then Argo CD, and Helm and the ingress controller are installed after that.",
       "relevant_contexts": [
-        "The transcript mentions Jenkins setup on virtual machines and AWS, the dashboard and jobs, freestyle projects, declarative pipelines, multi-agent and multi-node Jenkins, shared libraries, role-based access, a CI/CD project, and failure email notifications."
+        "The transcript says that with EKS Auto Mode the nodes scale automatically as load rises or falls, using Karpenter for scaling, and that the cluster takes less than 10 minutes to create. It also says the Terraform architecture needs a VPC, an EKS cluster, Argo CD, Helm and an ingress controller, and that the EKS cluster cannot be created until the VPC exists and Argo CD cannot be created until the EKS cluster exists."
       ],
       "expected_tools": ["retrieve_documents"],
       "actual_response": "",
@@ -50,11 +49,11 @@
     },
     {
       "id": 5,
-      "domain": "argocd_gitops",
-      "question": "Which Argo CD deployment and security capabilities are covered?",
-      "reference": "The lesson covers GitOps, connecting Argo CD to providers, setting up a Kind cluster on EKS, deploying applications through the UI, CLI, and declarative configuration, multi-cluster use, App of Apps, automation and notifications, plus RBAC, SSO, and HTTPS security.",
+      "domain": "docker",
+      "question": "How do you find out why a Docker container is not running, and how does Docker Compose simplify the build and run steps?",
+      "reference": "If a container is not visible in docker ps, it has probably exited, so list all containers with docker ps -a to see the exited one and then read its output with docker logs and the container ID. Docker Compose replaces the repeated docker build and docker run commands with a single docker compose up.",
       "relevant_contexts": [
-        "The transcript lists GitOps principles, connecting Argo CD to providers, setting up Kind on EKS, creating applications through the UI and CLI or declaratively, multi-cluster use, App of Apps, automation, Slack and email notifications, RBAC, SSO, and HTTPS."
+        "The transcript explains that when a container is not visible it has exited or been killed, that docker ps with the all flag shows exited containers, and that docker logs with the container ID shows why. It says Docker Compose replaces the separate docker build and docker run commands with one command, docker compose up, and it also shows a compose error about the version property being unavailable."
       ],
       "expected_tools": ["retrieve_documents"],
       "actual_response": "",
@@ -62,11 +61,11 @@
     },
     {
       "id": 6,
-      "domain": "gitlab_cicd",
-      "question": "Which GitLab CI/CD project features are included in the lesson?",
-      "reference": "The lesson covers CI/CD pipelines, pipeline variables and secrets, self-hosted and hosted runners, and deploying a project through a GitLab pipeline. It also introduces GitLab as a source-code repository and version-control platform with project-management features.",
+      "domain": "kubernetes",
+      "question": "What is a Kubernetes Job, and how does it differ from a long-running workload?",
+      "reference": "A Job runs a single task to completion, for example a backup, and then finishes instead of running continuously like a server. Its restart policy controls whether a failed container is restarted, and Jobs can run tasks in parallel batches; you can check the result with kubectl get pods and kubectl logs.",
       "relevant_contexts": [
-        "The transcript mentions pipeline variables and secrets, self-hosted and hosted runners, and deploying a project through CI/CD pipelines in GitLab. It describes GitLab as providing repositories, source-code management, version control, and project-management capabilities."
+        "The transcript describes a Job as a container that performs one task and finishes, such as taking a backup, rather than staying up as a server. It mentions the restart policy, running the job to completion and running tasks in parallel batches, and checking the pod status and logs with kubectl get pods and kubectl logs."
       ],
       "expected_tools": ["retrieve_documents"],
       "actual_response": "",
