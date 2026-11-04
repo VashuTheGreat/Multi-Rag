@@ -1,0 +1,3030 @@
+﻿If from Cubinitis in the same video
+Want to go into production and do a demos
+If you want to become an engineer then this is the right channel.
+You have come here friends because today's video
+I'm going to talk about Cubanities.
+To produce one shot that will be shown all over YouTube
+There is only one video in Hindi on which
+In the video we will see the EKS Auto mode
+About to launch AWS CLI in production
+terraform git ops rbocd help is
+If you talk about the depth of the video, then
+In this video, a live project is being conducted.
+I am going to do a multi-tier project.
+Multiple Databases Multiple Services Use
+It does. Like, I'll explain it all. UI
+It's built in Java. The catalog is built in Google,
+The checkout page is built in Notes JS, orders
+Made in Java, the card is made in Java.
+All these also use back end databases.
+Redis for caching. Postgres
+DynamoDB, my sequel. Friends, it's
+I am going to do the entire deployment.
+On EKS cluster via Terraform
+Using ArgosD Helm and Ingenix
+Ingress controller. Friends, this is the whole Git
+One click is going to happen on Ops
+Deployment and Zero Click Deployment Sub
+I'm going to tell you things in this video. If
+If you enjoyed listening to the video then quickly
+Let me know by texting boom in the chat. And this
+Let's start the video. But the video
+Welcome before we start
+I take it. So hello friends, welcome to all of you.
+Welcome to Train V Shubham channel. I
+I know you guys have Cuban in One Shot.
+I have given him lots of love friends.
+The video has millions of views.
+Docker in One Shot also got some love.
+These one-shots also got some love. Terraform In
+You gave the same love to One Shot and
+I have learned from him and taken up jobs. Friends, these
+That's why I talked about videos.
+Because all these videos are pre-required.
+That's it for today's video. Yes, that's right.
+You heard the cubinities I am teaching today.
+I am not from the very basics
+I'm going to teach. Yes, the project is absolutely zero.
+I will teach from But what is Cubis?
+What is Terraform? What is Docker?
+What is Linux? You know all this.
+Our must-learn playlist: DevOps in
+From the one shot where I shot Lynx Cubanus
+Docker Jenkins Github Shell Scripting
+Terraform Ansible Git Lab Resume
+The building is all covered. If you
+If you do this then you will deploy this project
+It will be very easy to do. Friends, this
+I have divided the entire video into three phases.
+It is divided. Where in Phase One
+The architecture of the project and
+We are the ones who set up the infrastructure.
+Then in Phase Two, Cubinities and
+To understand the application
+We deploy it on EKS auto mode
+Friends, we are going to do it completely end to end.
+Then the third phase is Gitps
+Deployment. Where we are Argo CD
+Git Actions How to see all this stuff
+When the developer commits the code, automatically upload it to Github
+Actions build that thing on ECR
+Deploy it on private images and
+Helm Argo CD's through your cluster
+I'll be up. We'll do all these things.
+So let's start with phase by phase.
+Let's start the project
+Fuzz with Architecture and Infrastructure.
+So here we start today's video.
+Let's do it. First, let's understand this.
+What is the project? Where did it come from?
+project? looks so beautiful The Most
+Public Secret Shop. And this project continues.
+It's there too. Let me show you. So you can explore.
+If you do this, you will see this entire catalog.
+If you want to buy a car, please add
+To check it out. Great here on the cart
+I got added. It's quite expensive. But never mind.
+No, you start it. Okay? So
+Location delivery and complete leke you continue
+Your product as soon as you continue and purchase
+The purchase order ID will be generated.
+How are things going, friends? All of this.
+Getting things done. An AWS
+Containers that are available on GH on the official repository
+Those people are doing such great projects.
+They keep adding in. One of those retail stores
+Sample app project that can be downloaded from your DVOS
+The brother has done a great fork and
+It is good that you add more chilli and spices to it.
+It's ready for the replay. So let's go!
+I will show you in this project.
+What is going to happen together. Complete
+Let me give you an overview of the project.
+The UI in the project is one you saw this
+UI in its background, these orders
+These are our orders, these orders,
+The thing is written in a particular language
+In which language is it made brother?
+I have explained it all to you here.
+The orders are written in Java.
+Here you have Java, it is connected
+The service that is checked out from Postgres
+It is connected to Redis with Cart Wali
+The service is connected to DynamoDB
+The service with the catalog is connected my
+from the sequel. So this whole multi-tier
+This is a microservices application.
+Why Microservices vs. Monolith Applications
+Why didn't you take it? Because Kubernetes
+It is in one shot, if you have seen it
+I had told you the difference, brother, that it is a benefit.
+What happens in microservices? Tomorrow
+The service that you provide for your orders includes some
+There was a glitch. So did the rest of the service impact.
+Your UI must continue to run.
+Everything of yours will continue to run smoothly and you will get everything
+One item not in the entire repository
+Microservices
+This is the biggest advantage and
+Kubernetes for Microservices
+It is considered best if you have a micro
+Services need to scale. Let's look at these five.
+You understand microservice architecture.
+I came to know that this is ours which I just opened on the page
+These are all our services shown in it.
+And in its back end, these are its databases.
+This is its caching. DynamoDB does all these things.
+There are things. Let's go one by one.
+Product of the project
+Introduction I hope you got that
+It's a great project. Nice project.
+It is an e-commerce project. You can
+You can put it on a great resume. Multiple
+Great fun to drive this thing
+You can. You've seen the micro benefits.
+The service is scalable across multiple cubacies.
+You have a whole monolith, a huge one.
+You don't have to maintain a repository.
+Small services you can also decouple him
+You can. Decouple means this whole big thing.
+It's a microservice. Take the lid off it.
+Two. This is a D-couple. Now there's no
+If something goes wrong, you fix it.
+So it's already running. So this is the math.
+It happens brother, micro services and monolith
+Architecture. So that's it. Now let's understand.
+Bhaiya, you have put cubes into production.
+Why Use Amazon EKS Auto Mode in iOS?
+What's in auto mode? And this
+What is Auto Mode? What is EKS?
+What is Amazon? What is AWS?
+I'll tell you everything. First of all, this whole
+To do the project you will need a
+You'll need to create an account on AWS.
+Good news. I made a previous video.
+I also told you that the new accounts
+If you create a new account on AWS
+So you will get some initial credits which
+There's $100 in credits. Yes. And you and
+If you follow these steps, you will get up to $200 in credit.
+You can meet. So you can enjoy this project.
+You can run it on AWS. So if it's
+Compare production cubitis to EKS
+Let me make it a little bigger. Zoom in
+I give EKS Elastic Cubinetti
+Service provided by Amazon
+There is a production ready Cubis service.
+where you can create your own clusters and
+The control plane part is Amazon
+He looks at it. Brother, I did not understand anything.
+It would be fun if you could explain it through a diagram.
+So in the last video,
+There is Cubitis and One Shot in which we
+observed that if you had a cubitis cluster
+If you want to make it, you can make it on Kind.
+You can make it on mini cubes.
+You can make it on ADM. How can you do all this locally?
+That's fine. But if you need to pay for production
+If you want to go, you have to use cloud services.
+It does, friends. So, from Amazon,
+Cubis clusters you can create
+Production ready is the EKS.
+Let's understand what EKS is. Then, auto
+Let's go to the mode. Okay? So if EKS
+Talking about simple Cuban is cluster.
+If you have asked how a cluster is formed?
+What are the components of?
+If you know then I will simply revise it.
+I'll give it to you. This would be a very important thing.
+This is what is called the control plane.
+So the control plane is your entire cubeset.
+Controls the cluster. APIs to it
+Server, Scheduler Your Controller Manager
+All these things reside in it. Now the other
+The thing that happens is your workers.
+Notes. Correct? These are your worker notes.
+Now what does EKS do?
+Does he speak? Your control plane, right?
+Amazon will manage. Amazon will manage.
+You only need to pay these worker notes.
+There are applications, right?
+The applications you deploy are your
+You'll manage. Okay? So this is what you do.
+EKS. So the heavy lifting that happens
+The control plane is managed by Amazon.
+All you need to do is apply.
+To run applications
+What do you need? I'll tell you.
+I mean, what all is needed. First of all
+You need compute, meaning your EC2
+instances. Then you need storage
+Meaning your EBS volumes would need to be reinstalled
+Is the network mean what your CNI container
+Drivers of network interfaces then VPC
+It contains IPV4 addresses and IPV6 addresses.
+You need everything. If you
+If you want to provide outside traffic then load balancers
+You also need an LB.
+All these things, what do you call this thing?
+There is this thing called the data plane.
+What do you say? Data plane. Now this, this
+Wali heavy lifting hai na with EKS ye
+You also have to manage EC2,
+Then manage EBS, manage VPC,
+Manage ALB. You have to do all this too.
+What does Amazon Auto Mode do?
+He says, Bhaiya, I can control the plane.
+I will manage it. I will also take care of your EC.
+I'll manage the toons too. Your storage
+I'll manage it too. I'll manage your network too.
+I'll do it. I'll also manage your load balancer.
+I will. Even if you talk about security
+We'll also manage security. How?
+The images used in the programs that will be used
+Machine AMI will be Amazon Machine Image which is used
+It will be immutable. What will happen with this?
+This will also eliminate security risks.
+All the nerves will return after 21 days.
+Keep reloading, keep shifting and
+Will keep updating. All this heavy lifting.
+Data will be in the plane via Amazon Eks Auto
+mode. And it uses it in the background
+Carpenter. Carpenter for scaling you
+Let's use your lot
+load has arrived. So automatically your jo nads
+Are there EC2 instances that can scale?
+If the load is too low, it scales down.
+It happens. And the cluster is so easy.
+Make it. Let me show you. Super
+Simply click on Create a Cluster.
+Quick Configuration with EKS AutoMod Tax
+Your cluster name will automatically appear.
+Give it a name. TWS EKS Cluster.
+Then take the latest version of Cubase.
+Here you go. 1.33 is your IAM role now.
+For security, you can create recommended
+If you click on the role then Joj will be able to see the roles.
+He should make it himself and here he
+The field will be filled in. You can select any field for the node.
+I'm roll whatever you need whatever you need
+Recommended, click on it. Automatically
+You will need your own VPC.
+Create it. You have to use the default.
+Do it. The subnets will appear automatically. Click
+OnCreate.
+That's it. That's all you had to do, brother.
+How to create an Amazon EKS cluster
+Auto mode enabled. Now take advantage of Auto mode
+What will happen? Whenever this cluster is formed, it
+It takes less than 10 minutes to make
+It is the fastest. Meaning if you are production ready
+Talking about clusters, it is less than 10 minutes.
+And you know what the best part is?
+When you go to its computer, first how
+I had to manage the nodes myself, right?
+Add this node Add EC2 Add forget
+It's not like that in the background.
+Carpenter is being used which is EC2
+Will automatically scale instances. 10
+Wait a minute, within 10 minutes this cluster
+It will be ready in a great way. I hope you have a great time.
+You must have understood what EKS is.
+And what is the auto mode of the EKS?
+Let's say that our brother
+Infrastructure is what we have today.
+The infrastructure to be built in the project
+What is it and which one do we need?
+What tools will you need? First, you
+Creating an EKS cluster on AWS.
+Then you will need the AWS CLI.
+I'll show you what the command line interface is.
+I'll give you one. You can open any of your terminals.
+So here's your terminal. Done.
+Oh, not clear, clear. Okay. So here.
+But all you have to do is configure AWS.
+That's it. So this access ID is coming up.
+Secret Access Key is coming, default region
+The name is coming, the default output is coming.
+All these options that are coming to you.
+This is coming because you have AWS
+You must have the CLI installed. Friends, this
+Installation of whatever the project requires
+I put everything in Read Me
+Meaning if you want to make this project locally
+What do you need to do to drive?
+What do you need first?
+CLI Terraform Kube CTL Docker Hell
+How will you take it? I've explained that in detail.
+The thing has been told here that downloading AWSLI
+If so, run this command. terfm download
+If you want to do it in Linux, then do it.
+If you want to do it in Windows, do it. Cube
+CL to do in Mac OS. To do in Linux
+It is. Do it however you want. You need Docker.
+I need Helm. All installation steps are the same.
+You'll find it in the Read Me. Everything
+I've put it in the description.
+This is about your pre-request.
+that you will need to verify that you have
+Whether all these things are installed or not. Now
+Bhaiya hum log connect on AWS CLI
+How will you do it brother, how will you do it, first of all
+What you have to do is nothing much, hard work
+No, you have to go to Amazon.
+Go to the AWS console and search for IAM
+You have to take it and you will click here.
+I AM PERFECT I AM HERE NOW
+Go to Users and create a new user.
+Create this username: TWS
+CLI users now have access to the console.
+No need because we work on CLI
+If you are doing it, then click on Next.
+Great. Now here's the attached policies.
+Do it directly. Whatever you need access to
+For example, you need access to EKS.
+Full cluster admin access if needed
+Select that. Let's give you the full
+You need full administrator access.
+Here you can select Mast Admin.
+You will get full access to the entire website.
+After doing this, click Next.
+Diya next. So this is your user who
+Have administrator access and create user
+Click on it. Done, click. Now you go.
+Click on your TWS CLI user.
+Now go to Security Credentials.
+Go to security credentials. Now here
+You have to generate access keys.
+Click on Create Access Key. And I
+Open your access key for the command line interface
+I'm making it. And after doing this, you'll get a
+I will have to give confirmation, let me do it brother.
+We have access to Next. That's it. Create
+Access Key. Your Access Key and Secret
+You now have two access keys. Copy
+Do this. Copied it and put it here.
+Go to the terminal and run a command.
+AWS Configure. You can do this only if
+If you have AWS CLI version two
+is installed. Access ID from there
+Copied and pasted here. Enter and secret
+Copied the access from here and here
+You just went and threw me down.
+I checked the access key. Yes. What happens now?
+It doesn't matter. I'll delete the video by the time it arrives.
+I will pay. Enter the default region name. This completes
+I'm going to do a full tutorial of
+In the US West Two, which is Oregon. Very
+I like it. So, US West Two
+Even if you don't do this, it's okay.
+No scene. Just a secret access key.
+Access IDs are multiples of these two. Enter
+The default output is nothing. We don't need any. Enter
+Done. Now you have to run a simple command
+Take a look. AWS s3 ls that's it.
+What will this do? This will reveal that
+AWS has as many S3 buckets as it can
+Can you see what? So I
+I can see it. This means our local AWS
+The connection is complete. Let's start with the first
+We passed the pre-request visit.
+Hey, that's too far. Move it a little closer.
+Let's get it. Yeah, it's fine now. So we
+What are you up to? With the AWS CLI
+We're done. Okay? So tick this.
+Terraform now. What is Terraform?
+That's what you can do with Terraform in one short video.
+You will understand that Terra is an infrastructure
+Edge Code is a tool that will help you with this.
+to automate the entire infrastructure of
+via code which would have helped a lot
+If there is an error and it does not happen then Terraform will try to
+If you want pass installed then come on friend tf
+Let's install
+Do I have Terraform?
+hfn version
+I have terfm version 1.57
+Terraform version is out of date with the latest
+Version is one to have low let's go br
+Update Terraform
+Done low blue upgrade terraform ok bro
+We will do as you say, what should we do?
+OK, is Terraform already installed?
+Bol Raha Hai The Latest Version You Can
+Upgrade by downloading it from OK
+No scene, this one will work too.
+It's no problem. Come back.
+So, you have Terraform installed.
+There is also Terraform. kube.ctl.
+Why is Cube CTL important?
+The thing with your cluster of Cubinitis
+To do it. So let's try it.
+Cube CTl version
+Client version 1.33.2 so Cube CL also
+We have it installed. If you have
+If not, it's written in Read Me. Let's go.
+And we also have Cube CT. Helm
+Let's also take a look at the Helm version.
+Helm not found. Let's install Helm
+Yes. How will you do it quickly? We'll go here and
+Look here it is written Helm, so this
+Just copy it, it's cool
+I copied this line and went here.
+Boom so I have the helm now
+The Helm file is downloaded.
+by doing a little CHMOD 700
+If you make it executable then ls huffn
+I have to look at the gate helm, I have permission
+Yes, read, write, execute permission
+I have given it because of Rs 700. Rest of the users
+There are no permissions. This is if you want to learn.
+How did you do it, take a look at Linux in one shot.
+I hope you watched all my oneshot videos
+It happened. Tell me quickly in the comments.
+Where are you watching the videos from because in that
+Millions of views. I don't know you guys.
+Where are you from? I'm from Pune. I'm bored right now.
+I live because of my new job. Okay.
+Let's just see. Get the hell where you are.
+Did he get it?
+Gate Hell
+Install it. So I copied it here.
+We went and slammed it here. Get Helm OK.
+Downloading Helm what's the matter, give me the password
+So you all know our password, test it.
+@123 Just Kidding OK Helm Done Install
+So Hell Huff Huff Version
+OK, no hyphen, just write the version.
+Hey brother, why do you do this, it's a disaster
+If it is installed then as many pre-request visits
+It was there brother, we installed it.
+Okay, let's tick this as well.
+Initialize Terraform and Review
+infrastructure code structure. So meaning
+Our project structure is
+We need to review it. Important one.
+The part is in. So from Terraform
+What do you want to make? Let us review it.
+So we have to create it using Terraform.
+This. What is this? It's inside the cloud.
+Everything is there. Here's your VPC
+Virtual Private Cloud. What is it?
+is our EKS
+Elastic Cubinity Service. And in this we
+People will enable auto mode so that this
+Let the pat become our own cluster. And this
+Terraform will also install the Argo CD
+Inside our EKS cluster. Helm too
+will install our EKS cluster
+In. What is this? Ingress of Enginex
+controller so that outside traffic
+Traffic inside and outside, all this is one
+If it can be connected, this ingress controller will also
+The rest of the retail stores will be as good as the app.
+Manifest files are like files that are used to create pids.
+Yes, deployment has to be created, service has to be created
+Yes, Ingress has to be made. All these things via
+Help charts will be taught to you.
+I haven't seen Cubism One Shot. Is this all true?
+Will I understand things? You understand
+They will come but you will feel like, friend, I wish I
+First he would have seen it, let me see this now then you
+Quickly watch that video first. Okay? Let's go.
+That's done. Now all these things need to be made.
+From Terraform. Let's create it. So first
+First, I'll go to my repository.
+Because everything is in our repository.
+And I'll move this to the main branch. Code
+I'm going to take it and go here and clone it.
+Sam, you can do that too. Okay? Now I
+I will open my ID here.
+Where is my brother? Will it open?
+Now. So let's open the key. Here it is.
+Our Kiro. Come brother. Don't be shy. Come
+So that's a cool agentic AI with ID.
+which you can install easily and
+You can run it using your builder ID.
+What is a Builder ID? My Previous
+Have you seen the videos? No problem. Link
+You can find it in the description.
+Create ID and sign in with builder
+Just click on the ID. It's very easy.
+So AWS has a
+Builder
+Yes. Builder Center. Where did Mast go?
+community
+aws now cool community. Go to and
+You will find a builder center. Sign there.
+Upload and your ID will be generated.
+You can now generate your Builder ID.
+You can. Let's say if you already have it.
+Because you watched my previous videos.
+So you already have a builder ID.
+Click here. Your email address is mine.
+Is it? Train with shubham@gmail.com
+Let's zoom in on this a little bit because you
+I'll be interested, right? I'll click next.
+I'll enter the password here and you'll see.
+Will you take it?
+The password is long. I won't tell you.
+I. OK? I'm signed in. Now it's
+The verification code will come to my phone instantly.
+Pay. It's here. Here, my code is 2113
+211
+323. Do not share your OTP with anyone.
+Please do. This is in the public interest. Okay?
+The redirect will continue to happen. And this
+What will happen? I can access my key.
+I will get it via Amazon q developer. Mast Mera
+I have access to it. Now what do I do here?
+What am I going to do? Look carefully. I'll
+I'm going to open all my files. If
+If you want zoom, I'll make it awesome.
+Yes. This has no scene. Now here I am.
+I'll open a terminal. New terminal.
+This opens Terminal. Now what do I do here?
+I will do it? CD documents in a good way
+Go to the folder. Work Train with Shubham
+Projects
+Done. Now here are my projects. Who
+Which ones? Deployment strategies.
+The Cube is a starter. So here's a new one.
+Let's create the project. Who is MKDir?
+Sa Retail
+Enter store ok in retail store
+He is gone, now what should I do?
+I found the Git repository here.
+If you want to clone it then this is the command
+Just copy it and go here and do it.
+Let's Get Clone
+If I slammed it, my repository is retail.
+Store Sample App will be cloned
+Clone will be fast?
+I will go through this retail store sample app
+in. As soon as I went in, whatever it was
+I have files on my ID on Hero.
+It will be nice to see it here on the side. I didn't see it.
+No problem. We can open the folder and go there.
+I'll bring it. There's no scene.
+Was in documents, was in train wish,
+Was in the projects, was in the retail store
+And here's my retail store. Okay? That's it.
+So you can also do vibe coding in it.
+You can do all of that too. But that's okay. Now we'll
+People will go here. This is our application.
+A beautiful application has arrived for us.
+Pass. Done. You should read this application very carefully.
+You have to understand this. It's very simple. One
+The folder is argoCD. There is a folder
+Documents. Then there's your source files.
+You don't have to write it. The developer writes it.
+That. Then there's Terraform. And the rest of the branching
+Strategies Read Me Get Ignored This is it.
+Let's start with Terraform. Okay?
+You will find all these files on Terraform.
+AIDSf Argo CD Locals Main
+Output Read Me Security Variables Version
+You'll get all these things. What do you have to do?
+Is it? Start with Read Me. Okay? Read
+Start with me. Read me if you want.
+You can also open it in a preview mode.
+Yes. Open the preview and you will love it.
+It will look beautiful. Right? That its
+What is the file structure like? All these files
+Which file does what?
+I've written it all out. If you need to run it
+If so, what kind of commands are there?
+I have written down everything you need to do. You can read it.
+Lena. I'm going to teach you.
+First, let's go to main.tf.
+You have two big architectures.
+Infrastructure
+VPC
+And your EKS cluster creation. Both
+We use prebuilt modules for this.
+You will create a block called module.
+You can. For more details, see Terraform.
+In one shot so that you can understand that
+What are modules? How are they made?
+Okay? So there are only two things. Your
+The EKS cluster and your VPC are small.
+Let me explain it to you. Brother, this
+Whatever you have, it doesn't look good to me.
+It's all white. You
+You know what you can do? Go here.
+Search for extensions and Terraform
+And this is Hasik and Terraform, right, 574.
+Abhishek Veer Malla recently turned 500.
+Bhai ke to big shout out to Abhishek Veer
+Malla Bhai for Reaching 500 K
+Subscribers on YouTube are a big deal, man.
+So keep showing love like this, this victory is ours
+This is a victory for the entire devops community, friends.
+So here we go, we've also terraformed it.
+Click here and if you want to use Terraform
+Now you will open the files, ah yes, colorful, ah yes
+Watch now talk about module VPC
+If you need to create a VPC.
+If you want to create a VPC here,
+What is a VPC? A private
+There is a cloud inside which all your
+The resources will be there. They will talk to you.
+with all security. So if you have a
+If you create VPC then this has to be created
+Name Cider Range Tenancy Availability Zone
+Cider subnets have to provide all of this.
+You're writing in code. Source Terraform
+AWS Module VPC This One Line
+All the files your VPC contains
+Security Availability Zone gives you all that
+No need to pay attention. This will work.
+It'll be done. Put the version in. Brother, all this.
+Where can I get it? Just search on Google.
+Low Registry AWS
+Terra
+Form VPC and that's all you have to do.
+Click on the Terraform AWS VPC module
+Two and that's it, I got this code from here.
+I have taken it, you just use this, I have copied it like this
+I did this and went here and threw him down, that's all.
+I have done the work, okay that is so easy
+In OK Name you have entered the cluster name in the variable
+Created a VPC of Bhaiya Variable Cluster
+Where did the name come from? So here I
+The variable tf is created. Where
+Cluster Name Default Value Retail Store
+Environment Dev. You can also enter production
+The choice is yours. The Cubinities version is yours.
+Take what you want. VPCT's VPC's
+Take whatever cider block you want. Argocide
+What will be the namespace of the same?
+You can configure the variables from here and
+You can use it in main.f. Done
+Availability Zones Public Subnets Net
+Gateway that provides the outside network address
+Translations for your public and private
+I have set it to true for subnets.
+Internet Gateway External Internet Access
+I've made it true. So I've done all these things.
+It has been made here and by doing this your
+The VPC module has been created.
+I also configured the EKS cluster.
+I have provided it here. You can also visit Google again.
+You can find his awesome code here. Source Terraform
+AWS Modules EKS AWS
+Get the latest version. Cluster
+Cluster name Cluster version
+Cubitz version. Joe End of Cluster
+Points have to be given public access
+What? Yes. Private access to endpoints
+Yes. Creator Admin permission.
+It is very important that I create
+If I can, I will give it. Now EKS Auto Mode
+I mean, I told you about compute nodes.
+It scales automatically. Network
+automatically. Load Balancer
+It happens automatically. For those who
+The configuration appears to be this.
+computeconfig enable true. That's it.
+You will do EKS Auto Mode of your cluster
+Wow, and in that
+Enter the VPC ID and create a key so that
+Encryption is also required. If the cluster login
+If you want to keep it enabled then make it true.
+If you don't want to keep it, it's okay. It's done.
+That's it. That was it. And if I
+I'll go to Terraform here cd terraform
+I'll go and write it here, Terraform
+In it. That's it. I've got as many as I can.
+modules, all my backends,
+All parts to be downloaded part by part
+It means the background will start.
+What's going on in this? Here's the full code,
+This is its complete code, it is from the internet.
+It is downloading in my local.
+And all set. How fitting. Now it's a little late.
+It will be done in a moment. It won't take much time.
+I think I would zoom in a little bit more.
+I am. Yes.
+So it has everything I had.
+Na helm aago cd everything through this
+I installed it and my terraform init
+What has happened to the Terraform command?
+Initialized in the folder so here
+My Terraform is done initializing.
+What do I need now for my architecture?
+I look very carefully at my
+What do I need in architecture?
+My architecture requires an EKS cluster
+VPC ArgosCD Hale and Injection
+Ingress Controller
+Until my VPC is created, my
+EKS cluster will not be created. Until my
+Until the EKS cluster is created, my
+Argo CD will not be made. Until Argo CD
+How will the internal application not be created?
+Will it be deployed? So one step at a time
+We'll go, wise guy. Come on. Okay? So, step.
+Wise if you need to install anything
+Like this is my Terraform folder
+If you turn this off, it's rgo cd.tf
+In which I have configured Argo CD
+Everything about the Argo CD is written down.
+It's written down. Okay? If I
+What if you applied Terraform?
+Will you know? This is Argo CD Main VPC
+EKS will become everything and connect to each other.
+It won't be possible. Why? Because dependent
+So what am I going to do? I'm going to start with
+I will create a VPC. How? Using Target.
+Target is equal to module which is mine
+The module was VPC brother, make it enter.
+What will this do? My first VPC
+It will be created. Okay? So Terraform
+applyTargetModule target=module
+VPC. Do you know what will happen now?
+will find among all the files that our
+Where is the VPC? It's in Maine and in
+What does a VPC need?
+So only that much will do the job.
+Yes. This will take some time because VPC
+It has to be completed. Availability zones, all of this.
+So how many resources will it create in total?
+In a VPC? This will create 24 objects. OK? Yes
+If you do this, VPC creation will start.
+Guys. Okay? Are you watching? Module
+Creating a VPC is great. As long as
+VPC is created, let me tell you that
+How do I automate this whole thing in Terraform?
+How to do this in Terraform using Argosd
+I'll tell you what's going on.
+First, go to Versions.TF.
+Your providers are very good brother.
+That's a wonderful thing, friends. If you
+If you use an AWS provider
+You can also read the related components of AWS.
+Resources Mast Aisa Chutki Me Modules
+You can install it through. So I
+What did I do? I also got a provider for Helm.
+I also took a provider of Cubis.
+Time random string I used for everything
+I have taken the provider. And I must pay that.
+I am telling you that brother, whoever helps me
+The provider is on my EKS cluster.
+You should go. Get all the certificates you need.
+Take it. Take all the commands you want to run.
+My help should run on EKS cluster.
+Cubitis is my end of the cluster
+Points whatever token is configure everything
+So I've put everything in versions.f.
+Configured and stored. Variables TF
+I explained it to you. You
+You can adjust it accordingly.
+Security is very important. You
+If you talk about production then your load
+Which route should be in the balancer?
+What should be HTTPS traffic?
+You mention all the things here.
+OK? So I've taken as many notes as I can for the port.
+For addresses there are 3000 to 32767
+Whatever this is, I have put it all here.
+What will this do? Security Groups
+I need some security from myself.
+There will be no need to edit the group.
+It's automatic. Right? If the outputs
+I need to show some output, like cluster
+What is the name of the cluster? What is the suffix of the cluster?
+What does it mean at the end of the cluster?
+What's the endpoint? What's the version?
+And what is the VPC ID?
+I have mentioned the things in the output. Your
+You must have become a VPC. Look, you have become a VPC.
+So in the output you can see that
+VPC Sider Block and which VPC ID these
+It's created. So, copy this VPC ID and
+Let's see what actually happens in your account.
+Whether it is made or not, because I don't know.
+Let's go brother, what is going on, how is it going?
+So your VPC is in US West Two
+Search the ID brother, I didn't find it, no problem.
+It must have been made somewhere else. Yes, there are two on this one.
+Click here. Here's the Retail Store VPC
+And this becomes your VPC ID paste 090
+OK? Once the VPC is created, you can now
+What can you do? You can even create a cluster.
+So I run terraform apply
+Target is equal to module dot now which
+My module was in Main, what was its name?
+VPC's name was Retail App.
+EKS copy that and go and throw it here
+module dot rip eks my enter
+That's all I have to do and my EKS
+The cluster will obviously form after 10 minutes which
+We created it manually, please check it once.
+So remember EKS, TWS EKS?
+Created a manual cluster named cluster
+We did. It's active.
+Click it. Now what do you do?
+Minimize it. Now go to its access
+Go ahead. So I have great root access.
+Hit enter for another access.
+What was my user name? TWS
+CLI user. Brother, that user also has access.
+Do it. And then do this access next. Cluster
+I need access to. Which one? EKS
+Make me an admin, brother. Admin. So EKS
+I gave the admin cluster access.
+Review it completely and create it. So who is this?
+What cluster is this? This is what we first discovered.
+I made a TWS ES cluster. This is it. Cool.
+How do you access it, brother?
+The command to access that too
+I've posted it here. You don't need much else.
+You don't have to. There's just one command, small one.
+Copy and paste it and you will have access to it.
+I'll go. I'll tell you. It's very easy.
+Here it is AWS Hey where did it go?
+AWS EKS
+Update kube config just copy this and
+Go to any of your favorite command lines
+Drop it. Just your cluster name.
+Yes, that is very important. So my
+The cluster was named TWS EKS Cluster which
+that was the region
+In what? In the US West Two. Done. Added
+CubeContext Done.CubeCtrl
+Get Ns
+Can't list resource nodes. Why?
+These APIs group cluster scopes. Why?
+Because this user has this particular access
+No. So whenever you have such access issue
+Come by the way ours which AWS EKS which
+The cluster was being created using Terraform.
+How many resources does it have to add 40 to it?
+If so, say yes. This will continue to be our ad.
+There is no issue in that I
+Security policies have been put in place.
+If you want to fix this
+If the poor user doesn't have access, you
+Tell me how to do it? I'll tell you something simple.
+Yes. Press Q. What's this Q? Amazon Q
+He's a developer. Absolutely brilliant. What's the point of it now?
+Does it happen? You give it context.
+Bhaiya I created an EKS cluster t
+WS
+EKS Cluster
+In US East Sorry West to end my user
+Is not able to list Nads just you Amazon
+I told Q that brother, this is not my user.
+He is able to do it. He himself describes the cluster.
+Your cluster is active and
+running. That will list the node groups and
+will add a policy. Update Cube
+config enter
+Don.
+And with simple things what will he do?
+Now look, he got an error that cant see this that.
+Now it will look at the current access.
+I only have access to the cluster.
+I just paid AWS
+Go to Access and give access to the cluster
+Nodes were not given. Nodes are auto
+Managed by EKS Auto Mode. Now that of Nads
+He will give me access.
+OK? I haven't received my GATE notes yet.
+It's okay. I tried it again. Okay? That's when
+until it's fixed.
+He will continue to run it iteratively.
+And that is where our industry is heading,
+Guys. Look, here it is. It's gone. Excellent.
+The permissions have been applied successfully. Yours
+The cluster has access to everything. Now
+Quit this.
+I quit. Now if I do Cube
+ctrl get nodes boom. I have my node
+Ready. Cube CTL Get Namespace.
+I have my namespaces ready. OK
+Is it? Interesting. I understand that our
+The industry is moving towards AI. So you
+To increase your productivity,
+Use it, guys. Okay? Got it?
+I realized that our TWS EKS cluster is
+You can also connect locally. So now
+I'll delete this. Why?
+Because the money goes away.
+Okay? You understand clusters, right?
+How to make, how to connect,
+How to troubleshoot, everything. Right now
+We are a cluster of retail stores.
+We are making it through and it will take time.
+It will take around 10 minutes until it
+It's taking time, I know this is one short
+If you like the video then you will enjoy it with us completely.
+Have a great day learning DevOps, Git
+enjoy it cool
+I asked you where you joined from.
+If you are, please tell us that too.
+Which videos are in the playlist?
+If you have seen it, please tell me that too, like Maximum
+The votes that I have received are for Linux.
+Video has been found. Cubitis is then
+Docker then Jenkins then Gittip good
+Everyone got votes. Reume Building
+You guys haven't seen it. Why is it so?
+Do you do it, friend? Okay. I get it.
+No? Let's go back to our agenda.
+I wonder how much I have become.
+Okay? So we've initialized
+Terraform has been given. Reviewed.
+The structure of the infrastructure's code.
+Completed. Deploy Core
+Infrastructure VPC with Proper
+Networking and EKS cluster.
+We have deployed it. EKS
+It takes around 10 minutes for the cluster to be created.
+Are.
+EKS cluster takes around 10 minutes
+to be created. OK? Configure cube.
+Secure Access to the Newly Created
+cluster. I said, you remember that one, right?
+The command was entered a ws eks update
+Kube Config will create your new cluster.
+Just put its name here then kube config
+Your update will be done, this is also very easy.
+Okay, we'll do this too, okay, let's go.
+Till then let me tell you that if you
+How much effort would it take if I had to write everything myself?
+I'll tell you, you have to go, boy.
+Shubham153 ok this is my github where it is
+You will find all the projects now.
+Go here and search for Terraform.
+Terraform. Right? Terraform for DevOps
+Search it cool. Now here if you find a
+If I had to create a simple EC2 instance
+Look at how much effort it takes. What data?
+Is it a keep pair security group, egress,
+Ingress instances everything. So many
+Instead of writing things down, you can use modules.
+So that's what I'm doing with this project of mine.
+I am trying to convey through this that if
+You don't have to go to production.
+You don't need to use a lot of code to get to production.
+Less code but also reusable code
+There may be production deployments.
+So if someone is telling you like this, brother
+500 lines so we have a Terraform
+Make it. No need. Less lines.
+I can do the same thing. Okay. Let's go.
+Now let's talk about ourselves and our code.
+What other things are there? How does this all work?
+What is it doing? Our Terraform will be created.
+The EKS cluster that will be created using Terraform
+How will things go inside? Let's take a look.
+Let me show you. This
+Look. So what did Terraform just do?
+Created a VPC first. Then an EKS cluster
+Brother, we need to build an EKS cluster.
+I'm sure you'll make it. Take it easy.
+You'll make it happen. We have trust here. This
+The applications inside, this is the Argo
+There's the CD, this helm, this engineer
+Yes, there is ingress control, how will all this come?
+Tell me, brother. So I'll tell you. Look.
+This is your complete project structure.
+You have to look at this very carefully.
+Shut out distractions.
+There is a project structure, in this you will most
+The SRC folder is important.
+Go to the folder. What will you find here?
+Here you will find all the micro services.
+Like UI, which is UI micro
+The service is written in Java and
+Spring boot nice html css all
+It is combined. But to run it,
+The Docker file is written here. So Maven
+It all builds through.
+It's written down. Brother, I need to learn all this too.
+Yes. Check out Docker in One Shot. Okay, so here it is.
+Docker file of this. If you need to install this on your local computer, please do not forget to install it.
+If you want to run it, then it can also be run through Docker Compose.
+It can be operated. Okay? Now what's in it
+The important part is that brother, this is mine
+Retail Store Applications Pod Ye
+How will everything be made? So, this will be made of charts.
+through help charts. What are help charts?
+Help charts will help you understand the whole process.
+Not writing the manifesto of teracubanities
+You just need to dot the values ​​in the charts.
+y Just insert your values ​​in it
+The definition of what is paid is what is paid
+That's already a Yammel template.
+Everything is included in the template. For example, if
+If you want to see deployment then deployment
+The template always remains the same.
+The template is the same. No problem.
+The change is within that template.
+There are values. So you have to focus on values.
+All the values ​​will need to be changed. Like now
+I'm using a public image. Right now.
+I am not going to build this for the first time.
+So I'll use a public image. This is its tag.
+simple complete whatever its address address
+I have put everything I have to give here.
+Resource Limit Auto Scaling Insert Anything
+All that will be in the values. Similar UI
+It's done. Similarly, the micro-
+There is a service and there is a chart inside it too.
+There are values ​​inside too. There are images of it. So
+I put all this in the SRC folder.
+So you don't need to worry.
+No, brother, where will I find my
+Cubitis's manifest files. Because
+It's all happening through Helm. I'm back
+I'll tell you what to helm if you want.
+Does he? Helm says that the brother should be kept separately,
+Separate deployment, separate service, separate
+Do not make ingress from.
+I'll make you a template.
+Give me values. I will instill those values ​​in you.
+I'll put it in the template. It does the job.
+And what have I changed those values ​​to?
+I have given those values ​​here in different micro
+Enter the values ​​in the chart in Services
+I have given it. So if you want to change the image then
+Yes, change this line. The image should change.
+It will go. But brother, this SRC, this
+What's the name? The values ​​of Hell, Hell
+charts, these will reach my cluster
+How? It will arrive via Argo CD. CD
+stands for Continuous Delivery. So Argo CD
+I have kept complete documentation of this also.
+Argo CD's You a Project
+You don't have to make it.
+I have already written retail store
+Projects that source repos have this repository
+He will pick it up. You can write your name on it.
+Fork the repository and this is your
+The repository will be done. Okay? Now, in
+What will the applications be? UI
+The application of this
+Brother this is in Argo CD Help Charts
+How will he pick it up? Where will he find the location?
+SRC in PATH
+The values ​​dot eml written in the UI chart
+It will pick up whatever has happened and deploy it.
+I understand that Argo CD is a repository
+He will go to this branch. He will go to this branch.
+This is the folder in the branch SRC UI
+The chart shows the values ​​written in it.
+He will use the values ​​and deploy them.
+That's it. So
+I'll tell you what it will do when it starts.
+I give it to you on this particular repository
+Jayega Meri Retail Store App Pe Phir SRC
+I will go.
+Go to UI Go to Charts. Charts
+will go into the values ​​that are in it and which
+The image's repository value is written
+He will deploy it. His templates
+If you want to see the templates, they are here.
+This is what we have to do. This is what we have to do. Ingress
+So, the template remains the same for everyone.
+It's. Okay? It's fun. Look.
+It should be fun no matter what happens because this
+If you want to add this repository to the project
+You just clone and just images
+You change it here and there. You can change it at any time.
+Deploy the application from this repository
+You can. This is a plug and play
+Repository. Okay? I got it.
+Brother, how will all this happen then? You will write it.
+What? No. Everything Is in production
+Automated. So if you go back to the code
+Go to Terraform Go to Argo CD then
+Here it is written that all the things
+How will Argosy do Cube Citadel?
+Path in the Apply Argo CD namespace
+Modules What ArgocD Slush Projects
+means Argocd slush project in this path
+The project was created in this path: Argo CD
+Slush applications became applications
+They
+I've put everything here. Everything
+I've put it right here. So once you
+Terraform applied. Your application
+It'll be up, friends. That's the beauty.
+OK. So our EKS cluster is now created.
+What's up. It's called a retail store.
+71H9. Go to AWS console
+Let's refresh and see.
+So our old one got deleted which
+We created it manually and the ones that were created automatically
+It was created using Terraform and is up
+Retail Store 71H9
+It's done. Now you have to add me manually.
+I had to access it, I won't have to do that.
+Because who added all these things to the CLI user?
+Did it? Terraform did. So anything to me.
+I didn't have to do it manually. What I had to do before
+A cluster was formed in which I found many
+Things were done manually by AI, not me.
+But now I will not have to do anything manually.
+I have everything configured automatically.
+So if I run this simple command
+AWS EKS Update Kube Config
+Region US West to name retail store to
+Will my cluster connect?
+Tell me in chat if my cluster is connected
+will go? cube ctrl get ns.
+O By the way, nodes will not be created for the first time.
+Why? Because there's an empty cluster. Some of it
+I haven't put anything in. So no Nads.
+That's auto mode for you guys. Auto mode
+What happened because of this? So far I have
+I did not deploy anything on it. That is why Nads is
+No. So what do I do now? Cube
+CTL Create NS Lets Demo Ingenix
+Try creating a demo engineics namespace
+Let's take it. Cube CTL Run Injectix
+Look at the autocomplete, it's all coming up.
+Why is auto-completing? Because
+I've used Amazon Q.
+I have installed all these developers.
+This image is Ingenix, namespace me.
+I have to put it in. Demo Engenix Enter.
+Now this pad is created. So cube CL
+GATE Notes If I do it then I will automatically
+The note will be ready. Just a little time.
+It will look like this because the cube cel get pads in the
+Namespace Demo Ingeninix A Little Time
+It will take time. It will take some time.
+Let's see how much time it will take.
+Pending is coming. Okay. One more thing you
+You can do it. Watch
+Cube CTL Gate Pads Low Watch is not the same
+Tell me, install watch, see what a watch is.
+There is a small command which you have to
+No need to run a command repeatedly
+It will have to be done as a complete process.
+It keeps showing on the screen, okay, so let's go.
+Come Watch Cube Seal Gate Ports
+If you start running then you have come to running.
+Cube CTL Gate
+You have also created a node in NUDs.
+It will be. What's the matter? 45 seconds ago, your name
+has been created. This means that as long as I
+I will not deploy anything until then my notes
+You won't be ready, friends. Auto mode for you.
+OK? This traffic increased yesterday. Notes too.
+will increase. And it has so much strength
+Security is there. Every 14 days, every 21 days
+These notes keep refreshing
+For security purposes. And whatever is in it
+OS AMI is used for Amazon Machine Image
+It is not immutable.
+Top Notch in If you like it
+If you want to read more then Amazon EKS Auto Mode
+Search like this and this mast will give you its complete
+Full documentation will be available.
+What is it? What is efficiency?
+You will get everything related to security here.
+Crazy stuff, brother. Okay? It's done. Now.
+My Cubanetis cluster is created.
+What do I have to do? I just have to go to Next
+I have to go to the step. Which is it, it's done. It
+I'm done. I want to get to this one. So, I mean.
+What's left? Configure Cube CDl
+Access to the newly created cluster
+Gone. Done. Deploy the Platform
+Services.NGX Ingress Controller
+Certificate Manager and RGOCD. This
+Platform services are what you call yourself
+Deploy it. How? Simple.
+Terraform Apply Target not this time
+I will. Why? Because now if I
+If I apply it completely then how much
+Those which are already created will be refreshed.
+Whatever is not created should be created.
+I'll go. That's the best part.
+Terraform that right now face me by face.
+First I setup VPC. Then EKS
+I've done the clustering. What am I going to do now?
+Argo CD and Ingress Controller and my
+I will take up whatever helm is.
+I know it's been an hour since our project was seen
+I am not coming because it is
+architecture if so you get the framework
+If you go, you can run any number of projects.
+Yes friends. This is a plug and play
+system. Look what will be created now.
+The load balancer will be created automatically.
+Yes. Why? Because we are Ingres.
+You are using a controller. It will be created.
+Okay. Let's go. So how many things do you need to make in total?
+16 things to be created and nothing to be destroyed
+They won't. They will change. Why change?
+Because your EKS cluster
+It's empty now. Argo CD will go into it. Node
+The values ​​of will change. All these things
+There will be changes. Okay? Let's go. Ganpati
+Bappa Morya. Yes.
+What does this mean? All my addons
+Yes. What does addons mean? My
+What extra do I get in the cluster?
+I need it if my cluster
+I need a certificate that my application
+SSL
+Use a certificate. Use HTTPS
+So I just set it to true. The ad is done.
+on. I need Ingress Engineering. I
+Set to true. Add-on done. Load Balancer
+I need it. I added it. And
+What can you do? If you
+Monitoring also needs to be added. This is a task.
+For you. If you also want to add monitoring
+Yes, you just have to uncomment it.
+The entire stack of Prometheus and Grafana is yours
+Cluster Pay will be enabled. Boom in the chat
+Because no one else is getting it done.
+You are not taken to the depth.
+I told you that you are told that brother
+This is Jenkins. This is EC2. Deploy here.
+Do it. And it's none other than your brother.
+So this is me going up one level
+up. So that you people who are already on our channel
+They are viewers of slightly advanced things.
+So, this is my complete recipe.
+Idea. Okay? So this thing will continue. Until then
+Let's have a little chat, friend.
+Let's chat. How are you doing?
+Is it? I hope your passion cools down.
+It hasn't happened. I know this is very heavy.
+Video. Lots of concepts in it.
+There are. There are many things. But the beauty is
+You get all the concepts in one go.
+You will find it in the video. As you
+You don't have to go here and there. If you have notes on this
+You should want this video whenever it releases.
+If within a week of that, on this video
+1000
+We finish our target of likes.
+So I brought its handwritten notes to you.
+I'll give it to you. That's my promise. Just kidding.
+Even if you don't get 1000 likes
+I'll get it to you. Link Description
+I have it. Check it out quickly. Notes,
+Blogs, codes, cheat sheets, whatever you need.
+Tell me. Tell your brother, I'll be yours.
+I'll bring it for you. Come on, let's chat.
+It's a strange pimple, friend.
+So that my nose does not turn red and shines
+Yes. You people keep saying that brother, there is a different shine.
+Are you there? This is that pimple. No one. My
+Let's focus on our Qubes cluster.
+Pimples will keep coming. No scenes.
+So let's release Helm ArgosCD now.
+Argo CD is being created. Meaning Argo
+CD projects are being created.
+And you know what's going on in the background?
+This file is Projects Argocd.
+Building the project. Retail store
+Create a project named Sample Application
+The code is available in this repository.
+picking up from. Okay? In this namespace
+is putting in. And the applications that are
+These are all the applications of ROCD.
+The chart of the retail store with the cart
+It's being made. Then the catalog is being created. Check out
+The page is being built. The store is being built. All of this
+Things are building up. Okay? So
+Deployment is taking some time
+That. Okay? It's fine. It's okay. A little.
+It will take some time, but you will end up with something like this.
+You will find a snapping application most
+Public Secret Shop. What's up. This
+Site Is For Demonstration Purposes Only.
+If you bought some of this and brought it home
+If you don't come, I won't listen to your complaints.
+Because this project is great, man. And this
+You can change the project a little bit.
+You can put your resume in. So you do that.
+You can say I worked on an e-commerce
+Application for a client which includes
+Front end built on springboot java
+Using Maven back end on NoteJS golog
+Database with my Sequel Postgres
+DynamoDB Caching Using Reddish
+You can put all this on your resume.
+Friends infrastructure built using
+what teraphone
+Application Deployed on EKS Continuous
+Delivery using argo cd income hi fantastic
+Bhaiya Developing Argo CD Project And
+Application Kya Baat Hai Argo CD
+Project Created
+Oye hoye hoye hoye hoye all the output is this
+You've given it. Let's read the outputs. Argo
+The admin password of the CD is sensitive brother.
+is sensitive. Enter the namespace of the RGCD
+If you need to buy Argo CD locally
+It will work only on cluster but if you want local
+I want to access using port forward
+So its command has also been given brother.
+What's the matter? Give me the end point of the cluster.
+I've given it. I've named the cluster. Okay?
+Cluster name suffix OIDC if you
+Connect to this cluster with Open ID Connect
+If you want to get a third party application done then that too
+I have given it, I have given it to the security group
+I gave everything brother, I did not leave anything behind, Ingress
+Enginex Load Balancer is a brother of load balancers.
+If you got the URL, you could have copied it.
+Are
+It will be useful later, okay, I'll tell you.
+Let's see how useful commands are
+If you want to see CD apps, check this out.
+If you want to see the cluster then see this.
+If you want to see the notes, check them out. Get Potts
+If you want to do it then let's do this Get Pots.
+Cube
+CTL Gate Pads
+All the namespaces All the namespaces
+I have some too, bring them all brother. Let me come.
+See how many trees there are. Oh my god, so many!
+All of them are there. Okay, so what are the pods?
+Our certificate manager has been created
+So that we can do SSL, HTTPS
+We've got to demo this, engineers.
+Engineering
+He has also become a controller. Our retail
+The store cart has been created. Create a catalog
+Done. Checkout done. Orders done
+It's done. The UI is also ready. How many people need the UI?
+It's ready. Want to see more UI?
+Yes, tell me quickly by writing boom in chat.
+two because here I'm going to
+cube ctl which is the command I pasted
+na get service ingress and give me the url
+2. Quickly, the load balancer. So, this URL
+Pay my load balancer to my application
+Deploying. Guess what? If I
+I'll open a new incognito. Hey boys.
+I'll open incognito. You guys
+What goes through my mind? I
+I have pasted the URL which does not end
+With any hub. OK. Enter
+For now it is not secure because
+I haven't done domain mapping yet.
+For SSL. Continue to site. Will it be
+Live? Three to one. Let's go boom in the chat.
+You Have Deployed the Most Public Secret
+Shop on an EKS cluster.
+All automated. Meaning, if tomorrow I
+You can also clone the repository here to any
+I'll play it on my laptop. Obviously.
+Prerequisite EKS and AWS CLI
+If configured, if Terraformed, it
+Your application will be deployed friends.
+You should change its public images.
+Just put in the image you want. That application
+Will be deployed. Production Ready Drop a
+Boom in the chat. Brother, please show me how to drive it.
+Who knows, you're just showing us the UI.
+You're fooling me. You could have shown me, brother. It's free.
+face changer formal wear. Yes, this boat came
+We need it. Add to car done. And more
+I want it. I want this shoe too, brother.
+I need this add to card and more things brother
+We have to go to the next page. We have to
+Brother, give me an umbrella too. I'm done. That's it, brother.
+We have $405 so YouTube pays me
+I don't do it, brother. Okay, we went to the cart.
+Let's start. First Name: Jado Street
+Edness has put in the details perfectly. Continued
+Total is $45 continued.
+Do you want it on priority or more priority?
+I told you I need it on priority.
+So I added more and the continuation became 435.
+Do not give your card number to anyone.
+Oh My God Mission Authorized Order ID
+Placed Order Place Your Order Arrival
+Your application is working
+Perfectly Guys Using Terraform
+Argocd help brother Argocd has done this
+I don't know how I deployed myself.
+Cube CTl Get Pads in the
+Namespace rgo cd then rgo cd running
+Everything is running now I have an Argo CD
+UI then Terraform output
+I will write this down and whatever output I get
+He'll be back to me. Argo CD
+See the port forward command for
+Here. Yeah, here it is. So, the cube ctrl port.
+Forward, copy this and post it here.
+Given. This cube ctl port forward
+Our port is 8080 on localhost's 80-80
+I want my Cubanetis cluster connected.
+Let's try it. So here I go.
+localhost colon 8080 enter
+And your Argo CD is live, what a thing
+Fabulous
+Drop a boom in the chat friends username is
+I'll tell you the admin password.
+I don't know yet, but absolutely
+I will tell you, I will show you the password
+Yes. Open a new tab here and go here.
+More Terraform output in the Terraform folder
+Write it down. Now you'll be prompted for your password here.
+I haven't entered a command. Where did it go?
+Password?
+Can you see it anywhere here? Secret
+Can you see the secret?
+Get Terraform Secret.
+It doesn't matter. If it's not here, then it's here.
+I must have put it in the Read Me somewhere.
+Find a secret somewhere
+Yes here is the port forward to arg cd
+UI Cube CTL Argo CD Get Secret
+Copied the initial admin password OK
+I threw this one at my terminal.
+Okay, I have received my password.
+I copied this
+And go to your UI and enter the password.
+I went and hit sign in
+Hey Hacker Man, okay, so this is your Argo CD.
+All Sync All Healthy Bhaiya how this application
+How did all these things come to be?
+What is friends chat me Aago CD in one
+Write a shot at Argocd's UI CLI
+Using Yaml Files Completely Explained
+I will go into it in depth, for now I will tell you this much.
+Let me give you this code here.
+Applications and projects so these
+The project is a retail store project.
+Whatever things are written, name name space,
+You can also create everything manually.
+Go to Settings and go here
+Go to Projects | New Project
+Go as you enter project name here
+My new something to describe my new
+Engineics put from LETS
+Description lol put something create
+If you have done that, you can project through UI.
+creating it. If you need to add it to Github
+If you want to add a source to the repository, you
+You can edit and add ad source here.
+So on the same thing I did through the code
+Name Namespace Description Source
+Installed Repos Gate's rip repository.
+Destination: Enter the full address of your server.
+I gave it. It's the same thing. I looked it up through the file.
+You can also do it through the GUI.
+Yes. Okay? Let's go to applications now.
+All your applications are there. Brother, this
+How did you become one? These are also similar applications.
+Made from files. These are mail files.
+Everything in Cubitis is a yall file and a
+Manifest. Okay, let's go, it's great fun.
+Did you learn anything? Even 1%?
+If you find this video, please like and comment.
+Tell me if you enjoyed it, brother. Okay.
+So, that's it, our application is running.
+But brother, I do have something like this.
+should that if I if I
+Here is my main app, this is its source
+I should change it to . Like in the UI I go to
+And go to UI, then Source and then Main.
+This is my template in Resources
+The home page is what the UI is showing if I
+I'll change this, I'll change this
+here
+Secret Shop The Most Public Secret Shop
+Bye
+Train with Shubham, let me do this and commit to it.
+Let me commit this to you.
+Given in the main branch
+It should not be done directly. However, new
+Should be done by branching. Butt from lats
+If I commit, all those changes will be
+This train, Shubham, all these changes for me
+It should be visible on your GUI.
+GUI home should look like this.
+You won't see it right now. Why? Because right now
+The current images are in it using Argo CD
+What image is that? I'll show you.
+Which image is it now? If you click on it
+You will do that, the public uses the image
+It uses images. Okay? This is what I desired.
+All these things are manifest, right, these are public
+If he uses the image, the public image is public.
+What do we have to do? Our own images
+You will have to create it. It will cost
+Build, deploy, all that. Okay? So
+We will do that phase two in the next phase.
+Okay? Nobody even cares about anything.
+If you understand, let me know in the comments.
+I'll explain everything to you. So deploy
+Platform service ingress controller
+Engineering Certificate Manager
+ROCD done. Verify all components
+It is running and accessible.
+Verified. Place order word as well.
+Gave it. How much? $35
+Of. That much YouTube doesn't pay us.
+But we did it. Come on.
+Okay, now phase one is over.
+Phase by phase, give me a rating and comments.
+In that Bhaiya Fuzz One, two stars out of five
+Take it, take three stars, okay, four.
+Take it, what will you remember, so fuzz by fuzz
+Give me your rating in the comments and let's start.
+Let's do Phase Two of the Cuban Application
+Understanding is very important friends.
+On which you have a lot of need to drive deep
+need
+Come, understand now that there is a need to deep drive in it.
+Why do we need it? We need every single micro
+Business purpose and technology of the service
+Understanding the stack is essential. As a DevOps
+Engineer only and only on ROCD
+Deployed. Created EKS cluster.
+Quickly picking up code via Terraform
+Deployment done. That is not how a
+DevOps Engineer Works. One that is real
+In essence, a DevOps engineer
+His mindset is devops. Devops means
+What happens to Development and Operations?
+He simplifies it. So, in development
+I am not telling you about DSA algorithm.
+It should come. No, but the code that is written
+You must be able to read. How to code
+Which one is in the back end of the build that is happening?
+The database is being used, how is it being used?
+You should know everything that has been happening. That's why Deep
+Gotta drive. Let's do it.
+Analyze each microservice business purpose
+And technology stuck. Come on.
+This is going well.
+OK. Where did yours go?
+Is that a lot of windows? Yes.
+Let's understand one by one what we are doing.
+I got the CD folder, and
+They have mistaken it for a folder, which we have not.
+I understand that in docs and images.
+Nothing. All the showmanship is just images.
+The important thing is SRC.
+folder. You need to understand this very carefully.
+Friends, be very careful. For example, if
+You can read the read me which I have given in this video.
+At the time of starting, it was told that every UI
+Component, Card Component Background
+Talking to a database in. Caching
+He is doing it. Understand how he must have made it.
+So let's take an example of a simple
+Cart. Right? It's a cart. Cart's
+Read the Docker file to see what it uses.
+First, they launched Amazon Linux.
+You used it. Okay? So you also generally use Uban.
+2, Amazon Linux, Redat all these public
+You can use the images. Now these mavens
+It is using java 21. V means your
+If you read the source files of the cart
+files, you will find Java files somewhere.
+So if you have Java files
+It Simply Means the Docker
+Should be doing maven build mvn install
+MVN Clean will do all of these things.
+Hey? See, he'll do all these things.
+Multistage Docker builds used here
+Yes. Okay? What has he done now? Something
+User added for security
+Purposes and basically made a jar file
+So if you want to learn Java applications
+You have to build it. Generally, jar files are created.
+Now that you understand your cart,
+Cart uses Java. That's why you need Maven.
+I have to use it. Now let's go to the catalog.
+OK? After the catalog, you'll see the SRC.
+went to the catalog. Now if you look carefully at it
+Look, go dot mud men dot go men dot go
+Meaning, like in Python files, main.py
+It happens that way, there's main.go here.
+But your developer used glang.
+So if you have any Docker in the golang
+If you want to write a file, how is it created?
+So first you should install Amazon Linux.
+will pick a base image. Then after that you
+Download all the Go packages in Go.
+They will download your main from go build
+The entire application will be built. And once that
+It has been built, you can access it from app.main
+So generally, creating Docker images,
+Creating Docker files is easy. If you
+Understand who wrote the code in the background.
+It is written in C language. All these
+The developers will give you the commands. Right?
+So this is very important for you to understand. But
+Now the question arises that brother, you tell us
+Got that cart functionality
+It's written in Java from Let's. Check out or
+The catalog is written in Goa. Which is behind my
+The sequel is DynamoDB, which is behind
+Redis, how do we configure it?
+People? I'll tell you that too. You'll need to know about that.
+Let's say catalogue. What is the use of catalogue?
+Is it happening? Using in the catalogue
+sequel. So, you
+Go to the charts. Went to the charts and
+Get into the values. Then you'll understand.
+That the image that is being used, you build it
+By doing this, the image is created from the Docker file and you can use it.
+You will. But if you go any lower, you will
+It would make sense that there was a
+The public image used is of this version.
+This is the image. The service is running on this port.
+It uses its storage.
+Doing things is very important friends.
+And that's why I created a repository.
+Cube Starter
+Cube starter. So Cube starter
+What does the repository do for you?
+I need to learn the basics. Important things.
+Deployment strategies, help,
+Ingress, Role Based Access Control, Kind
+I have brought all these things here.
+I have prepared projects. If you
+If you want to see it in the video then I know you are Cuban
+You've already seen the end shot. So that's why this deep
+Driving is very important, friends.
+You should know what you're made of
+Yes. Many people don't even know that
+What are they doing, right? So, Annalise.
+Business of each module and each microservice
+Purpose Usa Technology Stag Dekho Review
+Docker file you made with help chart
+There are templates, they have values, they are very
+It is more important friends, if
+Let's come to me
+My card service is the card service which
+Hem chart is what values ​​does he use
+In the background it uses Dynamo DB
+So I also did the public image of Dynamo DB.
+It is kept there, if you don't want to use it
+If you want to do it, what can you do directly?
+Can you provide DynamoDB endpoints?
+Going here. So this is too much.
+It is important for you to understand that Hale Charts
+How are they being used in this? Okay?
+Service to service communication. Bhaiya
+How do you understand service? There are many ways to do this.
+EKS Auto Mode lets you
+gives the data plane, which is your
+Node, security, and your storage. But Joe
+Third party products like Estio
+You can also configure it yourself. However, if
+If you want to see service to service then you
+Let me tell you a simple thing.
+Go to SRC. There's an app there. The app
+The values ​​of the app include all the things in it
+It is written that
+The cart UI is the main one. Its endpoints are here
+Pay it is. Cards Checkouts Orders All of these
+There are end points. They talk to each other.
+So this whole thing is SRC for you.
+You need to understand folders very well. Let's
+What do you do if you don't understand it?
+Can you know?
+Look, these are tips and tricks. If you want to take them, take them.
+Look, you have to go now.
+In the SRC folder. OK? SRC folder
+I went in. Here again you can Q Amazon Q
+You can use it. And you can tell him.
+Can you explain the microservices in
+The SRC folder
+In short.
+Simple. Do you know what he'll do now? SRC
+It will continue to scan the folder in depth.
+SRC will continue to scan the entire site.
+While scanning the entire folder, it
+will understand that from read me files and here and there
+What is he doing and you are getting a complete
+Understanding will give it. That's the beauty of
+AI. A lot of people are afraid of AI. Look.
+What I'm doing today is what I
+I set up the project and did all these things.
+I did it manually so that your life
+It should be automated. But there are so many things that
+The reading is done, the knowledge is transferred, that's you
+Why waste 100 hours?
+You can ask the AI ​​directly. See now.
+Microservice Overview Catalog Service
+Uses Go and My Sequel and
+Provides an API for product catalogs.
+That the product information is shown on your UI
+You can. Cart Service Java Dynamic DB
+Uses customer data in the cart
+Stores. Check Out Service Temporary
+Customer data is provided for Redis caching
+Order Services manages my
+Java with sequelize data to keep its order and
+The UI is your front end that lets you access the API
+Calls are handled by the app service that connects to each other.
+connects with. This is a typical
+E-commerce microservice architecture with each
+Service handling special. So you quickly
+I asked the AI, brother explain this to me.
+That's the benefit of going deep with AI.
+Let us go
+Now brother, what's next? Understand.
+Service to service communication is now complete.
+You've seen the containerization approach. Review
+Hale charted the applications of Argo CDs.
+You've checked the definition and sync policies. Okay?
+How the service is being exposed is very
+It's important. Let's look at that too.
+All the services that are there if you go into it
+In service, they are exposed on port
+Number 80 if you look at all these port numbers
+exposed at 80. All these HTTP
+Port number 80 is exposed and ingress
+The controller is just redirecting them all.
+It is. You can pick up whatever you want. This is
+Now which one did I pick up? I picked up
+There was a catalog service. You could pick any one. Check
+Take out the service. And on its service
+Go and check it out. All on port number 80.
+He is exposed. This will give him a name.
+See this also exposed on port number 80
+Now its ingress is affecting everything
+He manages it. Ingress is everything.
+Manages things. Go to the UI.
+And go to the UI ingress, okay?
+Went to Ingress. Now in Ingress you have to do everything
+The thing you will find is that this is the UI of the retail store.
+if you
+What if you want to access the domain?
+You can find everything right here.
+Okay, nice. Now, the next thing is the most important.
+The important one is Fuzz 3. Get Ops
+Brother, it's been an hour and a half. Now we have to understand.
+gitps what happens is that I put something here
+I made some changes to the application's UI.
+So I changed it to Actual on my UI
+I need to see how I've changed.
+So for this you have to understand a few things.
+Look here very carefully, my friend.
+What is your Github, SCM?
+Source code management is fine yours which ECR
+is e cr what is that elastic container
+Registry means whatever images of containers
+He will be in ECR.
+What does it do? It fetches images. ArgosCD
+What does EKS Cluster Deploy do?
+He does it. It's such a simple task.
+The question arises regarding this ECR.
+How will this Docker image be delivered? That is the
+Question. How? It's very easy. Very much
+It's easy. I'll show you. What do you care?
+You want to do it? You can go here to AWS.
+Write down the ECR. Okay, I have written the ECR.
+Fully Managed Elastic Container Registry
+You can create the repository here.
+Okay, so here, oh, I already have it here.
+Have you created some repositories?
+The thing is, don't make yourself public, brother.
+How do you want to make yourself private?
+If you want to get it done, come let me get it done and create it.
+Let's create a private repository for this
+I will name it Demo Private.
+OK? Put in the demo private del. And
+here
+UI Image from UI Lets Push Me
+If you want to get it done then demo private UI image tag
+mute mutability mutable means change
+Maybe. Immutable means it doesn't change.
+So I want my tags to be
+Let it change. I'm not that painful.
+I'll create immutable tags. But never mind.
+No, it is up to you and that is all you create.
+What I did was I created a private repository
+Made this private now I'm just on this
+I will click, it's done, click, now see what
+It will say View Push Commands, click on View.
+Push Commands and This Is How You Push An
+Image to Your Repository AWS ECR
+Get Login Password Username AWS Ye
+If so, copy this to anyone of your
+Go to the terminal, they go to their Kiro.
+Right now. Okay? There you go.
+Now I have to build the UI using let's.
+Here is my Docker file. So
+I'll just do it Docker. Okay, one by one.
+Let's do it. Okay? Let's not rush it.
+Bro. AWS ECR Login Password
+Copied it and posted it here.
+But he threw it down nicely.
+Now he will take some time.
+You are logged into the private registry.
+I'll get it done. Login is successful. Now.
+What do you need to do? Docker build image.
+Now the Docker file should be here.
+Now it will take that much time to build the image.
+And so on that much time to build
+And he will build the whole thing and so on.
+Whatever time it takes. Whatever UI
+The image is a bit large. Look at it.
+No, there are 18 layers. What is a layer? Again.
+Check out Docker in One Shot. You'll also love Docker.
+It'll be easy to understand, right?
+Video for those who saw Davos
+I have seen the entire series in this one shot.
+They are masters of devops and now they
+I want a project. And I want that project.
+I'm explaining. Okay? So this is going to be the build.
+It takes as much time as you need. Just build it.
+After doing this, you have to tag him and push
+I have to give it. That's it. Your private image.
+It will come to you in your ECR and it will be
+The name of the image is just what you will find in the help file.
+I have to update it in. Finished work values
+Just update it and it will start working.
+That's it. Now, what I've been doing so far.
+What is this that I am so full of
+I am working hard.
+It's all manual. So I logged in.
+I did the build. Then I'll tag and
+I'll push here. Then go and see that helm.
+and the Argos CD latest image
+So manual.
+I want to automate this. I don't want to
+I wait for hours to see when my friend will come
+It will build. Then I'll wait. When will he
+Not deployed.
+Let me tell you one simple thing here.
+Vi is no age
+CICD Continuous Integration
+You've seen the Continuous Deployment CD.
+I took that Argo CD will say that whenever your
+Source deposits changed, I've seen those things.
+I'll deliver it. CI How will you do it? CI
+Continuous Integration means that anything in the code
+Detect the changes that have occurred.
+Then log in to ECR. Build the image.
+Do it. Tag him, push him. All this if
+If it happened automatically then that is called
+Continuous Integration.
+So CI
+Continuous on CD
+Inti
+Integration. What does it entail?
+What would your Docker do first?
+Is?
+Check out the code
+Then if your code is latest then its
+Detect Changes Then What Will Happen
+docker build then what will happen docker tag then
+What if Docker push to ECR then what?
+Which will be the tag of my latest image
+Update tag in Helm charts. So, this is what
+All the steps are there, if it happens automatically
+If I go, I will have the latest image that will be created.
+Its value will be shown in the help chart.
+And from here to here
+In Continuous Deployment I used Argo
+You have already set up the CD.
+So I have already set it up.
+So this becomes my complete CICD pipeline.
+Will go.
+But there's a catch. The catch is if
+I did not do this CI and I
+Directly updated in Hale Charts
+Go here manually.
+So can my Argo CD deploy that thing?
+Will you do it? Yes.
+Meaning, this entire pipeline of CICD
+Isn't it from github?
+This will be built on Docker, this will happen again
+This will be pushed into ECR
+Then this will be deployed on EKS.
+Devops lives Code Build Test Deploy
+CICD now there is problem in this
+Do you know what it is? What's the problem? If
+I went here and added the values ​​directly.
+changed it and this Argo CD
+Once deployed, your application must
+It'll do. No scene. But what about those values?
+ghub
+Does it match the code on the
+Is it? No. So a small error in DevOps
+There are chances that if you
+Engineer DevOps Engineer Manually
+Updated the help charts and added Argo
+If the CD picks it up then your code
+The code will be checked out on Git.
+That and the production in deployment.
+The match that is going on will not end.
+That's why the concept of git offs ka bhai came about.
+What is GitOps and GitOps and DevOps
+what does gitps say
+Gitps Bol Bolta Hai Your Git and Your Version
+The control system is the single source of
+Truth. Meaning whatever is in your Git pay code
+The same thing will be written in your deployment.
+If your git commit is a
+If you want a replica, then in your EKS clutch
+There must be a replica. If it has 10
+If it is written then it should be 10 here.
+How do you do something like change the code in Ghub?
+Yes. Automatically build. Values
+Update it. Deploy Argo CD
+They. And that is why it is known as
+Gitps. And that's why fuzz three of this
+Project Is The Mostant Fuzz Till Now.
+That here you have to understand Gitps a lot.
+It's important, friends. Very important.
+Review GitPs Principles and
+Benefit Single Source of Truth. Meaning
+I was quietly building this
+No, this is such an unpacking of Docker, this quietly
+I built it and I quickly got here.
+Docker tagged
+And did the docker push.
+Docker pushed. This is wrong. This is not
+It should be. Why shouldn't it be?
+Because I am doing this docker push
+Hmm my help chart will pick it up.
+But can I upload my source code to my GitHub?
+Does management know that this change has occurred?
+No, he doesn't know. So whatever changes you make
+It will be on GitHub. So that's why Gopps
+You will have to create a new folder for this.
+Which is known as Main Main Wale Pe
+I'll have to make it. Not here.
+New Folder
+Whose name will be Ghub
+Work Floss
+And you'll need to create workflows.
+Friends, this is what work flow is.
+The work flow is what I just described.
+This only
+that changes in the code were detected in the code
+If changes are detected, docker build will be done.
+Tab gets triggered, Docker pushes, gets updated
+Helm Charts Pay and ArgosCD that thing
+Deploy it automatically
+That Can Be Achieved Using GH
+Actions.
+Let's start the Ghub actions right now
+Talking about.
+OK? So GH Actions isn't too difficult.
+It's simple. I'll show you.
+what do you have to do? oh yes by the way you
+The image is in the private repository.
+The push is done. Close it and
+If you refresh, you will get the latest information here.
+Got the image.
+How accurate is that? And if you look at this image,
+Where do I put the value after picking it? Help Chart
+Put it on. Your latest version is now running.
+Wala image. That's the beauty. Okay?
+Let's understand Gitps right now.
+What would I do for GitPop?
+It's simple. I'll take you to Git. Git
+Pay and here I'll take you to the actions
+In. Actions. Okay? Into Actions. Now here
+Then you click on New Work Flow.
+You can find all these workflows on GitHub.
+Defaults to static HTML
+Deploy the pages. Deploy
+static HTML pages, you just configure this
+Click on the button. Complete getup work.
+The flow will automatically be created. What else can you do?
+You can see it. Publish Docker container. Docker
+Want to publish a container? Click on Configure
+Click. Now watch the fun part. As soon as
+What will happen if you click on Configure?
+You know? It doesn't click well the first time.
+Your GH action is already done.
+The GitHub Action is called Docker. This work
+Flow uses actions that are not certified by
+GH. Okay. You can also schedule this
+Run it every day at 8:00 PM on the 23rd minute
+If I push anything to the main branch
+Or should I pull over the main branch?
+If I create a request, then on this registry
+The build of this image should be ready.
+If it is built, it will not be locally produced.
+GitHub has runners. GH already has
+They have installed machines on which Ubuntu is installed.
+Running and that will check out your code.
+Whatever latest code you have pushed
+It will take the code. Docker will then build it.
+What's the point? Docker's metadata is a docker build endpoint.
+Push Docker Image. Build and Push. Joe Joe
+We entered the same commands as ECR.
+Just put it here. And that's it. That's your image.
+Isn't this amazing?
+You don't even need to write much.
+You just have to go to the work flow and
+You just have to create work flows. That's
+It.
+This 404 is coming because your
+There is no work flow in the main branch.
+No. But brother, if I had to work on my own,
+If you have to write from then I will tell you.
+Kiro Bhai, I will tell Kiro, hey Kiro
+of
+Do me a favor, enter your idea
+I want to generate dot git hub work
+Flow for This
+Application
+Which does three simple things?
+What Detect
+Any New Changes
+Build and Push Docker Images to ECR
+And update the values ​​in Helm charts
+boom enter now what will kiro do i mean ai
+He will make a plan, he will make a plan
+As many files as you have, as many
+There are things in this whole system, all of them
+He will read it, he will read it all. That latest cloud
+There are as many 4.0 LLMs these days.
+The world is moving towards AI, friends.
+It's a crazy time. Generally.
+After understanding your source code well, one can
+AI can also create workflows for things.
+Yes, all this data is local cache.
+It stays in. It doesn't go back to LLM.
+to be trained. So too is your data
+It's secure. You're doing everything locally.
+Amazing. So what will he do now? He's a
+Spec will create. Spec will contain your
+There is a requirement, let's say you require
+Do you do Git Actions workflow for retail?
+Store Application CICD Pipeline which includes
+I have a requirement CICD
+The pipeline has to be automated. This happens whenever the main
+This will happen when the code is pushed to the branch.
+This will happen if there is any micro service change.
+If multiple microservices change then this
+What is the second requirement?
+Devops Engineer, I Want Docker Image to
+B. Automatically build and push to ECR.
+What's up? Quickly write "boom" in the chat.
+Because it is the most advanced yet.
+This is a project that I have created.
+Integrated with how AI can be used in
+Devops for GitOps in a Multi-Micro
+Services Architecture on EKS Auto More
+Drop Boom in the chat. If you like this
+If the requirement seems right then you can apply for it.
+You can go to the design face. Move to Design
+Face. What will happen now? Whatever these requirements are?
+He will understand that brother, this is the requirement
+I understand. If you need some changes,
+If you want to get it done, you can make the changes here.
+Yes. Okay? When debugging for debugging
+If you want some changes then change all this yourself.
+You can also do it from here for example
+I want it to be the best.
+DevOps and Gates Practices
+Or if you have a requirement then write like this
+Give it here and he will understand that too and for you
+He will make a design. Brother, what design?
+Does it happen? Whatever your understanding is, whatever
+Also your requirement is, he needs a dis fuzz
+I will take it with me that this has to be made first,
+This is the second time to make it. This is how it flows.
+It will. It will detect changes first.
+I have written down the things here and told you Joj
+I wrote down the things here that
+Detect Changes, Docker Bill, Tag, Push all of these
+I was just showing you the design. That's it.
+It's a thing. If he makes it himself, it will be a design.
+Once there, click on the design. Look like this
+Main CICD Work Flow CICD.L
+Trigger on push build then build service like so
+It will also create a complete email like this.
+What a great move to implement.
+Fuzz. What will happen in Implementation Fuzz? If
+If your design looks right to you, then you
+Tell him that my design is correct brother. All
+It's set. What happens next? Next, which is
+Task list. Now create that task that the first
+Tasks create a folder dot gibb work
+Flows. Task 2: Do this. Task 3:
+Send an email if my build fails so on.
+So this is creating the task. Can you see
+Created Task If you click this task
+will you do it
+First create main CICD as a DevOps
+The engineer thought that first git work
+A folder with Flos will be created, then path based
+The card catalogue will be filled and so on again
+Reusable work flow will be created build service again
+AWS Authentication will be ECR access
+Bhaiya, how will the authentication happen, you will have to tell your
+Secret access keys will have to be given to Gibb
+They'll give it. Yes, they do, brother. Something like that.
+No. Don't worry. Docker build multi
+Platform, all these things, service
+Specific configuration, configure go
+Service, Configure Note J. So, all these
+He'll do things himself, friends. You just have to
+Click on Finalize Task.
+You don't need last tasks from lats.
+You don't need testing or validation.
+You can delete it. Done. Save it.
+File task list. And all these
+The AI ​​will finish the task. Let's see.
+Click on Finalize Task List
+I. Now one after the other he said three things
+Requirement document, design
+Documents, implementation plans. All of that.
+A DevOps Engineer in Day to Day Work
+It does. Now you can simply do it. Start
+Click on the task. Boom.
+Create Main CICCD Workflow File.
+Create dot Gibb work flow. So here
+Your ghub wfls folder is created. Now cycle
+If you want to make it then ghub wow in CICD he
+I made it myself. Click here, he's writing now.
+It is. It's still being created. But it's taking a while.
+Later it will give you the output whenever
+You have to review it. Don't say it later.
+To the boss. Hey brother, I didn't write it. AI did.
+Wrote it and that too was told by the brother from Devops
+It was. Doing this is not like that. You
+I'll have to review this, my friend. This is when you
+When you review it, you will know that this is
+So I created this long file. Well, more
+It wasn't long, it was well done, man. He made the Matrix
+I've used it too. It's well made. It works well.
+He did it that way. It was great. So he saw it.
+Task Task in progress All these tasks
+doing.
+This is Chumeshwari work. How is the video looking?
+As yet?
+Task completed brother. Create me
+The CICD workflow file has been created.
+If you go to CICD, whatever your Docker
+push and build is action, setup build exe
+Yes, need AWS account ID
+It must be, you need a reason. Okay, what's the matter?
+All these things, all these things here, update the chat
+Path.
+Brother made it all. He made it all. Drop
+Boom up in the chat. If you understand
+That's how things are. By the way
+Using this I have already created
+A Gotab Actions workflow that shows what you can do
+You can get the status, all this is made up.
+Hey git stay do it what does stay do
+All these things are temporarily hidden and
+You will use it later, okay now.
+I'm going to a new branch called
+git checkout get os so I created a new
+The branch has been created. This new branch
+I already
+I already
+I have written deploy. CICD now.
+There's no need for this. OK, delete it.
+You can. Why am I deleting this?
+Because brother, I have already made this.
+I have already made this using
+that and using my own intelligence that this
+It's not wrong. So look at it very carefully.
+So, basically, these are all the jobs in it. Three
+There are jobs. Try reading it from the top.
+Do it. There is a simple pipeline called deploy which
+what does it do? if you push my
+In branch gitps
+Path SRC means if in githubs branch this
+The src file in the github branch
+If I look at my developer, the developer is right here.
+Will push the developer to change the UI
+So that will change in the UI, change the catalog.
+If I do it, I will make changes in the catalogue.
+Optimized your work flow.
+A devops engineer will do this. AI
+What will the AI ​​do? It will tell you everything.
+If there is any change in the repository, run it.
+Here you have to apply your mind that I
+The entire repository does not need to be changed. Read
+If you change me, my pipeline will not work.
+If there is any change in SRC then all these
+I'm going to run my pipeline. Okay? Done.
+On Push.
+Done. What do I need in the environment?
+Requires AWS Region. Secrets
+AWS Region. OK? If you're using Read Me
+Will you check the file?
+So go to the last phase. The very last phase.
+Go ahead, friend. Then you'll get Ghub Actions.
+Create an IM user. You've done it.
+Generate credentials, you did it.
+Go To Your GitHub Repo Settings Secrets
+End Variables Actions New Repository
+Secret. OK? Access Key ID Your
+Access ID. Now the user who has access to your ES
+Do not use the ID of the same user who created the cluster.
+Here, create a separate user for GH so that
+You should know that because of that user this
+Changes made. Don't mix up your users. OK
+So what am I going to do now? I'm paying.
+I'll go. Okay? I'm going to go and I'll go to a
+I'll create a new user. Okay? A new user.
+I'll name it Git Ops
+admin gops admin ok this is a new user
+Who should have what access now?
+I want all access to the users with Gib.
+I don't have to give it, I have to give it to ECR
+Where did ECR go?
+ECR Me Re
+Okay, give me admin for now, but you
+What do you basically need? Yes, you can buy it on Amazon.
+You can ask Q what all
+You can ask from here what all permissions
+Should I give up my GH actions? What? This
+Zoom in a little. All permissions.
+should i give to my
+Gibb Actions
+user
+In I AM So That It Can Build Push
+Images to ECR
+Use the best security
+practices
+What's going to happen now? I understand AI.
+I will see what permissions I will get.
+What tokens, what things do I have?
+I should do it. Okay? So he told me that
+You have to use this policy. Okay? So
+How cool is that? He told me everything.
+What Least Privilege Principles Use
+and all these things. So you should
+Create a user. GH Actions ECR
+Attach policy document. OK? Attach this.
+What's the point of create access, man, that's the
+Power of AI guys I don't say this
+that AI will take your job and you will be in your job
+Using AI to improve your productivity
+In this way you can increase a lot of
+Friends, it is very important to understand that you can get jobs.
+It is important, I enjoyed it, can you do this for me?
+I
+Welcome to the era of agentic AI. Okay?
+So here in the middle are agents who use tools
+are using use AWS. So that
+What will he do? He will keep running and doing things.
+will create that policy document. Then it
+This command will create the user.
+So now what I'm doing manually is
+User creation was happening and this was not the policy
+Have to do it. No not needed because he will do it.
+Let me attach the policy. Okay, attach the policy.
+Let me create the access keys. OK access
+Keys of GitHub user. Let me have access
+The keys will arrive soon.
+Got the access keys. Okay, nice. So this is my
+This is Access's ID. Great fun, Access.
+Key ID. Now here if I refresh
+If I do this, a user will have been created.
+GitHub Actions ECR User. I'm here now
+What should I do? In my retail store app
+I'll go to Settings. Settings
+After going into Secrets and Variables
+I'll go to Actions. End here.
+My secrets are stored in that repository.
+I configure the repository secret.
+I will. How is it written here, go to your
+Get Repos Settings Secrets Variables
+Actions New Repository Access Key ID
+Secret got its name and Secret Access
+What happened to the ID of that user?
+The access key is Create Add a Secret Access
+The ID has arrived, what else do you want brother?
+need secret access ok one more
+Create a repository secret and enter its name.
+What is its value for secret access?
+I'll delete it. This video is worth it.
+Everything will be deleted as soon as it arrives. Tomorrow
+My manager must be watching and saying
+What is he doing? I'll delete it.
+Dude. Okay. AWS Region
+Check the AWS region in Read Me or
+No? Yes, it is. Okay. So, new repository.
+What AWS region is the region? US
+West to. Use your brain here. AI
+what did he say? AI said US East One
+And you are preferred. What are we doing with this copy?
+Let's paste it in. So let's give him all these dumb things.
+Like stop copying and pasting. From AI
+Increase your productivity. Okay? Account
+ID 62. Now this could be wrong. So you
+What should I do? I added this region.
+Now I have my account ID too, right?
+Account ID
+Where did it go? If I get my account ID,
+I need to find out. It's very easy.
+Go to the AWS console. Like mine
+Train vs Shubham is his own account.
+Copy the account ID and go there.
+Throw it away.
+Now this is how you have access to GitHub.
+I have given you the details of my AWS account.
+Not the entire AWS account
+Given. Cannot create cluster-waste
+This. What can it do? Just push
+Can image. That's it.
+Least Privilege Security Principle.
+Okay? I'm learning a lot from this, right?
+From the video. It's been two hours. Brother, please stop now.
+I am not taking his name. So you should just like it.
+Leave a comment or two to let us know what the next one is.
+What video are you going to watch because this one
+So, brother, he's gone crazy. Let's do it.
+Repository your secrets. What next?
+Do you want to? Let me show you my face once.
+Work flow by going to the branch with GitPos
+I'll show you. At the Gates branch.
+Let me show you the workflow. Overflow
+It's very easy. Not too difficult.
+Yes. It's deployed. I told you, didn't I?
+Well, I was just explaining there.
+Meanwhile, this one arrived. Okay? Now, this one first.
+Got it? What's your name? What's your job?
+Name of. Okay? On means when will this job run?
+Push to this branch. Changes to this source
+It will run on AWS in an environment
+You have the secret in your region. Now you
+I configured it. So did the environment.
+That's it. There are three jobs in Jobs. Meaning
+Detect Changes, Deploy and Give Summary.
+What did you do at Detect Change? This job.
+It runs on Ubu. Meaning it runs on GH's runner.
+You don't need to run it on your local
+Ghub will automatically run on its runner.
+Output Change Service Steps Changes Output
+Change service. What is this, brother? This means
+Wherever there are any changes to these steps
+It happened. These are the steps, this is a key
+These are its values, whatever changes are there in it
+If so, in the UI, in the catalog, in the cart
+Any changes to orders at checkout
+If they are there then what should you do, check them all.
+Changes and changes if detected
+So what should happen
+So my detect changes will run so change
+Service will help you understand who
+C-Which service has changed? Okay?
+Done. Got it, this one.
+OK. Done. So Detect Changes will only show this.
+that your developer has made a service change
+Or not. Done. Deploy these lots.
+It's Matrix.com.
+What is Dot Service? Meaning of Matrix
+Parallel jobs. If you look at Redmi here
+If you look at Redmi, I will give you a
+I will show you something very cool or you
+You can go to Actions and watch it in parallel.
+jobs. Parallel jobs means this
+Multiple jobs can run at the same time.
+is called the Matrix. This is your Neo and
+This isn't the Matrix with Kano Reeves.
+To run multiple jobs in parallel
+The Matrix is ​​there. Okay? So what does he do?
+If changes are detected, this
+Run the thing. What do you do? AWS
+Configure the credentials. So here
+Pay credentials are configured. You have
+Access ID, secret access key, all this
+So I've kept it under observation. Log in to ECR
+Do it. You have access to ECR. This log
+I'll put it in. Build and push. Same thing.
+The same thing that we did manually here.
+No, we did it manually.
+Everything was pushed manually, all the same
+The commands are written here, the name of the repo
+How did you find out the account ID region?
+ID region because here if you ECR
+Go to
+So whenever there is a push on ECR, if you
+go to your private registry whenever
+If it is pushed, what is the name of that image?
+This is your account ID then DKR
+ECR
+US West Region Amazon AWS your
+One way is to enter the name of the repository and then the tag.
+The same method is given here.
+ID DKR ECR Region Amazon aws then
+Retail Store Your Image Name Then Service
+Name of UI Cart And So On Okay Then
+If the repo is not there then create it.
+Create will build and push docker build
+Build with the same command docker build docker push
+The same command will be pushed. Once the image is
+If pushed, the values ​​of the Helm chart
+So updating helm values
+For this, first you have to see that help
+Where is the chart placed? So the ock command
+Again Linux in One Shot if your main image
+means if you have the image above then
+Add the updated repo to the repository. OK
+Is it? Just doing this and that successfully
+Updated image and that's it. That's it.
+Once you've updated the images.
+Commit those images to GH too. Why?
+Because when you commit on Ghub
+What happens? Show me. If you commit to Ghub
+If you do, the work will start. CD
+Wala. What is all this? It's all CI. This
+The jobs that were not detect changes were deployed.
+Summary This is your CI This was your CI
+Continuous Integration Once you've committed
+Done the work of git and then Argo CD
+It will start there, what did I do?
+It has been said in the applications that if
+Any commits to the gitps branch of this repository
+If changes occur, these values ​​are deployed.
+Tax two values
+Deploy CI Jobs Pay Values ​​Here
+changed and Argo CD
+I deployed it. I mean, whatever I
+Gateway will go to deploy that Argo CD.
+He'll give it to my cluster. Let's show you.
+Am.
+Ok.
+Let's turn it off. Clean it up a bit.
+I'll give it to you. I know. Okay?
+Get Status Now
+ER policy is ECR policy. Right? I
+I don't even comment on the policy yet.
+I'm fine. I'll do it later. Okay? Anyway, commit.
+The policy should be implemented. What should I do now?
+Is it? I want as many of my
+There are services, I would have made changes in each one.
+I am. I went to SRC. I went to the cart.
+I would have changed it in the read me in the cart itself.
+Yes. I'll make a small change, not much.
+Test Commit This is a small version named Test Commit.
+sa change in every single microservice
+I'll do it. I added it to the cart.
+I even do it in catalogs.
+Do you know why I'm doing this? So that my
+All images
+Build it. Or you're fine. This would do it.
+Now I have changed the catalogue also.
+I also like to read me a little about the check out service.
+I'll change it a bit. I'll also change the orders.
+I'll change it a little bit. But brother, you
+So I said that you will change it on read me and
+Not good if the pipeline gets triggered
+He's just showing you a demo.
+I am. That too inside the SRC folder.
+Whatever files he has.
+Okay? Read me. Okay, that's it.
+Orders are read on the UI
+to me
+Test commit done so now I do if git
+Status
+So I have five files changed.
+So I can add SRC if I do it.
+My status became five ready to commit.
+So if I commit this.Get
+Commit hfan.m added minor changes to src
+Microservices
+I'll put something like this for testing.
+Committed
+Should my pipeline run? Why not?
+Because what the pipeline says is when to come
+Pipeline Speaks On Push To The Branch Gate
+Offs so if I do get push
+Origin Gate Ops Also If You Do This
+You can fork this branch of this repository.
+And try pushing in yours and you will find out my
+I am pushing and saying that brother
+Not working OK Gate Push Origin Gate
+Offs Enter
+The push is done, as soon as the push is done, now I
+Where will I go to my
+I'll go to the repository and go to github's head
+Recent Push
+Okay? Now I'll move on to my actions.
+Where are you? I'm going to the action. Can you see me?
+Pipeline is running added minor changes to
+SRC Microservice Testing.Click
+Do that. And you'll see detected changes.
+Service. Is it okay? Something's wrong.
+What's this? Oh, there were some errors. Okay?
+We'll fix it, brother. It's our job.
+Fixing the error. What's in the Deploy Cart
+Getting an error? Build and Push Cart Pay
+Came.
+OK User is not authorized to perform
+ECR Create Repository
+I gave him access to push but
+If you are not given access to create repository
+Now what I will do is create that user.
+I'll give you access to the repository. Let's see.
+How will I do it? Hey, he is my brother, isn't he? Amazon Q
+So if you write Amazon Q
+ECR Create Repository X Access Was
+Not given to GitHub. Now this username
+You'll have to give it to him properly, friend. Otherwise, he
+The poor guy will get confused.
+I will go to AM. Oh by the way this whole
+There is no editing anywhere in the video.
+So the errors that I get may also come to you.
+It is. Just what's in it? GitHub
+Action ECR policy. What is this? Okay.
+Yes. We give you ad permissions here.
+No problem
+Brother, let someone do it
+Get to the User Get Actions
+Using the Policy
+Dot JS
+ECR Create Repository Access Was Not Granted
+Given to the GitHub Actions user, what is that?
+The ECR that will be stored in this repository
+If you have a policy, someone will assess it.
+What he is saying is that the ECR policy is
+missing is ok
+That's so cool. Okay. That's why you always
+Create, Describe, Permissions, Read All
+So whatever AI generates
+Read it. I deliberately left all these
+errors. Like you can tell the AI ​​to do something like this
+Don't use a shunt. Use it properly.
+Do it. Okay? Now does it have ECR?
+List Create Read Update End All ECR
+Related permissions on AWS Ask this
+Does this user have all the permissions?
+So he will tell which permissions and
+Needed
+Ok?
+OK, nice. Look at the tags listed.
+Permission is also required. Right now, because of the tag
+would have thrown an error. Okay? Done.
+Let's Give the Permissions
+To the user. Now brother, I am fed up with your actions.
+I understand one thing. I know a lot.
+People will now write to me in chat.
+Brother, if AI does all the work then what will we do?
+Will you? What about our jobs? Simply put,
+Let me tell you one answer.
+AI is an assistant. So what you saw
+You saw Amazon Q, all these are a
+Assistants. Most Capable AI
+Assistants whose job is your day to day
+To help you in life. Okay?
+The job is not to take decisions on your own.
+Look, the pipeline itself is messed up.
+If you tell the AI, "Friend!"
+Build this end to end makes garbage brother.
+It sucks. So you need a human in the loop.
+HI TL also speaks of Human in the Loop.
+This is very important. So treat AI as an
+Assistant. Sharpen your knowledge.
+You might not know that ECR
+How to add a Create Repository policy
+Yes. Ask the AI. You probably don't know.
+will be least privilege security
+What's a principal? Ask an AI. Well.
+How Solutions Per Architected Framework
+Architects work. You probably know
+It won't happen. Ask the AI. So use AI very
+Wisely. That's why I added AI. Right?
+The permission issue you encountered should now be
+Resolved Your CCD Pipeline Should Work
+Walk Smoothly
+Ok
+Click on Renew Jobs so that
+If you missed something, you will get it back.
+Reinfeld doesn't have to pretend to be committed
+Click on Jobs and all these things fail.
+It's done, click on rerun jobs and let's go.
+Just back then, he created the Jobs Matrix.
+Granted, this matrix is ​​very large.
+Friends, because you can do multiple jobs in parallel.
+You can drive in. Check Cart Catalog Now
+Out Orders Deploy UI All this is happening
+Yes. Okay? If you click on this now
+Look, push it, push it, be happy. See it all.
+Build and push, everything started happening.
+Okay, it's being built now. It will be pushed.
+Come
+This is the best part of DevOps.
+We get to learn so many new things.
+Now you will say that brother, GitHub Actions in
+Make one short video where you are yourself
+Write things down line by line and I will do it.
+That correct, you tell me in the comments.
+Complete the like target of the video
+I will do all that Argo CD in one shot gig
+I will do all the actions in one shot.
+You have to be mindful that you are not following the tutorial.
+Don't get stuck in hell again on the big screen
+things
+What is tutorial hell? You've learned Linux
+I sat down to study, watched one tutorial, and then another.
+Saw the tutorial, read this, read that,
+I read all of that too. That's not good.
+Friends, did you read anything about that project?
+Errors appeared in the project.
+Fixed it, hands on it. That project
+Put it on my resume and applied for jobs
+for. Got the job. Well and good. Didn't get it
+No problem. Upskilled again.
+This Is How You Get Out of the Tutorial
+Hello. You will say that brother, get it.
+Actions in one shot Bhaiya this in one shot that me
+So I'm ready to make it. I like it.
+teach.
+It's up to you how you do that thing.
+You absorb it. Well, it's my job as long as
+This whole thing ends up talking nonsense to you.
+Stay. Just kidding. Okay. Oh wow, this
+I found the right thing. Train vs Shivam
+hat.
+Done. So I know for a long time.
+Not going live, not having meetups.
+and I know train with Shubham that you know
+You guys are missing me. I know.
+When is batch 10 coming brother? This or that?
+Everything will happen. Right now, such strong people
+Let me take my projects to the next level
+Let's give you a deployment summary, brother.
+This is a commit. It happened on this branch. Guys
+Shubham has triggered it. Which one?
+Has the service changed? Has the UI changed, catalogue?
+Changed, Card Checkout Orders Change
+Done. Deployment successful. Built
+End push Docker images done. Hem charts
+The update has been made. The commit has also been made. Argo
+The CD will sync it.
+Wow. Let's see if it really happened.
+Whether it is there or not, then go to ECR.
+And go here and give me your private
+Yes Retail Store Cards are available in repositories.
+It's out. The catalog has arrived. Retail store checks
+It's out. Orders are in. UI is in
+has happened. When? July 27th is today's date.
+He has gone. Now brother, he said that Argo
+The CD will sync automatically. Which branch is this?
+C? In which all these things happened. It
+What is the name of the branch? So this branch
+The name is Gitops. But your Argo CD
+If you check his details, he
+Argo CD Launde Shubham 153 K Main Branch
+He is taking it from there. Not from the Gate Offs branch.
+He's taking it. Why is this? Because when we
+Demonstrate the project in the beginning
+When we were doing it, we used public images.
+The private images are on GitPop
+I have kept all this in the branch.
+Explain in the branching strategy file
+That's my branching
+How is the architecture designed so that developers can change the code?
+If it's in the main branch,
+There will be manual deployment. Public ECR
+Images will be used and the umbrella chart will be complete.
+You'll see RGOCD's. But if the developer
+Changed the codes in the production branch
+If in gitps branch then github actions trigger
+The bull will build and push to hell
+Will upgrade the charts and Argo CD
+Private ECR images will be synced and updated.
+and update individual apps.
+What does that mean, friends? It means
+that my Argo CD is
+Gitps
+This is the configuration of Argo CD.
+I want to apply in my cluster.
+Did you understand? Because right now what I
+What is going on in the cluster?
+The Argocd running in my cluster right now
+It's running on the main branch. So I
+What should I do? Cube Ctl Apply Halfn F
+What are the applications of ArgocD?
+All the applications, whatever they are in these
+Namespace ArgocD
+Enter, now you know what will happen
+Now that I have updated my Argo CD
+configured configured configured which
+My updated target revision is which is
+GitOps will be used. So now you can
+Argo CD if you look at the applications
+Look, everything is being processed.
+And if you look at the target, you'll see
+Branch and all are healthy. What a great thing.
+This Is Gopps
+Funny. What did you do? You posted it on GitHub.
+Changed the code. GitHub Actions fixed that thing
+Build Test Currently in testing stage
+I haven't added it. I built it and
+Pushed to ECR. Help Charts
+Updated and synced with Argo CD
+And Argo CD is syncing right now.
+He will do it slowly because the entire public will
+Move from images to private images
+Neither will it complete. It will happen slowly. Can you
+Sea Green? Slowly your life turns green
+Is going.
+How did you like the video?
+How long has the video been? I hope 2
+An hour and 22 minutes. Oh my god.
+And your application is up. Take a look.
+Check if my application is running or not.
+So if I want to see the UI of the applications
+If yes then I can directly go to the folder containing Terfm.
+I'll go in and write down the Terfm output.
+And here I get the URL of the retail store.
+You will get it. So just run this command echo
+Me. Copied it here and posted it.
+Here is my application running.
+copy it
+And go here and try it. Is it working?
+Yes, it is working. Why? Because the secret
+Shop by TWS Bhaiya where did Shop by TWS come from?
+Because I have added that UI to the gitps branch.
+I made that change by TWS if you remember
+If it happens then what will I do in SRC
+Oh by the way the main branch has some
+Not gonna happen Main Branch Is Your Public
+Go to the gitps branch containing the images
+Go to the gitps branch now see the UI
+I'm going to change the source of the UI
+I'm going to assume I'm a developer.
+The developer changed the UI for that
+I went to his resources, templates.
+Went and went to the home page and said
+What did you say? Secret Shop by
+Train Everything a Secret Agent Needs
+Minus the paperwork. Yes. So write it here.
+Hello there. What have you done to him? What have you done?
+Did I give it to you? Did I mess something up?
+Where did you go?
+I messed something up.
+You also have to click on Edit This File.
+So maybe I didn't do it.
+What's happening to him? Yes. So where's the change?
+Did you have to do it yourself? Yes.
+this not
+Hello friends.
+How was it
+Like the video if you enjoyed it
+Watch, like, share, subscribe.
+The way of asking is a bit casual but it works.
+Okay, do it, hello friends, how did you like it?
+If you enjoyed the video, please like and share
+Subscribe now, don't do it if I
+I comment and commit
+So will that commit rcd pick up gits
+It will process it and only do it if it happens.
+Okay, otherwise don't do it, let me commit.
+I'm in a Git branch and want to commit directly to
+git branch as I make fewer commits.
+What will my Git actions say? push
+It's happened. The push to the branch has happened. So if I
+I'll go to my sample app githubs branch
+So the push has happened.
+Go to Detect Changes Details.
+Changes. Were changes detected? Yes
+Done. Deploy UI. Why just UI, brother?
+Was it deployed? Why weren't the others deployed?
+Because I have written that when
+If the service changes, change it accordingly.
+Services architecture with gates drop a.
+Boom in the chat guys if you're enjoying it
+So what did he do? Build
+End Push is pushing the UI now. OK
+Is?
+OK, nice. What do you think? Hem Values
+It will update. Let's see. Build and push
+UI is happening. Look, I won't touch it.
+Otherwise, tomorrow you will say, brother, you
+Edit and trim the video and play it
+Yes, and brother, we are not like that. We are a little
+We are living people. We don't live life for long.
+Let's take it. So let's enjoy it like this.
+By the time the Build and Push UI is running we
+Let's drink some water. It's been two hours.
+The goats are doing it.
+And remember the credits thing.
+You create an AWS account this year.
+After July 15th, you'll get $100 in credit.
+See you. And if you take a few more steps
+If you do, you get $200 total.
+Awesome, run this project, add it to your resume
+Do it. Post it on Lindin. Which I don't
+Know you must have Gates skills.
+Friend, you must have ArgosCD skills.
+Must have Terraform skills. EKS Auto
+You should also know how to mode. This takes a lot of time.
+He's taking it, man. This old man in my midst.
+He talks a lot.
+It's happening. It's happening.
+Do you know how it generally works? Now, anyone
+If you watch the videos of big creators, then they
+Never put breaks in videos.
+He is drinking water in the middle of the video.
+The boy will be back soon after his walk. Afternoon
+I started the video. It's evening.
+So this all happens, brother. Hey, what?
+Is it okay? It's done. It's done. What's the matter?
+It became simple.
+Now my CI is over. Can I CD it?
+Where did the UI go? UI. Can you see?
+Can you see this? My UI
+Progressing. My UI Progress
+It is doing it. Look, it is being deployed.
+I did not touch anything automatically.
+I did it brother.
+I didn't do anything. I didn't do anything.
+The app is healthy. Meaning, if I go here and
+If I hit refresh, what about here?
+Will the change that was there come? Refresh.
+Hello friends, how did you like the video?
+So like share and subscribe complete gitps
+Cubis to Produce in One Shot You
+Your brother delivered it, I really enjoyed it.
+By the way, we forgot our agenda.
+tick
+So where were we, you saw how
+Access to Argo CD as an admin
+You have entered the port with the credentials
+You also saw the forwarding of GitPos
+The principal should check your application.
+Also monitored the deployment. Observe
+Sync processes of RBOCD and
+Just did the health monitor.
+Declarative Configuration Management Gate
+Ops gotb work flow seen. Self
+Healing Capabilities You Saw. Load
+You got the balancer URL. How? Here's how
+Here it is. You have the URL for the load balancer.
+Took it.
+What did you do next? Test complete. Yes, brother.
+You haven't even tested the application.
+How can we do something like this tomorrow?
+If you show it to us, how will the exploration go?
+Add to load out start
+Continuity Content Delivery Continuity Mission
+Funding purchases should be made and the mission authorized.
+The app is well tested friends, where did it go?
+My OK Verify All Microsoff
+Communicating Properly is All Communication
+Properly Testing Different User Work
+Flow Browse Add to Card Checked Out
+Yes brother. Monitor application health and
+Performance metrics have been done.
+Practice Trouble Shooting Common Deployment
+Let's practice the issues.
+There are some common deployment issues that you
+A changed image, changed secrets.
+They're not reflecting. So, all that stuff.
+Yes. They do that too. Learn to identify
+Roll Sync Issues in Argo CD. These Sync Issues
+Occurs when your configuration is incorrect
+I made a video on how to roll back.
+Deployment Strategies in One Shot as well
+Take a look at the Application Logs Proactive
+Troubleshoot what's the matter oh hoye hoye hoye hoye
+Fuzz one two three Sarah you're finished
+Please give Fuzz wise rating to Bhaiya, ok this
+What did you learn from the video?
+What were your outcomes? Did you
+I have gained technical skills in chat.
+Tell me what infrastructure you have.
+Code Terra Perform Cubinetas Cluster
+You managed EKS on auto mode.
+Container Orchestration done on GitOps
+Methodology Viewed AWS Cloud
+How do they integrate services?
+Saw Production Trouble Shooting End
+Monitoring View Declarative
+Infrastructure Management (See DevOps)
+You got the idea of ​​the practice version
+How is monitoring and control done?
+You may also have seen Observability Practices
+I have not seen you, what can you do to me
+I don't have much to do here
+Go and have your
+Where in Terraform
+Where did we go in Maine?
+find
+Prometheus
+Do you see it somewhere
+Here's the terraform of Prometheus, so advanced.
+All you have to do is go in and
+Brother, please uncomment the part and so much
+Apply Terraform to uncommit the part
+To give. And that's it. On your cluster
+Monitoring and observability should also be enabled
+It will go, friends. That's the beautiful part.
+of having infrastructure s code.
+Because your infrastructure has been built.
+All the connections are made. You just have to
+Apply. And I didn't change much.
+I have done it. What have I done? I am able to
+tagged Cubantis Prometheus and named it
+Put it in space. That's it. I have
+of this thing
+package modules were available so he
+I turned it on. Okay? He'll do it himself.
+OK? Done. Modern Microservices
+You get the idea about architecture patterns.
+Deployment Strategies Video
+I'll link it to you. You can check it out. Gates S.A.
+You understand the deployment methodology
+How does production go?
+You have seen end to end EKS management of
+You've seen the DevOps workflow.
+How did you like the video friends, tell me in the comments
+Tell me I know a lot of people were saying that
+Brother, bring this video and make something like this.
+So that we can put it in a cool recycle and
+Brother, I have brought it for you. If you like this
+If you want to destroy the infrastructure
+It's a simple command. I'll tell you.
+I'll do it later. Okay? Hey.
+What's going on? Okay? So you have a
+A simple task to be done. Prometheus
+I want to enable monitoring and I need Lindin
+Let me know by tagging me. Let's Terraform
+Destroy
+Enter. What will this do?
+You won't forget to delete something.
+Let's say you ever deleted an EKS cluster.
+The bill came in. You forgot to pay late.
+Forgot to delete the load balancer, the bill came.
+So you don't have to do all that.
+I entered the destroy command. Now run Terraform
+Terraform will see what needs to be done.
+Whatever he creates, he will destroy it.
+OK? Refreshing state. OK. All this
+Whatever things were in the policy documents
+All
+ok nice
+There is one more thing that is interesting brother.
+I need to upgrade my cluster.
+How will he do it?
+EKS automod upgrade your cluster
+It doesn't. It upgrades your nerves.
+If you want to upgrade the cluster, it is in your hands.
+You can easily do it from the UI as well.
+Yes. You can back up this cluster and create a new one.
+You can migrate to a cluster. Multiple
+Waze if you want a video on cluster upgrade
+So let me know in chat. And yours
+Destruction is slowly being completed
+Slowly, slowly. Still devastating Argo CD
+Devastating. What's up? Funny. Oh
+Oh shit.
+I missed a small thing. Oh my friend.
+There was another little thing called Which Is
+Shirt manager. So what is a shirt manager?
+Is it a Cert Manager?
+By issuing a certificate to your cluster
+Shit, man, I destroyed it.
+So if you go to SRC, in UI
+Go to the charts and go to the values
+So you will get that your ingress which
+Shows your GUI, is ingress
+Engineering is being used in that. Okay?
+Which is SSL redirect false. You should fix this
+Just set it to true and inject it into the domain
+True retail store your own
+The domain is there, just need to get it.
+Whoever is on 53, just put your load on that.
+Balancer Key URL C Name Record Pay Map
+Just do it. And that's it. Just your certificate.
+The email in the manager is not my email.
+Whatever your email is, it's your email.
+Put it in. And that's it. That's all you need to do.
+You have it. And whatever your domain is here
+You have to enter that. And your SSL is also done.
+Shit, man, I took this for destruction.
+My destruction is complete. Oh my friend.
+Would you do it? How many people have
+I am confident that he will do the SSL part.
+I'll take it. Tell me in chat, boom, and so on.
+There should be a loud noise that fills Lindin Hill
+Go away friends because you were watching Cube
+To Production in One Shot by Your DevOps
+Wale Bhaiya Drop a Boom in the Chat if you
+Enjoy the video and
+I know
+Meet me soon friend in Meet Up Wet Up.
+I'll give you all this swag, let's go for it
+What else did I have to tell you?
+The URL of the repository is given.
+Documents, Notes, PDFs, Blogs,
+Codes, cheat sheets, resume additions, everything
+Item is in the description. Quick checkout
+Do it and share this video with your friends
+Don't forget to share it with us.
+Thanks for being in the video.
+Keep watching Train vs Shubham channel. Thanks
+for watching. Ending the video in three to
+One. Bye.

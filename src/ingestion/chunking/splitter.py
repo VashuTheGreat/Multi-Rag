@@ -11,9 +11,9 @@ def split(documents: List[Document]) -> List[Document]:
         try:
             logger.info("Beginning chunking process", doc_count=len(documents))
             splitter = RecursiveCharacterTextSplitter(
-                separators=["\n\n", "\n", " ", ""],
-                chunk_size=100,
-                chunk_overlap=0,
+                separators=["\n\n", "\n",". "," ", ""],
+                chunk_size=1000,
+                chunk_overlap=200,
             )
             chunks = splitter.split_documents(documents=documents)
             logger.info("Document splitting complete", input_docs=len(documents), output_chunks=len(chunks))

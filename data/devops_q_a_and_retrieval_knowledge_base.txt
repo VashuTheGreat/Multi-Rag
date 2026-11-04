@@ -1,0 +1,99 @@
+================================================================================
+SECTION 1: CONTAINERIZATION & KUBERNETES (K8S)
+================================================================================
+
+Q1: What is a Pod in Kubernetes, and why can it contain multiple containers?
+Answer: 
+A Pod is the smallest deployable computing unit that can be created and managed in Kubernetes. A Pod represents a single instance of a running process in your cluster and can contain one or multiple containers. Containers within the same Pod share the same network namespace (IP address and port space), storage volumes, and IPC (Inter-Process Communication), allowing them to closely cooperate and communicate efficiently (e.g., a main application container sharing logs or local cache with a sidecar container).
+
+Q2: How do Deployments manage updates and rollbacks in Kubernetes?
+Answer: 
+Deployments provide declarative updates for Pods and ReplicaSets. When a Deployment specification is updated (e.g., changing the container image version), the Deployment controller performs a rolling update. It gradually terminates old Pods while spinning up new ones based on configured strategies (`maxSurge` and `maxUnavailable`). If an update fails or introduces instability (detected via readiness probes), the Deployment can be instantly rolled back to the previous stable revision using the command `kubectl rollout undo deployment/<deployment-name>`.
+
+Q3: What is the difference between a ClusterIP, NodePort, and LoadBalancer service?
+Answer:
+- ClusterIP: Exposes the Service on an internal cluster IP. It is only reachable from within the cluster (default type).
+- NodePort: Exposes the Service on each node's IP at a static port (typically in the range 30000-32767). This allows external traffic to access the service via `<NodeIP>:<NodePort>`.
+- LoadBalancer: Exposes the Service externally using a cloud provider's load balancer (e.g., AWS ELB, GCP Load Balancer), routing external requests directly to the NodePort/ClusterIP backend.
+
+Q4: [Edge Case / Troubleshooting] Why are my Pods stuck in CrashLoopBackOff status, and how do I debug them?
+Answer:
+A CrashLoopBackOff status indicates that the application inside the container starts up, crashes, and Kubernetes keeps restarting it with exponential backoff delays. Common causes include missing environment variables, incorrect configuration files, database connection failures at startup, or application exceptions. 
+Debugging steps:
+1. Check container logs using `kubectl logs <pod-name> --previous`.
+2. Inspect pod event history and exit codes using `kubectl describe pod <pod-name>`.
+3. Verify ConfigMaps and Secrets referenced by the deployment.
+
+================================================================================
+SECTION 2: INFRASTRUCTURE AS CODE (IAC) & TERRAFORM
+================================================================================
+
+Q5: What is the purpose of the Terraform state file (`terraform.tfstate`), and why should it be stored remotely?
+Answer:
+The Terraform state file is a JSON-formatted document that maps real-world cloud resources to your configuration declarations. Terraform uses this state to track resource metadata, dependencies, and execution history during `terraform plan` and `terraform apply`. 
+Remote state storage (e.g., AWS S3 with DynamoDB locking) is mandatory for team collaboration and production environments because:
+1. It prevents concurrent write conflicts through state locking.
+2. It secures sensitive attributes and credentials from local machine exposure.
+3. It provides a centralized single source of truth across CI/CD pipelines.
+
+Q6: What is the difference between `terraform plan` and `terraform apply`?
+Answer:
+- `terraform plan`: Executes a dry-run analysis by comparing current cloud infrastructure against your local configuration and state file. It generates an execution plan showing which resources will be created (`+`), modified (`~`), or destroyed (`-`). It does not make any actual changes.
+- `terraform apply`: Executes the actions proposed in the execution plan against the cloud provider API to provision or update the actual infrastructure.
+
+Q7: [Doubt / Retrieval Case] Can Terraform modules access variables from other modules directly?
+Answer:
+Direct cross-module variable referencing is not supported in Terraform to maintain loose coupling and modular design. Instead, modules must explicitly pass outputs (`output`) from one module into input variables (`variable`) of another module.
+
+================================================================================
+SECTION 3: MICROSERVICES ARCHITECTURE & API DESIGN
+================================================================================
+
+Q8: What is the Database-per-Service pattern in Microservices, and what problem does it solve?
+Answer:
+The Database-per-Service pattern dictates that each microservice owns its private database instance and schema, which cannot be accessed directly by other services. This solves tight coupling issues found in monolithic architectures, ensures data encapsulation, allows teams to choose the most optimal database technology (SQL vs NoSQL) for their specific domain, and prevents cascading failures across services.
+
+Q9: What are the best practices for REST API design regarding URLs and status codes?
+Answer:
+- URL Naming: Use plural nouns for resource collections (e.g., `/api/v1/users`, `/api/v1/documents`) and avoid verbs in the URL path.
+- HTTP Status Codes:
+  - `200 OK`: Successful GET, PUT, or PATCH request.
+  - `201 Created`: Successful POST request that resulted in a new resource.
+  - `400 Bad Request`: Validation failure or malformed payload.
+  - `401 Unauthorized`: Missing or invalid authentication credentials.
+  - `403 Forbidden`: Authenticated user lacks permission for the action.
+  - `404 Not Found`: The requested resource does not exist.
+  - `500 Internal Server Error`: Unhandled server-side exception.
+
+================================================================================
+SECTION 4: CONTINUOUS INTEGRATION & CONTINUOUS DELIVERY (CI/CD)
+================================================================================
+
+Q10: What is the core difference between Continuous Integration (CI) and Continuous Delivery (CD)?
+Answer:
+- Continuous Integration (CI): The practice of automatically building, linting, and running unit/integration tests every time code is pushed or merged into a shared repository. Its goal is to catch integration bugs early.
+- Continuous Delivery (CD): The automated extension of CI where validated code builds are automatically pushed to staging or pre-production environments, ready for manual or automated promotion to production. (Continuous Deployment goes one step further by automatically releasing every passing build straight to production).
+
+================================================================================
+SECTION 5: LINUX SYSTEM ADMINISTRATION & SHELL SCRIPTING
+================================================================================
+
+Q11: What does `set -euo pipefail` do at the beginning of a Bash script?
+Answer:
+It is a defensive programming directive that enforces strict error handling in shell scripts:
+- `-e` (errexit): Exits the script immediately if any command exits with a non-zero (failed) status.
+- `-u` (nounset): Treats unset variables as an error and aborts execution.
+- `-o pipefail`: Ensures that a pipeline (e.g., `command1 | command2`) fails if any command in the chain fails, rather than just returning the exit status of the final command.
+
+Q12: How do you inspect active network ports and listening processes on a Linux server?
+Answer:
+You can use modern network diagnostic utilities such as:
+- `ss -tulpn`: Displays all TCP/UDP listening sockets along with their associated process IDs and program names (replaces the older `netstat` command).
+- `netstat -tulnp`: Traditional utility to inspect listening ports and services.
+```
+
+---
+
+### What to do next:
+1. Save this content as **`devops_qa_knowledge_base.txt`** inside your project directory.
+2. Ingest this file into your RAG vector database. Because it is structured specifically in **Question & Answer + Edge Case + Troubleshooting** format, whenever your evaluation pipeline asks questions like *"Why are my pods in CrashLoopBackOff?"* or *"What is the database-per-service pattern?"*, your RAG system will retrieve the exact, high-precision answer!

@@ -227,3 +227,6 @@ logs/
 *.db-wal
 
 ss/
+
+
+d.py
