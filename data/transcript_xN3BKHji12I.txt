@@ -1,0 +1,4499 @@
+﻿In today's session we are going to study
+Computer Networking and System Design Master
+class. The entire flow of this session
+We will do that with a live application.
+You are going to see it. Think of it like this application
+Dave's Board Which Is a Project
+tracking application. Now inside this if you
+Look, there are these types of features and if you
+Talk about AI assistants, let's say
+Summarize This Project
+So it works perfectly. If the dashboard looks like this
+You can go to AI Assistant and summarize this.
+The project summary of the project is here.
+Let's go to some task.
+Wire up TLS let's say someone is tasked
+So may I ask what is TLS?
+Task
+OK done hi wire up TLS at the gateway so
+AI Integrated Project is now
+Inside the project there is a front end and a back end.
+There is https, everything is there, how does it work
+How its system works
+To understand this, first understand yourself.
+Friends, you will have to learn computer networking.
+How Computer Networking Works
+How does it work? First of all, we should
+We have to understand. So let's get into today's session.
+What's going to happen? Let's list it.
+down so that you guys get a
+Get a mental model of which direction to take
+We have to go. First of all, we have to understand
+What's going to happen today? The Physical
+Internet. Many people have heard the word.
+It may be that the internet is not working today.
+Turn on the internet. Get this data. Turn on the internet
+Two. Look at WhatsApp, he sent something. So this
+How the Physical Internet of All Things Works
+Does it? I mean, how the Internet works.
+First of all, we're going to look at people. One time
+Looked at the Internet, the physical Internet
+I saw about it. Then we'll see the
+Address
+For the Internet. That your address on the Internet
+What is it? Like your home address.
+By the way, what is your address on the Internet?
+We're going to see about that.
+As things go, we'll see how the
+Data moves in the Internet.
+How does data move on the Internet?
+People are going to see that. And with that comes
+Your OSI
+TCP IP model. OSI TCP IP model
+This will also be covered in the same thing. Now people, you
+You will say that brother OSI model TCP IP
+What is the model? You will find all of that in this video.
+I'll see. Okay? Now let's understand.
+What will happen after this? After this, we
+Will move towards security
+For the Internet. Now that the Internet is here
+But is he going to be secure for her?
+To see how important security is
+Once you check the security,
+What is a VPC, brother? Virtual
+What is a private cloud? Once
+Check the security. Then we'll see.
+System Design
+and how to design
+Applications.
+How are applications designed?
+Why is this session important? Because every
+Anyone understand what brother Cubis is?
+What is Docker? What is Terraform?
+Does it happen? Everyone knows. These days, a lot
+It's become too common. Someone should train with Shubham.
+There's a channel called "The One Shot Video."
+They'll come and see. So now everyone knows.
+that's what all these things are. But in
+Before learning everything
+Why are you learning that stuff? How the system works.
+How does the Internet work?
+Learning is very important, friends.
+That's why today's session has been scheduled. This session
+It can be long. Whatever you need for coffee, tea,
+Electrolyte, glucose, whatever you feel is yours
+Keep it close. But I will definitely read it today.
+Come on, let's get it done. Okay?
+Get Started and Let's Understand
+How the Physical Internet Works
+What is this physical internet? How?
+Does it work? We'll talk about it now.
+We are going to see it. First of all, understand that brother, this
+What is the Internet? What is the Internet?
+Now, many questions are coming to your mind.
+They might be thinking that brother, internet is this, internet is that.
+What is a computer network? In simple terms.
+Let me tell you.
+This is your laptop
+And you are sitting in Pune.
+And this is your friend.
+This brother is sitting here.
+In Kashmir.
+Okay? Now these are their friends and they're sitting
+Has happened
+In Canada. Okay? Like in Canada.
+Sitting in New York, New York.
+I like that place. Okay? Now this
+There are computers, there are laptops, there is anything.
+There are types of devices,
+If you run this in your own home, your
+Hee ghar pe means your own laptop.
+If you and your laptop are traveling alone
+That thing is called stand alone.
+Stand-alone. Meaning it's running alone. But
+If that device
+connects to another device. If
+That device is connected to any other device
+She goes.
+So these devices
+are said to be in a computer
+network.
+And this computer network when connected to each other
+remain interconnected then that thing
+They say internet.
+So the Internet is an interconnected
+Network for Devices.
+So you have one device here, one there, one
+here. If it all connects to each other
+If connected, then basically
+Interconnected network of devices. Now
+Brother, the question arises that all these people
+How do you connect? Because it's ours.
+Earth.
+Here we are sitting
+In Pune.
+Here we are sitting in Pune and the
+He was a friend of ours in New York.
+Completely sitting in another place
+New York
+He is sitting completely separate, correct?
+This is New York, this is in Pune, how is it connected?
+If we get from New York to Pune
+If you want to go to New York, then also such a flight
+If you have to carry it, how do you connect it?
+So it comes to a lot of people's minds.
+that Elon Musk
+There is a company called Starlink
+And there must be such a cool satellite and that
+in satellite
+The network signal must be going from Pune and that
+The satellite sends this network signal here
+It will be. So, like we take a flight.
+Pune to New York via satellite
+Our signal goes from Pune to New York through
+It will happen. But it doesn't happen. It does happen.
+This is not optimal. Why? Because if
+You can take it from Pune to Kashmir, Kashmir to
+New York, New York to Pune such a network
+to connect and if you use satellite
+If you do it, your location satellite
+distance up to
+This is too much. It's too much.
+Meaning, understand it like this that Elon Musk doesn't have a rocket
+have to be sent and so much fuel in the rocket
+Wool has to be added only then it can grow
+It can cross the atmosphere.
+It won't be possible. So the satellite couldn't be built.
+Then brother, what other way is there?
+I'll go by train, brother. By train, so train.
+Even if you go by land route, then
+Too many geographical boundaries on the route
+It comes in. Meaning, for example, we
+Such Rajasthan and such Kashmir would have become like this
+and a border comes in the middle and
+No one can go across the border.
+These poor people, how can our network
+Will you go? So these people came up with a solution.
+That we will not send the network even through air.
+We will not send it by land either.
+will go
+By water. We will go by water.
+By the way. So your computer operators
+are connected to each other. This
+Basically connected by waterways
+Opticians are laid underwater.
+Cables,
+Fiber Cables
+And your data is transmitted through this cable.
+and these cables connect you
+So if you think I'm here
+I am using Wi-Fi and the connection to that Wi-Fi
+Because of this, even my friend sitting in Canada
+I am able to send WhatsApp messages and this is happening.
+All the talk is happening in. Something in the air
+It's not happening, friend. It's all through the water.
+He is going from... Brother, what is the proof of this?
+So if you open a new tab and
+You all write marine cable map
+submarine cable map then you will get a very
+Friends, you will see something interesting.
+This is our whole world
+This is North America, here is Thailand.
+This is Australia, United States.
+Africa, India and all these cables
+Yes. If you see the name Transword
+There's cable. Africa, all these names are cable.
+Can you see this?
+Now let's tell me this from Mumbai
+If Ethiopia wants to send a message, it is this water
+goes through cables. And that
+Way it is the fastest.
+How Many of You Did Not Know How Internet
+Worked
+Before seeing this particular cable map?
+You thought you should recharge Jio
+Then the internet starts working. Oh no, friend.
+This is a huge game altogether.
+running through underwater cables and
+We play this game daily. Now, brother.
+How is this game played daily?
+How did the whole world get connected? Now this is the
+Global
+Computer networks. Global networks. OK
+Got it? Just drop a yes in the
+Chat If You Got to Understand How
+Your sitting in Canada in the United States
+How could a friend connect even here?
+Is.
+How are you able to connect here in India?
+Got it? Okay. Just a little more.
+Let's go into depth.
+Let's go a little deeper now.
+And understand how the world works.
+So the chapter is titled How Does the Internet Work?
+What is the physical internet and how is it
+The internet works. Okay? I hope you
+It should be clear in the mind that physical
+What does the Internet mean? Physical
+Internet means these cables. So I need to chat.
+appeared in Someone's Question That
+What is the source of the Internet? So the source is
+These cables connect one device to another.
+so that data flows
+Let's connect those devices with each other
+What will happen to that device if it is not connected?
+will you speak? If those devices are connected to each other
+What will you say to her if she is not connected?
+It's called a stand-alone device. But if
+You have tied the stars with each other
+Once connected, data is transmitted through those wires.
+is transmitted and that data transmission
+Because of this, your message gets sent.
+The sound reaches you. And so on. Understanding
+I came to know what is the source of internet?
+What does the Internet stand for? Okay? Now.
+Let's understand how the world works.
+So, this is your world.
+People say the world is round. We
+denoted through the rectangle. Right? So
+This world is yours. Okay?
+Now inside the world
+What comes in? Your world comes in
+Country.
+Your country falls within the world. Correct.
+This is the meaning. Inside it is a place called India.
+There's a country. Right?
+comes into his
+Your city.
+Your city comes under it and in that city
+It's your house.
+Isn't that right, brother? It's a big world, brother.
+We have a small country inside that world.
+Inside it is our tiny town and
+Inside we have a tiny house. And that house is
+It's everything for us. Well, now it's work.
+How's it going? Okay? Now the world you've
+I saw it, it was this. It was nice. The world
+You saw it. So this world is at the level, isn't it?
+Optical cables are running. Optical
+cables running through
+C
+Water
+They are not sinners. They are submerged in water.
+I hope everyone gets it.
+It. Yes. I hope everyone got it in this world.
+It is running because of these optical cables.
+OK? Great. How's the country doing right now?
+Country
+It's working like this, you go to your country and
+Zoom in on that a little bit.
+Zoom in a little bit. And when you zoom in
+If you do, you will see that there is a city here.
+Its name is Mumbai. And Mumbai has many
+All the cables are in. Like Falcon,
+Like Raman, like Simvi, European
+India Gateway.
+Then there's Kochi, a small town. Then there's a city.
+There's Trivandrum. Then there's Tuticorin. This
+I didn't even know about this city.
+Then there's the town of Machhipalam.
+Your Digha. Then there's your Bangladesh.
+He'll go. Okay? Now.
+one in that country
+Wide area network is installed.
+area network is installed. So in that country
+The optical cables that are coming
+Someone is sitting there buying optical cables
+It is. Okay? Someone must have bought it.
+And I will name some of those people for you.
+I would like to present him like Ambani,
+Adani, Tata Group.
+Okay? So all these people have that wide
+Area Network Optical Cables from Mumbai
+I've bought it and kept it. Okay? Because
+to run that cable underwater
+We need people, electricity, cooling.
+I need cable material.
+The investment remains very high
+It remains. It remains very high. I mean crores.
+We are all about Rupees per Month per Day.
+We're talking. It's that high. Okay.
+So, our Ambanis are running this country.
+Adani
+Indian Airtel Tata so if someone asks you
+Who's running the country? So you should remember you
+Should be very practical about how the country should run
+How is the world doing? And so
+on. Why do the rich get richer? These are the
+Reasons. Okay? Now, in a wide area network,
+The cables are coming and someone bought them.
+Now the cable that transmits data
+It is happening till a particular city
+It is delivered to a particular city.
+Transport is done using Metropolitan
+Area
+network.
+Metropolitan
+Area Network Man. Okay? Metropolitan
+area network. Now what would happen in that case?
+Do you know? A very interesting entity.
+The one whose name is Aai comes forward
+X
+P. Bhaiya, you should have said ISP.
+IXP is it here? So IXP
+This is basically how IXP vs.
+ISP if you look carefully
+The ISP is the internet access
+sends people to their homes. Okay? And Joe
+ISP is a physical data center.
+The center location is where the ISP and
+Content providers exchange traffic
+So basically your man is
+Metropolitan area network of a city
+There's an IXP sitting in it.
+basically physical
+Data centers. Physical data centers.
+which your ISP
+Provides internet to the internet service provider
+and this Internet Service Provider is your
+Local Area Network as WiFi
+It gives you internet. Oh brother, tell me what is this?
+So basically the whole world runs
+Optical cables
+Bhairand is expensive. Then the country runs.
+WAN Wide Area Network Pay
+Which Ambani, Adani and these people have bought and kept
+I've got that optical cable. Now that optical cable
+They rent cables to different cities.
+The data that he uses to connect
+Physical data is given to IXP on rent
+centers. And from that physical data center
+Your ISP
+What is U Broadband installed in your home?
+Jio Fiber Airtel Extreme
+What's going on in my house?
+The internet is going crazy.
+Meaning his name is Crazy Hathaway.
+ACT Fiber Net is now ACT Fiber Net.
+Bor is a big player
+And this way you can make your home
+Which is very fun watching Desi Bling on Netflix
+Looking to see that desi blink
+For this, the Wi-Fi installed at your home
+Wi-Fi pays ISPs at ₹400
+month. That ISP pays the money to the IXP
+X vs. Z per month. And that ISP IXP
+Wide Aryan Ambani gives money to X
+month on Vz so that Ambani can do this optical
+I could buy cables and travel the world.
+A Clear in the Chat If You Understood
+How is the internet available at your home?
+How many of you had no idea who I was
+I recharge Jio every month.
+How does it run the internet?
+How many of you had no idea.
+No idea? Oh, great. That's great.
+And you're out to become a DevOps engineer.
+No, read, read, Cubiters, read, trouble.
+I doubt you if you don't read the shooting.
+Clearing session is not for me
+becomes trauma
+Brother, this is the production level.
+You don't understand production, okay?
+I came in
+Now it has happened
+The world, country, city, and home started following us.
+Well, our family is settled now. Okay?
+Now, brother, what is our benefit in this?
+What are you going to get from this?
+I liked it that you recited Hanuman Chalisa in the morning.
+I taught it. I taught the morning session. How
+The internet works. But what's the point of it for us?
+What do we have to do in this? So much
+Look carefully.
+It's you.
+who are sitting in Pune with lets and this
+He is your friend.
+OK? This is your friend from Let's
+He's sitting in New York. Now you understand.
+I took that brother, information from here to here
+Transfer in progress. Data transfer
+It's about to happen. And here's my laptop.
+So what do they call a laptop?
+Machines speak, devices speak.
+And this device data is going to go here.
+And that's how the internet works. Here we are.
+People looked up. Okay? So the data
+Transferring. Data is being transferred
+and to transfer this data
+It costs money and you recharge Jio with the same.
+You hit me. Okay? That's it. So much for yourself.
+has understood. Now this data
+It is being transferred, isn't it? This transfer happens.
+It is in packets.
+In bags, in packets. Brother, packets
+What is a packet? A packet is basically a logical
+A packet, literally a pouch type unit
+did not send it like this by filling the data inside it
+A logical unit exists within which
+Some address remains, some details remain
+And the data is encoded in that packet and
+is transmitted. The data is encoded and
+is transmitted. OK? Packets say
+Now let's take this packet from Pune.
+10 minutes from Lets to New York
+It takes 10 minutes. That's as much as
+Time taken from source to destination
+That thing is called latency.
+This is very different from India's Got Latency
+So don't be confused, friends. Latency is the
+Time taken for a packet to reach from
+A source to a destination. Okay? Got it?
+Gone? Latency. Now
+How many MB of data can you send in 1 minute?
+Can you? How many GB of data do you send? But
+How many MB of data can you send per second?
+How many packets can you send? How few?
+What size of packet can be sent in latency
+Can you? That's called bandwidth.
+Bandwidth, he says that we have 300
+300 Mbps unlimited data at Mbps
+There is a plan.
+300 Mbps unlimited data plan
+We have. We're very big people. Like this
+It doesn't mean anything. Some big man.
+No. Those that send data over separate cables
+The size of data that is going out of it
+In which your cable is going
+is subscribed within which he
+packets are going
+talking about that so if you
+Bandwidth You say it's my bandwidth
+4 Mbps then data of that size can be transferred
+If you have a 500 MB Mbps
+There is a plan, but
+It's taking more time. Latency is decreasing.
+If you are, you are not going to become a hero.
+Choose a 10 Mbps plan or a 10 Mbps plan
+If your latency is reduced, it
+The data isn't going away. Many people are heroes.
+To become this, you should have taken a 1 Gbps plan.
+Yes. And they say, brother, we have the 1 GB one.
+I have taken the plan but still the internet is slow.
+How many people has this happened to? That brother
+I have taken this plan but still the internet is slow.
+It's happening. It's happened. Neither makes sense.
+No. It has nothing to do with it.
+1Gbps, 1 Mbps, 10 Mbps is the bandwidth that
+How many packets can you send at once?
+Latency is a different matter. Let me show you
+How do you know how to test your speed?
+Go to cloudflare.com. This is where I'll find your chat.
+I will put it in.
+OK? Go to cloudflare.com.
+If you look carefully, you will find some terms
+Your internet speed is displayed.
+Speed ​​245 Mbps Great. Good download
+There is speed. Upload speed is so many Mbps, what is this?
+Is it latency or bandwidth?
+Is it latency or bandwidth?
+This is bandwidth.
+This is the bandwidth. Now the latency is 46.6 milliseconds.
+Meaning
+Round Trip Time Latency Is the Time It
+Takes for a packet to be sent from your
+Computer to the network and back.
+OK? The lower your latency,
+The lower your latency, the better
+Do you know what that means? Low Latency
+It's taking less time. So if my latency
+You can see the download of 64.8
+It is. It is more. It is more.
+uploaded
+It's low. Do you understand? How many people
+I understand that these words that I am throwing at you
+I am throwing it at you again and again
+It's going to be very useful. Okay? Now
+Vaibhav asked what jitter was. So I did this.
+was forbidden to be smart
+Let me get into the flow. Okay? Now.
+when you
+You're sending data. Okay? Send data.
+Kar Sir, for example, I am sitting here and
+My grandeur is sitting right in front of me. I
+I am speaking
+Ben strokes, I said. Now he would say
+The time the packet went, right? The packet went now
+I said become
+Strokes let's from her
+The bun became a little faster and the strokes became slower.
+Is it? The faster the strokes, the slower the strokes.
+Latency went up, down, up, down. Okay? Up
+There was a variation in latency.
+Variation is called jitter.
+That variation is called jitter.
+Understand it like this, sometimes you are your own
+You're talking to the prisoner. You're saying that
+And Babu was in the police station. So sometimes in that time
+Your prisoner says yes I ate it.
+And it gets stuck there and you get tensed.
+He didn't eat the food.
+This is called jitter.
+That's the jitter. Right? Jitter means your
+Variation in latency is called jitter.
+right? Packet loss means you lose the data you're losing.
+you're sending, the data you're sending,
+While sending that data, sometimes the data
+Some segments drop too short.
+I mean, for example, I am talking to you.
+Hello friends, where is the middle thing in the channel?
+Gone? Dropped. Packet loss. So
+Sometimes yours and mine in live classes
+The internet can go down. And in that case,
+packet loss occurs. In that case you
+Do you know what you do?
+stuck stuck stuck stuck lag lag do you do this
+You guys. While in reality, what happened?
+Reality: Data has been released from my side.
+The packet has been sent, but due to the congestion
+In networks due to the high latency, high
+Jitter The Packet Was Lost.
+But you guys don't understand stuck stuck lag lag
+Here's why today's session is important.
+Is it? Today's session will give you an overview of technical terms.
+DevOps will create engineers. Or you will.
+Internet wale bhaiya. Internet wale bhaiya who
+Is it? Brother, the Wi-Fi isn't working. He says
+Restart the router. It should start working.
+Gone. Thank you. Your issue has been resolved.
+I don't want to become myself. To do that, that
+There are people.
+You have to understand how the world works, brother.
+How does the Internet work?
+What is the physical internet? All these things.
+I have to do it myself. Okay?
+Now brother, this data from Pune to New York
+If you were sending, you sent the packets in it.
+Some latency came, some bandwidth came and basically
+Because of Vaibhav, I realized that
+What is jitter, brother? Okay, variation.
+In the latency is basically jitter. Now
+Brother, this is the one who has internet in his house.
+WiFi
+If you get abused on the internet then WiFi
+Why have you installed it like that, how will this WiFi work?
+does and what physical
+Things you should know about The Physical
+Internet
+What you should know about physical
+What is physically required? Three things are very
+The first thing that is important
+router
+second thing switch
+And the third thing is the hub.
+Router Switch Hub. Router is simple.
+What does a router do? It's just like its name.
+His job. He
+Routes between the correct networks
+You say network, brother, internet.
+It's not working. He says the router
+Restart. What does that mean? Your
+which is the router that the Internet Service Provider
+is the incoming network from the ISP and that thing
+that it is broadcasting to your network
+The router is routing the packets.
+Something's wrong. So first he says,
+Restart the router. So, to reset
+Sometimes the problem gets fixed
+It is. But not always. Sometimes the ISP
+There could also be a problem with the site. Anything
+Maybe. So what is the purpose of a router?
+Routing packets between networks.
+How many people understood this? Router's
+The work is not that you install the router
+The internet will start working. Come to those people.
+Let it be. You're a DevOps engineer.
+It is necessary to know whether the packets or data is
+transmitted between different network end
+If that packet has to reach your home you need a
+Router. Okay? Now.
+Switch
+I have a device in my house. Let's
+laptop. I have another one at my house
+device. Another laptop from Lets. My
+I have a raspberry pie at home that
+A mini computer. Small
+It's a computer. Okay?
+If I could install a WiFi router
+So I'll connect it all.
+I will go to everyone and turn on the Wi-Fi.
+I will enter the Wi-Fi password and all these
+Connected in a local area network.
+But brother, they were connected through the router.
+No, because the router directs the packet.
+It is. It is giving route. Then what is the switch?
+Is it? A switch is a physical device.
+in which you can have multiple
+You can connect devices
+And provide internet in this switch
+Now this internet is available on those multiple devices.
+Will keep the devices connected.
+You do not use this switch in your home.
+This switch is used in data centers.
+What is a data center, brother?
+It was a very large warehouse type thing.
+There is a huge warehouse.
+Too many computers, too many machines
+Now if you need to keep those machines
+If you want to connect, can you put a router there?
+Will you apply it?
+No. Routers for your home, office
+OK. But if you're looking for a data center,
+If you want to connect the devices, you put
+Yes, switch. How many people understood?
+How many people understood that one of your
+Data center. What is a data center? A large
+There is a shop. There are lots of things in that shop.
+Computers are engaged. Now those
+to connect the computers. So either
+You install a Wi-Fi router and connect everyone
+Do it. Then you play the router's band. Or
+Then you put the switch on.
+You can connect them all with a switch.
+Yes, brother, please show me a photo of the switch.
+It will stay in your mind. Why Pratyush?
+Switch
+these data
+Center, look at such a photo.
+Look at this
+Data Center Switches Are High Performing
+Networking Devices You Need to Manage
+Extreme traffic with enterprise and
+Cloud data centers that provide high
+Speed, Low Latency, Connectivity
+Remains for connectivity. Images if
+If you want to see it, it looks something like this.
+These things are called racks. What do they say?
+Are?
+Rack. Racs. Rack is rack, isn't it?
+My sister, she's in Canada now. She was little.
+If you are so fond of clothes then a rack for it
+We had brought only clothes separately.
+To keep. Then she grew up. Then a
+And the rack came to put the shoes in. So the rack, then
+It's like this. Now, there are racks like this.
+Where the servers were placed. Now you can find all these
+Can't connect through the router.
+To connect it, you need a switch like this
+It is. Got it? Looks like a switch. It lets you
+It is very important in data centers.
+Whenever I want to get the data in the coming time
+I'm going to the center. I'm a great vlogger.
+I'll explain what a switch is? What a rack is.
+Does it exist? What is a hub? It exists. Now, consider the hub.
+Let's know about the Hub. Basically
+grandfather Sir
+the times of
+switch of
+This is a switch from Grandpa's time.
+Back when router switches didn't work
+Hubs used to work then. A small hub like this would stay
+Was.
+I will show you.
+He lived in a small place like this.
+There were ports like this inside.
+Got it? Hub
+There was a small device like this inside.
+There used to be such a port. Now inside that port
+You connect your networking devices
+And things went from there. Okay.
+Hub is basically
+Old-school switch. Okay? I understand.
+Went?
+There used to be a switch in the olden days.
+Now
+If we have already started talking about data
+Of the centers.
+So understand a very important concept.
+What happens in a data center?
+I have a large warehouse.
+It is a big shop type thing in which
+Many computer operators are engaged.
+Many computer operators are engaged.
+So many, so many that you can count them.
+You can't. You can't count that. And this
+Not all computers produce heat.
+What does it take to cool him down?
+I Hanuman Chalisa
+It will take you a while to cool it down.
+AC Air Conditioner
+ok the air conditioner keeps a lot
+Computertors So what did Microsoft do?
+What Microsoft did Microsoft thought
+That brother, if you want to keep it cool then water should also be kept cool.
+It is cold and the deeper you go the
+If you go into the water, it would be colder.
+It'll be cool, cool, cool. Okay? Something like that.
+So what did they do?
+Microsoft's underwater data center
+Project Netique was launched in 2018. Where
+But he
+the computers, the data centers,
+He put it inside the water so that it
+Stay cool. Now data centers like these are your water
+It is also inside.
+How many people didn't know this?
+Idea.
+I didn't know. Great. Very good. Okay. Now
+This is an underwater data center.
+These stars that are coming out from here, these
+The wires are coming out, it is through these wires
+Your data was moving. OK? Now under
+Only data center instead of water data center
+If you write it down, it looks like this. This is at ground level.
+He lives there. Okay? He lives on the ground level.
+Yes. And if you look at this carefully
+So only AC is installed.
+And only the AC is on. Your computer
+It's actually here. Got it?
+Okay? Now for wasting so much AC water.
+After investing, this data center
+What do you do for work?
+These data centers provide you data.
+Are.
+Brother, data means information.
+Information means
+Packet means packet in which your
+Information is traveling via
+Internet to data centers are the heart
+Off
+Your
+Internet.
+All the internet coming to your home is from this
+It's coming because of the data center.
+It is information that is travelling.
+It is information that is traveling.
+I am teaching you this.
+My data center is located somewhere.
+No. This data is reaching you from there.
+Where are you keeping your brother? How many people?
+I want to know.
+How many people want to know where it is kept?
+So, how is it holding up? Let me tell you.
+Once your site has an aws.com
+Pay
+Just create your own instance. Okay?
+Just to Give Some Hands-On Experience
+So that this is completely a theory session for you.
+Don't feel like giving a hands-on experience
+For.
+Ok
+The code will come.
+one second yes
+4747
+Ok
+Now what is this, I have an account.
+EWS has arrived here, now whenever I
+I create an EC2 instance. So basically when
+I am also creating an instance
+I went to Launch Instance from Lets.Web
+Server Name Less Networking
+I created a web server called Practice.
+Built the server. Picked up Ubu. T3 Micro
+Free tier eligible
+Bharat Mata ki Jai. Okay. And make a pair.
+Networking
+Practice
+of
+It's created. Okay? It's created.
+I went into the network settings and
+Basically SSH allowed in security group
+I did it. And by doing that, I created a 10 GB
+Took storage also.
+I took the S3 files. And here I went
+I launched it. Right? Now this is what I launched.
+This is the physical location of the instance.
+Where is the location? It's in Oregon.
+Oregon is in the United States. Right?
+Oregon is in the United States. So basically
+Think of it like this
+Gone. And here I have this one.
+Instances
+What have you taken it for? I've taken it on rent.
+Brother, this instance is in Oregon.
+What did it take to connect?
+Optical cable installed. Through the waterway
+The connection happened. Then the money went to Ambani.
+Then to our Internet Service Provider
+The money went in. Then through our Wi-Fi
+Because of the internet that came to our house
+I am sitting at home
+Was able to access this Oregon data center.
+was able to access this particular computer
+And you have to pay for this.
+Second money. How many people understand?
+Went?
+How many of you got it that per second you
+The charges that have to be paid are in full
+You have to pay for the process. Okay?
+Now I can open my instance here.
+I will take it.
+I'll go to the instance and connect here.
+and click on connect
+After doing this copy it with SSH client
+I'll do it and call my terminal.
+Come on brother
+and as soon as I called the terminal it
+We've reached the terminal. Then I'll do it.
+CD into the Downloads folder. Now
+You have already understood that an instance
+You need to use the SSA client to connect to the
+This client has to be opened.
+Opened it. Then CHMOD 400
+I hope you all understand all this now.
+They must have started coming.
+It should be clear now. CMOD 400
+We reduced the permissions from there. And this
+The SSH command is
+We connected with this.
+Are you sure you want to connect? Yes, I am
+Very sure that I want to connect. And
+He connected. This is me.
+Connect.
+That's it, I'm connected. Where? Oregon.
+Connected to one system. OK?
+Connected to Oregon's system. Now
+I want to see Train with Shubham.com
+How is the data coming?
+Where is it coming from? Why is it coming? So I
+I will write the trace here.
+Route.
+Trace route. Trace route means my
+The router installed at home is for me
+Give data of Train with Shubham through packet
+packets are being passed through, but the data in those packets
+Where is the Train with Shubham server coming from?
+Where is it kept, I write train
+Trace Route Train vs Shubham Dot
+Enter
+Command traceroute not found because by
+The default trace route package is your
+If it doesn't pass, you do soda.
+apt install traceroute enter.
+OK? Now let's trace your route.
+No. It simply means that this system
+It's not up to date. So sudo apt
+By updating the gate
+You can update to the latest version by doing sudo apt get
+You can bring the packages to yourself. And in
+One of the latest packages
+There is also a package called traceroute that can be downloaded.
+Purushottam will be downloaded.
+Won't install. To install
+You should run sudo apt install trade out.
+Will have to.
+It will now install. Okay? Purushottam
+Still asking why not upgrade?
+Did you? Didn't upgrade because
+Upgrade to a complete system upgrade
+It would have happened.
+10 minutes
+Trace route 3 seconds In 3 seconds I
+Install the one and only TraceRoute now.
+OK, now if I do TraceRoute
+train division
+Look at this
+Trace route to train with Shubham.com 15.197
+So what is this? What is 15.197? This, that
+The IP address of the server is
+PayTrain is hosted on shm.com. Okay?
+Now
+Hops What are hops? This request
+Wherever I hit her, where did she go from there?
+request? Then where did it go from there? That every
+The location is called a hop. For example,
+I'm sitting down. Where is this server?
+Where is this Ubu IP 172 server?
+Tell me quickly in chat where is he?
+He's in Oregon. He's in Oregon. Okay.
+Where is it? It's in Oregon. So the first one is 1 2 3 4
+5 6 7 What are you seeing? These are hops.
+So what is the first hop, the source?
+ec2 US West to compute aws.com these
+IP Address Now copy this IPP address
+And go here and write it down.
+IP Location Finder IP Location Finder and this
+Go to and enter this IPP address and
+Find it.
+Drop a boom in the chat. If you understand
+My server must have been in Oregon.
+I have kept a request from there
+Train with Shubham.com has been hit, which
+The initial IPP address is the source.
+Is Oregon
+That source is Oregon. Okay? Now Oregon.
+from where did he go? seconds
+Where did the seconds go? 240.0.68.5
+He went here.
+Here I went to 240 dot and found it.
+IP address host name This is a normal
+The IPP address came in. Okay? Then the other one.
+I went to pay.
+He went from here to there. He could be like that too.
+That there's a switch there. Someone from Oregon
+A switch that connects a particular network
+It connects. Then it goes from there.
+Ok?
+Then I went further and let's move ahead.
+Then I went to one of the networks. Then I went here.
+242.5.91.7
+Went here.
+Ok?
+Now let's tell you the exact
+If you are not getting accurate then you can try another one.
+Go and see.
+go here
+And go here and find the IPP address.
+Throw it away.
+Did you enjoy it?
+Do an IP lookup.
+OK. So basically, your
+Where does the data come from and where does it go?
+He tells me everything that has happened.
+And this is the asterisk asterisk asterisk
+Are you watching Astrik, this is actual?
+packets. This is actual data. This is actual
+This is data. Meaning the train requested from here
+on visham.com. Data came from there
+By doing this you basically have this data
+It's being served. This data is being served.
+This is data being served. This is data
+Being served. Okay? Now you need to know
+Bhaiya, if you want to Google it then trace it.
+Route Google.com
+So Google
+Went here from this place then to this server
+Then went to this server 99.83.117
+Let's see what 99.83.117
+Where is his location?
+United States Washington Seattle
+Amazon Technologies then he went here
+On one of Amazon Technologies' servers
+Went and then brought this data from there
+142 dots from this
+IP lookup fetched data from here
+From Google. Where did you get the data from? Google
+From. It is understood that from a source
+He has a lot of trouble to go to another place.
+You have to hop. And basically, every hop
+There may be packet loss.
+Do you understand? That could cause packet loss.
+Is.
+Is it clear?
+Everybody's clear? Just let me know clearly.
+The Chat. I'll tell you in 2 seconds.
+If you need to access somewhere with Wi-Fi
+Basically, you have to hop between places.
+That's the whole point. Okay? That's the
+Hole point.
+Well, this data center gives you data.
+If this data
+Are they images or static data?
+Or static data. Images or
+If the data is static then from a particular server
+Comes what is called C
+D N
+CDN means content.
+Delivery Network
+CDM
+Because I want the data that is there
+The data that is stored in one place
+I want to take static data that does not change.
+It's happening. It's not like a video call.
+It's not like a phone call. It's static data.
+It's there. It's CDA. Okay?
+CDN
+Now
+There's a data center in Oregon. I sat down.
+I am in Pune. So from Pune to Oregaon
+Which way do we go?
+Go by land, by air or
+Do we go via water? Tell me. We go via water.
+Let's go by the road. Correct? By the water.
+By the way.
+I am not a sinner. Because of you, my words
+I'm confused. I'm just kidding. Okay? So
+Let's go by water. Now by water
+Do not make a stop in between while travelling.
+Comes.
+Dubai. Habibi
+Come to Dubai. Dubai comes. Right? By the water.
+on my way. Now tell me how I
+If data is needed in minimum time
+So should I take the data from Dubai or directly?
+Should I take it from Oregon or via Dubai?
+Should I go? How should I go?
+By location India is here and Dubai is here
+It is. It is somewhere around here. Saudi Arabia, yes.
+Look, it's here. So ideally, go here.
+I want it. Right?
+But
+Your office person said that office man
+The manager's own data center is our data
+Our data should reside in Oregon
+If I get orange then our data should be received
+in Oregon okay then you have a jugaad
+You said okay, which is CDN.
+No, which is static data, which is static data.
+We cash it in. We
+Let's cash it in. Brother, cash means
+What happens? Is cash the modern equivalent of speaking
+Is there a way? Not cache. Cache means temporary.
+Storage.
+Temporary storage that I keep going back to
+Am.
+I'm bringing groceries from the store. That's better than this.
+Shop goods, a small shop in the middle
+I'll keep it in. When you need it, take it from there.
+Will come.
+And if you are moving from the main data center to a local location
+You are coming for cashing, this is called edge
+Location.
+Edge location.
+Edge is a new concept these days.
+computing. What happens in edge computing
+Do you travel all over the world?
+They don't. Where the world's data is stored
+You make a small cache of what has happened.
+to some medium place and take the data from there
+And that's why it's called edge computing.
+It's become very popular these days. Okay?
+That's it. Now this is Oregon, this is
+This is Dubai, this is Mumbai,
+These four things are called region.
+They are called regions.
+They're called regions. So if you
+Do you go to AWS or go up,
+What is this that's loading? North
+Barjana, Ohio, California, Mumbai,
+Osaka, Seoul, Singapore, what is this? All of these
+There are regions. Data centers are located in these regions.
+Now I want to do edge computing in the region.
+In smaller places than here.
+There are local zones. There are local zones. Right?
+I haven't enabled the local zone yet.
+Yes. But if you go to Manage Local Zone,
+Small local zones will be visible here.
+Local zones are used for edge computing.
+So look, there is a local zone in Kolkata.
+Delhi has a local area zone.
+Local Zone. Located in Australia, Hamburg
+I am in. But if you open
+A Global
+Infrastructure
+AWS. If you're using AWS's global
+Infrastructure
+When you open it, you will see a huge map.
+Will be seen.
+This is the map. This is the dot you see.
+They are giving it, right? This dot denotes it.
+region. Write in the chat what this dot denotes
+We do?
+They denote the region. So if someone asks you
+He asked, "How many regions are there in total, brother?"
+How many regions are there in AWS?
+So AWS has 39 regions.
+39 regions.
+Ok?
+And so many more edge locations. See Edge Location
+Are you? I don't see the dot. Edge location
+What is it for? It's for caching. I understand.
+Got it? Region Edge Location Caching.
+Region Edge Location Caching Understand it all
+Is it clearing? Is it clearing?
+Is?
+Now imagine that you have gone out to buy an iPhone.
+You're out to buy an iPhone.
+Do you know what the specialty is?
+iPhone is available only at select places.
+Let's say something to him. What do we say?
+calls him
+Apple Store.
+It is called Apple Store.
+The first Apple store opened in India
+It was in BKC.
+Then another one opened
+In Bengaluru
+I forgot the name. I don't even want to remember it.
+me. Then the third one was opened in Koregaon, Pune.
+In the park.
+Ok?
+Then it opened in Delhi.
+Okay? Apple Store. Think of it like this.
+Apple Store
+Think of it like an Apple Store region.
+Is.
+But brother, this Apple Store is in BKC.
+But it is not necessary for me to go to BKC Mumbai
+Apple Store by going to the Apple Store
+I'll get an iPhone. I can get it somewhere else too.
+Any Trusted Authorised Dealer
+Not from a reseller but from a dealer whose name is
+Unicorn.
+The unicorn lives. The unicorn lives
+He remains an authorized dealer.
+This is yours in Region and Unicorn too.
+iPhone will remain available. And that's why one region
+comes under
+Availability
+Jones.
+Availability zone comes under region.
+I'll repeat it. Region
+It falls under the availability zone. Okay?
+Simple. Now if you go back to Global
+You will get this in infrastructure
+It's the Hyderabad region. Right? The Hyderabad region.
+Is.
+There are 39 geographical regions and 123
+There are availability zones. Meaning
+Divide by 123
+Bye 39
+Meaning, what is the minimum in each region?
+Should there be availability zones?
+Minimum three availability zones in each region
+Should be.
+How many people understood?
+How many people understood?
+How the Physical
+Internet
+Works
+Chapter One
+Don
+How the Physical Internet Works Is
+Completed? If you understand this now,
+related doubts that you have to
+Write Down on a Paper Comment in Discord
+Accept for wherever you feel comfortable
+The Chat
+You just have to say two things in the chat Ganesh
+that you either understood it or you understood it
+I did not come, I just want to say two things about it.
+Apart from this, give me a summary of the arrow, tell me that again.
+All the things you record
+You can give me unlimited time. Your job right now is to
+What is it? You have come to me to study.
+I taught you something.
+Did you understand what he taught you?
+Didn't you come? That's it, little one. Okay?
+This is the small one.
+It is simple, brother, physical internet is working.
+How does it work? How does the Internet work?
+It's here. How many people?
+I didn't know all this. Be very honest, this
+We didn't know everything. We knew.
+Cubinity is in one shot.
+So this is important.
+And that's why friends
+Let me tell you, brother, study from the basics.
+Things will make sense and your interest will remain.
+OK? And if you continue to be interested, you
+You can do something long term. Correct?
+Remember when I was a kid? I was in eighth and ninth grade.
+I had a beard and moustache. Someone was interested.
+I. You used to follow him around. Even in class.
+Used to reach early.
+Everything was working properly. Interest
+Because it was made. Okay? Let's go now.
+Let us understand the second chapter, the addressing for the
+Internet.
+Ok?
+What is the Internet address?
+What is your address?
+What is your address?
+What is it brother, tell me your address?
+What is the mobile number? What should I do? Dial
+That's what I'm asking for. What's your mobile number?
+number? So if you want to reach me
+If so, what do I do?
+I call. I WhatsApp.
+Simple
+Don't worry, DNS IP is here.
+Let the others do the brainstorming
+Our job is to improve our mind so that
+walked longer than the others okay now I need you
+what do I do to reach
+I'll call you, right, I'll just call you.
+I will tell you what is going on brother Apoorva
+There I feel like a number for him.
+Yes. What do you call that thing?
+It takes a number to say that thing.
+Phone number. Okay? Phone number. Simple.
+Simple phone number.
+For calling
+You need a phone.
+And to access that phone you need an
+Address.
+And that same thing is called calling address or
+Then he says the phone number.
+Now tell me my phone number from late.
+Everyone knows, right?
+Has it ever happened that you called me?
+Have you called me on my personal phone number?
+And whether Ambani or Modi ji took it away.
+Whether it was picked up or Rahul Gandhi picked it up
+Yes. This doesn't happen. It doesn't happen generally.
+Why? Because that can't happen.
+Because that is a unique address of the device.
+your phone number
+Is a unique number.
+Unique 10 digit number that you
+Lets you talk. Lets you connect
+It's okay. Now
+What did we talk about, that you are sitting in Pune?
+In.
+You are sitting in Pune. Your friend is sitting
+It is in New York.
+Now from Pune to New York
+Both of these are also one device.
+Both of these are devices, right?
+This device should also have an address.
+Correct yes or no? This device also has
+There should be an address.
+You should know that your friend is sitting there
+You are sending him to the sand dunes
+and went to someone else and accidentally hit someone else
+What if something went wrong?
+In that case, your address is
+More than half the people did not understand the joke.
+But it's a good thing, I didn't understand.
+It's a good thing I didn't understand because this is a
+Family show ok toh sandules kya hota
+basically
+There is sand, okay, sand whose from this class
+I have nothing to do with Pune now.
+Some data has to be sent to New York
+Now
+For that the address of my device should be
+It should be unique, what should it be?
+It should be unique.
+If that address is wrong, then I understand.
+what could have happened? do you have any
+Any idea what could happen? Anything.
+If it reaches father, he might
+Then you will remember him. That Ankush multiplied.
+Priyanka, what is he saying?
+Oh he is saying something, so that reel
+You'll start to think, okay?
+Don't do that. That's why you have to be
+very thoroughly with
+Addressing
+of the Internet which is chapter number two. The
+Addressing for the Internet. Now this address
+There is a particular protocol for this.
+call the thing
+Internet.
+protocol
+Brother Internet Protocol
+what is this Purushottam what is internet
+protocol
+Internet Protocol is basically a rule set
+of rule that says that if you
+I want to send a message to someone, I want to send a photo, I want to send a letter
+I want to send, I want to send wishes, I want to send love
+So you need a unique address.
+That device should have a unique address.
+That's why he created a unique address.
+made
+Which is called IP v4.
+So the people who are coming here are saying
+IP Address IP Address It's Basically IPV4
+IPV4 address
+Now when this IPV4 address came because of this
+Your device received a particular address
+such as 10.2.3.16
+found such an address
+And your friend from New York gets 10.2
+I got some address.
+Now I understand how you can call someone.
+You do it and it feels the same.
+There is also an address on the Internet.
+There is an address and whenever you send something
+From Pune to New York, I would go to the same address.
+It is. It doesn't move around. And for that matter.
+There is a protocol called
+Internet Protocol and the addresses in it
+It is an IPV4 address.
+And like your
+Like your phone number is lets say 860 whatever
+Is your phone number correct? Is that the phone number?
+number and someone else might have the same
+The phone number can be
+It can't be at all, it can't be at all
+It could be. Absolutely not. So that's the thought.
+Thinking the same, these people got the IP address
+created IPP v4 and they thought we
+People 4.3
+Billion
+We will create IP addresses and give everyone a unique address.
+Will get it.
+If 4.3 billion IPP addresses are created, then everyone
+You'll get a unique address. What do you think?
+True? What if the numbers were 4.3?
+Would billion numbers be enough for everyone?
+Was it?
+Now look here.
+total population
+In India. And not poultry, re total
+Population India is 1.48 billion 1.48
+Billion years
+So just
+This is the population of India.
+Now tell me what, now tell me what
+1.48 billion have one or more
+Can there be more devices? Maybe someone
+Have a laptop, maybe someone has an iPad
+Yes, maybe someone has a mobile, maybe
+Someone has a computer, a personal computer
+Yes, it could be. Right? It could be. Let's
+So on an average someone has two devices
+It is. More than on two, it may be that very
+All of them could be. So, is this 4.3 billion?
+IPP address only in India
+Will it be used? The whole of India dealt with it.
+Gave.
+That won't happen either.
+You will find it more boring than that.
+The same people from the IT industry
+I will use it.
+So they understood that we are cooked.
+4.3 billion IP addresses are not enough.
+Now can you repeat these IP addresses?
+Do these IP addresses with the same name repeat?
+No, right? Then
+These desert photos
+It will be wrong, right? I mean, Dad is asking.
+that son
+What have you sent?
+I don't understand what you have sent me, son.
+You? Dad, that IP address of mine was there.
+That New Yorker and yours are mistakenly beans
+I went. That's why this happened, Papa.
+There's no mistake. That's the whole idea.
+Okay? So they thought, brother, this is wrong.
+Yes. Let's create something new. So they
+IPv6
+I made it. made IPV6.
+and IPV6
+The combination that was kept was something like this
+I kept that the combination of IPV4 was 1
+Dot 2.3
+Dot 4
+1 2 3 4 means 0 to 255
+0 to 255
+0 to 255
+From zero to 255, like this 0.001
+4.3 billion in this way
+IPP addresses could be generated.
+Octet says
+octet octet. Four such
+There were four octaves in it.
+So 4.3 billion came out. In IPV6
+What did they do? One
+colon two colon three colon four
+kept like this if you go here what's my
+IP will go here
+So you will get my IP address like this 1
+2 3 4 5 6
+He made six such
+1 2 3 4 5 6 Now because of this the total number
+Off IP addresses found
+It was a little over 4.3 billion.
+Anyone know how much more than 4.3 billion?
+Was it much?
+So the total number of IP addresses that are in IPV6
+can cover
+he is
+300
+and 40
+Un dísillion
+340 Undecillion
+Roughly
+One Undecillion
+Roughly
+One undecillion is equal to two
+One Octillion Billions
+Meaning
+that if you bring four or five more like meaning
+Even if you go, it's not going to end. Okay.
+Is it? Yes, maths is weak. I know mine too. But
+If you understand in simple language then wherever that
+It was 4.3 billion, how much is it now? 1 2 3
+4 5 6 7 8 9 10 11 12 13 14 15 16 so
+Billion
+How many billion IP addresses can be created
+By IPV4
+which means so many million devices
+can have
+What
+So many devices can have a
+Unique
+Address.
+Did you understand?
+Did you understand?
+There can be so many unique addresses.
+Understood the difference, what is IPV4?
+What is IPV6?
+IPV4 is limited. Because of the limited
+Problems started to arise. Then what did they do?
+Did it? IPV6
+Pay moved in. Okay?
+Did you enjoy it?
+Do you understand? IPV4 and IPV6
+You should understand the difference. Okay?
+Now
+People thought that brother, this
+IP v6 is the first thing its address is very
+It is big.
+Look where did my address go? So, IPV6.
+Address too long. 2001 48607805
+Colon 4A is also large and complicated.
+plus alphanumeric digits in it means
+Alpha is a numeric character.
+Numeric means alphabet and numbers alpha
+Numeric.
+So he said, brother, this is IPV6, right?
+The 128-bit alphanumeric
+The character seems very complex.
+We are using IPV4
+I was happy.
+We're happy with IPV4. We don't need IPV6.
+He contacted Thanos that Thanos
+you comin.
+Then Tony Starr doesn't like it.
+We will not let you die, brother. We will die ourselves.
+We won't let Thanos die for any IPv4
+was actually right
+Thanos was like, that dude made 4.3 billion
+You people have been increasing the population for years.
+Then we had to come up with all these new solutions.
+are better than this
+So that was Thanos' logic now he
+I thought, brother, do one thing, not even Thanos.
+IPV6 is also very complex.
+It's happening. What should we do? So someone
+The great man said that you use the internet.
+And there are 4.3 billion IPPs on that internet.
+Addresses can be IPV4. You do one thing.
+a little piece of myself inside that internet
+Create an internet which is called a subnet.
+Which is called subnet.
+What is a subnet? It's the larger Internet.
+Big Internet
+And 4.3 billion IPV4 servers on the larger Internet
+Here are the addresses. Okay? You do one thing. One
+Make a small internet.
+Make more if you want.
+And limit it only to what
+The devices will remain only on this internet.
+Will stay inside.
+They can neither go beyond this internet nor
+Someone else on the internet can come in. Okay.
+Are they? They'll stay within limits. And this thing
+was spoken
+Subnet.
+This thing is called subnet.
+Now
+Subnet means small internet, so what about small internet?
+Even on the internet, according to the rules,
+Internet Protocol (IP) Yes or No
+If there is internet then internet according to the rules
+If the protocol remains, will it also have IP?
+Will there be addresses? Yes or No
+Yes, it will also have IPP addresses.
+And so ended Thanos and the subnet.
+You're done. Got it? The subnet is clear.
+What is a subnet? What is a subnet of the larger Internet?
+Created a small replica. Small subnet
+Little internet. Okay? Now you can use it.
+4.3 billion. Everyone is happy.
+Currently we use this.
+Currently we use this. Everyone is happy.
+All is well in the world. Thanos crying in a
+Corner.
+Tony Stark Returning as Doctor Dum.
+Everyone is happy.
+Are you happy? I'm enjoying the session, I understand.
+Things coming in?
+It's coming. Good. Okay.
+Okay. That's good. Now, brother, what
+subnet is
+You said that the whole world is using this optical cable.
+Ambanis run the country.
+Adani runs it. Then the whole city is this Airtel.
+And Jio people manage it. You stay at home.
+Owner.
+What do you know? What do you know about IP?
+How are addresses assigned? How are devices
+Register? What do you know? Then
+You said that brother, there is a concept which
+Let's say cider.
+Cider
+Now everyone listens to my classes. Right?
+So as soon as I said cider, moms and dads
+Like apple cider vinegar. No, it's not.
+This is different, Aunty. I won't tell you now.
+I. drink water
+So cider basically
+Classless
+Inter-domain
+Range
+inter domain range that your subnet is an internal
+It's going on.
+Now how to find the range of IPP addresses within it
+Do you know? Okay?
+Now inside her
+Let's say I
+Four are addresses. Okay? Four
+I have an address.
+routing needs to be done. Okay? To that address
+I need to get the routing done.
+So how do I find this address?
+Needed
+How do I find this address?
+So what did Cider say?
+What is classless inter-domain routing?
+Let me give you a method for this. Class
+Whatever for classless inter domain routing
+I'll give you a way to do that.
+that you raise 2 to the power 32
+- n
+If you enter this, you will get so many IP addresses.
+You will find it.
+2 power 32 - you enter n and that's how many IPs
+You will find out the addresses.
+Okay? Now what is this n? What is this n?
+Start with two ones. From n = 1
+Start it. So what is 2 to the power 32 - 1?
+Happened?
+2 to the Power of 32 - 1 Anyone Maths Maths Topper
+Anyone
+wow Shraddha wow wow wow wow
+Oh wow wow wow wow wow
+Where do we keep so much talent?
+Wow
+Mic Drop Bro
+Mic drop over.
+It's okay. It's not your fault either.
+Is.
+2 to the Power 31
+This much.
+This is what I was expecting.
+You can have so many IP addresses if your
+Cider Notation Is Slush One
+what did you say, Aai Bagan, what is this
+So basically, whenever you want to make cider
+Is Cider
+You create CID from the website rxyz
+OK? Anytime you need to make cider.
+Na, Visualize and Calculate Network
+Ranges with IP v4 sider blocks. OK
+Now let's see what you put in
+Slash One
+Slush one. So how many total IPP numbers?
+Will you be able to make addresses?
+As many as this happens, so many number of IPPs
+You'll be able to keep addresses. Okay? 2 billion.
+Okay, fine. Nice. You can keep this much.
+Did you understand?
+Now change this number. Make n = 2. So 2
+What is 32 - 2 to the power?
+2 to the power of 30
+Ok.
+Now
+Total number of IPP addresses
+This much.
+Now if this number
+If it becomes 16, then what will be the total?
+will go? 32 - 32 16
+O!
+O 65536
+Yes brother, it means this number is increasing, so the total
+The number of IP addresses is decreasing.
+Is that a right statement?
+that if you
+if you
+Create a subnet. Within that subnet
+Assigning devices a unique IP address
+So the way of doing that is known as cider.
+Cider
+Classless inter-domain routing is a routing
+Mechanism
+that will give you
+A network range
+Bhaiya, range means range means lets
+0.0 0.0
+16
+0.016
+So write it here
+0.016
+Total number of IPP addresses How many
+Can you find a solution for this range? Tell me.
+Shraddha or anyone?
+65 thousand
+536
+IP addresses can be extracted. Where the first
+The IPP address will be named 0.1
+The last IP address will be named 0.
+255.254
+0.1
+and 0.02.255.254
+How many total IPP addresses are there between
+Can you? Tell me everyone in the chat.
+65000
+500
+36
+Now
+If I keep my cider notation like this
+I got 65000
+65 IP addresses are available.
+If I
+Only 3,000 instead of 65,000
+IPP addresses need to be retrieved. So 0.00.0
+This number
+Will it decrease or increase?
+increase
+and decrees.
+Increase is the correct answer.
+So if I make this 32, I
+Only one IPP address can be obtained
+If I do this, I will
+I can only retrieve two IPP addresses.
+what does this mean brother? it means
+me if
+An IPP address needs to be generated.
+If I want to get an IPP address then 2
+^ 32
+-
+32
+2 ^ 0 answer one 2 power 32 - 31 2 ^ 0 sorry
+2 ^ 1
+The answer is 2^32 - 30
+2 to the power 2 answer is four
+So if I keep the value of n as 30 here
+Tell me how many IP addresses will appear in the chat
+Four
+If I keep the value of n, how many IPs will one have?
+Addresses are coming out
+And if I put the value of n as 0
+What is this number?
+What is this number?
+This number is 4.3
+Billion.
+Vi is the total number of IP addresses available
+in IPV4
+Drop a boom in the chat if you need an IP
+Addresses are cleared
+You will have to think a little bit but it should be clear.
+will go
+What will become clear is that if I get 4.3
+If you want to extract billion IPP addresses then mine
+The notation will be
+Slush 0
+So 2 to the power 32 because of slash zero -
+0 so 2 to the power 32 comes down to 4.3
+Billion IPP addresses. How many people understand?
+I learned how to calculate an IP address.
+Are?
+If my Sider notation is 16
+So 2 power 32 - 16 = 2 power 16 quoted by
+Shraddha which comes down to 65000
+How many people understand today?
+Session.
+This slush is a notation that denotes
+How many IP addresses will be available?
+Ok?
+Now
+Now pay close attention to the address.
+You will take it out, look very carefully from the leaves.
+You 0.000 You kept it so that my IPP
+The range of addresses should be this
+There should be slush 16, which means how many in total
+IPP addresses will be generated.
+65,000 will come out now, those 65, out of 65,000
+The first address will remain, the first address will remain
+which is 0.00.0 the first address to that thing
+It is called network address.
+That thing is called network address.
+This 0.00.0
+If you have 0.0
+16 or whatever it is. Now from here on out
+The last address will remain the last network
+Address is basically the first.
+And the one who remains last is called
+BroadcastAddress.Broadcast
+Address.
+broadcast address. So the network address
+The first address remains the one that remains.
+The broadcast address remains the last
+The address remains. First address and last address
+Address
+If your Rs 65,000 is not used then
+The total number of IPP addresses comes out.
+How many of them will be usable?
+65,000 - 2 Got the meaning?
+Did you understand that?
+If you extracted 65,000 total IPP addresses
+So the first usable IPP address will be
+will remain 0.1
+And the last one will be 0.02.255.254
+It will remain. It is just these two, these many
+The network address that will remain and the broadcast
+The IP address remains, but it will no longer be usable.
+Are you coming?
+Did you understand?
+You were asked all these things in the interview.
+and all these things go to you
+is taught in engineering. The thing
+Engineering people pay a lot of money for
+You told me that someone
+This is a device. Let's say this is a device.
+device or machine
+The one serving the data. Data or info
+or the packet
+You can say whatever you like. Okay.
+Is it? She's serving data. Let's say
+Its IP address is 15.33.42
+This is some IP address. And this data
+It is serving you computer network
+He is teaching today.
+And I hope you are understanding it too.
+They
+Who is this IP address that is giving you this IP address?
+teaching computer networks and making you understand
+I might be coming.
+Correct Train with Shubham.com Okay Train
+With
+Shubham.com
+OK. It's TrainWithShubham.com. And
+You also understand that the device
+This is the address of the device.
+is the IP address of.
+Then how did this IP address become train shm.com
+Went?
+What system is this?
+Meaning
+If I
+Go to trainshm.com. Train with
+Shubham.com
+then a device on its background
+running whose IPP address is something
+515 this is
+Find IP Address From Domain.
+OK? Find IPP address from domain.
+So I took the train late.
+V Shubham
+dot
+If I found the IPP address, I don't even remember it.
+I have my IPP address
+15.197.255.128
+This is my IP address. Okay? But then
+This IP address
+Why mapped with TrainWithShubham.com?
+This map is created because of a system.
+This map is due to a system called
+Let's say domain
+Name
+System. And Domain Name System Is As Simple
+Edge Your Phone Book.
+Now the Genji audience does not understand this example
+I have only two words for them.
+Yes. God bless. So now consider it a phone book?
+When I was a kid there was a
+Such a thick diary directory type
+It used to be kept where
+The names of all the people in that city
+And his landline number was written down,
+Dude, I don't know how many of you can
+Relatable or not, but Rashmi, your father is definitely
+Will relate that a big, very big address
+No, I don't know what he used to call her.
+No, what did you call him, I think it was a book.
+I don't know what he might be saying, yes yes Sahil
+Joshi Is My Man Yellow Color Pages
+He used to have yellow pages, yes
+Correct
+Yellow Pages Phone
+to book
+ah ha ha ha
+Fabulous
+So Genghis has no idea about this.
+No, they are like what the hell man this is
+Not this is not the vibe that's all they will say
+But if you ignore them completely then what will happen?
+His name is written like this here.
+The phone number is written as it is
+Telephone directory yes good good. So name
+The end phone number used to be written like this. So I too
+In this way I was looking for someone else in Lucknow
+Do people named Launda live there? So there's a
+I saw Prahlad as a boy.
+I called him and told him that
+You are enjoying papa na okhta meaning
+So I've done all that. Okay?
+In a proper way
+Your domain name, such as google.com
+train w shमam.com
+The IP address mapping remains a DNS
+Server Pay. DNS
+On the server. Now the DNS server that lives
+No, he does a lot of work inside. I mean
+By definition, it's very simple. Your domain
+In the background of tnwsam.com, there is a
+The IP address is mapped. So whenever you
+If you write trendws.com then that IPP address
+Pay connects. That's it. That's it.
+It's a story. The story ends. But what's inside it
+Work goes on, he's very detached. So I
+Let me show you an image. From there
+I'll teach you how DNS works. Okay?
+There is an image.
+Here it is.
+Ok?
+So, this image is very important.
+It is very important for you to understand.
+Now first of all what do you do as a user?
+you
+you you
+You enter a DNS query.
+put it as if
+Train with Shubham.com you put this on your
+On the client. Client means browser.
+You put it on your browser.
+What does a browser do then?
+First, that DNS query is sent to the root DNS server.
+Root DNS servers
+Where do DNS servers live? They're located near you.
+For example, if your route
+The DNS server for google.com is gadd
+If it is there somewhere, I would go there.
+and from there it goes to the ask.com server as
+So what is ask.com?
+what is a.com brother? so as a.com hey this
+Something went wrong.
+DNS servers. Okay? So these are different.
+The lookup tools are there. Okay?
+There are different lookup tools.
+There are different lookup tools in place.
+From there, the IPP of your domain is
+The address comes out. First of all
+Caching happens first.
+Caching happens. Brother, tell me about caching.
+What does it mean? Caching means your phone
+Speed ​​dial
+Do you know? Speed ​​dial for example
+This is my phone. So here's my speed.
+in the dial
+There are four of us: Mom, Dad, my sister, and me.
+Wife. So, now I remember their phone numbers.
+I don't need to. I've written his name and
+I have kept his phone number cached.
+I cached his name and his phone number.
+So the first thing about DNS is
+You should understand
+Your local system does the caching. Right?
+Your local system does the caching.
+Let's say if I write NS here
+look up ns look up name server look up
+Train
+Visham.com
+Now enter
+The IP in the background of the train w shm.com
+She's here. Okay? She's here.
+At the same time when I did NS lookup
+When he did this, he introduced its IPP locally.
+What did you do with the address?
+Cache at the browser level and at the local level
+Cash taken. Cash taken. Temporary storage
+I did it. So you should know this.
+What happens sometimes? IPP address changes
+It happens. You're still hitting and
+You're saying it's not working, brother.
+It's not working. Why?
+It's not working? Because that local cache
+OK? Now let's get past that local cache.
+went to the root DNS server. root
+What is a DNS server?
+There is a directory. There is a telephone directory.
+Meaning it contains the domain and its lookup.
+Okay? Now there's a TLD server.
+TLD servers are very
+This is an important thing. Top-Level Domains (TOP)
+level domain. So the top level domain is
+What's the name? TLD serverservers.
+So the TLD server is the top domain server.
+Component of DNS Responsible
+Managing a Highest Level of Domain. Now
+Google's top-level domain servers are located here.
+Google's live.
+Yes
+Yes, here it is.
+So Google as a top level domain operator
+Google Registry
+So Google will have a server like this.
+which will contain all these mappings
+And then your root directory is
+Let's go to GD and these people go to Google.
+Let's buy it. Do you understand?
+Google, Public, DNS, all these are Google's.
+servers live. Have you ever noticed that
+8.8.8.8,8.8.8.4
+What is this?
+These are particular DNS servers.
+Also called name servers. Right?
+This is also called TLD servers.
+Are you coming in? So here you go
+Google's got Google. Majority
+Google owns the majority.
+They lived in. They were early
+to launch this in your career. Then from there your
+His IP address comes out and that IP address
+An authoritative DNS server
+Rolev says that brother, yes this is the IP
+That's right, this 2.7, whatever your IP is, and
+This will be your domain, both of these are correct.
+And when this authoritative DNS server gives it
+He says that it is correct, only then that thing will be yours
+If the pass is loaded then the meaning of the story
+What does that mean? First, we'll look at the phone book.
+I used to match directly after seeing it.
+That's not how DNS works. DNS is very
+It goes through routes all over the place.
+For example, root DNS servers, TLDs
+Server, Authoritative DNY DNS Server.
+Is it okay, brother?
+It occurred to me that if I were to
+When I write my name, something is in the background.
+The lookup happens and my IPP address comes out.
+But this TLD server,
+Authoritative server, DNS server, these are some
+I didn't understand. Understand this way that every
+The server's job is different. One's job is to check
+Ensure that the response is from the correct authority.
+It comes from Google.
+or a fake
+He is doing it. In between, he wants to read you a news item.
+You must have noticed that all the banks
+was told that you have domain
+have to. Does anyone know
+Anyone that all the banks were told that you
+Domain has to be done.
+Recently news came about Banks Indian
+Banks Ask to Change
+Domain 2.
+Read this Read this Here is why RBI
+Asked Banks to Move to Secure Domain
+dotb.in domain
+Why?
+Why?
+When you read this, you will understand why
+will come in
+Earlier this year in July, the report emerged.
+that Kolkata police arrested four people for
+Duping businessman of lakhs of rupees by
+Faking the website of a private bank.
+Anyone can go here
+Name Cheap Name Cheap One named Name Cheap became Name Cheap
+Hostinger is done, GoDaddy is done from here
+You can go to ICICI and get it here.
+If you go and look, you will see it here.
+icidi ici dot tech
+Now tell me this
+how many people icicik
+I received an email from him saying send a UPI of this
+Can anyone buy this domain by paying ₹80 $80
+Is
+Is there any $80 yes is there any chat from GPT
+or ICICI by doing anything
+Net Banking
+can create a page like this
+Yes
+Can do
+And anyone can cheat you. Now this is me
+No one is giving a master class on Jamtara.
+I am explaining that top level domain
+Why does this work?
+If you see root sorry not root, root level
+domain
+When you go to the root level domain, then this
+I live there. For example,
+If you have a website named
+www.example.com.
+So this thing that remains, this is the root.
+level
+domain.
+Now it's set in
+From
+bank.in
+This verification begins.
+start to happen. And that's why
+You do not get an IP address directly.
+Its route from the first root DNS server
+level domain
+It gets verified.
+Then the top level domain such as dot now root
+What level is included? example.com now
+This comes in the top level.
+dot
+dotb.in
+Got it?gov.in gov.in
+ab.gov.in
+Who will operate the TLD server?
+Will you? Let's Save.in
+If it belongs to the government, then it belongs to the government.
+Will see.
+Now I understand why I went through so much trouble.
+What was the need? Directly from the book.
+You should have read it and told me that it was good train with Shubham.
+Directly write NS lookup
+Train with Shubham and he would tell IP
+Why did you change the address so completely brother?
+We taught you, so we taught you.
+So that no fraud happens to you tomorrow.
+Even if it happens with lettuce, whenever you
+in your cybercrime or anywhere any
+You can write in details about the place you will be visiting.
+that my TLD was not verified by the server itself
+You can sue them for not taking action against you.
+The TLD server itself was faulty.
+in Kolkata because
+Four people were caught.
+Did you understand?
+Cybercrime Self understood that he
+Fake websites were being created and TLD servers
+were bypassing the .
+Are you getting this?
+How many people understood?
+Now
+Now I have given you some notes.
+On WhatsApp.
+I sent you some notes on your WhatsApp.
+Which is known as such
+Networking Short Notes.
+Brother, I don't have WhatsApp. It's okay.
+No problem. Go to trainvisham.com
+Go to Digital Products.
+Oh shit, I probably deleted it. Okay. I
+I will upload it here.
+Train vs Shubham Digital
+Product
+Computer Networking
+Write it like this. Yeah, look, I got it. So
+Computer Networking Master Class
+There are notes that you can download for free.
+Yes. Redirecting in four seconds by doing this
+I'll give you the link. View it.
+And if you download it, you will see it completely like this.
+Will go.
+How many people have received these notes?
+As many people have not come to
+Do as I say. Now
+If you go to the end
+So whatever I said just now
+Those things are written.
+a little bit more and go to the end just a little bit yes this
+remained.
+The DNS is a database of domain names and
+IPP address information that enables computers
+To locate the correct IPP address for a
+URL. How many people understand this definition?
+I came?
+Just let me know. How many people know this?
+Did you understand the definition?
+It has come.
+Click on this link to see it
+It will open directly.
+And if you look carefully
+Cloud front dot cloud front. What does that mean?
+Is it? I've put it on Cloud Front
+Cloud Front has a DNS server.
+Domain Sorry DNS Server Not CDA Server
+Content delivery network through which I can
+Digital Products Directly Hosted There
+I can do it and give it to you. I understand now.
+cloud front and all these things. Now
+This is where this data is coming to you. OK
+Is?
+It is understood that DNS is a database of
+The domain name and IPP address are in. Okay?
+Now, how does DNS work? First,
+From your computer to the DNS resolver
+Will go.
+But before that you have to mention that thing in it
+No. The first thing it does is check your cache.
+It checks your cache first.
+I have not mentioned it because
+This is a slightly old note and has been borrowed from someone.
+It was asked in a recent interview.
+So I'll explain it right away. Then, DNS
+The route will go from the resolver to the server.
+Server pe Train with Shubham.com this domain
+Where is it registered? Then it will go from there.
+Then from the TLD server the top level domain.com.
+He will do all that. Then, from the authoritative server, he
+The item will be validated and then the item
+The website opens. That's trainshm.com.
+The web page will open and load on your computer.
+Will be done.
+How many people understand this now?
+How many processes work together to perform DNS tasks?
+He gets it done.
+OK? Comes with multiple processes
+Yes. Okay? Got it, right? I'm
+Why am I doing all this? I am Purushottam.
+I am doing it for him. He said yesterday, but brother.
+DNS means Domain Name System.
+But here's the DNS server. So, S means
+Will it be the server or the system? Then I will
+I will say it. I will say it like that.
+I... So I don't want that. Okay. This light
+Who extinguished it?
+Oh shit. My battery's dead. Never mind.
+no ok
+You have understood, Gopi Bahu.
+All good
+Now tell me, I know the name now.
+IP was also known to how many people
+Addressing for the Internet understood
+How many of you got addressing thought for.
+The internet gets it. Done. Nice.
+Now let's talk about how this data moves.
+How does the data move on the Internet?
+In the internet?
+How is this data moving on the internet?
+Brother? How many people?
+Still alive. Still feeling fresh.
+Are.
+Just for your record. It's been 28 hours.
+We're reading this, okay? You're
+Still able to understand. Right?
+I'm going very slow today.
+I'm taking a break. I want to get through this session.
+No. I don't want to run away from this session.
+Let me explain computer networking to you.
+That is my ultimate goal for this.
+Session.
+And first of all thank you so much for
+Cooperating.
+Because generally people start talking here
+quiz. Because when they say quiz
+Politely he wants to speak to me
+I have to leave for Palvel. So, for today's session
+So the good news for you is that there is no
+Quiz. So don't ask for quiz and don't
+Ask me to stop.
+Okay? Stay seated.
+How does the data move in the Internet?
+How does data move? Let's understand.
+From the story of the people
+The story of two people explains the data
+How is the move doing?
+One is Shubham.
+It's Shubham. Okay?
+And there is one
+Purushottam. Now Purushottam Represents
+Best learner. And I'm not joking about this.
+I have been. He is actually the best learner.
+Why? If you don't study well,
+You will not have any doubts. So if you
+If you are not having any doubts, it means you are good.
+You are not studying from there. Brother is having doubts.
+And that is why he is the best learner.
+So let's go Purushottam. Okay, correct. So
+Let's see how does data move on the Internet?
+Now there is Shubham and there is Purushottam.
+Shubham clearing Purushottam's doubts
+Shubham called Purushottam his brother.
+Do your doubt clearing on Discord.
+But Purushottam is like no
+WhatsApp।
+OK? On WhatsApp? Purushottam Like,
+OK, clear my doubt on WhatsApp.
+Do it and tell me right now. Okay, it was like Shubham.
+Is like ok. So WhatsApp pe agar
+If you want to clear Purushottam's doubt then
+WhatsApp
+What is WhatsApp as a product?
+A product is an application.
+There is an application.
+WhatsApp as a product is an application.
+Right? Now I picked up WhatsApp, brother.
+Correct. I picked up WhatsApp. Here it is.
+My WhatsApp. I have a great WhatsApp.
+I picked it up. WhatsApp me now.
+We have to find Purushottam. So there
+I will feel secure that brother Purushottam
+I need both his phone number and my phone number.
+Only then will I be able to present something to myself.
+Next level where security
+Looks like I went into presentation mode
+I'm going. Okay? In presentation mode.
+I'll leave. So I WhatsApped
+I have picked up the application. I have
+I have added the number of. Security wise
+I have both of his numbers. He has
+My number is in. Done. Security is set.
+So now we can present. Meaning that
+I will be able to solve my doubts and my anger
+I'll be able to pull it off. So present. Okay?
+Now once again Purushottam and I sat down to talk.
+Went
+that slash root. Purushottam asked me
+What is a slash root? I said
+Slash is where Linux starts and root
+Is the root folder for such. So then
+Purushottam said no, no. Then Root
+What's a slash? So I'm going to do this and
+Purushottam
+We started talking. So right now, between us
+I'm not chatting. I'm chatting. OK
+No chats, there are chats and a session
+It's been maintained. Okay? One session.
+It's been maintained, brother. Come back after writing from there.
+I'm typing. And as I type,
+I'm sweating over here
+Yes, brother. And that's where my typing starts.
+It's done, yet he's still typing from there.
+So a session is maintained.
+Connected. Session maintained
+Yes. The typing is here. Then
+Now I am in the session, brother, we chatted on chat.
+I'm going to try to explain it to him.
+Yes, but my words don't go beyond that.
+It is reaching me. I am able to communicate.
+I am. Everything is reaching him, but he doesn't understand.
+I can't understand what I want to say
+Yes. But things are getting out there. Right? So
+Transportation is happening.
+So transport
+It's getting proper. Things are going well.
+The transport is getting proper. Then suddenly
+se purushottam kab blue tick double tick blue
+A single tick replaces the tick.
+So then I breathe like this. Then I breathe like this.
+In Purushottam, he says sorry brother.
+My network was gone.
+Now it's in. So now back to typing.
+He sent messages in quick succession. Brother, tell me, you bastard.
+You're fine. The network is back on now. Then
+I told Purushottam
+Look brother
+This is how it works. Then I push
+He said, look, take such examples, Nibbana
+Nibbi, I sent some such examples
+He said that the link has been added.
+There was a data link, it got connected.
+The link was connected to him. The link was connected. And
+As soon as his link was connected he said, Bhaiya
+Right now I am not asking any theory questions.
+I will ask. I will come in person and come physically.
+There with you daily on Discord
+I will practice on the physical level.
+And friends, this is the OSI model.
+What does the OSI model say? It has seven
+There are layers.
+Application Layer, Presentation Layer, Session
+layer, transport layer, network layer,
+the data link layer and the physical layer.
+The physical layer is the cables in this physical layer.
+Routers, switches, cables.
+Connect your devices with the cable
+and those devices link data
+Then those devices are connected to the network.
+connection is made and the IP address
+Data is transmitted through
+Transport layer
+A session is maintained so that the data
+The transfer should be done without any data breakage and then
+Your application from the session layer
+His security is checked to ensure that everything is in order.
+Is it there or not and finally your WhatsApp trnw
+shmam.com Yours in any application
+data
+moves. So this is how data
+Moves. Data Moves Via Cables
+Then it goes to the data link layer. Then it goes
+to IPP address then it transports via
+The network then a session is maintained then its
+Security encryption happens and finally
+It goes to your application.
+How many people understood that the data
+How it moves.
+Seven
+There are layers. There are seven layers. Okay.
+Is it? I'll tell you back. Okay? Got it?
+Did anyone go? Didn't anyone come? Purushottam came
+He must have gone brother.
+Okay? There would be seven layers.
+It's here. Always connected to your device via data cable.
+Goes to the application layer.
+Layer One is your physical layer. Layer Two is your
+Data Link Layer. Layer Three Is Your Network
+Layer.
+Layer four is your transport layer.
+Layer Five is your session layer. Layer Six
+is your presentation layer. Layer seven is
+Your Application Layer.
+Ok?
+Brother, explain it again, this time to Purushottam.
+with a real application on the side
+Explain.
+Understand it with real applications. Okay?
+I have given this example especially of Purushottam.
+I wrote this because it is so easy to understand.
+No. It's not as easy as it looks.
+It's not easy, right? For example, www.
+Train with Shubham.com
+I have to reach there.
+Okay? So, like this
+And this is my laptop.
+This is my laptop.
+And what did I put on the laptop? Browser
+inserted in www.tran
+shम.com
+So it went to this DNS and from here it gave me
+I brought the data. How many people will this diagram represent?
+I understand that this is you
+You are and this is your server.
+Now we have to understand how the data
+Moves.
+How does data move? How does data move?
+How does it work? How will the data be transferred? From here
+How will the data arrive? From trains to here
+How will it come?
+First of all, this laptop of yours is
+Must be connected to Wi-Fi. Right?
+It must be connected to a Wi-Fi.
+And if it is connected to Wi-Fi then let's
+If not, then
+The LAN cable must be connected. Right?
+The cable must be connected to the cable.
+Which will provide cable internet. Now this loan
+Cable Wi-Fi router
+These
+Which layer will it fall into? Which layer?
+Will you come?
+The physical layer will come in. Physical
+layer. So here's where you start from
+Physical layer.
+OK? You start from the physical layer.
+OK? You start with the physical layer.
+Yes. Now
+This
+A local level of the device
+There is an address. At the Internet level
+There is only one address, what do you call it?
+Internet Protocol at the Internet level
+The address it gives is IP
+Address. An IPP address at the Internet level
+It does. Okay? Locally, near your home.
+A MAC address for each device at the level
+remains.
+What does MAC address mean, brother? It's yours.
+Does a MacBook have an address?
+Address
+So the Mac address is no longer a MacBook address.
+machine
+The machine does have some residue. What remains of it?
+Yes. Media Access Control Sorry Media
+Access Control Is a Unique 12 Character
+Physical Identifier Permanently Assigned to a
+Device network interface chip controller
+Even then this device would have a MAC address
+Yes. You might remember your college days.
+In college, when you needed internet, you
+They used to go to the server room and the internet guys
+Sir used to give you internet access. Mac
+I used to write down the address. Remember?
+It used to happen like that in those whose college it did not happen
+They're the lucky ones. Right? They used to be. Now
+This one with MAC address is data
+Link layer. Data link layer then cables
+We have moved up and reached the address.
+Data is on the link. Okay? Data
+You've arrived at the link. Now, your WiFi router
+You have internet. Your data is linked.
+Your device has also been identified.
+So you can send a request through it.
+In the Network.
+You are in the network
+You can send the request in the network.
+If you send a request to the end network
+had been.
+What did I say in the beginning? Data
+is transmitted via
+Packet. It's in a packet. It's in a packet.
+Packets are transferred in the network.
+OK? Packet
+Your packets are transferred. Okay?
+The packets are being transferred.
+Whatever will be transferred will be from your device.
+represents a unique address to the Internet.
+If the Internet needs to know the unique address
+So what is that address called of the device?
+What is that address called IPP address.
+So the packets also carry an IP address.
+The packet also carries an IPP address.
+and these IPP address transport
+There are.
+Transport takes place. Now transport
+There are two ways this can happen: one is transmission.
+through the control protocol or the user
+Datagram
+Through the protocol. Okay?
+TCP
+If you transfer packets through the protocol
+Guaranteed if you do
+Guaranteed data loss
+If yes, the data will arrive.
+In UDP there is no guarantee that the data
+Went and arrived. Suspect packet loss.
+It is more. For example, right now I
+I'm talking to you. Hello friends.
+Data arrived. Data has reached you. OK
+Is it? But let's say hello friends.
+There is a little bit of network latency in between.
+It increased. What if there was packet loss? Hello
+Will all the data from friends be accessible? No
+Sometimes access won't be available. So we
+what people are doing right now right now what we
+What are you doing is UDP.
+What we're doing right now is UDP.
+These are the notes that I have for you
+What type of network is this?
+Did you get there? These notes that I just gave you
+Sent over chat, it arrived over TCP.
+There is no worry about packet loss.
+It will reach you guaranteed. Right?
+It happened. Now
+This TCP IP moved forward and
+I got hold of a particular address. Where do I go?
+I have to reach there and he has a
+The session has been maintained. Whatever you say in the session
+The data resides in your host client.
+This is you and your host Train with Shubham, this is a
+This establishes the connection.
+establishes the connection.
+Connection
+Establishes a connection. Once
+If the connection is established, it will be
+Looks like one thing: http colon slash
+slash it has an s if you go na
+You can see these three dots here on train shm.com
+There are two dots on it.
+If you click on it, the connection is visible in it.
+Secure.
+The connection is secure.
+Secure. So this certificate ID and the
+Is the value of connection secure being set?
+These are yours
+This is happening in the presentation layer.
+Why in a presentation? Because
+In the presentation he is saying that whatever I
+A pass request has come and this certificate
+It is HTTPS, it encrypts it.
+After decrypting it, it is saying that it is correct.
+And no one should send me to any fake website.
+Someone trying to tamper with my data
+not doing it. So the presentation layer
+Checks encryption.
+Checks encryption. And finally
+Your application after the presentation layer
+TrainWithShubham.com opens now.
+Application Train with Shubham.com
+from the application layer
+The presentation layer comes in. Your data
+encrypts and passes it to the session layer
+He tells the session that brother, your connection
+It is established, right? Take this data and this
+Send it to whoever requested it. Then
+The session layer transports that data.
+Layer 1: TCP or UDP
+Whatever type of request it is
+and then the packet through the network
+It carries it. It carries it in data packets.
+and then the packet is sent to my device
+Identifies the data link.
+And if I have a router, Wi-Fi,
+Train with Shubham.com is on my laptop.
+The website opens.
+OSI Model Explained.
+How many people got it cleared?
+How many people enjoyed it, brother?
+This is the internet that we have seen till date.
+Was not given.
+At which layer does authentication take place in this?
+Tell me what you need for authentication
+HTTPS
+You will need it in the application.
+Here
+If it happens here then V layer does authentication
+Work in OSI
+session. Why? Because if you authenticate
+Only then will the connection be established.
+Connection only if you're authenticated
+It will be established.
+Then
+Then now V layer does encryption
+Work in OSI, tell me fast, fast, fast
+quick quick
+Data encryption primarily happens in layer
+Six presentation layers now which layer does
+Application
+Work in OSI
+layer seven application layer okay so if
+Please look carefully, your application is here.
+If he wants to maintain a session, connect
+If you want to do it, then authenticate it here.
+Will have to.
+This is if he has to transfer data.
+Now tell me where does the IP exchange occur?
+Write it here.
+How does IP exchange work?
+Operates at the network layer. Which layer does
+Device Address
+MAC Address
+Exchange?
+The MAC address operates in the data link layer.
+We layer dos
+Cables
+Work in OSI The cables operate in the physical
+Layer of the model. Drop a boom in the chat if
+You will never ever forget the OSI model and
+How the data moves in the Internet.
+You will never tell how the data moves.
+It is on the internet.
+If I have WhatsApp and I
+I am talking to Purushottam so I have
+There is an application. Then I use that application.
+Can send any data to Purushottam
+I can only send if we
+Established connections between people
+If the blue tick is not coming from his side
+Yes. A single tick is coming up. This means the network is on.
+There is a problem with the transport layer.
+There will be no cables, no physical layers.
+Data address will not be available.
+Did you understand everyone?
+All good. Did you enjoy it?
+Can you remember it? I just remembered it.
+Would it be? The application layer,
+presentation layer,
+session layer,
+then your transport layer, then your
+Network layer,
+Then your data link layer, then your physical
+Layer.
+You must have remembered it. Right? This is what happens now.
+OSI model
+which is ISO international standard
+Organization or International Organization
+Theoretical
+Its concept is practical
+Explain what the implementation is.
+that these applications presentation and session
+How many people think that these three
+WhatsApp can also be the only one.
+Application, Presentation and Session, these three
+This can happen in any application, such as
+that WhatsApp
+Authentication can also be done in WhatsApp,
+Encryption can also be done, session can also be done
+It could be a presentation, everything
+Could be. Correct? Then
+Your transport in the transport layer
+will be.
+There will be transport. Then your network
+If the IPP address comes in the layer, then it
+It can also be called the Internet layer.
+It can also be called the Internet layer.
+And this data link and physical is this end
+Of the day is happening in a single device.
+Right? The physical cable and your MAC address are the same.
+It's in the same device. So can you use it for a better look?
+bit network
+Access
+Can you say layer? Network Access Layer.
+Because if you don't have a MAC address
+If there are no cables then the network
+Access will be lost. Correct?
+Done. This is known as TCP.
+IP
+Model
+TCpAPI model which has four layers.
+Application layer, Transport layer,
+Internet Layer, Network Access Layer.
+E.g. It's even easier to have network access
+The layer will not last if your cable is not
+Connected. The cable is not connected.
+The Internet layer will not work if your
+I don't have an IPP address.
+The transport layer will not be in place unless
+You don't have internet. No application.
+It will work if you have transport internet
+There's no network. Got it? So
+The OSi model has seven layers. TCP
+The IP model has four layers.
+And this is theoretical.
+This is more of practical.
+The OSI model works on a completely theoretical basis.
+TCP is more practical. How many
+People understood TCP IP
+And how does data move in the Internet?
+Understand how data is moving
+on the internet? Tomorrow if you get internet
+If you are disconnected, you will need to debug
+Will you do it?
+The internet is there, everything is there, everything is working. I
+I can't authenticate. My
+Encryption isn't working. So what?
+I will check on physical layer or data
+Should I check on the link layer?
+I'll check on the session layer. Good, good.
+I will check at the session layer. If my http
+I am unable to pass the certificate, no
+The protocol is not running, the application itself
+If it's not running, I'll try to use the Network Layer.
+or transport layer check
+Will I do it?
+I am going to create the application and presentation layers.
+I'll check the top layer. I won't check the network.
+I'll do it. I'll also make up some interview questions.
+Learn it. Okay? Like I made it here.
+Were.
+I was sitting here and making something.
+questions that we layer does this we layer does
+Do this anyway.
+Now look at HTTPS
+https is the primary operator at layer seven because
+http adds encryption standard to https
+so and so
+Both the application and presentation layers
+keep working on that thing and
+Encryption layer also works in it.
+That's why many people were confused.
+that brother https
+Is it the application layer, presentation layer, or
+session? So in the TCP IP model, that entire
+He solved it completely and said
+That you guys go, these three are the same layer
+Whose name is application layer.
+Did you understand? Gopi Babu, you haven't understood.
+How many people understood that there is a lot here
+There was confusion in the OSI model, so those
+People created a new model called TCPIP
+In which this application was told to these three
+Layer
+You are considered great
+I want to teach a little more about this.
+so that you can understand more and
+go into depth
+A little more and then go inside
+Let's dive in full depth.
+We understand that this is our transport
+The layer is
+Transport layer.
+Transport layer. This transport layer
+Looks like a lot of work.
+Also known as L4. Also known as Layer Four.
+Let's say.
+Also called layer four. L4 layer four
+Transport is very useful. Why do you know this?
+Because this transport layer has two
+There are several types of protocols. One is
+TCP
+And there is another one called UD P.
+TCP and UDP. Now how TCP works
+Is?
+TCp works client
+Server
+Works on client server model
+So the client
+sends a request to the server that a
+Server, join me.
+Synchronize
+Synchronize with me. With me
+Synchronize. The server says A
+The client will synchronize with you.
+So he acknowledges that thing.
+Acknowledgement to Synchronization
+Request.
+The server said acknowledgement to synchronize
+I will give this to you. And this acknowledgement
+To the synchronization request server
+He sends it to the client and says, "Brother."
+I will talk to you, acknowledge my
+Synchronization. But are you also different from me?
+Will you talk to me? He said, yes, I acknowledge this.
+I respect your feelings. So one
+Two
+Three
+three way
+Handshake.
+Three-way handshake.
+Three way handshake. Meaning client syncs first
+The server will say, "I
+I acknowledge that sink. What?
+You acknowledge my acknowledgement
+Are you there? She said yes. Now between them
+The connection has been made. Now, between these two
+The connection has been established. By handshake
+These people have established a connection. Now
+The data transfer between these two
+will be
+That's 100%
+Guaranteed
+will be successful
+Because the data will be transferred. No matter.
+What, there is still a connection between the two?
+It's gone. There's a pipeline that's collapsed. Now
+Data is being transferred from within it
+It is. It is becoming. It is becoming.
+Did you understand?
+Did you understand?
+Vishakha said it absolutely right.
+SSH
+in the background
+Uses
+TCP.
+SSH in the background using TCP.
+See
+Yes, SSH Secure Shell Always Uses TCP
+At the transport layer, weather you are running
+It's interactive and sending to the background
+Because TCP guarantees packet delivery
+orders. It ensures remote commands and
+Data streams are executed reliably.
+Without dropped messages.
+How many people understood it in depth?
+What are you guys doing in life?
+Now on the other hand, by the way, TCP, this
+It also uses HTTP. Brother, HTTP means HTTP.
+There is a protocol
+The text
+to transfer from one place to another
+returns. That's all there is to it. HTTP is a
+protocol that transfers text from one place to another
+Allows transfer of transactions to another location
+It is. Like
+CRl
+www.
+Google.com
+What does a CRL do? It will go to this location.
+And
+I brought the text.
+He brought the text.
+He brought so much text.
+That's it.
+That's it.
+So what is HTTP? It's a protocol.
+That allows you to transfer text. Hyper
+Text Transfer Protocol. Hyper
+text. Hypertext means a lot of
+Text that links to some other text
+There will be a coupon. There will be some more text on the link.
+It will open. So there's a lot of hypertext like that.
+Protocol for Transfer of Data to the U.S. Now
+What does the TCP handshake say? Whenever I
+Did
+cl https colon ये
+www.google.com
+I did this, I hit enter and the data came in.
+Why did the data come in? The first time I saw it
+Did a synchronize request go to Google?
+Pay. Google acknowledged him and his
+He sent me a request. So, between the two of them
+I got the connection. Now this data is being sent to
+How much has the loss been? How many packets have dropped in?
+This data?
+Zero. Zero packet drops.
+HTTP uses TCP
+What is http s? Now you can send text
+Transferring from one server to another
+Up to the server.
+Someone came in between and took such a text and put it in his pocket.
+What will you do if I fill it?
+So what does HTTP s do?
+that you have in your pocket
+Fill it in. You won't understand it.
+What is written in the text? Encrypt
+HTTPS also uses TCP
+SSH uses TCP.
+SMTP
+Also use TCP. What is SMTP brother?
+Gone yet? SMTP Simple
+Mail Transfer Protocol. This is dead.
+There is no protocol for sending mail.
+Transfer means whatever you send through Gmail, email
+You do that, that's a transfer. So, just mail.
+Transfer Protocol. Okay?
+Now you want that in your mail you wrote
+Hello Sir, this is to inform you
+That I have got a better opportunity. So I
+Have to leave this company and attached is my
+Resignation letter. And you are sending it.
+If it weren't for TCP,
+If there was no three-way handshake, then this would also happen.
+Could your resignation letter be as an
+The attachment would have been dropped.
+Anything could have happened. Right? So TCP's
+Because of this, your mails and emails are received reliably.
+They are delivered. Okay?
+Now
+UDP
+User Datagram Protocol what does it contain
+Is it you or your server?
+You tell the server to server data
+The server keeps publishing the data.
+There hasn't been a three-way handshake either.
+They didn't have a proper handshake.
+The connection is not established. In that case
+What happens in?
+In that case the user's datagram is
+Any number of kilograms, megagrams, whatever
+There is a possibility of that drop. So you
+Kant Guarantee
+No guarantee.
+There is no guarantee that the data will be delivered.
+It will arrive. There are no guarantees. Think about it.
+that I said here that
+Shubham is doing this on the A train. And so many
+Someone said stuck leg leg stuck stuck
+Stuck stuck slag lag lag lag lag. Two things happen
+It's in the middle of this. We're on a UDP.
+Connected friend. Connected via UDP
+So there is no guarantee that I will
+I will speak and it will reach you. He became one.
+The second packet is also getting dropped.
+Third, you say "leg-leg" and then
+which is my bandwidth within which data
+The transfer is taking place. You can
+And you are polluting it. If you give it more data
+Are you increasing or decreasing latency?
+Are you? What are you doing? You're increasing the latency.
+You're putting in bandwidth and, I mean, watts.
+Like you're stuck on that leg.
+What to do in that case? What to do in that case?
+Let's get stuck, I'll ask
+I hope my internet is stable now.
+At that point, you can say yes or no. But
+If you spammed
+Lag lag lag there are some people I name
+I will not take it but there are some people who copy paste
+Do you know there are messages?
+A few people who write something meaningful
+But they think maybe they heard me.
+Don't go, don't copy it, don't copy it
+paste copy paste copy paste very
+All messages are sent. So already packets
+There's a loss. Plus, you can add more packets.
+If you are there then there are chances of packet loss.
+increases. I understand how does your
+Should I move the data to the internet?
+Do you understand?
+Should I do it? Okay. So far, everything is fine.
+glucose
+Parleji Get Red Anyone Needed
+need a break
+No, no, okay, no, don't ask anything.
+ok not giving break
+Now let us understand how security works.
+work
+How does Internet Security work?
+How does security work in the Internet?
+Security works, very cute
+In this concept, it is called fire.
+Wall.
+Fire Wall
+Either turn off the firewall, I will drink water.
+Ok?
+or else
+You
+Firewall when your public facing
+It's the internet. It's public. What's the firewall?
+Does it happen? I'll tell you. What's a firewall?
+Does it happen? Okay? You need to understand one concept.
+That concept will be very helpful in life.
+The name is Ingres
+and egress.
+Ingress and Egress
+These are two brothers.
+There is an incoming
+And there is an outgoing one.
+And both are in traffic.
+And traffic means
+data
+Meaning requests means packets.
+Ok?
+Ingress and egress. Ingress means incoming
+Traffic. Egress means outgoing traffic.
+Now if this traffic contains data, the request
+yes, there are packets so if there is a packet
+If it has a packet, packet means data
+information to because of
+network
+Layer
+It will have a unique address.
+What do you say?
+He will have a unique address.
+It's called an IP address. So if he has
+packet then it has an IPP address
+That would be the IP address. Okay? Let's use the IP address.
+0 dot something is an IPP address. X and Z IP
+Address 12.2.3.4
+This is the IPP address from Let's.
+Now I have installed it on my Ubuntu server.
+I added it to my Ubuntu server.
+apt get install engineeringix I installed my
+Installed Inginix on Ubuntu server.
+This is one of my applications. An engginx
+The application is there and I have installed engginx
+and I started it.
+sudo
+System
+ctl start ingenix so I
+If you start the injection then bye
+Default if I go to my server
+If I go to the server, I get this IP address
+I have this IPP address, if I send this IPP here
+Type in the address and hit enter.
+So I should have looked at Ingenix. Right?
+But he is saying that this site cannot be reached.
+This site can't be reached. Why? Because
+This is my instance, this is my instance
+The security part of this is security
+If I go to that
+Its inbound rules, inbound means
+Ingress Inbound Rules is what it says
+TCP protocol for port number 22
+TCP is allowed for port number 22
+Allowed. Well, TCP on port number 22
+General SSH
+TCP on port number 22
+That's SSH. Okay? Now I
+What will I do?
+Good Outbound Rules In All Port All
+protocols 0.0
+Bhaiya, what does Slush Zero mean?
+0.0
+What does it mean?
+0 4.3 billion Who was that? Correct Correct
+Correct. 4.3 million means I'm sitting here
+External outward traffic worldwide
+I can reach it. Okay?
+Good. I'll go over here now. Security Group
+I'll click on it. Okay? Security
+I clicked on the group. Now because
+Of this security group click mujhko kya
+found?
+I've got inbound rules and outbound rules here.
+I've got the rules. I'll edit it.
+Inbound Rules and I'm going to add a rule here.
+I'll add it. I'll tell him, brother.
+me
+My engine's port number is 80.
+So I want to set the port number to 80.
+Either I give Anywhere Anywhere IPV4
+If I give it, then see what will become Anywhere IP V4
+If you gave it, look what it became.
+Bhaiya Slush Zero means Slush Zero means 4.3
+Billions of people can access my server.
+Ideally
+4.3 billion people can access my server
+You can. What do you think? Security Wise
+As a DevOps Engineer, you should do this
+What?
+Don't do it. Never Anywhere IPV4
+Please Keep.
+And if you did this then
+340 undecillion people access your server
+You can do it. This should never be done.
+Ok?
+If I do my IP what is it?
+104
+288140
+32 Bhaiya what does Slush 32 mean?
+Whoever told this means he understood cider.
+Went.
+32 meaning
+2 to the power of 32 - 32 is 0 2 to the power of 0 one is 0
+How many people can access it?
+Just one. So I did just one and it
+Saved it. Saved it.
+Now I went to my EC2. Now I
+Went to the instance and got its public IP
+And went here and pasted enter.
+Now he's saying this site kind of be reached.
+Why? Because I'm using https
+I'm trying to access Pay. While
+I have not added any security to my server.
+If that thing is not put then I will give S
+I will delete it and press enter.
+Welcome to Engineering
+Welcome to Engineers
+I understood
+I understood
+Now
+If I add a https
+Certificate
+Two
+Ubuntu Server Engineers If I were to
+will come
+If I sit down to do all this
+For example, sudo apt update
+Then install all Python 3 or whatever.
+These steps are being given by the people from Google.
+If I sit down to do this
+So can I send my certificate to my fire
+I will be able to tell Wall that brother
+My Engineering is now HTTP as well as HTTP
+It will work on S also.
+Yes because what does Cert Bot do?
+converts HTTP to HTTPS.
+He gives the certificate.
+Let's say
+Secure Socket
+Layer.SSL
+Secure Sockets Layer which is out dated.
+No one uses it.
+The latest thing that is used is called
+Transport Layer Security
+No TLS Yes Transport Layer
+Security TLS then TLS certificate
+It is what you guys call SSL.
+Video Laike Aao SSL Wo TLS
+SSL certificate gets outdated
+I understand it's over
+Yes, now Purushottam, now look who has come and the
+The Prodigal Son Returns. What Then SSL
+So does SSL. But
+SSL is outdated now.
+Gone let that go. TLS is the new thing.
+Now organizations are getting used to those people.
+TLS has been called SSL.
+TLS has become a term used to refer to SSL.
+Do you understand? For example
+for example
+Two
+Toos
+R
+Four.
+Two twos are four, but what's your habit?
+2
+4
+Habits are a bad thing. Right? So be it.
+Read about SSL vs TLS.
+TLS
+Transport Layer Security is the
+Upgraded modern successor to SSL.Both
+Are the same thing but all original SSL versions
+Are Now Depreciated and Contains Critical
+Security Venables. How Many of You Were
+Today years old? When he realized that
+Brother, do something good with your career.
+And join Train with Shubham's class
+Let's take it.
+Your future is a little TLS right now
+Secure with security.
+With outdated SSL security
+Not secure. Secured with TLS
+Yes. Okay?
+enjoying
+I am enjoying it.
+Ok.
+Now if I tell him that brother, my
+UFW is. UFW means
+Universal Firewall. Ab Dekho Full Form
+Anything is possible. Someone award me the Padma Bhushan.
+Not gonna give that UFW's full
+Do you want to remember the form or what? I've put my
+I have memorized it in my mind. But if
+If you want to remember properly then
+There is an uncomplicated firewall.
+There is an uncomplicated firewall. I
+How do I get work when I do it?
+I do this.
+sudo universal firewall allow injectix
+Full. Okay? So I used Ingenix's rule
+Updated. OK
+Done. So now if I do HTTPS and
+Go to my security group and
+Call the security group
+do one thing brother
+whatever remains
+do this, go to security and
+The port number of HTTP is different.
+HTTPS has a different port number.
+So add rule here.
+443 is HTTP. Or if you're here
+Go to HTTP
+You select HTTPS
+So the 443 is automatically locked. And do this
+You give me my IP and save it.
+And now let's go to our EC2 instance.
+So this will work.
+OK? That certificate gets registered,
+It will take time to do all that.
+It will take time. But after a while, he
+It'll do. Okay?
+What is your work?
+What is security work? Your job
+Security and the concept of security
+Like the uncoupled firewall in my
+I speak in the language of Universal Firewall
+Allow
+Except means you are allowing a particular rule
+Uncomplicated firewall delete.
+Delete means you delete the particular rule.
+Now these are Linux commands.
+This is the GUI version of it.
+Go here to Security and then Inbound
+Editing rules. Security is very
+It's important. Firewalls are very important.
+A firewall is basically your ingress
+Incoming traffic and egress outgoing
+to monitor traffic to prevent
+It puts up a barricade for public facing
+It is very important for the internet.
+Ok?
+Now packets come over the internet so
+IPP addresses also come through the network layer.
+So you can filter by IPP address.
+You can. But with an IPP address
+particular thing and remains attached which is
+Non-edge port.
+Port number. This port is very important.
+It does. Okay? The port with the IP address.
+So for proper security
+You think three things happen. One happens
+protocol,
+Then there's the IP address, and then there's
+Port.
+For example, if the protocol is https
+If yes, the port number becomes 4 4 3
+If protocol SSA
+If so, what becomes the port number?
+22
+If your protocol is SMTP
+So the port number becomes tell
+45
+Something remains
+465 yes
+If you want to see that, it's okay here.
+Go to Google and type in a network.
+protocols
+End Port
+Cheat Sheet Network Ports and Protocols
+Cheat sheet: Here you will find the complete cheat sheet.
+You will get the sheet
+Port number seven remains that of Echo.
+The character limit remains 19 for Jan. FTP
+The port number for this is 21. But brother
+What is a port?
+What is a port?
+Exactly what is this port?
+Understand that you are doing this
+You are having a great time on the ship.
+Here
+extend your hand out like this. Then your Kate too
+Spread your arms like that. You're doing great. But
+You will have to stop somewhere or the other.
+Somewhere you have to reach. So where is this ship?
+Does it stop? It stops at the port. Come here.
+It stops at the port. Okay? It's late.
+from Titanic
+So Titanic anywhere, anyone's port
+She won't go to his designated place.
+An assignment at the place
+It will go right to the spot. Look how dark Chetan is.
+He's saying it'll go on an iceberg.
+At his designated place, at the assigned place only
+Will go. By the way, someone else will take Ambani's
+If a ship comes, it will go to its port.
+If Adani comes, it will go to Adani Ports.
+So it will go to that particular location only.
+There is also a designated service for each service.
+The location has been entered.
+that at that particular location, that particular
+There must be something going on at the address. But, but, brother.
+This is my device
+That device has an address. Let's say
+It's called an IP address. So, if you go there, everything will be
+Not just at the IPP address.
+There is a lot inside that device as well.
+There are small places where
+Your applications may be blocked. And this
+Are your ports.
+Like I have my sequel database.
+So my Sequel's database port
+Number 336
+He's dedicated to going there.
+Is it? 3306 will do. I
+If you want to do SSH, it is dedicated so that it
+It will run only on 22.
+me
+27107 if you want to run MongoDB
+By doing this, something remains of MongoDB
+If he remains attached to her then like this
+Locations stay put, that's fine.
+Went
+Now why did I tell you this because it
+All three things seem to give security
+If you look here, if you go to the instance
+Go to Security Group and go to Edit
+security groups so if you carefully
+Look at the port here.
+protocol
+and IP
+It looks like three things. Got it? Type
+Basically if type is kind of a short
+If you enter the SMTP form then
+SMTP remains 25. OK, OK.
+You will put SMTP and let's pop three
+If you put pop, it will populate automatically.
+It will happen. Okay? I understand that.
+For security you need protocol, IP
+And the port requires all three of these things.
+Yes. Is that clear? Theoretically clear.
+Because practically later on in the future
+You'll see. Okay? That's done. But brother, this
+So it's for the public, right?
+Done for facing traffic. What
+About private? My own
+I created the internet. I mean my own internet.
+Meaning I created the subnet from scratch.
+You can even create your own internet. It is known.
+Talking in Edge AWS terms
+Yes. Okay?
+Your own internet.
+Obviously, he won't be physical.
+It will remain virtual. So we will talk about that.
+Virtual
+Private Cloud.
+VPC or Virtual Private Cloud
+own internet okay own internet now
+You can have multiple subnets on your own internet.
+Can you have multiple subnets?
+so that you can do that one I
+Public subnets
+And I kept one as private subnet.
+Public subnets and private subnets.
+What is the difference between a subnet and a private subnet?
+Is?
+Resources that will reside in the public subnet
+Like the servers that will be with me late
+There is a server
+This is the server from Let's.
+I will put such things in it which are public
+can access. Lately it is in the public domain.
+It is available to the public. Now
+Tell me a question.
+This which is my
+These are my notes, I am making them public.
+Should I keep it in a subnet or a private subnet?
+I'll put it in public because I
+I want you guys to read the notes. In fact,
+Anyone can come and read the notes. I, in fact,
+I should make the entire session open source.
+Public
+So it'll be in the public subnet. Okay?
+will remain in the public subnet.
+who has to give me internet access only then
+That network will be able to come in. So I need a
+I'll have to put a door in it.
+I am talking about Internet gateway.
+Internet
+Gateway.
+Okay? I call it the Internet.
+Gateway.
+Okay? Internet gateway. So, Internet gateway.
+What will happen to the Internet gateway?
+The request has come
+The request from this user
+She will be able to serve. Bring her head too.
+Go ahead. Okay? She'll be able to serve. Got it?
+I'm assuming I have my own private internet.
+There's a gateway in there. Now, it's through the gateway.
+I
+I can also take the request or from here
+If I have to send a request outside then that too
+I can. It's a gateway. Okay? Understand?
+Got it in? It's a gateway. Internet gateway.
+Interconnected to worldwide networks
+gateway to access. Okay? So this
+That's enough with the public subnet. Now let's talk about
+of the private subnet. What data is there that
+Don't you want to show me?
+Do you want to watch Train with Shubham?
+How many learners are there in total? Their IDs
+What is it? What is their password? When and who?
+Does Sa log in? You don't want to see it.
+What will you do after seeing it? Plus that one
+This is sensitive data. I don't want to share it.
+That data. So, those database things.
+Yes, I would have kept it in a private subnet.
+Private subnets are now private
+There can be multiple subnets. Right?
+There can be multiple databases.
+Maybe there is a server like this
+There is a server that I don't make public.
+I want to put it in. Now, like this one here
+on Discord
+Daily job postings are here
+Opportunities come like this daily
+Look, this daily job opening in 30 is this one
+Server is an application which does the job here
+I would like to see the code for this as well.
+I should also make the server public, anyone can do it with
+Campering can plus anyone tomorrow.
+I can come and say, I am the one
+DevOps speakers in India
+We will keep it but you all know the reality.
+OK? So I'll put that on a private subnet as well.
+I can put it in a private subnet.
+I can put that thing here.
+Now this is also a device in this private subnet
+So, it also has an IP address. Right?
+It will also have an IPP address.
+It will also have an IPP address.
+It will also have an IPP address. Yes.
+Tell me what kind of technology is this?
+Or what is the process by which these
+IP addresses can get a unique IP.
+Range of IPs found. What is that thing?
+Cold cider. Cider correct. Let's say to me
+In this public subnet only and only
+only and only
+If you want to give IP to two devices then what is slash
+Will you come?
+Come on, well done.
+If I give Slush 31 then total two IPP addresses
+Will be able to become.
+Correct? Now let's give me four here.
+I need to assign IPP addresses to devices.
+What should I write here?
+30 and this gives IP addresses to four devices.
+But I don't want private
+These IPSes are publicly accessible. But
+At the same time, I want my
+The server is placed in the public subnet
+The public subnet is now like this train
+This is the UI of shm.com This is the UI that is running
+The UI that is running is running in the public subnet.
+Is it happening or is it running privately?
+It's going on in public. Right? In public.
+It's going on. But if I go in and let's
+Do I open any success stories from or
+I want to upload success stories or
+Whatever work X or Z has to be done late
+Only digital products are to be uploaded or
+Do you want to upload courses or anything else?
+to upload
+So what are those public subnets and private ones?
+Communication between subnets is essential.
+Is it? Yes or no? Is it necessary? At least train
+It's important with Shubham. Yes. So
+For this, there is a public subnet and a private subnet.
+There is another gateway in between which is called
+It is called Net Gateway.
+NAT gateway.
+So what does a NAT gateway do?
+Address Translation Gateway. That my public
+IPP addresses can also access private
+And one of these private IPP addresses
+Write a particular name that is known to the public
+Let's go. Brother, tell me another example. One of these
+And easy example.
+you goes
+from lats
+You go to the hotel. Okay? You go to the hotel.
+Yes. Now the hotel has a kitchen where you can cook
+My favorite dal makhani is being prepared. Brother, at least one
+It's lunch time. You're asking for dal makhani.
+Okay. Anyway, your favorite dal makhani there.
+It's being cooked. So, are you going straight to the kitchen?
+Will you sneak in and eat that dal makhani?
+Right? No. You'll read the menu card.
+Dal Makhani will be written in the menu card.
+The price will be written next to it and then you can
+to the thing
+You will give an order to a particular person that
+Brother, bring me this dal makhani and take this.
+Money, then he understands it and does it for you.
+He'll bring the order from the kitchen. So that's something.
+Network Address Translation Gateway
+Translating your private IP address
+It gives a public face so that it
+The poor public people were able to access it.
+OK? Do you understand? Getting it?
+How does security work?
+How is it working? Net Gateway.
+A NAT gateway is a managed cloud service that
+Allow resources like virtual machines in a
+private subnet to connect to the Internet and
+Other external networks. Okay? It
+Translates private IP addresses into a
+Single Public Address Along Outgoing
+request. Okay? So this private
+IPP address, its IP taken, its IP
+and it has a single IPP address.
+Diya and internet access will be available from here.
+OK? Do you understand?
+Getting it. Theoretically getting it.
+I'll also show you practically.
+See.
+You go to AWS
+And here in the search write VPC
+Clicked Virtual Private Cloud.
+Now watch very carefully, you are going to enjoy it.
+Go to Create a VPC. Create VPC
+Now
+My project from Let's is called Train
+V Shubham V PC
+Demo Train V Shubham VPC Demo Now This
+Tell me if I had 10.016
+If it is written then how many IP addresses can be created
+Look, it is written in brackets 65000
+If I make this 32, an IP, if this
+If I make it 25 then 128 IP and so on.
+Ok?
+Did you understand?
+Need cider v for IP6? No bro
+He's not very big. So no.
+OK? Tenancy is their own.
+Okay? Number of availability zones. Brother.
+Availability zone means within a region
+How many different places is your application located?
+Should it be available? Kolkata, Mumbai, etc.
+There are a maximum of three cheeses. You can put two.
+Give me two. If you put in two, you'll reach the minimum.
+Sorry, maximum two public subnets can be created.
+Yes. Enter two public subnets. Maximum three.
+You can create three subnets. Subnets are called subnets.
+Apple Store. Apple Store has three
+Authorized dealers became unicorn stores.
+So those are the three authorized dealer regions or
+Is it an availability zone?
+The availability zone is now in effect.
+The public can come and buy iPhones.
+If I have three availability
+What is the number of public subnets?
+Maximum
+There could be three. Okay? Private subnet.
+There could be more. Okay? That could be more.
+There could be six.
+It could be that three
+Unicorn Stores' merchandise
+There might be more of that in the warehouse.
+You can do that. Okay? It's done.
+Net Gateway Bhaiya, why is Net Gateway used?
+Does ?Net Gateway Allow Private Resources
+To access internet from any availability
+Zone with in a VPC. Okay? That's it.
+VPC end points if you need that
+If you can access the VPC from outside, a
+Please provide endpoint. DNS is required. Yes
+I have to provide DNS because I need it, not
+If you want train vs shm.com then it is like that
+Create VPC How many people can create a VPC
+Will you take it?
+This is why I say start small.
+Start small.
+Now if I were to teach you VPC directly
+I would sit and not understand anything for an hour.
+You. Now you see how you break it.
+Now look at this
+VPC
+why subnet six six because
+Three private subnets and three public subnets
+How many people understood that there are six subnets?
+Why did you come?
+What are these six subnet route tables?
+Basically, if you have any resources on that
+Remains for network routing.
+a gateway for network connections to the Internet
+Gateway IGW means Internet Gateway
+Finish Just Click on Create VPC
+Don.
+Now this was very easy to make. Right?
+Was it easy to make? How easy was this to make.
+It was very easy to make. But how did it work?
+The internet works if I show you here.
+does not tell
+So here you can never write done.
+Friend.
+If I don't tell you that that data
+Where is the center located? That cable wire is in the ocean
+How to become below then you should never do that right now you 2
+You can get it done in seconds. And that is.
+Why I Say Basics Pay Fundamentals
+Focus more. This is how you learn advanced things.
+Will go.
+Bhaiya, now if that VPC has to be terminated
+So. So terminate it. So what's in it?
+Go to VPC. This VPC has been created.
+Right?
+VPC will come here.
+Can't you see?
+Here it is. Jump in here and into action.
+Go and delete the VPC.
+And if your VPC is deleted then
+The Internet gateway will also be deleted. Routing
+Tables will also be deleted. Subnets will also be deleted.
+will be deleted. Do you want to confirm?
+Delete? No, delete.
+Did you understand?
+So, this is how the calculations are done. Okay?
+The next topic is the one I am discussing for the first time.
+I am teaching. So
+It can get heavy, but I'll try.
+May you all enjoy it, which is my endeavor every day.
+I hope I live in it
+I should succeed. But it's a new topic.
+I know a lot of people have it in mind
+a lot
+Knowledge, a lot of information must have come.
+Okay? It's good.
+But
+You've had 4 hours, by the way. 4
+Did you feel overloaded in the hour that hey
+Brother, I am done with it. I hope so.
+It must not have felt overloaded. And that's why
+I want to overload you with
+System design. Okay? Like you said yesterday.
+Wake up like you have a hangover reading DevOps
+for. Then you with full dedication
+Read up on devops. So, so. Okay? Now, pay attention.
+See.
+First, I will tell you the same stories.
+Why brother?
+Why are you teaching me this? Why are you
+We Learning This?
+Why do you even care? Why do you want to
+To not skip this? And have your lunch. Why?
+Would you not skip this and do your weekends?
+What work?
+One second, yes, change the battery. Two minutes.
+Stop.
+Ok
+Brother, the camera started saying only the camera, that's it.
+Taxes now
+Camera shut up, don't stop me now. Okay.
+Why Do You Need System Design? Also
+What is system design?
+How many people will share this video with their family?
+Are you watching together?
+Is the mic gone too? Okay, okay, okay.
+The microphone must have gone out by now. How is our microphone?
+Is it a long-lasting mic? Okay. How?
+Many of you are watching this with there
+Families?
+ok ok so I don't mean that so
+I'm not asking if I type anything obscene.
+I will take examples of this.
+I am asking this because today I am too
+Teach your family members about system disease.
+That's my Aye, that's my Aye today. Rest
+I have nothing. I only have this much.
+That if you do this with your family
+If you're watching the show, let me teach them.
+Is that my M for today? Okay? Now
+That's why I asked. Okay? Let's go.
+Yes. So you can turn up the volume. I'm not
+Naughty jokes are not appropriate right now. So that's my
+M for Today that I am a System Design Family
+I'll teach for... Okay?
+Ok.
+What is the system?
+You have one of the letters
+You watch videos on YouTube. Right?
+You watch videos on YouTube.
+Ok?
+Whatever you like from Let's.
+Train with Shubham on YouTube, Aastha
+The channel is done. Whatever you like.
+You watch videos on YouTube now.
+This is what you see on YouTube.
+What you see on YouTube is that
+Videos are coming in. Shots like this are coming in.
+Yes. You see something like that. Right?
+This Is What You See on YouTube.
+But if you look here on YouTube
+There is a Create button where you can upload a
+Video.
+You can upload a video. So now your
+The way to look at YouTube is different.
+It has been said that there is only one on YouTube.
+There is no UI, there is another service.
+which is the video
+Upload.
+OK? There's also a video upload service that
+UI is where videos are available
+The stream is what you see. So you
+If you open your browser here
+You go and write Train with Shubham sorry
+If you write youtube.com then this is what you
+See as a viewer streams things.
+Correct?
+Now there is another part of it which is saying
+Plus create and upload videos. Okay? Upload.
+Video. Now this video has to go somewhere.
+It will be uploaded and after this video is uploaded
+It will be stored somewhere
+And only after that is stored, this UI
+Pay videos will stream. How many of you?
+Agree?
+If the video is not uploaded
+then those videos won't stream. And if
+If the video is uploaded then to upload it
+A database will be required.
+A database will be required.
+Those videos are now streaming. Videos
+Can be of any type, any age
+It could be for a group. So, for you.
+Here from Google
+If you are an incognito account from Google
+In
+from lats
+No, I already said it for the family.
+Incognito has no other meaning.
+You wrote youtube.com here. Let's
+From. Right? You wrote down youtube.com.
+I can't see anything here anymore.
+I can't see anything. YouTube doesn't work.
+I'm getting YouTube to work.
+You have to sign in here. And here
+I have to go and sign in to my own
+I authenticate. What I do
+I authenticate. So here
+I also need an authentication service. Hi
+Right? Correct. If I authenticate
+Only then will I be able to access the UI and watch the video
+I'll be able to stream. Correct. Now my
+He is my favorite Uber whenever I upload a video.
+will send a notification to my mobile phone
+Should come.
+There should be a notification that the train will be held against Shivam.
+just uploaded a video
+Does anyone know how to press the bell icon?
+Yes, I have done it but Train with Shubham videos only
+If you are not putting it then I will put that too, well that
+That's right, okay, so that notification is coming.
+If yes, then a separate service is required for notification.
+If you need a separate service for notifications, then
+YouTube YouTube is all you used to watch.
+Does he look any bigger now that he
+There is also a database inside, video upload service
+There is a notification service, authentication
+service. Has he grown up?
+That's it now as an application.
+Now it is not just an application but
+Now it's starting to look like a system.
+Now that looks like a system.
+So what is the system?
+The system is basically
+The Cost
+Off
+Not
+Thinking
+before
+You
+Build
+N
+Application.
+Brother, you have said a very important thing. Now this
+Please explain the matter.
+System Dis is the Cost of Not Thinking
+Before you build an application. So if I
+If I had to make a YouTube, what would I have told you?
+I would create a web page that
+Videos are being shown. Yes or no? You
+You must have seen Netflix clones at many places.
+You must have seen Netflix on many places
+Clones. Such a Netflix clone, a Netflix clone
+Using React.
+Okay? Netflix clone using React. So
+Netflix appears here. This is how Netflix looks.
+Movies are shown.
+Is this the system?
+Is this even close to the system design?
+Is it? No. This is just some web pages put
+In Front of You. If you like Netflix
+Look at the system design
+Then
+You have to understand Netflix's system.
+How the design works.
+You can either watch Netflix on your phone or
+Then you will watch it on TV, you will watch it on laptop.
+So whenever a request comes, it will load
+Go through the balancer.
+load balancer so that tomorrow many people
+If you suddenly start watching Netflix then their
+The load should be distributed so that the traffic is distributed.
+The balancer is installed. Then its data
+Stay tuned for my sequel. Now millions and millions
+When we put movies on Netflix, my sequel
+It won't work. That requires big data.
+So for Big Data, Spark seems to be it.
+How is Netflix doing now?
+Monitoring should be done. So monitoring for this
+I understand what a
+System Design Is How You Design
+A system for scale. System design is how
+You dis a system for scale.
+And If You Don't Do That Then System Design
+This is the cost of not thinking before you build.
+n application.
+Now you've created the application. Like I do now.
+I had my own book store in 2000-16.
+Had to make it.
+I wanted to build a book store so that I could also stay there.
+I can upload my books. Friends too.
+were able to upload their books and they could share with each other
+exchange books with me. This is my
+The idea was in 2016. So I created a cool HTML
+I created a page. I even put his name in the book.
+Bookworm named Kida
+And I used to put my photos in the book there.
+Of.
+And I created that website on my local host.
+I drove it away.
+And I'm so happy. Finally.
+I will create a startup of my own app.
+Build a website and earn millions. So, this
+I had this mine in 2016.
+And That Is When I Got to Know the System
+Diz.
+It Is the Cost of Not Thinking Before You
+Build an application.
+I did not think that this application would be
+How do people access it? If I
+If I drive locally
+What is localhost? Your computer
+Running a standalone application in .
+The application is not connected to the internet
+Is.
+I didn't think about it. Then I didn't even think about it.
+If someone takes the book, his address will also be given.
+He will deposit it and also pay it. I did not think about it.
+I have uploaded the photo of the book.
+If you want it, take it.
+Do you understand what this system is?
+Now let's tell me
+I want to make a train vsham.com. Where I
+recorded
+I will provide courses,
+I will provide live courses and notes.
+The system design is different for all three.
+Because if I am doing it live then I
+UDP based platform will have to be created
+Because live recordings will be made later.
+There must be stores. It's live right now, so
+Zoom here
+I will put integration.
+If I were to give you recorded courses
+So here I am
+drive
+I'll put Google Drive storage.
+Agar Mujhko Static Files Notes PDF
+If I want to give it then I will put CD N here.
+Content Delivery Network.
+I understand that I don't wake up like this
+I'll make you say, oh shit. Today I have to go to India.
+I have to teach DevOps. It doesn't work like that.
+Have to build an entire system around it.
+The entire system will be installed.
+Now I want you here to
+I should charge a hefty fee. I should charge so much that it means
+I stand next to Antela, my Tantela
+I will do it. So much
+A payment gateway will be required for that.
+A payment gateway will be required for this.
+Payment Gateway
+This payment gateway is my
+It is happening in a particular country.
+my country is great
+So for this payment gateway I need a
+GST
+I'll also have to get my marks. I'll get an 18% cut.
+and submitting it to a particular place
+Then this payment gateway
+What will it cost to razor? The best razor
+Razor Pay provides services
+at just
+2%
+For all transactions.
+Now my antilia is slowly getting smaller
+And my server costs are increasing.
+Because this is after the payment gateway
+Infrastructure costs remain because these
+You may also want a recorded session.
+It is not that you can only watch on Zoom.
+You'll be happy. You'll have him for four years.
+You also need a recording. So, infra
+It will cost.
+Then slowly my Antila disappeared.
+I came out on the road. Why? Because I
+It also has to provide a playground so that
+You can practice daily. So the system
+Do you guys understand this? What is it?
+It Is the Cost of Not Thinking Before You
+Build an application. I hope you understand
+He must have arrived.
+So
+before
+You
+Write Code
+Before you write your code
+Enter
+System
+Diz
+I understood that system design is something that
+The first step is before you write your code.
+Brother, then you have to write code, so you are developers.
+Teach us system design.
+I'm a DevOps engineer, man. We need to know all this.
+Don’t want to do.
+This does not happen because you are also a system.
+designing that system can be a
+CICD pipeline.
+That system can have backups.
+You too should monitor the infrastructure.
+Provision of infrastructure
+You will do it. Provision means create.
+You will provision it. So as a DevOps Engineer
+System Dis is Variant.
+How many people understood?
+System design is very varied as a
+DevOps Engineer. Why? Why?
+Because
+cost
+R involved.
+Costs are involved.
+Scale is involved.
+Now you know my bookworm startup
+Remember I created a website on localhost?
+Created a web page, created HTML
+If I had to give him a million dollar startup
+I had to make it like Amazon, even though I had booked it.
+If I started from then the scale is
+Involved friends
+Data flow is involved
+I need to upload those books. Let's say
+The photo I took of a book is the same photo
+It turned out to be 3 MB and I saved it in the database.
+I put that photo in the database and it took 3 MB.
+I am showing you a photo of my website.
+Will it load or will it load slowly?
+It will load slowly because you are using 3 MB of data.
+Downloading from the internet. From Lets
+You have high latency. Time taken to
+Receive the packet is high. What happens then?
+The experience will be bad. The experience will be bad.
+It will happen. He will tell you, "Brother, your photo."
+I can't see it. Anything could happen.
+Right? It will download slowly. The band will play.
+And so on. Okay? So this is very important.
+costs are involved. Plus, if you
+Design the system first
+Are your requirements clear?
+Will you go?
+Are your requirements clear?
+I'll say I want to make a YouTube channel. Next.
+If you want to make a YouTube channel then you can create a YouTube channel.
+Requires notification service, authentication
+need database, need front end,
+The back end is needed. The entire picture should be clear.
+I will go. Yes or no?
+Your data flow requirements are clear.
+Data Flow
+Design
+Bhaiya data flow this means your data
+If you are taking live classes then
+Can I get that through CDA? UDP
+I will take it through ZM or in some storage
+I will put it obviously through ZM or
+Then UDP
+I will take it through so that there is fast connectivity.
+No need for a three-way handshake.
+All these things are very important.
+So what do you think?
+Is the system dis
+and why
+System dissent? Got it?
+It's here. It's great. That's the first.
+Step. Okay? That's the first step.
+Then let's say you
+R Designing
+A system. You're designing a system. OK.
+Is?
+You are designing a system.
+Now, do you know what that system is? This is it.
+By the way, whatever you see on your screen at this time
+But you see it is
+a cumin know someone cumin cumin task
+Tracking It All Know-It-All In Progress Blog
+Don't know this
+This Dev Board Is Your Project This Apna
+This is a project that you have created yourself.
+Plus it has an AI assistant that
+Basically, you use AI too. A model
+Do you use it? This question is not in the
+Task.TLS from Lets
+You use a model. So basically what you
+Will Be Building You Are Designing a System
+For
+Task
+Tracking.
+V
+AI
+How many of you like the idea that first I
+I will design this system.
+OK? I'll design this system. End
+Then we will implement this system in the entire batch 11.
+We'll build it in. How is the
+Idea? How does it sound?
+that you first studied Linux. After studying Linux you
+You have established the basis of EC to instance
+How do you make all those things? Then you
+Read up on networking so you can learn about the Internet
+You understand how it works. Then you
+Study system design so that you can
+Actually, you will design the system for a
+Task tracking with application.
+And you will create CICD of this application,
+You will create cubitus, you will monitor it,
+Everything Like an Eco System.
+Good.
+The entire code is already done.
+Everything is already done. This is the entire UI
+Built in React. The back end is built in Go
+Language.It has notification service.
+There is light mode, dark mode, toggle.
+Email based authentication system
+You authenticate. Profile
+Everything you have is everything.
+On this you are going to learn system design.
+Ok?
+Your job is to systemize this application.
+Making designs.
+How many of you are now interested in
+Devop Zero to Hero Flight Batch 11? This is
+Not just a course. This is an experience.
+Okay? Now look very carefully. Very, very
+You have to watch carefully. Okay? Very
+Look carefully.
+me me
+The UI of this application has to be created.
+I have to create the UI of this application.
+The developer will build it. But as a devops
+Engineer I should know that UI
+I have to make it. Correct?
+So which programming language should I use?
+Will I do it?
+React JS, JavaScript from Lets.
+OK? Don't use Python for a UI.
+It happens.
+Javascript OK
+React
+From Lets I changed mine to React
+UI
+ok my UI is made in React and this
+I am making
+System Designed for
+Dave Board
+Task tracking application.
+OK? Task Tracking App
+Now, okay? This will be the UI, which is HTML CSS.
+UI will remain. Now if you and your family
+What do you feel when you're with the members?
+UI will remain which is presentation
+If you see it, what would you call this UI?
+You call this UI the presentation tier.
+Presentation
+Tear.
+OK? Presentation tier. So you're going to find yourself
+Explain this to yourself and your parents as well.
+The applications they can see with their own eyes
+The UI is non-age presentation
+Tear. Okay? Now.
+I have this task, let's do it
+This build notification service to done
+Moved. So the status of this task
+Yes, it's done. Status is done.
+Meaning, the logic behind moving is
+I need a logical layer. Right? Logical.
+I need a layer. So I wrote it as Golgang.
+In.
+In the Gulag
+Go is a programming language in which back
+And is written. Okay?
+The back end is written in Go. Right?
+You can also write in Python but I
+I teach Python.
+Thought I'd do something different with this batch.
+Lang. Okay? So this is basically your
+Logic
+Tear.
+Logical tier, that is where all the logic will come.
+So what my front end is from the back end
+Will talk.
+OK? It'll talk to the back end using a
+Certain thing which is known as application
+Programmable Interface or AP
+I. So my front end connects to the back end API
+It will talk. Okay? It will talk to the API.
+My front end and my back end. Now I
+Artificial Intelligence in this application
+It is also necessary to summarize this project.
+So this is the entire project.
+Summary: These things have happened.
+Please tell me the complete summary.
+So I need Python
+We need a service that can talk to AI.
+Can you explain some applications of AI?
+Are you an AI application such as a model?
+It happens, chat GPT olama
+In the hail
+So these ulama
+One thing that will remain for me is AI
+The models will provide
+And these AI models
+My
+will call Python's service.
+Ai
+Service
+will call Python's service.
+Now Python's service has some functions
+will remain
+which will call this AI and my back end will call this
+You can call Python. But brother, whenever
+Hey, whatever is calling, that is API.
+or application programmable interface
+through. Front end and back end. Butt
+Let me fuck you in the back end and back end
+I have to do it because this is also a kind of service.
+Off is the back end only.
+Yes or no? This AI service is also back-end.
+What am I going to do now? I will.
+RPC GRPC
+What's new, brother? gRPC
+Remote Procedure Call So if I have to call a single
+I need to call a function from the server side.
+from different services so I use RPC
+I do. gRPC Remote Procedure Call
+It happens fast.
+Understand that when I design a system
+If I am doing this then to talk to the front end
+I'll use the API for this. But back end to
+back end to back end to talk to AI
+I use gRPC to talk to the service.
+I will. Why? Because it's fast.
+How many people understood why I was doing this?
+I'm telling you, you know? Because you don't know the terms.
+Understand the terminologies.
+Use terminologies such as gRPC
+gRPC Remote Procedure Call Server to
+Server Communication gRPC
+Presentation Tier to Logical Tier Front
+End to back end communication API.
+Do you understand? Yes, why? Yes, that's why
+Because it was launched by Google.
+gRPC
+So gRPC
+Is an open source framework created by
+Google।
+That's why they named it GRPC.
+I gave it to you. Okay?
+So now how is this AI and AI service?
+Presentation Tier Done. Logical Tier Done
+AI service will be AI tier.
+Will be done.
+The AI ​​will be tiered.
+Got it? That'll be the AI ​​tier. That's a
+It is new in the market these days. Because
+You can also develop a new artificial intelligence model.
+You're using it. So the AI ​​is tier. Now this
+The data that is in the back end, that data
+It has to be stored somewhere. A database.
+Should be stored in.
+Must be stored in the database.
+Now someone is saying brother, post grace use
+do it.
+Someone is saying brother
+Use MongoDB also.
+So I would like to tell you my data.
+Let me tell you this is the summary of this store.
+or store my tasks
+Which are coming in any type of format
+Comes in the format of document type
+There are none of them structured.
+Is any data structured? Is this data
+After looking at it you feel it
+Structured?
+Does this look like some structure? No, it's not
+Structure is not data. So, whenever
+Structures are not data, whenever tables
+If there were no end columns, I would not only
+Structured Query Language NoSQL
+I use the database.
+I use a NoSQL database. But this
+Tell me there are users in this application of mine.
+Correct? I have an email address in this application.
+Password, sign in, users. What
+Does users fall into structured data?
+Yes, the user structure is included in the data.
+I will also use SQL for my
+users table. So, I want to store users in
+I will use a database to do this.
+And to store the rest of the task I
+I will use another database. And this is known.
+Edge Database
+Tear.
+Enjoyed that this is known as database tier.
+I'm designing a system that
+that users
+There is no impact
+If my tasks are being uploaded, I
+The databases for both are kept separate.
+System Design Engineer I System Is
+Well designed. Okay? Now
+These users will be authenticated. Right?
+These users will be authenticated. So here I'm going to
+But this password that I am entering is a
+Authentication must go through the server.
+Because tomorrow if my authentication server
+fails or the app fails
+Or some other service failure. I don't
+Want entire application to crash.
+So I'm here at JWT
+I'm here at a JWT
+Token Based JWT Java Web Token based a
+I will install the authentication service.
+I will install an authentication service.
+And this from the Authentication Service UI
+and from my back end and my just and
+Will only talk to the users table.
+JavaScript Object Notation Web Token
+There is a different type of token which is quite
+The secret remains the encrypted token.
+It's called authentication-based authentication.
+will remain. now
+I want my UI to be
+The notification service should come on. You are watching this.
+You are seeing this notification. Notification
+The notification should come in. Right?
+So
+I have a phone, this UI on the phone
+send a notification
+What if notifications for notifications
+It drops, it doesn't make any difference
+Does matter
+Missed any notification from Let's It
+Okay, right, I missed that, but I missed my data.
+shouldn't be okay so here I am
+I can use web sockets.
+I can use socket programming to
+That my notification service should continue running separately.
+My notification service should continue running separately. Now
+One
+Two
+Three
+four five
+Six seven
+eight I have eight services running that
+There are small services. In multiple
+What do I call services?
+I call multiple services micro.
+Services.
+I call these multiple services
+Microservices. That one service database
+service, one service for another database
+Service, a Service Authentication Service, a
+back end service, one front end service, one
+AI Service, a notification service. Understanding
+Coming in?
+Microservice Architecture
+Microservice Architecture
+that from different independent services
+I have a complete system in place. So I understand.
+How did I design the system?
+Did?
+How did you design the system?
+It's not finished. I've just finished it.
+I've thought about it. Now understand that I don't need this system.
+corner
+It has to be kept such that where the scale is
+Involved.
+Tomorrow these microservices will have to scale.
+What will happen then?
+What if I get a lot of load tomorrow?
+So I'll create another layer.
+I will create another layer and name it
+I will give
+Gateway layer.
+Gateway layer.
+gateway layer and I will tell the gateway layer that
+one lb
+Elastic Load Balancer
+Elastic Load Balancer OK Elastic Load
+Balancer's first user will be mine
+The internet will be here
+My user will be here, he will first be at this gate gateway
+This gateway layer will load on it.
+There will be balance
+And only then will I proceed further. Do you understand?
+Understanding what a load balancer is
+will remain. Load
+Balancer.
+It's like there's a wedding at your house. You're alone.
+You are a son and you are doing all the work.
+The band will play. What do you do then? Uncle.
+Call Kaka's son, call Kaka's son.
+All the cousins ​​come.
+Call my aunt's daughter. Everyone has arrived. Now
+Work is distributed. Load balancing is done.
+So will that work be done properly?
+Yes or no? May the entire wedding go smoothly.
+Will it be possible? Yes, it will be possible right now. So this
+Important for the load balancer gateway layer
+Is.
+Then this is my application layer, right?
+What is this my application layer?
+Is.
+Application layer where my micro
+Services architecture is used.
+Application that uses microservices
+The architecture uses .
+Now I need to scale this application.
+We have to scale. Scale means a lot tomorrow.
+If all the people come then the scale will increase immediately.
+So I'm also using Cubanetis here.
+I can use Cubanetis
+Because Cubis Is Best
+For
+Microservices.
+Cubanetis is Best for Microservices
+And Cubanetis gives you horizontal
+Pad Auto Scaler
+And also provides vertical pad auto scaler.
+Brother, what is the difference between the two?
+Horizontal.
+There is a wedding in your house.
+This is a big wedding in your house.
+You said that brother, I will take care of the wedding.
+Have to do it alone.
+Then you said, "Brother, I have a lot of work."
+Scaling needs to be done horizontally.
+Pod Auto Scaler. Horizontal means the same
+Your maternal uncle's son came along. Aunt's
+The daughter has come. Uncle's son has come. You have done a lot
+All the resources have been added. So this is
+Horizontal.
+Now
+It's you. There's a wedding ahead. Work at the wedding
+gone up.
+You told your father that the workload has increased.
+Papa said, stop acting and come here.
+From. And then Papa said, take this. Eat the berries.
+You. And you get energy by eating berries.
+You've become very strong. You've become bigger.
+He went here like this. Too much on a single person.
+You have regained your strength.
+You've built automation into yourself. You've done a lot of it.
+I poured all the Red Bull. You're very powerful.
+and completed the work single-handedly.
+So if you have a server that has
+If you have 4GB RAM and you need to use 8GB of RAM,
+Either you install two servers of 4GB or 8GB.
+Install a large server, 8GB large.
+Server is vertical scaling. Two 4GB servers
+The server is horizontally scaling. How many
+Do you get it? Horizontally.
+Resources increase. Same vertical
+Compute increases in resources.
+So for that you used Cubitis.
+This application is now running. You have gone to sleep.
+And that application exploded. Back-end service
+Not working. AI service not working. Some
+So it burst.
+You want to know when and how whatever has burst, it burst.
+What is torn about that thing?
+You also want monitoring.
+If you want to monitor that thing
+You used it for monitoring
+Prometheus
+Which is
+Will collect data from all these places
+Prometheus is collecting this data. OK
+and to display this data
+You need Grafana.
+You Need Grafana to Display
+so that it is great
+How's your data doing? GraphWAF
+I'm looking cool. Okay? Grafwaf
+I am visible.
+System Design for Your Task Tracking
+The application is ready.
+I understand what your eyes see
+That's that Wow web page. Wow, but Joe
+What is happening in the background?
+Yes? Logged in with the authentication service. Then
+Updates to the database whenever the task is updated
+So that whenever I refresh it
+Stay updated. AI is powered by AI services.
+That thing worked. If you want to monitor it,
+Monitoring will also take place here.
+Grafana for CanUC monitoring
+Is.
+Monitoring the Dev Board
+Entire monitoring is also done. This is your
+Dave is the board.
+Let's say I'm on this dev board on dashboard
+Came and I hit this URL many times
+I did it. I have to hit it many times. How do I do it?
+Do you know?
+Go to the terminal.
+Tell me how will you do it?
+Did I teach you anything?
+Taught while loop.
+Let's hit me with this thing.
+You get something like this
+I put a while loop on it and I
+I keep hitting it again and again
+So here is my Grafana dashboard.
+You see, there's a spike here.
+Spike is happening
+There has been a slight spike in requests.
+Now I
+I can say with great confidence that now
+I designed the system for my application.
+So system design is basically the
+Thinking, the logical thinking, building
+Parts, Everything That It Takes to Build
+A System Before You Actually Write Code.
+Now I have to improve it further.
+I can see the scope. Tell me if my
+Is there any task that I can perform from the back end to the database
+I am taking up that task frequently
+I'm picking it up. Again and again and again
+Frequently, I'm here at a
+Can I use Reddish caching?
+I can apply caching. Caching? What caching?
+Temporary if I have to pick something up
+Yes. I'll set up caching.
+Do you understand? What is this system?
+Caching is done, database is done. But brother.
+right now
+You mentioned microservices.
+and cubis best for microservice
+Yes. Are there any other types?
+System design? Yes System design three
+There are several types of applications.
+There are three types of systems
+You can design. Microservices
+मोनो लिथ
+Bhaiya, I knew about micro services and monolith.
+What is the third one? The third mono repo.
+So what are microservices? You
+Created multiple small services
+And a complete application is running from it.
+How many people are clear about microservices?
+Gone? Just drop a clear in the chat
+Because right now we have micro services
+I designed and tried the entire system.
+Now what is a monolith?
+It is a large application. Let's say it
+You ran a large application using Docker.
+and the code of that entire application is given in one
+Housed within a larger application. Monolith
+Understand that I
+I am currently live streaming.
+I am currently live streaming.
+And this platform is used for live streaming.
+It's happening. Where you can text
+Yes, you can see the screen, my screen.
+You can see, you can do everything. This is a
+This is the application. And by the way, I'll tell you.
+I would like to have every user
+A license is required. This is an application
+So that one application is a monolith
+Application.
+You must have seen this application in your office.
+It does not work on my laptop.
+You may have noticed. I don't know if anyone else has.
+You may not have noticed. This application is for your
+It doesn't work on my office laptop. Why?
+Because this is the URL of the application.
+It comes from somewhere else. I Use Academy
+I use a license for graphy.
+Actually, it's kept in a different place.
+That's the application. Okay? So that's the monolith.
+A complete single application.
+Now, brother, what's the monopo?
+There is a single code repository.
+Where the code for each microservice is written
+It remains. Got it? That's a single repository.
+Inside which the code of micro services is kept
+It has happened.
+What are microservices? Applications
+typed where your small
+Small applications are running.
+What is a monolith? A large, heavy object
+Application.
+What is a mono-repo? A single repository
+inside
+Microservice code kept in one place
+It has happened. For example
+An online version of Google Cloud Platform
+Batik
+This is an online boutique application.
+ok? online batik application where
+You do that on the front end, add shipping cards, everything.
+This is by the way this diagram is a
+System Design. This Is a Diz Diagram.
+How many people finally understood that
+What is system design? Front end
+Check out the load generator user. Okay? Now it's
+Inside Multiple Service Front End Go In
+The card is in C. It's different. But it
+All code in a single repository
+So this application is a
+Microservices Application But This Code Is
+What? The code is monopo Vishakha. You're right.
+And with this
+Let's wrap up the session. Because these are the
+System Design Concepts
+Whatever it takes to design a system.
+I really enjoy teaching everyone. I love
+teaching. So as I read in the chat
+I'm getting tired. I don't understand.
+Coming in. Like shit, man. In the next batch.
+I will do something else so that I can study for 6 hours.
+Would you like to recommend a train, Vibha?
+How many people think they got it right?
+what did you do here? now I have to go to the small
+Tell me in fewer words than I did today
+Whatever you taught, did you tell it to your parents?
+Or could you teach your siblings? If you
+Explain any concept to your parents or
+Teach your siblings or your friends
+You are getting, you can clear the interviews.
+If you are explaining a concept to your parents
+Or you can't explain it to your friends.
+Yes, that is an indication that you are not
+Prepared for an interview. With that being
+Said that's it from my side. Even
+Thanks for being in the video.
+Keep watching Do Zero To Udaan Batch 11.
+Thanks a lot for watching. Ending the
+Stream in three to one by

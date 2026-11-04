@@ -1,0 +1,3495 @@
+﻿If shell scripting in the same video
+Want to learn and become a devops engineer
+If you want, you have come to the right channel.
+Friends, because in today's video we
+We're going to talk about Shell Scripting in One
+about the shot which is the only video where
+Pay you will get all the information related to beginners to beginners in one video.
+Learn advanced shell scripting
+Milegi for Devops Engineers in this video
+In this introduction to shells and
+From environment setup to complete advance
+Projects are about to see everything.
+He asks me, brother, how much shell
+How much should one know about scripting?
+If you want to know programming then watch this video
+You should know as much shell scripting as possible.
+How to Write Shell Script Loops
+What is user input?
+What is a variable if you
+Programming Shell Scripting Nothing
+You can still learn the basics once you know them.
+Intermediate shell after covering
+How scripting changes ownership
+How cron jobs and automation do all that
+How to extract viewer logs
+Gonna see Advance Shell again
+We will go into scripting how we
+Networking How We Do Backups
+Let's see how make files are created.
+How projects are built Error Handling
+You will find everything in this video.
+Now that you've come this far, some projects
+Also take Real World Applications and
+projects are going to happen friends how
+You can call AWAKE Cloud
+How to automate your own shell scripts
+How can you backup and restore?
+Ho using cron job using log rotation g
+Yes friends, this is very important.
+The project is how will you parse the logs
+How will you do log analysis, everything is included
+Friends, if you want to learn in one video
+If so, please like it and leave me a comment.
+Let me tell you, in this video I have used time
+A stamp has also been put that you will be given rest for the entire week.
+I want to learn by taking breaks, so I did that too.
+If you have put it completely then it is good I hope you like it.
+If you like this video then start watching it immediately.
+Let us give our shell scripting in
+One Shot Introduction to Shell and Environment
+Setup for the day ahead
+What things will be needed and everything
+Today we're going to look at setup.
+Things are going to be figured out and move on.
+Wally in his DevOps Engineering career
+Let us understand what a shell is and what a shell is.
+Why are we learning scripting?
+First of all, you should understand that Shell
+Scripting remains Linux-based.
+based then you have to understand Linux first
+What is the architecture of Linux?
+If you want to understand the Linux architecture
+I will tell you a simple formula.
+You should write ask ASK ok write ask
+Now understand the core of Naxals.
+The heart is what the heart is for
+Colonel Colonel Colonel has such a
+Many such programs are written
+Programs are written so that
+Linux operating system works
+The program that runs inside the kernel
+A large store called Linus Store Worlds
+The legend wrote the C program in C.
+The files remain there, okay, and in the program
+You can create folders from files.
+You can network the hardware
+You can manage it by installing software
+You can do a lot of things
+that talks directly to the hardware
+OK, which talks directly to the hardware.
+So your kernel is from hardware
+talks and the hardware is basically its
+Above is the kernel but the kernel is then C programming.
+It is written in me, I don't know it.
+C programming apna to hai user user ko
+What will happen to the user if he has access to the kernel?
+He needs a terminal that is
+A door is needed through which he can access
+The name of that door is Shell, okay, that door.
+The name is shell, so it is the layer above the kernel.
+Shell ok done and on top of that shell
+Utilities are applications based.
+bases live that talk to shell and
+Your apps talk to Shell Kerner
+This top layer comes on so if you look at the ruffle
+So this is your I know circle, it is very bad.
+Bhaiya made it for you but I hope you got the idea.
+You might have thought that this was the architecture of Nax.
+It happens and what you are reading is this
+shell You are trying to read shell
+Why, when you read Shell, you read Tap
+can handle and once you have to tell the Colonel
+Once you know how to handle it, you can automate the task.
+You can do it, okay, and write scripts.
+Now you can do a lot of things if
+You know how to automate the kernel, the shell
+I understand now brother, the Linux that lives there.
+Nor is there any way to talk to the shell that remains.
+There are commands for the thing which we people
+Shell commands speak What does the shell say?
+commands and the shell commands that exist
+She is very cool and very simple
+For example, if I have to print something
+If I want to get it done then the command is echo
+If you want to create a folder, the command is m
+KDIRM KDIRM If I
+To list the files
+DirectoryEntry
+If you look at the sequence from top to bottom
+If you write it in a file, friends, it becomes
+shell script goes so friends I
+How do you read shell scripts easily?
+I am going to teach you his method today.
+Yes, but before that, a little about Shell.
+Let's understand the history of Linus Tor
+Walds created Linux but the shell
+There was a shell, he needed help for that.
+There was a guy whose name was
+Steve Steve I think the name Steve is born
+There was a guy named Steve Bourne, he
+Help line to create Store Word
+Completely written in C programming
+Dangerous thing he then helped make the shell
+So the thing that Born created was called
+SH which was the shell and its location
+Slash in your Linux
+bin means sls h is in binary folder
+That shell was kept at the location, that shell
+The file was kept there and from here the shell
+The scripting starts without friends
+SL SH This is your shell now which is formed
+He brought more improvements to the community
+also brought further improvements so it became
+Born Born
+[Appreciation]
+again
+Born Again Shell means B.A.S.H.
+Bash is the Bourne Again shell that he created above SA
+which made the entire shell scripting possible.
+Shell was running in the same and improvements
+Hue and Aya Bash, his location was also like this
+slush bin
+slash bash means
+So you don't have to learn everything that is most popular nowadays.
+The most important thing going on is bash, so you need bash.
+I want to learn ok bash so this was a little bit
+Brief History About Shell
+Just understand what kernel hardware is.
+and manages everything but the Colonel
+I have written a C program like this
+I need some language to talk to the colonel
+So that's why we need shell commands
+And if you run shell commands in sequence
+Write it from top to bottom, a little programmatic
+If you write it in that then it will be a shell script.
+Let me show you how to make a butt.
+Before that, you need an environment.
+to run that shell script
+The environment will give us AWS.
+We have an 8 instance on AWS.
+We will create it and on that instance we will complete it.
+Shell Scripting for DevOps course underway
+I will be here for a while and
+Here I am shell
+There's one called Scripting OK for DevOps
+I will create an instance of shell scripting for
+instance named devps which is Ubuntu's
+The instance will be ok Ubuntu instance
+And this teat micro will remain free tier
+Eligible, okay, free, eligible now.
+Many people will say, brother, you have a crush on us.
+If you can't see the micro then don't region from here
+Select it in AWS and if you
+If you are not an AIDS account holder, you can
+Locally via Virtual Box or
+Can be run through WSL or any other way
+You will need a pair of OK keys to create one.
+They do it and name it Shell
+Scripting for devops's OK Shell
+Scripting for devops key key
+There is a name called RSA Prem and you can do this.
+Okay, download it now.
+You don't have to change anything in this
+don't want to change don't want to change anything
+you have to launch the instance so if you
+What is bash second to yourself
+I need a Linux machine. OK Linux.
+You need a machine, what do you need?
+Must be able to connect to a Linux machine
+You should know how to connect, that means it should work.
+And how will we do SSH one thing
+I have made videos on that before.
+If it happened, you should show it now.
+How does it happen that you got this problem?
+Click next to see if the instance is running.
+Now click on the check box and
+Go to Connect as soon as you have Connected
+It is written SSH Client there.
+But go ahead and give an example here.
+SSA command is written this SSA and your
+This key name and instance name are used to do this.
+There you go, you've copied it. Now go to your terminal.
+Pay and Jo Jo Instructions A W S Ne
+I have given it to you, do it, he is saying open it.
+An SSA Client SSA Client means your
+I opened the terminal, then what is it saying?
+Locate Your Private Key I Have a Private Key
+Where is it kept here in the download folder
+I have kept it in CD downloads
+The private file is kept, okay run
+This command if necessary to insure your key
+is not publicly available so viewable to
+Whatever permissions are there, they should close it.
+If you want Seech AOD 400 then it means this
+It should only be readable for its own sake.
+For your user, other groups and others
+There are groups, there is no extra permission for that.
+Yes, copy this and run it here.
+Two Seach AOD Shell Scripting for DevOps
+Done now LS Shell Scripting for devops
+If you look at the permission of the key then L S I N L
+Whenever you want to see the permissions, how many friends
+How is Parmish, just read this to see.
+Permission is there, which means this pem file is correct.
+Now this example copy will do.
+Do it and paste it here.
+You paste it and press enter, see the question
+Are you sure you want to continue?
+Connecting yes I am sure karna hai ane ko
+I entered it, I just have to wait for a second or two.
+You are connected, you are done.
+Connect to your Ubuntu machine and see what's there.
+He will say Welcome to Bantu and will say something like this
+Yes, look at this Welcome to Bantu, you will see a map
+How many have you connected to the machine?
+as easy as a minute
+What are commands? Now let's look at shell commands.
+They are very simple, like if you
+I want to say hello to everyone, so what am I doing?
+Inside echo and double codes
+Hello friends and look at this Hello friends
+Printed OK Hello Friends Print
+Done If I want to create a folder
+What I do is M KD I
+What can I say about TWS train?
+Let's create a folder named Shubh, okay?
+Enter and if I did ls, look.
+A folder named TW S has been created.
+A folder has been created, now what is this all about?
+If there are shell commands, then remember that diagram.
+The big diagram that I had made
+Remember that you have to do this in hardware.
+I had to create a folder on my hard disk.
+He must have had a colonel's program, something
+But what shell command did you enter A KDI R
+Now if you need to do the same thing in shell script
+If you want to create it, you will have to create one file at a time.
+How will that script be made?
+For this you need to setup an environment
+One more thing will be needed brother, one more thing will be needed and that is
+A text editor ok text
+editor text editor now that text editor
+Your choice might be Vim
+Could be Nano and could be G Edit
+You can do whatever you like, however you like.
+You can, it can happen, anything can happen.
+I like Vim, Vim is very cool
+So what I would do is I would first open Vim
+I will see how you run it, how will it work
+Let's run it and write vim, then you
+Writes any file that needs to be written.
+Let's write me a file. Hello, Dottie.
+The action is to create a text file which
+Dotty acti hai na this extension happens that
+I want to create a text file so dot t
+If I want to make a python then what will be the dot
+Tell me quickly in the comments about the Python file.
+vim hello t
+akt enter now this has opened my vim
+Editor, what should I do here now?
+Look, understand this editor, this editor.
+what is this this tilde tilde
+These are the lines that are made, right?
+These are your lines, now these are the lines.
+tx9 Okay, so now he is telling the details
+Now you can save your file as anything at this time.
+If you write it, it will not enter the file.
+You will not be written to in insert mode
+If you have to go then you will have to look at your keyboard.
+I have to press the eye, look like I pressed the eye
+what is this
+I pressed I now see insert mode
+I went here and wrote insert.
+isInsert went into insert mode
+This means now whatever I want to do in this file
+I will write it and he will show it.
+This is a new file, so it's running now.
+I will do anything and it will keep happening but right now
+I don't want to exit this text editor.
+If I have to come out, tell me what I will do.
+This is my insert mode here.
+If I press escape, then this escape button
+Escape I know you may not be able to see it but
+Click the escape button on the keyboard
+Look, insert mode is gone, now this blank
+Mode is not blank, it means command
+Now that mode is taking your command, you
+Two commands to remember: one is colon db
+Meaning write and quit means what you wrote
+If it has happened, save it and quit it.
+And it happens that K A K A means quit without
+Saving, you just have to remember two things, okay?
+So if I have to save it then what should I do?
+I will type Db and enter, now this file is saved.
+If I get inside the hellod t acti then check
+what to do so I cut hello dt
+acti enter this is a new file look at this
+This thing is written inside, if I have to read it
+If I want to edit, I'll email back. Hello, dt.
+I need to edit this with Acti and Let's
+I have to go to the next line, what am I doing?
+I'll do it if it's not in insert mode right now.
+I went to insert mode and now this is
+A New Line, okay, I've been thrown out now.
+Escape colon double key enter came out
+And if I file cat hello then new
+The line has also been added, so in this way you
+Learn to use Vim or any other editor.
+Now let's write our first shell.
+Script is ok, there is a lot of excitement.
+So create a folder called MKDIR or
+You can do one more thing, it is very simple.
+I can do as many scripts as I can
+They will be maintained in a Git repository
+The name of that git repository is shell
+Scripting for devops now you can clone it
+Can you do it? How will you clone HTTPS?
+Clicked on this copy and here
+Go write it down.
+clone paste and here you can clone
+Okay, now here comes a folder called Shell.
+Scripting for devops is now called
+go inside the folder okay this folder
+Go inside and create a folder
+M K D I R
+Day 0 Okay Day 1 Okay Day G and more
+All the scripts that remain today will be
+will put it in the forest okay and so that you
+Now learn what I have to do.
+I want to write a script, how to write a shell script
+Now I will write it as I told you.
+If you want to create a text file then end it with dotty.
+Acti if you need to create a shell script
+So ends with Dr. A so I make a
+shell script named a first or
+Then Halod
+a load a what is this load aa h .a your
+The first is a shell script, how do you know this shell?
+The script is Because It Ends with a Dot S
+The dot ends with AH, so this shell
+Now let's go inside the script, let's go inside now.
+How do you know you've entered Halod H?
+will cause Linux to run this file as a shell
+Know how to execute the script
+If it works then you know how it is whenever you
+You write any file about it.
+I should tell you some information, then Shell
+What is an information about the script?
+It must be that brother, who is this script?
+I told you so
+There are not many different types of shells
+like bin slash s h bin slash bash like
+There are different types of shells, so that thing
+what is called shabang what is called shabang
+What is shebang, I will tell you shebang
+what happens
+Hash Exclamation
+Mark
+Slush Bin
+Slash Bash means like we watch Marvel or
+Then let's watch the XYZ movie.
+Let's watch its movie from here
+If you keep watching movies like this then it will
+There are production houses that say brother this movie
+is brought to you by this production house to
+This shell script is brought to you by this
+Shell, for this you have to tell this first line
+It appears that brother, the first line is hash
+exclamation mark slush bin sl bash than
+Interpreter who knows what happens
+It happens that what the interpreter does is
+Ba reads the line and executes it.
+He understands which shell brother
+Which shell to run? Another shell to run.
+There is a method, this hash is like this
+Let's call a thing a comment, okay, this thing
+Let's say comment means your shell script
+I won't use this thing anywhere but this
+There is a kind of indication, there would be a comment
+That brother, this is your script on this thing
+It is based on this thing, so this would have happened
+So let's comment and shebang
+Let's do it, we're in insert mode
+hash exclamation mark okay a little bigger
+Let's make the screen have an exclamation
+mark sl bin sl bash bhaiya ki slash bin
+Where did you get the Slush Bash from?
+Do it practically and tell me, okay I will tell you.
+Well, this is called shebang, okay, escape.
+colon double k enter I've saved it okay
+I saved the file and now I can see it.
+So where is this bash kept?
+I will
+Ch bash chch bash so he is saying us r
+bin
+bash lookup ch bash command gets to know
+What shell is running on your system?
+So you are placed at this location SL SR
+There is no need to put it but it is just for you
+I was telling you for knowledge, okay now.
+Vim went to AH, we went to Bash and then Insert
+Now we went into a mode, what did we do, we did one
+Echo hello friends printed it right now
+You have to do the same thing in a shell script
+The only difference brother is that whenever you shell
+You write scripts like movie scripts
+It happens that a man speaks a dialogue and then
+The second man speaks the dialogue, then the third
+When a person speaks a dialogue, it becomes a script.
+You have to write a script as it goes.
+If it is there then let's write it down and I will do a hash.
+If there is a hash comment then it has no meaning.
+No, it will not come anywhere, this is
+Script for TWA on a Train
+Shubham has a small script, okay?
+what i will do is echo echo command
+As if something is printed then Shubham says
+There is a train from Shubham that brother, hello to you.
+Friends, okay hello friends, now our
+They are learners, they are learners, what do they say?
+What do the learners say, brother from Deps
+OK Deps Wale
+Brother, we will comment, okay, you have done this.
+When I said it, I echoed it.
+What does Shubham say?
+Friends please like also
+Give me one of these boys for sure
+There will be a little way to ask for likes and comments
+It's casual, someone will definitely write it, okay let's go.
+So what did you write, you know, you shell
+Commands Shell Command This is the shell command echo
+Shell commands are written one after the other and they become
+What a shell script has become so easy
+Hey friend, it was so easy, now I have written so much
+escape colon double k entered but you
+We have to understand this much, let's go back once again
+on yourself as to what you want
+The shell script was created using a text editor.
+But you execute the shell script
+If you execute it, you will get the shell
+The script needs to be executable.
+Hey brother, what is this executable?
+Whenever we do it, we
+He tells me what permissions the file has.
+If yes, then please look at the permission of Hello H.
+The user can read and write this file.
+can do it okay other other group members
+People in the group can read it and write it.
+and the rest of the children may be some other
+Users can read it anywhere
+No executable permissions
+Executable means X, write X here
+should have come and if there is no permission then
+I need to send my file to HelloDigital
+If you want to give executable permission then I
+will have to do CH M O D SCH AOD what
+He changes the permission now.
+This first dash tells us that this
+Is the object a file or
+DirectoryEntry
+If it's not cute then I need to read the current user.
+If I have to give right execution also then what should I do
+I will write seven means read right
+Execute now this next one is this
+What permissions does a group have?
+If I don't have read write execute then I
+If you don't want to give execute then read right
+Let's call the permission fi then the next one
+The group got permission for five, now that
+The last one others that is read write read just
+That's all, if you just want to read it
+So write 754, only read can write
+I can't do it, I've done so much, now this permission
+Meaning, do you know how it happened? The meaning of 754
+How is it, Sen means read, write, execute?
+F means read right four means read okay so be
+Now to whom do I have to give this permission?
+You have to give the file named hellod sa
+Enter l as hine l now
+Look, read, write, execute has come to it.
+Read and execute came, meaning these five
+Doesn't it stand for read and not write, sorry?
+Sorry, this mess has become a little bigger than it is.
+These five stand for read and
+Execute OK so the outside groupment
+It must be that he just can't write it.
+He can execute if you change
+If you want to do it, then change it to four instead of five.
+So it will be read only and only, that is you
+You can do it as per your wish, okay now.
+You have made the file executable.
+Its color will change, see it was white earlier.
+Now that it's green, green stands for
+executable file executable file
+White stands for normal file and blue
+stand for folder okay that in different
+Different profiles are created but generally
+Green means your file is currently executable.
+Now execute the executable file
+How to do it, it is simple, dot dot written dot
+the directory where your file is located
+go in heload a is dot sl heload a means
+Your shell script dot s h complete
+Shul script and enter watch the full picture
+Shall script be run TWA speaks
+Hello friends, how are you learners?
+The brother with the desk says, we will do it brother.
+Please comment quickly, friends, like it.
+Friends, you can do it very easily.
+I think within half an hour I had my first
+If you have learned to write shell scripts then this
+All the things you get throughout the course
+We need an environment, we need a shell
+We need to setup the environment and we did it today.
+As you know, this is a course
+Where I am with my learners
+I would love to have the opportunity to interact
+I hope you guys tell me in the comments.
+Have you seen Day One and if so, have you?
+So how much did you understand, if not?
+If you understand then I will clear my doubts.
+I will also take the session, tell me quickly by commenting.
+How much you learned and what you learned from it.
+So what benefit did you get? Let's see.
+Let's start the day two, but before that, hello
+Friends, welcome to Train V Shivam
+on the channel and you are watching Shell
+Day to Day One of Scripting for DevOps
+People have finished it, which is very
+It was interesting where we
+Introduction to Shell Dekha Tha Environment
+I had set up everything that was necessary so that
+A shell script can be written so that today we
+Basic cell scripting
+Skills that a devops engineer needs
+Basics are fundamentals, aren't they?
+Brother, you should be clear about the basics.
+First of all, he has to understand
+What are variables?
+Okay what are variables variables once
+If you understand then you will understand the argument.
+I should say that if I had any one from Lets
+If the argument is passed then what does it mean?
+All those things should also be understood
+Then conditional arrival
+should ok conditional like if else l if then
+You should know all the things, then you will come
+Loops There are two types of loops.
+There are two things, for loop and while loop.
+You should come, you should come
+functions okay so that you great cool cool
+Create functions and use them as your own
+If engineers can write functional programming
+You should know all these things so that you
+Deps guys are great brother, all these things
+I will teach you how to understand variables better.
+what happens is let's go first
+We walk only on hand people.
+I trust practical more than theory.
+There are many websites to do this, brother.
+It is lying there, okay, let's go, we have arrived.
+This shell here is basically
+Our instance is here, we have reached Day One.
+If you did, you would know
+gotta how to make this so it's here
+Now what I will do here is I will shell it
+In a folder named Scripting for DevOps
+I will go and today is day two so I will
+I will do MKD IR day to name me ok so
+I created a new folder called Day Two.
+Now first of all we will understand that
+what is a variable okay so a new
+Let's create a file and name it
+Let's see what name we will give to Jetha Lal.
+Duniya ok Jethalal ki duniya d sa now this
+It's Jethalal's world, it's Jethalal's world
+The world and all the characters that will be in it
+If he moves around Jethalal then come on
+Let's start with what we have to say first of all
+There is a big word Shabang, that has to be done.
+If so, exclamation
+It will look like ok nice hash here and
+exclamation slush bin sl bash it's done
+Now I need to put it in this if file
+I want to write a comment, what does any comment mean?
+What happens is that whenever you run this file
+The code which is commented will not be executed.
+If it doesn't happen, it won't work, then we'll comment.
+You can write this is
+Jethalal's world ok this is Jethalal's
+Duniya ok now if you like multi line comment
+This should be a single line comment.
+If you want to comment on multiple lines then
+How will this happen, apply less dan less dan
+It's started, okay, now you can comment.
+Create a block and you can use that block as anything.
+You can give a name, for example, give your name.
+Gave comment, this is a block started now
+If you want to end this block, write here
+Two comments so now this block is over so
+this not
+This is a block, this is a block like this, and this gives you
+Even if you write it once, it will be fine and here you
+You can write anything
+ok you can write anything
+Written
+Here will not be executed okay then
+You also understood multi-line comments, okay?
+It is very important if you have a shell
+I've written the script and you've got to give it a lot of thought.
+has reached the people and given them a
+If you want to give a description, they understand now.
+What are variables Let's say your name
+ok you entered the name now your name should also be Shubham
+It could be Rahul, it could be Rohit.
+Your nickname could be something like
+People at home lovingly call me Dadu.
+Yes, Dada is called Dada in Marathi.
+Dadu calls you what is your nickname if
+If it is funny then definitely tell me in the comments.
+It happens that I named him Jetha.
+Okay, I named it Jetha, now this name which
+The name is this, the name is this variable.
+variable is variable its value is very
+She can be very capable now, just like the firstborn is tomorrow.
+If I want to print this, I
+I will write its name here now I am the firstborn.
+I will not write what I will do
+Write the variable and put its name's value here.
+I will tell you how the value is calculated if I
+He will not be able to recognize the name written here.
+He will feel that just like this name, so is this
+Both are names and strings, so how can
+Explain to the shell that this is a variable, then its
+If you invest your dollar further then dollar
+that variable identification by applying
+If we make it executable then C
+H M
+Odi
+755 What is this? This is permission.
+Seven means read write execute such permission
+which I want to give to this owner
+So I will destroy Jethalal's world and make him whole
+I will give you permission, look, the green has become the green signal.
+I have got it, now let's use the dot S Jetha Lal
+Enter the world of Name Is Jetha Name Is Jetha
+Now if I change this name, let's
+So I told him that it was Jethalal's.
+Instead Babita ji said ok here I
+In place of Jethalal, put Babita ji, ok and
+I saved it and now when I run it
+No, when I run this, her name is Babita ji.
+So the value is very very able so like this
+You can use variables and whatever you want.
+You can also use the variable itself.
+I said that the name is here and here
+Put a comma, ok, here the name is Babita.
+Yes, and put a comma here after the name.
+I have given that the end date is here now I have to date
+If I want to print the date, then if I write the date
+If I give it, it won't work but date is this command
+Right, if I were to buy dollars and this was for pennies
+put inside
+then it will run so if you type any command
+If you want to run as a variable then you can run it like this
+Yes, how cool it is. Escape colon W why?
+Enter and I'll run this now. Okay.
+Dot S Jethalal Ki Duniya Name is Babita Ji
+End date is Tuesday to February, whatever time it is.
+It is so right, it is so right, but
+Bhaiya, I don't have to tell you this name and that again and again
+I don't want to change my name
+I don't want to change, I want you to be like this
+Ask the user what their name is and the user
+You will get to know that the name is
+If yes, you can write echo here.
+Enter the name ok enter the name and you user
+If you can get the name read from
+read username ok any username you
+I have read it, okay, now how can I read the username?
+It has been read, so what will happen?
+Your blank code will stop there.
+will go and you will have to write at that time which
+any variable you need and that value user
+will go into a variable called name and you
+You can print that variable.
+Entered dollar username like this and this username
+Who will give it, you will give it, you get it read by me
+show ok escape call double k enter
+Let's go, name is Babita ji, date is
+Tuesday February Enter the name Jetha ok I
+Jetha entered now look enter dabang you
+Entered Jeth, so this is how you take input from the user
+Now you can brother, where is its use?
+What is the use, know at the time of creating user
+Its use is how VIM creates your data
+AA one I created the file create your AA and
+put it in
+slash is exclamation bin bash and here
+I put the read username and if you want, it
+Proms Ho Han
+P enter username ok enter username like this
+I have put it in, now try running it, Echo
+You
+Entered and here dollar username is ok
+escape colon double k enter escape colon double k
+Enter good two ways you can bash create user
+You can also run it and you can also run it with dot sl
+yes enter username dekho prompt de diya
+He and I entered the username Jetha You
+Entered Jetha so this is another way you can user
+Input from the user
+You can also make it a little prettier.
+You can do this by putting a little dot here.
+Now what I need is a user.
+What can I do if I want to add it?
+sudo user add han m and here dollar user
+I can name and echo that
+User dead or new user dead, something like that
+I can speak
+New okay new user dead means I'm a
+I will add the user by taking input from the user and
+I will show him that new user has been added.
+Okay, now what I'm going to do here is file
+Make it a little executable like Seach AOD
+77 Sorry
+755 Create User Ds Enter
+and dot sl create user ds enter enter the
+Username Jeth ok enter done you enter
+Jetha new user dead then create a new user
+If you want to see the name Jetha,
+You need to see how the user was created.
+Where has it happened then ETC spot
+Eddie sorry not this what you have to do
+Cat Spade SDdy Users in this location
+You will see it, enter and watch Jetha ad
+The firstborn is done, the home directory is also added.
+If it is Jetha's turn then you take input from the user
+You can do things so this variable is very
+Friends, they are important, now please understand.
+what are the arguments okay let's go
+I am back in the world of Jetha. Okay Jetha.
+Let's go back to the world of Red and what
+I know and understand that Jethalal
+If we have to add arguments in the world of
+I mean, if you want to add more people, then how will that happen?
+There will be ads, let me know what to do.
+Is
+I have to write like this, are there arguments?
+Let me tell you that first, okay?
+from let's you wrote a file okay
+You wrote a file a dot
+slush okay you wrote dot sl firstborn or else
+Anything can be done in the world of the firstborn.
+SA Now the blank space after this,
+These are your arguments and it's all yours.
+The argument is this is yours
+Argument number zero is whatever comes after it.
+Yes, that is your argument number one.
+What happens after that is argument number two.
+And these are all separated by spaces.
+Meaning, when you write yours on the shell
+You go to the terminal, look at this
+terminal is open dollar terminal is open
+It happens when you write dot sl firstborn
+The world is like that, dollar zero means zero eth
+argument okay let's you put it before that
+wrote
+that Iyer wrote Iyer, so that would be dollar one
+If I show the first argument, it's like
+I wrote here dot sl Jetha's world this
+Your zero eth argument is done, ok now.
+Look at the first argument, a year, this is yours.
+The first argument lets you get the second
+If you want to give an argument, then this is your thing.
+The second argument is these arguments
+And you can enter these arguments in the code or in the script.
+You can use it, I will show you how.
+You can enter my name is Babita ji.
+Those things happened enter the name lol put anything
+I gave it to you okay you entered lol now here
+But Ayar and Bhade are not visible anywhere.
+Why do you know we gave them Act Senses?
+If it is not done then the world of VIM Jetha will now be
+You can get an echo done here, okay, get an echo done.
+Can you do the argument and the characters?
+of these firstborn
+How do you see the world or the world of the firstborn?
+Will you print it, tell the world of Jetha?
+How to print $0 because
+Zero is the argument, okay, yes, zero.
+argument and dollar one it's the first
+If it is an argument, what can you do about it?
+Just print it escape colon w k
+enter run this ok enter the name
+Lol to characters in Jethalal Ki Duniya
+R
+Now where did this come from? Where did this come from?
+This dollar zero came from dollar one, what is yours?
+File Name Dollar One What is your first
+Now you can put the argument here.
+Dollar one and dollar two, now put dollar two also
+given means crowd will also come escape colon
+w k enter ok dot sl firstborn
+World
+Ayer what is this dollar one crowd what is this
+Dollar to enter the name firstborn anything is fine the
+Characters in Jethalal Ki Duniya are Ayer
+The crowd and where they are coming from
+Arguments are coming now its advantage
+I know what the benefits are.
+Let me show you the advantage of this when you create user
+You go to the file and this username
+You have to enter it, you don't have to enter it
+You don't even need to use the above argument.
+Can you pass it, Nana is so cool
+You entered create user Shubham in the argument
+Create user Shubham Ye Doti Ch 5 6 Sa Aa Aur
+Create too many users at once
+I can tell you how cool this is.
+I'll show you how to have five users at once.
+If you create it, it will work, then you will get the argument
+I understand how cool it is
+Understand what you understand
+I'm here, okay, you understand.
+variable ok you understand the arguments
+Now let's take a look at what if else
+that's what a conditional is look at condition
+It is very simple sometimes we
+You must have heard that brother, unconditional love is okay.
+Unconditional love means no one is interested in you.
+there are no conditions there are no conditions
+This isn't it, but in the real world it's like this
+You have a condition, you have a condition
+If you break the moon and stars for me
+If you bring it, I'll do it for you.
+So
+If
+condition okay if condition then you have a condition
+If you have to give
+condition so
+I will do this thing
+I won't do anything else, I understand the meaning.
+that in the rest of the world things are unconditional
+It may be there but there are conditions here if this is
+Equal to this then do this if not equal
+If so, do this, I will take you through practical
+Okay, let me show you what we need to do now.
+We have to check whether Jethalal is loyal or not.
+No, okay, so VIM.
+Check if Jetha is loyal ok Check if Jetha is loyal
+So we have to check whether Jethalal is loyal
+Do you have any compassion for anyone or not, for your sister-in-law?
+Okay, so let's start the script first.
+I will make an exclamation mark hash this one
+Bin Bai
+ok without bash so what does this script check
+does
+Disclaimer: Now what is this disclaimer brother?
+This is a tag brother, its name is you disclaimer
+Post a comment, post a warning, anything
+put okay disclaimer okay this is
+Just For
+Infotainment
+Purpose, otherwise someone will tell us in the comments
+Bhaiya, what are you teaching me with earphones on?
+I have to read this, what is loyal and all this?
+You are getting things done, I had come to study Deps.
+what are you teaching so this is just for
+Infotainment Purpose Infotainment Meaning
+You will also get information about your
+Entertainment will also be good.
+So what we need to do is we need to check it out.
+that if the firstborn is loyal or not then it is okay
+For example, there is a variable called captive.
+There is a variable bandi now bandi if from let
+Who will it be? Let us take the prisoner's input.
+If you take it then read high fun
+Fifth note of musical scale
+A enter the
+Bandi Bandi, is that the jail prisoner Bandi
+No, the girl is kind of okay, enter the prisoner.
+Okay, I put the bandi now if
+If you know what you know
+Look at its syntax, it is a bit beautiful
+It's beautiful, don't mess it up, okay?
+If your dollar is captive, if our captive is double
+Equal
+Two
+Mercy
+If your captive sister-in-law is your sister-in-law, then or
+Then in place of enter the bandi we can enter anything like this
+Can Jetha turn and see whom?
+Who did the firstborn look at if he was a prisoner?
+Whoever the firstborn looked at, he felt pity.
+is future
+Then you can print it
+Who is the eldest?
+Loyal and if Daya Bhabhi is not there then simple
+It's a matter brother, someone else
+Echo Jetha is not loyal ok Jetha is loyal
+No, okay, now just put a simple condition.
+You're here that if this is equal to whatever
+You are getting the value of this thing read
+It is equal and look here I have also added semicalculus.
+If you do this then the condition which is yours if
+The block that happens is like this I
+Disclaimer comment block was closed, right?
+By the way, if block also needs to be closed then
+f aa write f what happens if reversed
+two so f happens okay it's over
+Escape colon W ky Enter now this
+Jethalal's loyalty check will be given permission
+Permission to do Seech AOD
+755 Check if Jeth is Loyal
+Ad Check If Jetha Is Loyal As Enter Jetha Ne Mud
+Tell me who you saw in the comments.
+Jetha turned and looked at whom but we wanted
+There is Jethalal and you and all our brothers
+Sisters, turn and look at your partners.
+So Daya Bhabhi ok Daya Bhabhi enter Jetha is
+What is loyal, meaning the firstborn is not
+He is loyal, isn't he? Why was he not printed?
+Because he had this condition that if he was a prisoner
+Double equal to Daya Bhabhi, that was the condition
+It is true, right? I put Daya Bhabhi here.
+Now if I put the same thing in someone else's
+If you had given it late, Babita ji would have put it in.
+ok Babita ji what will happen if you put it in
+Jetha is not loyal precisely because he who
+The condition was false, now the condition is false
+This happened because of that, now do this thing.
+You can, but God always gives someone else a chance
+gives okay to Vim Jetha Lal's world
+No no, not Jetha Lal's world, not ours
+Ko Vim Check If Jetha Loyal Is Alright Now God
+He gives a second chance too, okay?
+that if Bandi Daya Bhabhi Jetha is loyal
+But if the prisoner does not have mercy on the sister-in-law
+Is
+and L
+You can add if else if and other conditions.
+that even if the captive god is not there,
+But Jetha or you can do anything here condition
+You can put for example greater than
+Equal to less than equal to late
+Jetha turned around and saw whose he was. Could he put it in like this?
+Ho Reed one more get Reed hine p what do
+Can
+yes
+Jetha's love percentage is something like this
+If you can even get a percentage, it's called love.
+One someone take the variable okay if if
+your dollar love ok whatever your love is
+That gray grater
+Than equal to if greater than equal to 100%
+Even if he is 100% Zeta loyal, okay?
+Because Zeta is in love isn't it? Echo
+The eldest is
+loyal okay so what does that mean
+Do you understand this line that if the prisoner shows mercy
+Bhabhi Hai To Jetha Is Loyal But Let's Se Bandi
+Daya Bhabhi is not there but Jetha's love is complete
+If he is the firstborn, he is loyal like this, you have done multiple
+conditions okay so let's do it now okay
+Now let's go back to this, I know this generally.
+Sometimes a syntax error also occurs.
+Which is completely fine, you can do it in two minutes.
+Stack overflow and Cha GBT and that
+Can you fix it, let's check if Jetha is loyal
+Jetha turned and saw whom from the leaves
+Babita ji
+Ko But Jetha Ka Pyar Percentage A 110 Percent
+I love you brother, ok what is the syntax error
+is unexpected token else okay let's see
+what syntax error did we make
+given okay now we have syntax a
+What have you done if the firstborn's love is 100%
+If it is there then we have not put it in at all.
+If you have not deposited it then do not come here to pay.
+If you want to give it then type it like this, okay escape
+Column W Enter Run it back OK So
+You will always get syntax errors, so don't
+Get it fixed, don't get demotivated.
+Is
+Jeta, whom did you see? Jeta has just seen me.
+So I don't know any more characters yet, let's start with
+I saw Babita only, I saw Babita ji, okay
+Peta's Love 110 Pra Jetha E Still Loyal
+Because his love is too much
+So this condition is satisfied even though
+The above did not happen but this condition happened
+If you are satisfied then you understand
+that check if firstborn is loyal if else the whole
+How can you run So again this is just
+For infotainment purposes, my family also
+You must be wondering what the butt has come out to teach.
+You guys should understand this, if and else this is not
+You cannot learn this by reading if you take it the easy way
+I don't tell you, it's a simple thing
+Friends, in this way you understood the conditional that
+If Else El If El If Also Seen Right El If
+L If means if this condition is not satisfied
+If it happens then check this condition also.
+else if this condition is not satisfied
+If it happens then check this one also else if
+If this is also not satisfied then brother Jetha you
+So I'm like, okay, Else, let's do this.
+Our conditional cover is also gone, now understand
+what are loops see what is loop
+I know I'll tell you the loop
+What is one thing that keeps happening over and over again?
+That thing is called loop for
+What is your name Bhupendra Jogi? Well, you
+Where are you from? You are from USA. What is your name?
+Hey Bhupendra Jogi, where are you from? Name is USA
+What is Bhupendra Jogi loop, are you thinking it is a loop?
+That it keeps going unless you stop it.
+I am going on, I am going on, so I consider myself a
+Let's make a loop, now many people will say
+That friend, he is copying Easy Spot.
+Brother, give me these funny examples
+I have been teaching for nine years, okay let's come back.
+let's go to our place okay v I'm loop dot
+Let's create this name, okay, for
+loop dot s okay now what is a for loop
+Look, if you have any one condition, okay?
+If you have to do something repeatedly
+So you apply a loop, let's tell you the loop.
+shh exclamation mark sl bin
+sl bash ok now this is for end
+While loops are fine, both for and while
+I'll show you what you'll remember, okay?
+Come on, what do I have to do now?
+Something from let's again and again
+Now I have to get an echo done from Let's
+Bhaiya, are you doing Echo Echo, something good?
+Tell me to create a folder late 50 times
+ok so m kd r
+A folder will be named Lets Se
+demo okay demo and demo next to demo one
+Demo two Demo three Demo four Demo five such
+How do I create five folders?
+So I will have to write this line like this, M
+KDI R Demo To M KDI R Demo Th
+You will have to write in such a way that it is very
+This is a useless method, I will take you through a for loop.
+I'll tell you how it will happen, do you know what
+Whatever you want to do, write it as it is.
+Put it okay whatever you want to repeat
+Yes, keep it as it is and outside of that you can
+Put a loop, okay, put a for loop now.
+What do you have to do for you?
+= 1 ok i what is it bhaiya i write it down
+Write, subscribe, write, like, write anything
+Write that goes okay for num equal
+tov then nam less equal to
+F
+Nam plus plus brother, what have you made?
+I did not understand anything, I will tell you.
+hmm okay ah which is nam na this is a variable
+okay this is a variable whose value
+If you have put one then it means if you have any
+If you want something five times instead of how many times you want it,
+How many times will one have to run for five?
+I will have to run it a second time, I will have to run it a second time
+You will have to run it a third time, then the fourth and fifth
+If you have to run the thing so many times then this
+first second third where do these values ​​come from
+If it comes, it will come from a variable named num
+You can write I or J also.
+You can write anything Shubham
+You can write okay so variable named nam
+Where will all these values ​​be generated from?
+It will be from one to how many, up to how much
+And if tooth 4 5 has to move forward
+Increment order so plus plus tax here
+You will give it, okay simple, here you plus plus
+You can do it or you can do it here also.
+Nam equal to Nam Psav, if you can do this also
+For now you just do plus plus, that's fine.
+Now what do you do, turn it off too?
+This is done, now whatever you want to do,
+Do it, okay do it, do it, I mean do it, do it until
+Until this condition is satisfied, do this and
+As soon as this work is done, it's done, okay, done.
+Simple, simple, not much effort, simple, okay
+For Nam It 1 Nam Lesson Equ 5 Nam Plus Plus
+Meaning, the value of the sum is less than 1 one five, yes less.
+If the condition is satisfied then do MKR demo
+Make it nam plus plus hua nam plus plus hua
+So what is the value of Nam?
+Is it less than 25? Yes, if it is less, then do this thing.
+Let's go now and give me a demo name
+I am not able to create the folder what should I do
+Demo One Demo Two Demo Three Demo Four Demo
+If I want to make it like this then what can I do?
+I will give you this demo which is written, convert it into dollars.
+I will give it to you and write here pay demo dollar one like this
+I will give it to you, did you understand this, did you understand this?
+did you come what is this sorry this is not dollar
+It will be like this okay demo dollar one
+Meaning the name of the folder is demo and the number next to it.
+Dollar One good Dollar One no sorry Dollar Nam
+What is dollar num? This number is a variable.
+If its value comes there then understand it like this
+that the first time the loop runs, demo one
+The second time the loop will run demo to the third time
+Demo Th 4 5 Ideally it should be like this Lets
+C Let's C Let's give it a try
+Syntax errors may occur, no problem.
+No need to worry, we will fix it.
+Will do it okay so seach aod 755 permission
+Let's give the for loop enter dot sl for
+Lpad A Enter OK Syntax Error
+Unexpected Token: Now understand this like this
+Which is a bit like the syntax of a for loop
+It remains different, it remains a little different
+So what we're gonna do is I'm for loop that s
+Now this thing is for such and such
+Try doubling this, okay, put this double.
+Do this twice and open it and close it.
+Whenever you do it, then double close it, Aga
+OK double close it now see how everything
+Variable yellow turned yellow looking perfect
+Now try running it, press escape colon d
+a Enter for loop a Enter see no error
+I am deliberately putting errors in it.
+So that you understand that errors are very common.
+It is normal and very easy to solve.
+Now if I do ls
+I will do it, you can see demo one demo two demo
+Three demo four demo f
+Five folders have been created.
+Automatic, now you want to make it more advanced.
+So we're in furlough now I want to
+I want to name the folder and the folder
+and that
+How can one understand it through arguments?
+Whatever the name of the folder will be, it will be
+dollar one dollar one means the first argument
+I show I
+So here I put
+I will give dollar one dollar one means first
+Please write the argument somewhere here, okay?
+You should write it somewhere here, what would you write that
+Create a comment named task task
+Task Dollar One is Argument
+One Ch
+is folder name okay dollar to is
+Start
+range end dollar 3 is end range okay now this
+Your task is to start with a dollar, right?
+So what will come in place of one, dollar will come
+And what will come in place of f which is end range
+So $3 will come and your $1 will come.
+what is that folder name and what is that
+Values ​​will come, how simple has the escape become?
+colon double k enter now watch now watch funny
+Which is the repository of 90 Days of Devops, right?
+Check out this 90 Days of Devops repository.
+There were 90 folders inside it, 90, 90, 90
+Folders from Day One to Day Ye Woh sare
+I know how I made it, I know how I made it.
+Let me show you what the name of the dot furl a folder is.
+It's Day
+Starting range 0 Ending range 90
+Enter what happened here document line D
+By task, hey, I have said something here
+Maybe I made some syntactical error.
+so what did you do
+I did not do anything, I might have made some error in it.
+Please tell me what happened, error on line 16
+OK, go to line 16 and see
+I am on line 16, yes I am on line 16 right now.
+I
+Okay, so whatever comments you have inside this
+He cannot use dollars inside it.
+I have understood, okay, then don't use it like that.
+Escape colon double k Enter Run it now
+0190 Enter OK What's Done Line 16
+Document at Line D Limited by and of
+File and Task Did I do something wrong?
+Let's see what's happening
+In this
+If the task is correct
+Is there something wrong? Let's see someone.
+There is no keyword in it
+Comment for has also been posted
+Do Done is also done, everything seems fine.
+ok ok line 16 so this
+okay let's see may be may be its this
+The syntax may be different. Let's try.
+it out okay let's try it out
+Oh, the semicalculus after the for loop.
+If it doesn't seem like we were doing it wrong
+Now if we go from day zero to day 90
+If the folders have been created then automatically
+If you know the method then do tell me in chat. Boom
+By writing this, LS Bhai Saab, all the days became day one.
+From to Day 90, where did Day 90 go, oh brother, find it.
+Now Day 90 has become Day 90, it is so cool.
+No automation, you can create anything through a loop
+How right is it, what can I do now?
+I will delete all the folders I have given.
+R M Hine R De Astrik Isse Na Sare
+The folders containing the de will be deleted and RM Han R
+And which one was ours, the one with the demo was the demo
+This will remove all the demos.
+LS did see if all of them moved away then you are like this
+You can also create and delete it, this was it
+for loop brother what is while loop so v
+m while loop d a dekho while loop ka funda
+The concept of Vile Lup is very simple, what does it say?
+that as long as any condition is ok any condition
+The for loop continues until it is satisfied.
+Example while now how to put condition
+We put this inside square brackets.
+People okay inside square brackets
+Now I will do it, I have put one
+Enter the number Num Eq 5 OK Enter the number
+I put in num e 5 or num equal to zero
+Now here I have put the condition that
+dollar no
+less than equal to less than equal to means less
+is dollar num e less than equal to
+5
+so so do okay if this is so do
+echo lol print something and this
+Do it and get it done but brother, this is zero lesson.
+So if we are true then it is always true.
+We will have to increase the value of this name.
+If you want it then what can you do?
+If you can increase the value then Nam equal to Nam
+Psv you can do something like this okay
+You can make something that the value of the moist
+I edited it and extended it a bit, okay.
+Equal to Nam Psav you edited it like this
+How simple, how cool it is, okay now here
+per done escape colon double k
+enter bash while loop lol lol lol lol zero
+0 1 2 3 4 5 six times
+printed if you want some one
+Do it simply like you did in the while loop
+What did you do, no interview questions?
+is asked to check whether a
+The number should be printed only if it is odd or even.
+So you started from zero.
+Mode Mode
+Two Double Equals
+what does two zero mean
+Brother, if you divide the number by two
+If you do it then if you get zero then okay you
+Zero
+Came
+And And
+Your dollar is less than equal
+To 10 so what do you do, get the name printed.
+So
+Print the dollar amount, so what is this?
+If your name is from whatever letter number is 0 /
+Ba 2 So if its reminder is zero
+If it comes then what happened, it should be an even number
+There is a logic of even and odd, okay
+And the number is less than 10, so we have to calculate the numbers up to 10.
+Finding even and odd is as simple as understanding
+Come on, take it and if you do, I'll run it.
+What happened, friend, I got it printed.
+He said let's fix this, let's fix this.
+What happened here, the echo of Namaste is heard
+Value Plv Pv Something is happening
+Let's fix this, let's get some divided
+Batu and Nam Lesson This is happening.
+The value of the name is getting plus or minus. Yes
+A Simple You Can Do How To
+[music]
+Increment Value
+In this shell, it remains simple, perhaps mine.
+A small error of something plus equal to two.
+It must be happening yes here it is here here it is here
+This is simple, okay, so you can use this.
+I'll take it and put it here, yes
+Its syntax is something like this, so Nam equal
+to nam pasav this little bit inside the bracket
+Okay, so whatever you want for the variable
+If you want to do the scraping, do it inside the bracket.
+two remove this so that because of this a little
+There was something wrong, okay, this is the escape.
+Colonize and enter and try running it.
+bash while loop enter then 0 1 2 3 4 5 6
+Hey, this has been printed in everything, let's go to our
+Maybe something went wrong with your condition
+So the first value of the damp is zero.
+Matu now look again this is it okay this is it
+You put it back in it, like yours
+in pensas because whenever you have anything
+If you have to do an operation, you can do it in the penis.
+Put it in, okay, now watch this operation happen.
+This is called a na operator because it is one of your
+The variable is done, you have to put the multiplier inside it.
+I have to do it, I have to do it by running away, whatever I have to do
+Whatever plus or minus you want to do in it, you can do it.
+put it in and tie it to the pennies
+And whatever value it gives, write it here.
+Now look at the difference, see how it looks now.
+ok bash while loop 0 1 2 3 o this
+Why is setting the condition true?
+Or maybe there's another way
+I'll tell you there are many ways to do this
+I will tell you another method, but let's use this
+Let's see why it's not working.
+moist
+Mat D E 0 why is he messing up his
+Why do you try it whenever you feel like this?
+If you get caught in something, it's completely fine.
+You kept doing hit and trial experiments
+Do it a little, you don't have to know everything
+For the first time, you would experiment like this
+stay put okay let's see what will happen okay
+let's try this
+Okay, so if you get zero, what do you think of yourself?
+came that if nam matu dub e 0 now what
+will you do it
+Mode
+Operator Mud
+operator in shell script mode operator in
+shell script now you can see that
+How to use modules Okay, beach
+There is a space in it, let's put a space in between.
+Let's see in this
+A lot of things depend on the syntax.
+caste
+Okay, let's
+C is still not coming while
+loop or you can do another thing in it
+thing you can do is you know what to do
+whatever your number is okay whatever your number is
+You should increase it by two, increase it by two.
+Instead of increasing by two one, increase it by two.
+Ro will come, then two will come, then four will come, that too
+Even can be odd, so this is also a way for you
+You can do it, okay, yes, that's also a way.
+If yes, then if you have Modus
+If I had to do it, I knew what I would do.
+I have all the code and all the resources I have
+Brother, I have put you in the Skill Up Club.
+What is Up Club Skill Up Club is a members
+This is an invite-only private group.
+Here you will find resources, community, and everything.
+If it goes then I have shell here
+Scripting and back project notes
+If you keep it kept then if you go to the notes
+So whatever I have taught today is all about this
+It's in the notes, whatever I taught.
+Everything is there in the notes so
+Let's say if I missed any part
+went like this one I was doing now who
+yes this one I was doing if
+Let's say if I missed this then please note it.
+Yes I was showing I
+what was I doing yes I understood the while loop
+was going okay so you can see from here
+I made it all up for you.
+It has happened, okay, this is one thing that has happened now brother.
+The loops are also done, everything is done.
+What's left now is your functions for loop.
+Done while loop done function remaining function
+What happens brother, see the function, you should understand it.
+it's very very easy ok function very
+It is simple, what is the function?
+is there anything is there, is there anything of yours
+which you have to repeat and come back for it
+No need to write code, just reuse it.
+I have to make it from
+Oh, what do you want me to make, yes check it.
+have to check that if
+Is the firstborn loyal or not? Is it okay if he is loyal or not?
+No, now I will not check it again and again.
+I will do it or I will do something again and again
+What I'll do is I'll create a function
+I will create a function and name it
+Give
+is
+Loyal is loyal and inside this function you know
+I'll tie things up, I'll add things up
+I will make a club and group inside this.
+Now I can check my loyalty whenever I want.
+If I want to check anything then I can simply use this function
+I will call this function
+I will take
+that I wrote function is loyal and loyalty
+I have written all the steps here.
+And when that function is called, it runs.
+I'll show you how, so now I
+what do i do and i am checking if firstborn is
+Loyal AA
+Now this is the whole thing, Jethalal.
+It is based on me, okay it is based on Jethalal
+What do I have to do with this Jethalal?
+No, I want to base it on my users.
+If I have to do it, what will I do? I am here.
+I will write
+I will simply write it here.
+function function is
+Loyal is like this okay is loyal this is a function
+And whatever our code of loyalty is
+I'll tie it up in curly braces
+Okay, I'll tie it in curly braces.
+Now the function is loyal to these curly braces
+I have put it inside so whenever I
+If I call Loyal, it will work now.
+Let me show you one thing this code was running
+I will not call this function anymore.
+see what happens escape colon double k enter
+Dot sl check if zeta loyal nothing happened
+Nothing happened, I know why
+Function created, function is loyal is
+From a function named loyal, the function is like this
+Parens are identified by the y of the function
+I wrote down everything inside and called him.
+I didn't use it, so I'm here.
+But I will use it, it is simple to use
+Write to Loyal here and call him, this is
+Non-S calling, so I would write it here
+am this is
+function call this is a function call and above
+What is this
+is this
+Function Definition
+Definition OK, this is the function definition.
+where the function is created and here
+Escape colon double if function is being called
+Now what I will do is simple run.
+I will do it dot sl check if loyal a yal enter
+Look, now it's gone, now I'll write it down, Daya.
+Bhabhi enters Jetha's
+Love this if you late to 110 ok then firstborn
+I am loyal, now I know what to do.
+This should not be done according to the firstborn.
+What can I do if it goes according to anyone's wishes?
+I will do VIM check if Jetha is loyal
+What will I do to the place where the firstborn
+It is written wherever Jetha is written
+I will write Dollar One here and there, brother.
+Why would I write dollar one, dollar one, because
+I will write it because I am an argument guy
+I'll pass the name of Look, right now this dollar one
+I am now
+I'll put one dollar here too, now the firstborn is loyal
+what do I put in place of dollar one is
+Loyal is fine
+Now Dollar One is loyal alright
+Dollar one is now loyal to what lies ahead.
+I'll pass the argument how cool it is
+Not if you put dollar one dollar inside the function
+If you are writing this then you know what all this is.
+All this is going to be passed to your function.
+If the argument is, I am loyal to where my
+The function call is followed by the name of the argument
+I will write it down, I can put anything in it.
+Loyal
+I don't know who Tom is now, so Tom
+Okay, now run escape colon double k enter
+Tom turned around and looked at whom?
+if this mercy
+Bhabhi, ok Daya, I have seen Bhabhi, take Tom's
+No, Tom saw Jandya.
+Okay, Tom turned around and saw someone, Jandia.
+Tom's love 90
+Q. Tom is not loyal. Okay, so I understand.
+I am telling you how you implemented this code.
+You've made the code modular, okay?
+Made it a bit modular so that this code
+It won't work for Jethalal alone.
+This could work for anyone, okay, anyone.
+can also run for and similarly you
+You can basically do anything in shell scripting.
+You can do anything, just you
+You should know the basics, have you shelled out?
+Scripting for DevOps' repository
+I just checked if it was forked or not.
+10 people have forked it, meaning all
+The code is all that is to come.
+I am missing you my friend
+Quickly tell me in the comments that if you Day One
+And have you finished Day 2 or not?
+Let's start on Day Three.
+Intermediate Scripting Techniques
+What is an intermediate? A beginner who is
+How do they write shell scripts?
+He knows how to write functions.
+But if an error occurs in that function then
+How to handle it gracefully
+I don't know if backing up a server is a good idea.
+If it is there then he does not know how to take it.
+In today's video, we will discuss all those things.
+If you are going to see then let's talk first
+About Error Handling Error Handling
+This is a very important thing, friends.
+Understand that any programming
+Whenever you need to handle errors in the language
+If it happens, two things happen: try and catch.
+What happens is that if you get any
+I want to check if the error is coming or not.
+If it is coming then you can observe the catch
+In this you can actually handle that thing.
+You can now try shell scripting.
+There is no catchy funda but here is the funda
+If it is the funda of if and then if and then
+You learned in Basic Scripting Skills
+That was going to be used today, error handling
+In Lets, you can complete one of your projects.
+He has run which we will see in today's video.
+You are going to run a project
+I have done the steps to run it.
+If you encounter errors in it, how to handle it?
+how will you do it
+We're going to see the debugger, so let's start.
+Let's give it to you, we have come to our instance
+We have shelled out this instance on
+Dedicated to scripting for devops
+So let's do a MK DI R
+It is called Day Three where we discuss today's
+If you are going to keep all the things then it should be Day Three
+I am here now to tell you the basic fundamentals.
+I'm going to explain how error handling works and
+Why is there a VIM error?
+Handle dts OK Error Handle dts here now
+But I will do it slush ya shab bin bash ok and
+Here I will give you a simple function
+I will make
+Create
+DirectoryEntry
+Now I enter a simple command mk
+dir demo is now a function that returns demo
+okay now this
+Let's call the function create
+DirectoryEntry
+The second time the function is called
+So this
+If there are no directories then the code will not run further.
+Should the code stop then see what
+What happens if I echo with Let's
+This Should Not Work
+Because the code is interrupted, right in the code
+If something goes wrong, this line will not work.
+It should run ideally, it should not run ideally
+It should be handled, see what happens now.
+It happens escape colon double k entered now
+Let's give this file some permission.
+AOD 700 and error handling done now I
+dr error handle a
+Enter This Should Not Work Because the Code Is
+Interrupted It's okay for the first time
+Because if you do LS for the first time then
+A folder named demo has been created, now the second one
+You should not even run a bar, do you know why?
+Because the folder already exists, isn't it?
+You should stop because an error has already occurred.
+Look, I did this, MKD IR can't
+Create Directory Demo File Already
+Aegist This Should Not Have Work Because Code Is
+interrupted
+I didn't know how to handle everything, so
+It kept moving because he kept moving from top to bottom.
+Now I will show you how to handle it.
+So what I do is I'm handling errors on
+Now let me see if create
+directory if if in create directory
+It gets messed up, I don't create
+directory if in create directory
+What if something goes wrong?
+be it to do the code is being
+Assitate Already
+The Agist OK code is exiting because
+The directory already exists and exists
+So I took Exit One.
+I did it and wrote this if condition as F a
+Closed IFI Open Close OK Now
+See what happens, check it here.
+If CreateDirectoryEntry
+So dot sl what error handle d sa first time
+I will not get an error enter this should not work
+Because the code is uninterrupted, this is fine.
+There was no error the first time, but the second time
+should throw an error and also have a handle
+So this I ran kara dekha M KDR can not
+create directory demo file exist the
+Code is being acetate as the
+DirectoryEntry is This file should not
+Work did not work because that code there
+The try catch had been handled, friends.
+It doesn't happen but if you want to do error handling
+then you have to play with if conditions
+Exit one means exit code one, come out
+go okay come out with a code one
+Exit Code Zero Come Out With A Code Ro
+Okay, I understand how to do it gracefully.
+Now this is the only thing that needs to be exited, a project.
+Let's see how they put it in.
+It's as simple as that, I go escape code
+a Enter creates a file e m
+Diploid A Okay one I have a Jungo Pup
+Which we follow from start to end
+Deployed that error handling through shell
+through scripting
+Be deployed and excited and want
+That I should bring more such videos and
+If you bring me a project, let me know immediately.
+So that I can tell you in the comments so that
+me and hurriedly hurriedly day one day two day th day
+Four Day F makes a lot of videos like this.
+So let's start with the most
+First I put the shebang so
+shh shh exclamation mark sl ban s
+Now I would have cut off my task.
+I wonder what my task is
+Hai Di Palay A Jango
+Fifth note of musical scale
+End
+Handle the code for errors okay errors so
+Coming is very natural and that is what we are.
+The comment is on the one who handles it.
+Okay, now what will be my first task?
+First of all my work will be to clone the code so
+First I will clone the code.
+Now from where will I clone the code?
+I will do it with git so this is my git hub
+Isn't it there, I will search it here.
+Any one of the Jungo projects in the repositories
+So take what is above Jango Notes P Ye
+removed ok jango notes p these notes pap
+I want to run OK Shell Scripting
+So I'm going to go here and copy this as well.
+I'll do it, okay, that's it, now I'll do git clone.
+I will echo here.
+Echo
+cloning the jango app ok cloning the
+Jango app here I will do it like this and here
+I will write on Git
+Clone done, now understand git clone forever
+If it happens once, then it will work for the first time.
+Will it go a second time and give an error a second time?
+Okay, so you have to handle this error.
+If it should come then the code is cloned second thing
+We are going to do what we are going to do
+Whatever the required library is
+Take it out once and bring it, okay?
+Required libraries like for this code
+Just look at what you need
+Look at this, look at this, look at this in DM, right
+I have Jungo, I need Python, I need Richt, I need Docker
+I want more engines, okay, so many things.
+I want it, it is simple, I want so many things now.
+The second function I'm going to write is
+It is very simple to install
+I'm going to install the requirements okay
+I am going to do the requirement as per
+Docker is done, the engine is done, so here I am.
+Installing Echo Mar Dunga
+Dependencies OK Installing dependencies
+This is done now sudo at get install
+What a duck and
+Engine and if you get any promotion then say yes
+So y okay this is done now if there is any
+An error occurred, but there is no error in this.
+If all this goes well then it
+There will be no problem once your dependency
+Once installed, you can do whatever you want.
+Required
+Restart is fine if you don't see any functions.
+to any service to anything
+If you want to restart, you do it right.
+Lettuce helps restart your engine
+if so
+sudo ok sudo
+System CTL
+Enable Docker is fine by the way
+Hido System CTL Enable Engine Enable
+What happens the next time you
+If the system reboots, then this restart will happen.
+Will go fine required R
+K R
+a required tart ok required
+What will you do after the restart?
+You your
+What will you do in deployment?
+It is a simple Docker project, so Docker
+what will you build, okay what will you do with docker
+I am not talking about build or this repository
+If it is written in it then copy it from here
+And put it here, okay, put it now.
+What's next is docker run copy from here
+Take this and put it in, once it's done you will get this much.
+and after doing this you will get a
+Calling functions one after the other
+like what was the first function you wrote
+People clone code code clone no code
+I made a clone call, then what did I do, install it?
+Did the requirements, then what did you do?
+Did the required restarts and at last
+You people have
+diploidy sa like this like this by doing this
+diploid
+You can do something like this, you started
+Write nice, beautiful, beautiful and this
+You can end the same line here that
+Deployed Done Deployed Done Now Ideally
+Ideally this code should run because
+What a devops engineer does is what a developer does
+The installation dummy is given as
+It runs like this and everything works fine.
+I did the engine everything is fine
+It is installed, everything is done, it is running
+You should go now and see how much trouble one faces.
+How much problem is there in this app? Now it needs permission.
+The Cod
+77 means every user, every group, other
+to the user but we will only give read to the owner
+Right Acute Permission to Di Paly
+Now watch the day to day live of the engineer
+I dotted
+Degree
+Now watch the entry deployment started
+Everything is going well, deployment is taking place.
+Now see what happens, okay, it's done.
+I installed the watch brother
+Neel is running ok code d also clone kar
+You must have taken it, now see it is going well.
+Come on, something good is happening, okay
+Deit done but dement done speaking meaning
+Ideally, what has been deployed, but it has happened
+what if I do docker ps docker only
+It's not working and it's saying
+The one before you has been deployed
+Why error handling came into play?
+If it is important then let's make an error
+Let's see what the error handling is.
+The error is that it is unable to prepare for the contest.
+That thing is Docker file not found ok most
+First, where is it looking for the Docker file?
+If there is no Docker file then how to handle it
+you will do it whenever
+Deployed DirectoryEntry
+before that or whenever you git clone
+Or will you handle the git clone now?
+Look, let me show you something again.
+git cloned escape colon double enter
+Escape Colon Db Enter Now I can run this code
+I'll run it again and see what happens
+Cloning into the repository will be fatal.
+Destination Jungo Notes Already Assisted and
+This is not an M directory o meaning understand
+I am thinking that it is already existing, so it is not
+What will I do if I can walk?
+Diploid if
+I got an error while cloning, so I cd
+two, okay, I will do this much, okay then
+Deployed Started Jahan Pe Hoga Na Code
+How to handle errors in clone?
+If code clone encountered problem if code
+Clone problem occurred first.
+So what could be the problem if your code
+If there is already assist then which CD should I do?
+two what thing
+Jungo
+Notes P I Hope That's the Name Jungo Notes P
+Yes, this is the correct name and CD it in Jungo Notes.
+Took it and also got an Echo done before this
+The Code
+DirectoryEntry
+The fatal one had come, whoever it was already existed.
+We have handled it and fixed it
+Try it, let's try it, Dipl
+be the court
+gone okay look look what he said the code
+Already exist means you have a handle
+Your code is handled now, next time
+He must have seen that look you saw that the
+Docker file not found error was coming, right?
+It's gone Docker found file not found error
+Gone, new error has come Permission Denied
+while try connect to docker deem this docker
+Do you know why the file not found error occurred?
+Because we have code here.
+I had made CD Notes app in the clone due to this
+What happened that
+DirectoryEntry
+okay and he drove he now next
+If you see the issue then install
+I have no issues with the requirements
+If he comes, let him go, but still if
+If you want, you can write if some issue in
+Install
+What should I do if I require it?
+Two
+Installation failed and if the installation itself
+If it fails then there is no point in continuing.
+Get him to exit with one status if anyone
+If you face any issue during installation then exit
+Get it done with one status and do AI
+Escape call double enter now go back
+Look at every time you handle an error
+No, I tried playing that part back.
+Look, it's going great, but now see the permission.
+If you get a denied error, let's solve it now.
+Toi M Deployed D
+So ok, so a restart is required.
+There was no issue in that either, I hope yes.
+What do we do in the required restart?
+You can fix any permission issues that arise with Docker.
+If you can fix it then you have permission.
+What was it that Docker's D man
+This ver run docker sock this is the file
+He is having problem in this, he is giving permission to
+If you cannot find it then VIM deploy
+what do I do
+I will give permission to this particular file
+I will give you CAO DNB whatever my current
+The user is
+He should get permission for this file and do this work.
+I'll do it with sudo ok do this
+I'll give you this now if restarts are required
+Required restart if not
+What will happen if it is required?
+restarts or whatever it is
+Otherwise, it is a simple thing, just write it in your code.
+There is a problem, it means there is an issue in your system.
+System Fault Identification
+Fide system fault identification and you
+Get an exit okay f come let's say to me
+What should I do if I need to restart Docker?
+I will restart Docker if from let's
+If I have to do it, I will write it here.
+I will give you the system
+ctl docker a no no system ctl
+restart docker ok this restart asap
+I did it too, now look here if
+If any issue arises, the code will exit.
+I won't go any further because I have taken the handle
+I have done it where here handle it here
+I have taken the escape column and double enter it.
+Now what will I do, I will try it out.
+This happened, ran, ran, ran, well, ran, oh
+Look, Docker is asking for authentication.
+What to do in this case for restart?
+Two, you go there and put sudo, okay.
+Because your Ubuntu user who is using Adb
+When you create a CCTV, you generally have a password.
+It does not happen, the primary user remains fine.
+So put sudo and it should run now.
+Run vim deploy and enter deploy
+Executing Enablement Engine and Your Docker
+The build has been started, it's so cool isn't it?
+How cool is it that the error is in the same script
+are also handled if not git clone
+If it happens, he handles it.
+The library is not installed and it is handled
+The system cannot restart
+I would handle it and finally deploy it.
+Let's start it, let's see what fun it is.
+is complete
+diploidy palay is applying let's see
+And what happens next is a warning if
+Ideally, it should stop if an error occurs.
+O!
+Deployed Successfully Tag Notes Latest Oy
+Yes, yes, I have already been deployed.
+If I docker ps then that is on port number 8000
+What should I do if this code is running?
+I will go to the brick and its port
+Where did the 8000 go in the security groups?
+I will go and open its port at 8000.
+OK, do a rule custom TCP 8000.
+Let it be given brother, open it anywhere, anywhere.
+Two, if you need security, my IP
+Simply put it and you will be saved on your IP only.
+Rules have been made, now go to your EC
+instance pe bhi achha le its public IP
+Go here and run it on port number 8000.
+Look what's going on
+ok you can see your application deployed
+what's the matter with error handling
+But brother, if I run this script again
+If I do, just see what happens.
+Run the script again. Press Enter.
+Deploy this and that, this and that, okay engine
+He is enabling that he will do it every time.
+That doesn't have to be done every time, so it's okay.
+Let's see, okay, this is deployed successfully.
+Built node p latest and running perfectly fine
+ok everything is going well so it means your
+There is complete awe at this time, there is complete awe at this time
+It is intimidating but if you want to make it more intimidating
+So what can you do? You know what you can do.
+You can write it in your vim file.
+It was said that we can write in its file which
+Is it deployed or not? Docker run or its also giving error.
+can you handle that
+If
+If there is any problem in deploying then
+Echo what Echo what
+what is diploid field
+Failed Mail the Admin instead of Mail the Admin
+Mailing the admin you can do and so forth
+You can use a send mail utility or this one
+There is a utility that allows you to send emails
+You can do it if your deploy fails.
+So this is one escape colon double k
+Enter Now try running it again and see deployed
+P, this went well, it went well, ok let's see
+that from deployed started to
+Everything is working fine till deployed ended or
+don't see
+Okay, what is this, deployed done, everything is fine.
+Everything is going well, everything is fine
+Try CPS and see, yes everything is going well.
+Sen second ago mast he is becoming but one
+I can see something wrong, what's the problem?
+I can see that every time your Docker
+Docker is restarting every time
+Restarting and it's running
+I don't want that, what do I want?
+If I don't restart Docker every
+What happens at times because it's a simple thing
+Isn't it true if you have written it here?
+If you have written here docker run and this
+Code This code is repeatedly entered on port number 8000
+If I try, I will make an error, so let me do it
+Look, I'm making my own errors, I know.
+I am making the video longer but I am making my own errors
+I am making it, now let's restart.
+Docker would not have been enabled either
+If something like this had happened to Let's, look.
+error what comes escape colon double c and ter now
+See what error will come, error will come, okay enter
+did this happen deploy failed mailing the
+Admin brother, if deployed fails then friends
+The life of a devops engineer is not so easy.
+Everything doesn't look green, look it's failing
+Why do you know it's been deployed? Because 8000
+It is already allocated, in this case you know
+What will you do in this case?
+Docker compose so you write in the file here
+Docker Compose in Doge Install Requirements
+You will also install this and this of Docker Compose
+The good thing is that if you
+If you want to restart then you can do it by up and down.
+You can allocate the pot, it is very easy
+So I need Docker Compose and where
+I made an error where I made an error okay
+So before that send it to the admin and here
+But what will I use instead of run, simple
+Docker compose up is ok in docker compose up
+here it goes here it's done here I am a
+I will simply run this command, I will not run this command.
+I will simply run a command
+Docker
+Compose up through Docker Compose
+This project should run. Escape. Call Dock. Enter.
+Now
+Look, I played Deepal Jung, all this happened.
+Everything is going great, great, great, okay
+Processing is going well, OK tag
+Creating Network OK OK, everything is going great
+Look, this time I handled the error.
+If it has happened then ideally it should go well every
+Every time I run this file, it will run
+Let's see how it goes, okay.
+How long has the video become, my god!
+Half an hour video I hope half an hour
+You will get one hour video of this
+No objections because my purpose is
+You have to teach here, that too, okay, look at this.
+error something came can not start driver
+Fail port already allocated so what should I do
+I'll give you this port by doing docker ps for now
+If I de-allocate it, then docker kill but see this
+You are thinking that deploy is failing but
+Deployed Done after Deployed Fails
+Why is it coming in writing, its simple meaning is
+That whenever you have mailed the admin
+If the code is not exited then here
+You have to go and write exit one from this
+What if this is not a deployed done message?
+It will be visible, okay, it's a simple thing, let's go.
+Let's go and see, okay this is the final
+Execution of the Pup Deployed Started
+Completed Done Ok Done Which means if
+If I run it here, my AI is running.
+Mast, now you know what the best part is.
+As many times as I play it, I will play it
+It will work as many times as I run it.
+This will not give you an error because it
+The file which is cat deploy pup this is the complete error
+Handled OK, the entire file is an error.
+Handles everything from code clones to deployments
+You can operate this thing completely comfortably.
+I commit to Kit
+Status OK, I commit to that day.
+Get the Day
+Okay, what is this?
+Oh, this is a little mess on my part.
+Why has it gone, what has happened because Day Three
+Inside I wrote a Jungo Notes P
+a direct
+Cloned a Git Hub repository
+What is the reason for the problem
+Scripting for Des already a Git
+There is a repository and inside that I have another one
+I have made a git repository which is very wrong
+If it's a matter, I'll do the work. CD Day
+I will remove it, okay, this is for you generally.
+It will not come but this is a common issue if you are a
+Clone the repository within the repository
+So this comes okay day three p go
+status okay so here this
+Our CD Death
+I would delete the junk notes from it.
+hmm ok RM Hafer Jango
+Note
+yes done git
+Status OK
+git d
+These gits
+status git
+Commit ain am added
+Death and doing this I push the gate
+I will do the origin main and here for all of you
+Pe here where ya which shell scripting
+Is it a repository or a shell scripting repository?
+Your Day Three account is in the repository.
+The code has arrived so whatever I have done with the Jango app
+You have that script written by
+I hope this video has reached you.
+You might have got some benefit in real life.
+You must have got an example of error handling.
+How to clone using commit
+How do you do it, what are its errors?
+Got a great overview of everything
+If you find it, please comment me.
+Don't forget to like and comment on the video
+Why should I tell you the reason behind this?
+These are the videos that I make, these are
+I make it with the intention that many people
+If you can help them reach there then watch the video.
+I don't like it, right?
+We have shelled as much as it takes
+Scripting for devops in this free course
+We have covered it, we saw it in Day One
+How do you setup your entire
+Learn the basics of Environment Day to Day
+Learned intermediate shell scripting in Thr
+and a project
+Deployed Vance Shell Scripting and
+about debugging because I've done things like
+I told you that as much as you can keep your shell
+I have read scripting and that is enough.
+But what should I do for a devops engineer?
+My heart just doesn't agree and I want more
+If you want to learn something new, then today I am going to tell you
+I have brought it for you AW S C L I
+AWL
+Apartment
+Won't you do ours? So hello friends.
+Welcome all of you to Train V Shubham channel
+And in today's video we are going to talk
+We are going to learn about advanced scripting.
+where we are a
+Linking with AWL scripting
+Gonna see all these things
+Look, this is a very interesting thing, I'll tell you.
+First, let me explain the whole thing.
+What is the script about?
+Let's talk about what's going to happen.
+Let's take that
+AWL is basically your cloud.
+It is a service platform where you can
+You can create all the resources
+You can build a lot of infrastructure.
+Where can you do things like shell scripting?
+Shell scripting comes in handy here, brother.
+This entire process is AWM
+Automating the way things are done
+It comes but brother, you can also terraform that thing.
+I can, I can definitely do it and in this region
+Because of Terraform, Embedded made things happen.
+New tools were created because shell scripts
+We cannot do everything alone, but we
+It is very important to know that shell
+How does the script do all that?
+In today's tutorial, I will explain to you
+I'm going to see what things are
+How integration works for AWL
+So the first one that
+AWSIM is up, okay, this is your laptop.
+where is your shell ok what is your
+Shell Now run this shell from AWS account
+You want to connect, how to do it G Shell
+Always run on the command line where the yi
+If there wasn't a GI user interface, you would have had a
+CLI gets you and AWS gives you a
+Adb cl i gives ok aw a
+What is the first thing you should do if you get sick?
+Open a new tab and download AWACLI v2
+Look at this, okay, Edl sa aa v2 v2 means
+Version two, the latest one, is fine.
+Open it and here something basically
+There are commands that you can use to run AW CI
+You can install it, see when I told you
+I was teaching shell scripting here.
+Basic Scripting: Basically Shell Commands
+When you write the conditions in sequence
+You write with loops, you write the same
+There is a shell script so if I have a
+AW CL I through shell script
+If you want to install it then pause this video now.
+Do it and today whatever I have done in the last three days
+Based on what you have taught, ask yourself whether
+I can write a shell script and
+Read the commands of CL I from here and
+Install by writing in shell script
+Can I write a shell script that does this?
+If your answer is yes then leave me a quick comment.
+I will tell you quickly in the next video.
+I'll definitely give you a shout out so this will help you
+It is understood that AWCL I which
+There is a tool that lets you install shells in AW
+You can confirm it with your account.
+It is very important to install so your
+The shell script will be your shell
+The script will be something like this
+Let's say this is your shell script.
+In that, first of all you have installation
+Hoga OK Installation Hoga Off AW
+SCL I but bhaiya I install it every time
+I won't do it every time
+Install AW CAI only then install
+I would if I had a WCL
+If it is not installed then install adb sl ii
+only
+If it is not present, okay, now I have to
+Tell me how I can do this thing.
+It's simple friends, if conditions like error
+It was handling, what can you do?
+You can check if AWS seal is available
+installed if not installed then this
+The pipe that remains is the fallback if
+If it is not installed then the installation one
+Run the script, OK, if not, install
+If so, run the installation script.
+So you should know how to do this because it
+Advance thing is now next once AW
+Once you have installed CIA, what do you do next?
+Then you need to configure AWS.
+You will have to configure your shell to do this.
+There is one manual step for you, I will tell you about that.
+I'll give it okay so that this shell AW S
+This is what you have to do to get linked with it.
+Next, our task is to create a T instance.
+Now we have to create a Bhaiya T instance.
+People can also create it through Terraform.
+Why are you bothering Ed Say in this and
+Why bother with a shell script?
+Friends, if you can write a script
+where you are running the AWS instance
+You can create s3 with the same script
+You can also create an instance and create an S3 bucket.
+You can create RDS instances of anything.
+You can at the same time send that script to your
+You will be in control of that script.
+You can modify the script yourself.
+You can use it for personal use and your
+Shell scripting is a journey for him and you
+Can you sharpen me at the end of the session?
+I'll show you how to prepare your script.
+It happens and what it looks like, that would be
+Now brother, there is a small you know advance session.
+So let me give you a little challenge whenever we
+People
+What is an AWSium instance?
+Basically you take a server on rent.
+This happens whenever you create an instance.
+The instance gets created but
+The instance's state is not running
+It takes four to five seconds, sometimes up to 10 seconds.
+It may take seconds, so you can use a shell script
+How will you see through that this
+Whether the instance is in the running state
+What you will need for this is these seconds
+In point you t
+Eat Instance Create
+You will do it, okay, you will create and third point
+I will see you will wait you will wait that if
+Whether your instance is created or not
+How to check if the instance is running or not
+You will do it brother, it is very simple whenever you take a t
+You create an instance and its state
+what happens to a state if that state
+If it is running then it means that the state is running.
+that the instance was created correctly
+else running if state is not running
+This means that everything is not right yet and when
+Till this state is not running, check me
+It has to be maintained that this state is running otherwise
+Think about all you've learned so far.
+According to this, the vial loop will be the best vial
+State is equal to
+Running until the status 'Running' is reached
+Keep things moving brother, keep moving them.
+Keep running, as soon as you feel like it, exit, okay.
+While state not equal to running as soon
+If you feel like running, exit it.
+I understood the script, didn't I?
+What to do is make a shell script do AW
+How to connect with AW
+Second AW from CAI BEAT YOU FROM CAI
+instance is to be created right became the third that
+Checking the state of the Eat instance
+He is in running, he is pending, he
+You have to check all the things in which state
+Now you have to do this thing, I am giving you this as a challenge.
+I want to give a shell scripting challenge
+For you Shell and AWS what do you need to do?
+I will give you a script for it.
+You have to understand and after understanding it, your
+I want to create any service as per ads s3
+May be Lada May be RDS
+It could be anyone, so let's go
+If you understand the script, click on it.
+ok the shell script is here create to
+I have created this instance which is quite strong.
+It's a C shell script, so you won't read it like this.
+What will we do with this, tell him.
+Let's launch an instance and see.
+If we go, I'll go with my AW
+S pe here pe my shell scripting for
+Connect to the instance running with devops
+I will do it and connect through SSA
+If I take it here, SSA
+Okay, yes, come on, done, we have come to our bricks.
+Instance on where we are shell
+I'm going to run the script, okay, now I'm coming.
+Go to my Shell Scripting for DevOps
+Now it is day one, day two, day three.
+Shell script for devops na a git
+The repository is okay, this is a git repository.
+Your branch is up to date with Origin Main
+But I am not up to date on Day Four.
+If not, what should I do? I can do a git pull.
+I'll take git pull as soon as I'm done. Look at my
+Day Four is here and here I am on Day Four.
+I'm going to go CD Day Four okay now its
+Inside is the script for create e2 a
+What I'm going to explain to you is E.M.
+create ec2 a so first of all this first
+There is a sentence, it is called Shabang second
+Sentence set eu pipe fail meaning if you error
+If you are handling it, then it
+This advanced shell shows beautifully
+There is a flag of scripting, what do I do?
+I am checking AW S CL I this
+I'm checking if AW S
+If I can't find the command, I'll say it.
+AWS CL I is not installed
+Please install it first and exit.
+I'll do it and then
+I have a complete AW CI installed.
+method where I am installing AdB S.
+v2 on
+Installs CI. Next function
+Let's see Waiting for ECT Instance
+I will come here a little later
+Let's see how to create an Eat instance
+Understand how it creates this thing.
+Once you have AA CI then that seal came
+From the command line interface you can use AW
+If you can talk directly then add e2 run
+instances This is a command that allows you to create e2
+You can create an instance, just give you a
+You will have to provide image ID from Lets.
+to make a kit and
+Now if the instance is not created then the instance
+ID will not be generated, see here
+how am I doing here what am I doing
+Instance ID is equal to this thing
+Now where does it get its instance ID from?
+Whatever query you get, that query
+instance whichever lets say this command gave 10
+Create an instance or create a
+The first instance of
+will pick up the instance ID and the instance ID
+I will get the output done, see I will get the output done
+So if you don't get the instance ID then
+It is simple that your instance creation
+Simple has failed and so you can exit.
+Go and if the instance ID is found then
+There will be no exit, the instance will come here
+You have to put it in the created list until it is running
+Wait for it to not reach the state
+I would call this method here.
+and pass the instance ID inside it
+I give it and by the way I have given it here
+The instance ID, AE ID, all these things
+Isn't it, I have created this as a local variable
+Whichever way you pass it from the command line
+can you okay let's understand that wait for
+What does the instance wait for instance do?
+An AW SEAL runs the I's command
+Whose name is EC to Describe Instances
+And in that instances I want to set the instance ID
+I pass it and put it in the query.
+I wonder what the state name of that instance is?
+If the state name is Running then the instance
+and inside this while loop of yours
+Take a break from it if you are not running.
+Take a short break of 10 seconds and then
+Run this command and see that the state
+Is there running or not, if there is running then brother
+Break and come out done okay and as soon as
+You will come out your waiting for instance
+These things will end now
+All the variables that are named are
+I passed it inside a main function
+I have given you MI ID, if I need any MI ID
+If you need an ID, I'll fill it in here.
+I need the instance type, I will fill it here.
+I will fill in the subnet name here.
+I will fill in the ID and do security groups.
+I will give the instance name and all that
+All the variables are parameters, I
+I will pass the function and
+Thatchi here you must have seen this here
+Check the line AW S CL I and
+Or fall back to install adb ci or
+I mean, you know, he'll check first.
+If adult cell has come then it is a good thing, then further
+It will increase, if not, then this fallback
+There is an option, okay, today I have decided which one
+sa he was our easy snip Neeraj Walia his
+I had seen some reel with fallback from that.
+I got this idea, so now you can do this thing
+Tell me in the comments if you understood it.
+Is it or not because what things are there in it
+There are four things it will check whether a CI is there or not
+No, if it is not there, there will be exit if
+If exit is done then there is a fall back in fall back
+What is the installation of Ed CI once Ed
+Say installed, we have a brick instance
+We will create the instance once it is created then we
+What we will do is check the state of the instance.
+What is the thing for running or not?
+This force thing and this thing is complete
+I will execute it, so that's it.
+escape call now yes main function I
+I have made the call here and this thing that follows
+It is written means in the main function
+You can use any number of arguments.
+If there is no scene then it becomes completely meaningless.
+escape colon double k enter now what do I
+I will see you soon
+700 Create to Instance to Whom
+I'll give enter now if I run dot s
+Create to instance so what first
+He will check his AdSal I.
+If you don't get it, then he will install it.
+Dekho Maza Enter Ads is not installed please
+Install it first, let's install it now
+Let's go We'll create it
+Inside the instance, basically your
+hai check adb ci install it first this
+as soon as
+It must have been a brake or
+He must have felt like an exit, but he doesn't consider himself an exit.
+It is okay to do it, he will not exit himself.
+I don't have to do what I want to do, it's simple.
+Because if you exit, then
+will come out there okay so you don't have
+To do this, press escape, enter, and run.
+what is he saying creating ec to
+Instance line 58 DS command not form
+Okay, so he basically can't get the command.
+If this is happening then what should I do with this thing?
+Is
+He is unable to walk on his own because
+It does not conflict with its fallback.
+If you want to go to Day 3 now,
+I want to see what we learned in the fall
+How does the back one work? So let's
+Let's go quickly
+Diplodocus was if it did not work then it did
+So give this part of yourself to that side.
+I'll have to run it, okay, this part of me will have to run it.
+I'll have to move it to the side, okay, let's move this part here.
+Let me write like this real life real
+It's fun to do error debugging on time.
+I keep putting this thing
+ok yes so basically
+If this if error in code clone then this if error
+What do I care if I get these AWSCL?
+to do
+hai install adl sl ai phir mujhko install
+I have to do adb install and it still won't install.
+If it happens then I have to exit, that's fine with me.
+Now I need this line
+No, I thought it would work, but
+I think it is giving some kind of issue okay
+Check AWSL I
+Ok done here
+Now try running it and see if your if addl
+I am not able to install AWSI
+And here's what you have to do. This is what you have.
+To keep exit one okay once here
+confirm it's ok
+Okay, what was it if not?
+This returns one okay let's go then return one okay
+is done escape column enter dub what is this
+If this command is not found, return one.
+Two, if there is no one return, then basically
+Your command will not run and AdB SSL will be
+will install enter ok no such file off
+DirectoryEntry
+something is messing up
+It's a CD, the CD was left in it by mistake, that's why
+There was a slight error while copying and pasting.
+I should use my brain a little bit
+Maybe the CD was left there, yes this is the CD
+Don't keep yourself ok if aids don't come
+Run it and install it and just press the escape column
+w k enter run done now see the installation ad
+sa aa v2 on
+Done yes look at you installing cia
+Can Now Run Usr Local Bin Adb Version
+Meaning the AdB seal you received should be installed.
+It is already ok but when that EC to instance
+I went to create it but I did not have any credentials.
+If you get it, you have Edal CI, then you have it.
+The part has come to you but AW
+Credentials needed to connect to
+Didn't find the same, let's setup the credentials
+If yes then do not go to Connect to Instance
+You have to go to IM, okay?
+IAM and here's what you need to do.
+You create a user whose name you want.
+You can name something, what can you name it?
+shell admin put shell admin okay this is it
+He no longer needs access to the console.
+Okay, he needs CI access, so here
+Click next on it, now I will put this in it.
+Let me put an admin policy in place
+Attach policies directly to
+Or you can say no to him basically
+give full access to ec2 okay full access to e2
+Grant access so that it can create an S2 instance
+Got it, it's okay, I've given full access to e2.
+Next, go to your shell administrator.
+If you have full access to e2, then create e2.
+Maybe tomorrow you need to create an s3 bucket
+If you want to create RDS then you have to use it as RD A3.
+You will have to give access, the user has been created.
+Brother, I am done now and I will go to shell admin.
+I'll go to security credentials and
+I will create access.
+What is a command line interface?
+He gets it and that command line
+It will generate access keys from the interface
+I understand next create like this
+Two done, this access key came and this
+The secret access key has arrived, copy it.
+Okay, I copied this here now.
+I will run the command aw a
+Okay, AWS, Confer Done, here now.
+Paste your access ID.
+Now it's two times the secret access that was there.
+It is hidden here, copy it and
+paste it what are you doing
+The user in the account who has brick
+You have access to manage that access.
+giving this adb seal eye as if it
+AIDS Seal IEC Two Instance Created OK
+Enter the default region name now it's up to you
+what I do generally I do generally a
+US East 2 where I'm at
+All instances remain as they are in the US
+East to so copy this from here and here
+Go to the US East and write it down. Okay, done.
+Output Format: Do not write anything for now
+It's completely fine not to write anything
+Enter OK a is configured now what to do
+Now you have Ed CI as well
+It is also installed
+conf dot sl create two instance co
+Run it now and see what problem comes up.
+Creating E2 Instance Error and Error Acad
+Missing Parameter When Calling Run
+Instances the Request Must Contain
+parameter image id so if you create easy
+In Two Instances
+Jaoge Mi ID is blank you instance
+You are building it and there is no operating system in it.
+You are not uploading the image, how wrong it is.
+So you have to create that thing.
+Go to instances Go to instances
+And here this MI ID has no
+You should also pick me up from the toilet.
+If you want Amazon 2 then click on it and
+Copy your MI ID. Okay, I copied it.
+And go to your code and wherever you are
+I had Nana throw it there.
+Two slammed Done Now instance type t2
+Micro because you have a free tier
+It won't cost any money, okay, now your name is
+Which key should be used to access this instance?
+If you want to do it, what can you do?
+I should go and see here, there might be keys somewhere.
+can you see that I
+No, yes, go to the pair of pair now.
+Pick up anything from here, I will pick it up.
+Shell scripting for devops key is ok
+This one is the key to shell scripting for devops.
+I pick it up and go here and throw it down.
+What did I do, I went here and threw it
+ok subnet id what is subnet when
+Whenever you create an AWS instance
+It has to be created under a VPC and
+It has subnets so let's say mine
+Shell scripting for devops this is what I have
+You can see which subnet the server is in.
+You can go into networking and here
+Look, the subnet ID is written in this subnet
+You can copy the ID if you need it from here.
+Not copying what you can do VPC
+You can go into and go into VPC and your
+A subnet ID in the default VPC
+If it happens, you have to copy it, okay?
+Look, go to subnets and look here.
+There are so many of them, copy one of them.
+And here
+Go and throw it, okay, I have this b6 one.
+I copied it and went there and threw it at me.
+What to do: Add a security group
+So I either create a new security group
+Let me see, security is present here.
+said the group
+or you can search
+Security Group OK Security
+Groups You can either create a new security group
+You can create it or assisting security
+If you can use the group then I will tell you this.
+Using an Assisting Security Group
+I'll take it, I've copied it and I've
+I wandered over here, okay, it's done.
+My security group name is Saree
+Whatever details there were, I got them from AWS.
+Take it and fill it in and double escape colon
+Enter bus, this is the moment where we are
+Run this script and
+Is Thorates C Practically Works?
+Enter Creating T Instance Instance
+But waiting for this instance to be in
+Running state means it has been created but
+If it is not running then it will loop again and again
+It is running, as soon as it starts running it will be like this
+I will exit the thing and boom no boom
+If it doesn't happen, you will get it in chat as soon as it happens.
+boom if this thing works dum
+thing has gone away instance I this is now
+Running EC to Instance Creation Completed
+You have an end to end AW
+An EC2 with Esc scripting
+Created an instance and saw that it was an instance
+whether it comes in running state or not End Sub
+After this you exit this code.
+Now you can go here and click on instances.
+Check if your instance is running
+You can see the shell scripting demo
+This is the instance it's running see it
+Your Initiation is going great, okay you can
+See it's now running yes when I start
+I was here at the gate
+Status: This thing that was gate
+def this thing that was this return one and this this
+This part is giving me an error.
+So you also have to solve this thing and
+This thing, what is its name, Shell?
+Scripting for devops is a bridge to this.
+Create a pull request
+After creating it, I review it.
+I will definitely do it if I feel it is right.
+I will pass that thing on, is this a
+We have a pull request from a friend.
+Check and print OS type, let's do it, it's great
+very good very good very good
+Look how hard people work.
+You also have to work hard and skill up.
+Go to the club and take this challenge and
+Let's see how many people can complete this challenge.
+I get it, so that's all I got in today's video.
+Hope you can learn advanced level from a shell script.
+Interacting with Pay AWS
+If you know how to do it, then tell me quickly.
+Share this video in the comments
+So that I get motivation and videos
+We made Day Tooth 4
+From Introduction to Basic Intermediate
+Advance has covered all these things which
+Are enough for your interview so if you shell
+If you are preparing scripting then this much
+It is much more than enough but if you need more
+Looking at real world examples and
+I need to practice a little, so I
+We have kept the days ahead, so today we
+Those who are going to see the actual shell
+Not scripting but shell commands
+is an integration of
+We use a tool called Make.
+What do the files say, make it
+Files, now brother, what are make files?
+So make files are a special type of file.
+I will show you one such
+There is a special type of file where you
+You have to run make commands brother.
+What are you saying, understand what make is like this
+what is the name of your file make file
+Now what do you want to do inside it?
+If you want to build something from it, you have a
+wrote the command build now what to do on this command
+You can write that command like
+You want to write a shell command that
+docker build highty dot once this is done then you
+You want all what should happen on this one.
+jaye docker tag image koi image tag ho jaye
+You want something like this, then you want that
+whenever I speak
+run so docker run command should run docker run whatever
+That was your image and whenever I say up
+So what should happen in that, it should be built and run
+If something like this happens, it should happen, I mean basically
+I am giving instructions using shell commands
+I am giving instructions for a make file
+Where the commands are very simple, build
+He's running, he's up to you, let's say
+You want as many containers as you can
+Everything should be destroyed and everything should be clean.
+So you can put clean end here.
+What will happen to the Docker system when it's pruned?
+And however many containers you have
+If all those things are removed then simplicity will come.
+How elegantly you made one that you just
+Enter the command "Let's make build now"
+Run specific commands only for you
+If you have to do it then only run this much part
+How cool it must be now, its real use
+What is the case that you have no connection with the letters?
+Whether to make it environment specific or
+Even if it has to be operating system specific
+Make files are very useful, for example
+You said that if my operating system
+All these things will run only if there is Nux
+How much fun it would be if my operation
+System
+And here I will give you a demonstration.
+I'm going to show you how to use a make file.
+If you do, you would have taken a small application
+Here is a two tier flask application.
+Let's take a look at the two-tier application.
+If you want to create a file then how will you create it?
+Here is the code of the application which I would do
+I am a clone and I will go here and write
+git clone and this is my application's code
+If we go then CD two tier application now this
+I need to make a make for the application
+file now what I'll do is look at the make file so
+This is already an expert, if we remove it then R
+You have deleted the m make file bhaiya, now I am creating a new one.
+I will create a make file. I will create an em make file. Now understand.
+What is the complete concept of make file?
+Let me make a file in the make file
+If I want to create a variable, how do I create it?
+I will write it simply with 'lets'.
+Docker
+I found one called Compose, this Docker Compose.
+If I want to create a variable, how do I create it?
+Simple is variable name colon equal to now
+Which is your actual command for this variable
+Enter the value that should be there, so let's
+From me the value of Docker Compose in this
+If you want to add it, I have added it simply.
+Let me know which operating system
+I want to know what it is, so I wrote O colon
+How to Equalize Now Operating System
+If you recognize it, you can write it inside the dollar.
+Write the name of the shell, this will give you the name of the shell
+Operating system will also come now like I
+I explained it to you in the tutorial here.
+Here you have to write the name of the command.
+And here you have to write the actual command.
+Let me create a command from Let's make a command
+There is build and what should be done in build?
+I want it to happen that my brother gets scared
+Echo
+Running in now here on our
+what is dollar
+Something like this should be printed that I can
+[music]
+So what about Docker?
+Compose Up gets Docker in a detached mode
+What does Compose become from now on? Application
+Now I want to be able to do it whenever
+If I say down, what happens to Simple Docker?
+Composed down should be a simple and whenever
+What if I say clean? Docker
+system prune docker system prune hine wi
+What does this mean, all the containers
+All the stagnant volumes are there
+If the things are images, they should be removed, then I have done this
+I have made a small instruction set of my own.
+For the make file, let's run it and see.
+escape colon double k enter now what should I do
+I will do whatever is simple
+I ran the commands in my make file
+If I give it to you, then if I have to do make and build, then
+make build enter now he is saying that command
+Make not found to can be installed to make which
+There is a tool that is installed by default.
+If it doesn't come, you have to install it.
+I will copy this and install it.
+Make and paste this so let's make
+It will be installed in two minutes now.
+what will make build make build from me
+What do I need to get my application built?
+go enter he is saying this no true fa
+directory docker compose no such file and
+directory make file line number eight at one
+If there is an error, let's see what the error is.
+If there is an error at line number in the make file
+T 3 4 5 6 7 8 OK there is an error one minute
+Let's remove this line for
+that if this line is causing some error or not
+Okay, let's do this and see, yes, one more thing.
+You have Docker to run Docker
+Must also install Docker command
+install that should install Docker Engine
+If that is not there then let's try that too, okay?
+He is saying no such file of directory
+If he doesn't get this, then one work around is Docker Compose.
+Let's install Docker and see.
+If yes then sudo at install what docker d aa and
+Try installing Duck Compose.
+come on what is happening oh sh what brother
+sud at get install ok docker.io has no
+Installation Candidate because you have your
+If you haven't updated your system,
+AT Gate update the system first and
+Once updated, install it again
+I will try it, okay, all these errors that
+If they come to me, they will come to you too, so I
+I will put all the errors in this video.
+I am not editing, okay, this is it.
+Let's go and try it out now
+Okay, this is basically Docker Compose and Docker.
+I am installing this also see this once
+Check if your Docker is running.
+Because this system requires access
+If it is Docker then try Docker PS.
+If permission is coming denied then this is it.
+Run ducker sack, change this ownership then
+sudo sd a which is my current user
+I give ownership of the particular path
+So that Docker will not throw errors, give
+Di docker ps no errors hit let's go now
+We see that in this file Docker
+There is compose, yes there is make file, let's go now
+what will I do, I will run make build, enter
+Now see what he's doing
+Hey look he started the build okay
+I've started building with just one
+command small command he built
+I have started, let's see what's next.
+It happens that I only built
+I have asked him to put up the containers
+I haven't said anything, you see how I
+Running the execution in a controlled way
+Let's just see what happens next.
+This is the complete build steps being run my
+sequel client all those things okay so if
+You must have seen successfully build means if
+If I do docker ps the containers are still running.
+If you haven't been there, you've seen how right it is.
+This is when I told the make file that bhaiya
+In the build you only need to use Docker Compose
+If he wanted to build, he just built it.
+If you say you want to build it, then build it.
+It will make it up, which means it will also make a continuous run.
+I'll show you what I'll do now.
+I will tell the make file to make
+Make Up
+Up okay make up a no such file and
+DirectoryEntry
+Let me check this once, maybe I'll do something
+I am doing a small issue, make no such file
+Why is this directory coming up?
+OK from the compilation command the error and the
+Source line given this is that thing nos file
+GCC Can't Find
+include
+OK, this is a very strange command.
+yes ok
+Never mind, yes, let's come back to the
+Point Creating Two Tear Floss Cap Done
+Creating a Two-Tier Floss Cap Done If
+I'll do a docker ps next so you can see
+Yes, both my applications are two-tier.
+Both Tier 1 and Tier 2 of the application are running.
+Fixed with just one command from Make Up
+So whatever commands I want
+I can run there, let's see.
+whether the app is running or not then I can
+I will go to the instances and after going to the instances
+Go to Security Group
+I see that port number 5000 here 5000
+It is written that I will enable 5000.
+Edit in bound rules d rule and here
+I have enabled 5000 now.
+What I'll do is I'll go and see
+Is my P running properly or not?
+In details
+go and pay
+5000
+Pay running then your two tier application
+It's going great, it's going great and this
+If you need to stop the application within a minute
+What we have to do is simple, make what we did
+People commanded to stop for a second.
+whether it was written or not, I am make file
+I wrote yes to the stop I had to make down
+Or let's write it as simply make
+Down simple done down just a small problem
+giving make name no such file and
+DirectoryEntry
+t I have a make
+File this it is giving me an error error ka
+what is the name
+make name no such file and
+Directory this simple now let's see that brother
+What are you telling us, dear, that
+what are you saying
+Okay, the make file spat use your name command.
+to determine operating system and
+operating system then use ok to that
+Basically speaking, you have operating
+I have used the system, this thing is it
+what is this v i
+Make file is the shell name of the operating system.
+Yes, I have used it but understand it properly.
+I can't understand what that is called
+I probably have the command of the name
+If I have written it wrong then instead of name it should
+Be Your Name Okay So Thank You Chat GPT
+For suggesting the change it should be your name now
+What I'm going to do now is run this thing back.
+I will try it and see if I get an error or not.
+then make
+You see, now that error is gone, so if like this
+You are getting errors, I am also in the industry
+I use StackOFlow Chat GPT.
+You can use it too, there is nothing wrong in it.
+Okay, everyone is learning now.
+Let's go into this and a little bit of level of you know
+VIM Make File Adds Industry Touch
+Now what I want is that if my
+Operating System
+So how about this build command?
+go rate
+Eco Running
+in and here
+Write dollar dew so what will happen
+You will know that these maps are operating
+It is running fine in the system, try running it
+Let's see, it's still not done yet.
+Work if you started If Equals
+Neither will I have to do end if as well, okay if
+I will have to stop it and I will have to do the end if as well.
+Okay, this is a simple make file rule.
+So escape column double k enter let's make down
+First of all, download Docker Compose.
+ok now what I'm going to do is build my make
+only if it's Linux so what do I
+I will do make up, not makeup
+Build is running fine in Linux build
+I noticed that only if I have Linux, it
+If I have Windows then the thing should be built.
+Simply tell me that brother, it is different for Windows.
+set off command toi m make file here if
+I will put that brother
+If right here in the build itself if equals
+what is my operating system
+Windows
+NTT does something about Windows by doing this
+I will take a look at it once
+make file
+Syntax
+For
+[music]
+Windows OS If What Remains Yes I Think
+There is some Windows anti, yes it
+It remains on Windows, yes I saw how to use it
+If the operating system is Windows then
+Do this, this is how things work here.
+Windows Anti-Corruption
+two okay so this small
+So if I have Windows then you simply
+Tell me
+Echo
+Please
+Add
+Windows commands and you guys can do this in Windows
+Try it, okay, now make it small, yes
+Please add Windows command and after doing this
+You just have to do the end if end if okay
+hai done so this is how you create make files
+Can you escape colon double k now if I
+I will do that make
+Down is complete, now make
+Build saw chala but jo Windows Windows wala
+The command that was there was not run, I saw it running in
+I had written a statement, why did it not come?
+Because I am on Windows operating system.
+If not, then this is how you create the make file
+You can have one more thing in the make file
+There is one more thing in the make file which is
+Let's say
+what do you call phony drink this and then that
+What is it, it is basically an identification
+Run all your commands.
+You can list down here what all
+So what have I done to you people?
+A make file for this is maintained here.
+Here's what you can test on
+The operating system can determine this
+You can specify all the variables and build it.
+Yes, you can run, you can stop, you can clean.
+You can do a lot of things,
+Now let me clean this up and show you
+simple
+ok make
+Clean now he's saying that unknown command
+System Prune Y OK Docker System Prune
+Unknown flag y okay so basically that
+This poor guy did not get it, this did not happen
+I am getting it, okay what can we do is this
+Let's delete it for now. Now make a clean. Done.
+Now what I wanted to know was that hein wa
+I should go there but okay let's see okay then
+Basically, all the unwanted images that were there
+He removed it so you can do it inside a make file
+Everything you need according to your needs
+Can't you put it completely now by commenting to me?
+Let me know if you find make files interesting.
+Or if you don't feel like it, you need it from the example
+So Awesome Make
+You can do file examples like this and here
+You will find many make files here.
+Where can I find a make file tutorial?
+I learned from Lets you can learn anything
+If you want to create a make file then you can learn from there.
+You can, okay, such an Echo is very simple.
+Hello world hello so like this very simple
+Target lives simply by its properties
+So please tell me in the comments.
+If you liked the Make File tutorial
+Or not and I definitely need this app
+with make files Today we will learn how to make a
+backing up the server and most
+Bhaiya will also learn interesting rotation backup
+So do you know where you got this rotation from?
+You see friends, 90 Days of Debts is going on.
+It's 90 Days of Debts between now and 2024.
+Challenge is where your task is on Day Nine
+Shell Scripting Challenge Directory
+Backup with rotation so this is your challenge
+In which I am helping you where
+You are getting backup and rotation
+of the server or a directory entry
+and you did the backup backup of p1 then
+You did a backup the next day and another one the next day
+backup of p2 then backup of p3 do something like this
+backups are being made ok backups are being made
+You have 30 days of such a project.
+Keep making backups. Now think about this project.
+How many backups are there now for 1GB? 30
+Which is a very wrong way of speaking
+what do you do compress cups
+Do you use zip? You can zip it or tear it.
+By compressing this backup using
+You store it but still if it is 30 days old
+If you look at the entire year,
+How many backups will be made and how many
+It will take up storage, what is its solution?
+Rotation: Every company has a rotation policy.
+It happens that only the last 5 days backup is done.
+Only last three days backup is required.
+You have to keep the latest one with you and the rest you can
+You can delete it or change it to another one
+If you can move it to storage then today's
+In the video, we will see how
+A project or a directory
+Take a backup and rotate it
+Only the last five backups of your
+Keep it close and run in a completely automated manner
+Let's start, we're here
+The data folder on this server on your server
+Let's try CD data and see something here.
+These are very important files.
+We have to take backup of these, so let's go back.
+Create a script to take backup
+Yes, I am backing up DA. Now this is my backup.
+This script will be very beautiful.
+The script will use functions and
+Proper syntactical errors occur as many times as possible
+I will resolve the issues before you.
+And we will learn a lot, first of all we
+Shabang writes the shh exclamation
+Marx sl bin sl bash now I'm a small
+I'll put a comment here, multiline.
+Comment
+I will name him Dummy and tell him
+I'll give you dummy open and dummy close and I'll do this
+I will say this is a
+Script for backup with file system
+Rotation OK Day
+Rotation means only the last five days
+will take backup and some usage of this script
+If you want to use it, then how
+You have to use dot s backup dsa this
+The name of the script and the first one you need to enter
+Path to your source to be backed up and
+In the second argument, you have to enter the path to
+backup folder okay so that means you two
+If you have to pass arguments, one at a time
+Let's take a small check that the argument
+There is a question to determine if you passed or not.
+Let's create a function that
+Display usage is fine, let's make it a function
+What will this do to display usage?
+It will just print this thing out.
+If it is used then how will you get it printed?
+Echo will print and this thing inside it
+Bus usage will print display usage
+It will print only if your conditions are met.
+I will not be satisfied brother, what are the conditions?
+So if the length of my argument is this
+The argument that happens if the arguments are equal
+to 0 if my argument is equal to 0
+Does this mean that I have just given the argument?
+I have not passed the exam, what can you do?
+Call up Display Usage and set your if
+Turn off the condition, it was as simple as that
+What will display usage tell you?
+This will tell you how to run the script.
+When will it tell you if you haven't passed the argument?
+What does this dollar mean and what does it mean?
+how many arguments there are in total, if that total
+The argument is zero, meaning you haven't done it correctly.
+If you run it, run it, press escape colon and delete.
+enter now what I will do dot sl back upd
+I will try this, permission denied
+Why because LS Han L Back Upd SA
+It has read permission but
+If I don't have executable permissions then I can c
+MO 700 Backup AH Karke Ise
+I will give executable permission, now it is green
+The file has turned green, a complete green signal, good to go.
+Go.backup.de is showing the usage.
+Saw that function run back up a path
+to your source path to your backup folder then
+I am yes this is correct so path to your
+What I will provide in the source is a backup folder
+Let's make it too, okay, so M K D I R
+backups so this is ta folder this is my backup
+There is a folder and this is where I keep my files.
+If I give then PWD present working
+directory this will be my path so dot sl
+backup s okay in this the first one is mine
+The argument will be what will be my data
+folder and the second argument will be
+What if my backup folder is fine?
+Simple, now I ran it, see no error came.
+Why because I have used it according to the usage
+I have scored, so far it is fine, now I
+What will I do, I will actually take a backup
+BackupDS is actually used to take backup
+Let's go to the backup function here.
+Let's write the function
+Create Backup Function named Create Backup
+I'll make it, which isn't too difficult.
+It will take three things: one source
+DirectoryEntry
+My backup directory will come from One
+Argument to is simple, the only difference is
+that I have to take backup every day, right?
+I also need a time stamp, so I'll add another one.
+I will create a variable and name it
+Time stamp now how do I get this time stamp
+You will get a look
+It's not good what should I do
+Format with cool formatting
+year and month and day and
+r minutes and seconds formatted like this
+I will do this year month day in this way
+Every time I remember the date and time of that time.
+If I get the steps, I will do it.
+Copy and I'm on my
+The time stamp variable in DSA is
+I will assign this to this. Now if you have a
+Assigning a shell command to a variable
+So the method is dollar pence and
+If you paste it inside then I will get time.
+I got the step, now what will I do, create?
+In my function, backup, I say
+I will tell you to zip it brother, zip is a tool.
+Zip it up recursively. What is my backup?
+directory and source directory meaning
+The source directory will be this source
+This directory is my dollar source.
+You will use the directory like this, okay this is what
+The source directory will remain, backup it and
+What should I name the backup file that will be created?
+BackupDirectoryEntry
+My time stamp so this dollar time stamp
+Brother, I don't understand what this is.
+My backup directory is home.stu.s
+Backups will create a file inside it called Backup
+This time stamp will appear next to the name.
+And it will end with dot zip dot zip
+It will end and that's all I had to do.
+This whole thing will remain yours, this one
+The string will be the item you are passing
+It is in a string, so you can
+You will put it inside the double codes, see now
+It has turned purple, it looks very cool pink
+Sorry not purple and this thing over here too
+You can put it in double quotes if you want.
+If you don't want it then it's up to you and this
+After doing this, you just have to send a message to Echo
+backup
+Generated
+successfully for now enter time stamp here
+Two of this time stamp
+My backup was generated and I closed it.
+Do it, okay, it's done, now I will use this function.
+I'll call this create backup function
+I will call the create backup function.
+Escape Colon Wk
+enter dot sl recursively dot slush this goes
+I will give it and enter, see what it is saying.
+Could not create output file home Ubuntu back
+Up backup o why because this backup which was written
+Isn't it called something else? Backup S
+Yes, but you saw this even though the zip error came.
+But he got it printed and generated the backup.
+Successfully which is misly ding then you
+A condition will have to be added if the above
+If the command error occurs, generate a backup.
+Don't do it successfully, it's a simple thing.
+First, let me check the backup.
+This Echo Backup in SA Generate Successfully
+Only when will it come if my higher one
+The command is How is the output of the above command
+dollar question mark will be known if its
+No output means no error occurred.
+Then echo Backup generated successfully and if look
+Just turn it off, if this is what I have on top
+na this command dollar question mark its
+What does it mean that the above command is a
+If the above command gives an error, an error occurs.
+So here its value will be no error.
+If it comes then the value will be zero so if error
+If it does not come then generate backup successfully, simple
+Escape column double enter and here I am
+I will run my command back backups s
+I will put enter this time, see how cool it is
+Backup Generated Successfully Not Error
+This is a warning message, so if you
+If you want to hide the warning message then
+There is also a way to tell your backup DAA
+The output of the zip command is
+He redirects where a black hole is
+What is a black hole brother, such a device
+SWEE A device that is a tap whose output
+If it is not stored anywhere, redirect to it.
+do it discard do it escape colon delete
+Now if you run that command, you will see
+That error did not come and it came that backup was generated
+Successfully for This Now Once CD
+Go to backups and see, brother, backup
+Backup is also being generated and is also being generated well.
+It is happening but there is a small problem if
+backup it if it's backup script every
+The day went on successfully, every day went on, every day went on
+What will happen if it runs every day? Your backup
+There is a folder, it will be filled, so here you will see
+You will have to perform rotation brother rotation
+How will you do this, understand this simple funda.
+Look at this 39 15 34 35 36 you don't know
+Not which file is the latest, then a command
+There is L.S. Hine T. and your path
+If you give me the path of the F folder then this will be 38 37
+36 35 34 15 39 Sorted it out and gave it to me
+Sorted According to the Time in a Timely Fashion
+If you do it then what does your logic say?
+that one friend of the latest five catch and
+Delete the rest of the people, this is what we need.
+have to do it in shell scripting and same thing
+What is called rotation then I am back up as
+I will go and I will have a nice one here.
+I will create a function and name it
+Function
+performRotation Function to create a rotation
+I will create this function what it will do is
+First of all, restore all the backups.
+Who will bring all the backups?
+sa was the command that would bring up all the backups
+It was simple, dollar pence, what could be done with it?
+You can run any shell command.
+What was L.S. Hine T. Iss Time's
+Sorts according to who sorts
+I have to sort this thing of mine
+to the backup directory here
+If I want to sort then I will do the same here
+I'll print the thing out and back it up.
+Here I have printed as it is but
+I don't need a time stamp here.
+What do I want, do I want Dhar or Bhaiya Estick?
+Whoever comes, backup up, whoever comes, he
+I want to print this thing now.
+I need an array of backups so I can use this
+I'll create an array here so what happens
+I will get the list of file names.
+I'll go and here I am
+Echo and Dollar print backups inside it
+I'll get it done and this is an array so I'm going to put it here
+rate inside square brackets
+I will put it, what will happen to me?
+At what time will all the arrays of files arrive?
+Sorted backup according to the direct tree
+in whichever backup restic means whatever file
+Come from something that starts with the name Backup
+Now you can change one more small thing.
+You can try this here and see now.
+You have to call perform rotation that you
+Where will you create the backup and then recover it?
+After creating the backup, you can perform the rotation.
+You will call rotation the spelling of rotation
+Yes, perform
+call rotation
+Escape colon and enter now your last
+Will you run the command where did our last
+Command
+OK this enter can not access home Ubuntu
+Backups Backup App No Such File Directory
+So what does this mean? This whole thing has to be put into perspective.
+It's taking the variable name, which is wrong.
+so em back up thats gonna do this and this
+The double quotes that I have put in
+He has put it a little wrong, this is till here only
+It will remain and this zip is yours.
+Extras will be appended and its output
+Where can you redirect to 2
+Grs Dave Snal Bhaiya what does this mean
+It means whatever the standard
+You are getting errors, please discard it.
+So this will do the job for you, let's go.
+Let's see Let's Run This
+Enter let's go to our Home Backup 41 and then 10
+38 You will find all the things in a sorted manner.
+I got the backups brother, I
+What should I do? It is a very simple logic.
+Brother, you have got an array of backups, right?
+In this array, first we have to see that if my
+If the length of the array of backups is five
+If the length of this backer is more than five
+I will do rotation only if it is more
+What does it mean I will not rotate?
+If you have more than five backups
+Only then will you discard the one which is worth five rupees.
+If the old ones are less than five then
+If there is no need to discard it then
+Write down the condition for the dollar here, a small
+The catch is that your array of backups
+If you want to see its length then here
+But you can put hash on it, what will happen with that?
+This will give you your length
+And if it is greater than what you are
+If you perform rotation then here
+what to give
+Echo Performing
+Rotation for F Days OK Performing
+rotation for f days and here you if co
+Close it, let's see now, okay yes, that's
+Remove it otherwise it will get printed again and again.
+If you want backups, then these are Echo backups, right?
+Remove this, you don't need it.
+Because you know that this one
+All your backups are coming from the command now
+What I'll do is run it back.
+Doonga OK performing rotation for five days
+So you have more than five backups.
+How do I delete those backups now?
+I'm going to give you a simple way to delete those backups.
+I will tell you the basic principle that you should follow.
+Will need list slicing or array slicing
+Meaning if your array is backed up like this and you
+If you have written this then what does it mean?
+Don't print the entire array in the array. Fifth
+Print ahead of the location, meaning if
+This is your array, it contains t 3 4 5 6 7 8 na
+If there are such elements then its indexes would be
+is 0 1 2 3 4 5 if I borrow that array
+Only one and only one fifth of the entire array
+If you want to show everything from the index then just
+And only this much part will be printed, so if
+If you look carefully, our array is sorted.
+According to time, so many parts are in your
+and delete this much part
+You have to give it, you have to keep the first five, right?
+I follow this logic in addition to the first five
+Bring the last extras
+If I go, what will I do as a backup?
+A cool backup tool called Remove
+I will make a cool array named array how
+Let's make it like this, okay, let's make it like this here
+I will create this nice array and inside it
+I'll take my dollar backups this much.
+Simple and this is what I'll put in my double.
+What will this do to me inside the quota?
+Backups to remove will come now I will just
+I'll check my backup by doing an Echo.
+Remove Backups To Remove It, you can find the correct ones.
+I don't know if I deleted the wrong thing.
+Diya and our manager is shouting over there
+So you have to confirm yourself here.
+Before deleting backups to remove
+Escape whether the correct ones are being removed or not
+Colonize and press Enter and you've hit Play Here.
+Diya yes look at this 37 36 35 34 old
+The old ones are coming, meaning the old ones
+So new ones are not coming, which is a good thing.
+We need to delete these old ones.
+So I'll go to backup DSA and I'll go to another one.
+I would have had a simple delete logic.
+that will run a for loop for backup in
+backups to remove backups to remove mine
+is an array so here I will put it in double quotes
+Same as written above, backups to rim
+such and its array
+this like this and here's what I'll do double
+You have entered the code, right? Yes, there is a doo in it too.
+Hey do and done, you just put a curl in it
+Shubham Bhaiya, I missed the bracket, this is what happened.
+curly bracket d now what should I do with it
+Do I have to remove it?
+Forcefully remove any dollar backups
+I have to give you a simple dollar
+I need to remove the backup and this
+After removing it, oh and after removing this
+After I'm Done Performing
+The rotation was over, that was all there was now.
+I'll do this and run it escape colon w
+Enter all my old backups now
+Backups Performing Rotation Now if I
+In the folder with backups
+I will go and only get five backups
+You also get the latest ones, these latest ones
+Only five backups left
+Backups have been rotated, meaning they have been deleted.
+Backup, hey hey hey, I don't have to go here.
+You have to know your script in EM
+backed up because I accidentally deleted one
+left a print yay yes ya
+Leaving backups to remove is basically
+This way you can rotate your backups.
+You can based on whatever you need for the day
+I want five for five days, do it for five days.
+Need six for the day and so on if
+I'm going to run this now, it's great.
+You will see the backup generated successfully performing
+Rotation for five days and what happens with it
+The backup is also being generated and your
+You have only five backups.
+How true is this brother, this seems automatic to me.
+How do I get it done the right way?
+I made a video about cr cron
+Jobs so what do you do cron tab hine e kar
+Two cron tab hine e and here it will come that
+You can take scheduled backups through cron.
+So, I chose Vim from Lets.
+Put Pay To here and choose Vim editor.
+And here you have a simple cron
+Can you create a job for cron job?
+I would like to give you a tip, you can go
+On a website called Cron Tab Guru and here
+Whatever you get from cron what is cron
+There is a schedule that you need to do something
+If you want to run it automatically at any time, then its
+This is a schedule, so you can do anything.
+I have to run it, look at its schedule every day.
+If you want to run it every minute then this is for every minute
+There is a schedule, copy it, what's the point of it?
+I'll have what I need every minute.
+It'll work and I'll come here and paste it.
+I will give that every minute, every hour, every day of the month, every
+Month, every day of the week, now I have command here
+What is the command I have to enter? This is my A command.
+My name is S.
+The backup DAA kept in Uban is
+You have to run it and I will give the source path in it.
+That is my sl home st
+Ubuntu sl data folder and my backups
+The folder is sl
+Home Sl Uban
+So you can find your path
+computer-wise and here
+Backups and what I do after I'm done
+I am living every minute, every hour, every day of the month, every
+Run a bash command every day of the week that backups
+This is the source path to run the DSA script.
+and it will give the backups path escape colon
+Double Enter See here Cron Tab Installing
+New cron tab now look what I'm going to do
+This is 41 41 46 07 52 46 meaning if I
+If I change this to LS hight, it will be 46.
+The latest one is 52 days, 07 days, 46 days, this is the meaning
+What I mean by that is the 46
+It was a minute, 45th minute, 44th minute.
+The 41st minute and now this latest one
+will come
+backup because this is backup 2024 39
+41 This should be deleted
+Why automatic because I have also made the rotation
+Backup has been performed
+If it is done then what can I do?
+When I can run it back
+See
+50501 This is due to the latest backup that came in.
+The backup of 39 was deleted.
+Automatic rotation has happened and friends, this
+The way you have done it so beautifully
+Wrote a backup and rotation script
+What does it do, it also tells about usage and backup.
+Creates and also does error handling
+It also does rotation, so friends, I hope you
+Learn a little about such scripts from these videos.
+Real Time Scenario Real Time Experience
+You will also be getting the DevOps Engineers
+Generally used in day to day activities
+I hope you liked this video here
+Thanks for staying in the video
+Whichever part you liked, I would
+Please comment and tell me more such videos
+If you need any suggestions for video ideas, please let me know.
+Do let me know in the comments if you liked the video
+So please like the video till here
+Thanks for staying tuned to Train Watching
+V Shubham Channel Thanks for watching

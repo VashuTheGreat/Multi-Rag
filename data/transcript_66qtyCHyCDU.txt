@@ -1,0 +1,1358 @@
+﻿AI agents for DevOps. Let's get started
+. First, let's understand why AI agents
+ are becoming so popular. Why do
+ companies want you to build AI agents?
+ Why does the company want you to learn
+ AI agents? Why is all this happening?
+ Those of you joining from a laptop,
+ please don't just type 'lap' in the
+ chat. You can tell me the rest. Okay,
+ okay, okay. Alright, very good, very
+ good. Yeah. So, it's working then. Okay
+, it's working. Look, wherever you are
+ joining from, I can claim with
+ certainty that less than 1%of people
+ know about AI agents. Less than 1%know.
+ Because people are still stuck on the
+ same old tools. So, what are AI agents?
+ Let's understand. AI agents are
+ primarily software. Code apps that you
+ can write. AI agents are basically code
+ applications that you can write. Now,
+ which programming language do you use
+ to write applications? How many of you
+ have built an application? Okay? Mayur
+ Thakur says Python? Okay, correct. So,
+ you can build AI agents in Python too.
+ You can build AI agents in Java as well
+. You can build AI agents in TypeScript
+ too. You can build them in Ruby as well
+. You can build them in many languages,
+ even Rust. You can build them in
+ different programming languages. Today,
+ we will talk about Python. Okay? So, AI
+ agents are basically Python code. They
+ are Python code. Okay? That Python code
+ remains, that can talk to LLMs. Bro,
+ what is an LLM? LLM-Large Language
+ Models. Bro, what are Large Language
+ Models? Bro, what is Python? Bro, we
+ don't know anything, please tell us
+ from zero. Alright, I will teach you
+ today. Zero, teach from a very, very
+ basic level, an absolute zero level.
+ First of all, understand that this word
+ AI (Artificial Intelligence), when did
+ it come? It came in the year-tell me in
+ the chat, when did AI come into picture
+? Quickly. 1956? Okay, everyone knows,
+ so it came in 1956. Well, those who are
+ saying 2022, that is when ChatGPT came
+ in 2022. So AI came in 1956 but got a
+ boom after 2022, Because data and
+ compute became widely available. Bro,
+ what do you mean by compute? Compute
+ means servers, servers, GPUs, CPUs, all
+ these things were available in
+ abundance, and due to COVID in 2019,
+ everything became digital. Since
+ everything went digital, the data, all
+ the things done manually or on paper,
+ shifted and became entirely digital. So
+, because of digital data and compute,
+ AI experienced a boom. And ChatGPT,
+ Gemini, and these things became popular
+. Right? In 2022, these things became
+ popular. Now let's understand what
+ happened after that? Why did AI become
+ so popular? Where did this AI come from
+? So, think of it this way, this is you
+. Right? Or is this you? Now, what are
+ you? You are a human being. You are a
+ human. Now, the intelligence you
+ possess is called what? The
+ intelligence you have is called human
+ intelligence. You have human
+ intelligence, brother. Now, in front of
+ you is a laptop, a machine. Right? You
+ have a machine in front of you. It also
+ wants to become intelligent. It also
+ wants to be smart. So it copies you. It
+ tries to replicate the way you work. It
+ gains intelligence too. But what kind
+ of intelligence is that? It is
+ artificial. So, what is artificial
+ intelligence? Artificial intelligence
+ is a stream, a branch of computer
+ science that tries to mimic or copy
+ human intelligence. Right? Simple. Now,
+ how does it copy? When you were a
+ little kid, you learned A-B-C-D. How
+ many people didn't know that, brother?
+ Tell me that first too. So, you learned
+ A-B-C-D. After learning A-B-C-D, what
+ did you create? After learning A-B-C-D,
+ what did you create? Okay, you made
+ sentences, you made words. Then, after
+ making words and sentences, what did
+ you do? Vocabulary, okay. You wrote
+ paragraphs, poems, you chatted with
+ them. Okay? That's right. You wrote
+ books. Very good. Right? Words are
+ correct. In the same way, the A-B-C-D
+ you studied, what is this study called?
+ In English? When you were doing this
+ studying, what do you call it in
+ English? Learning. Right? You were
+ learning. How did you learn? Who was
+ the one who taught you A-B-C-D? It
+ could be a book, it could be audio, it
+ could be a teacher, correct? It could
+ be a teacher. And this is where you
+ started your learning. I mean, what
+ were books? What were audio and
+ teachers? They were data providers.
+ They gave you data, you learned from
+ that data, and you got trained in A, B,
+ C, D. Yes or no? How many agree that if
+ they are able to form sentences today?
+ If you are able to do things today
+ after learning A, B, C, D, it is
+ because of the data, because of the
+ learning you were trained. Correct? Now
+, the computer also felt, "If he can do
+ it, why can't I?" So it also tried. It
+ also tried. So when it tried learning,
+ that is called machine learning. So
+ what did it do? It started training on
+ past data. Okay? It started training on
+ past data and because of that training,
+ machine learning algorithms were
+ created and the machine became
+ intelligent. Okay? How many people
+ understood that Artificial Intelligence
+ is a huge stream? What is it? It is a
+ huge stream within which machine
+ learning is a way of learning things.
+ How many of you got it clear?
+ Artificial is a large stream in which
+ the whole game, the conspiracy, of
+ copying human intelligence is being
+ planned. Now, within that is a stream
+ called machine learning, in which
+ things are trained by taking past data,
+ books, audio, emails, your WhatsApp
+ chats, and photos sent by you. How many
+ people understood? Just drop a 'clear'
+ in the chat. Just drop a 'clear' in the
+ chat that machine learning is a
+ sub-domain of Artificial Intelligence
+ which involves learning or training of
+ computers or machines based on past
+ data. Okay? Understood. Now, you
+ learned A, B, C, D. You learned words.
+ You learned a lot of things. Right?
+ Then from there, you made paragraphs.
+ You made many paragraphs. You wrote
+ letters. In fact, even here, "I can't
+ live without you." You started writing
+ everything. How? Because inside your
+ brain, there are cells, there are
+ neurons. How many people know this, if
+ anyone has studied biology, then the
+ things going on inside the brain, that
+ chemical reaction, those are neurons.
+ Neurons. So what do neurons do? They
+ transfer information and by adding or
+ subtracting a few pieces of information
+, they create something new. For
+ example, if I ask you, have I read out
+ anything from somewhere in these 24
+ minutes so far? How many people think
+ that there is a script written here and
+ I am reading it out? No, no, that is
+ absolutely not the case. My brain, my
+ neurons, are generating new things
+ based on information. What are they
+ doing? Everything I am saying right now
+ at runtime is being generated. Even
+ what you say when you go for an
+ interview is all generated. So you have
+ to train your mind a lot. That is
+ basically generation. So how does that
+ happen? It happens through neurons.
+ Which means through neural networks.
+ Through what? Neural networks. So,
+ brother, what is a neural network? A
+ neural network is basically a system
+ that transfers data and creates
+ something new. Okay? It transfers data
+ and creates something new. And this
+ type of learning is called deep
+ learning. What is it called? Deep
+ learning. Deep learning, which uses
+ neural networks. Okay? Now, because of
+ deep learning, I am able to talk to you
+. You are able to chat with me, for
+ example, Ritesh Saini, he joined a bit
+ late. He is asking, "How are you,
+ brother?" I tell him, "I am doing great
+." So we are able to talk. Why? Because
+ of deep learning neural networks.
+ Machines can also talk. Machines can
+ also generate. In fact, if I pick up my
+ pen and draw something on this page, am
+ I, as a human, able to draw? Yes or no?
+ Can you, as a human, draw? Absolutely,
+ you can. So machines have also
+ understood how humans work, so let's
+ create an artificial neural network and
+ we will make drawings too. We will also
+ chat. Gemini Nano, Gemini Pro are being
+ made to generate images. Why? Because
+ there is an artificial neural network.
+ Now, inside that, there are basically
+ some things called Generative
+ Adversarial Networks, which are also
+ called GANs. Okay? So all those people
+ who were saying Generative AI is the
+ future. Gen AI is the future. How many
+ of you think Generative AI is the
+ future? For Generative AI, just drop a
+ GenAI in the chat. So where did this
+ GenAI come from? This GenAI comes from
+ the machine learning within artificial
+ intelligence, the deep learning within
+ machine learning, and the Generative
+ Adversarial Networks (GANs) within deep
+ learning—that is where 'generative'
+ came from, which has now become old
+ technology. Old technology is outdated.
+ How many people have stopped generating
+ images now? Remember those Ghibli art
+ images? You'd put a photo of you and
+ your girlfriend in ChatGPT and write, "
+Can you convert this to Ghibli art?"
+ Then you'd put it on your story saying,
+ "Guess who my girlfriend is." Well,
+ that trend is over, bro; nobody is
+ doing it anymore. And those girls who
+ used to take photos in nice sarees, the
+ retro style, that's gone too; that's
+ finished. Nobody does that anymore. So,
+ what are people doing now? Now they are
+ working with Perplexity. What is
+ Perplexity doing? You just chat, "
+Execute this order for me in the stock
+ market." Understand the stock market
+ trends. Execute my order. How many
+ people here use Perplexity? I'll write
+ the full form of GAN as Generative
+ Adversarial Network. GAN means
+ Generative Adversarial Network. Okay?
+ Perplexity user. Yes. Perplexity user.
+ These are the same people who got an
+ Airtel SIM. And because Aravind
+ Srinivas said, "Hey, get Airtel for a
+ year," they are just using Perplexity.
+ Why they are using it, they don't even
+ know. Wherever a company says, "Today
+ we are launching this for free for
+ these users." My friendship with
+ ChatGPT has ended. Gemini is my new
+ friend. Perplexity is my new friend.
+ But they don't understand the
+ technology behind these tools; they
+ don't get it. Perplexity uses two
+ things behind the scenes called RAG and
+ AI Agents. I will teach you about RAG
+ some other day. But learn about AI
+ Agents today. Brother, can you explain
+ what AI Agents are again? So, what are
+ AI Agents? AI Agents are pieces. Of
+ code that can talk to LLMs. Brother,
+ now what is an LLM? An LLM is nothing.
+ It's a Large Language Model. Models
+ that have been trained on past data.
+ Brother, trained on past data, like
+ ChatGPT? Can anyone tell me the full
+ form of GPT? GPT means Generative
+ Pre-trained Transformer, a model that
+ you have already trained, and it
+ generates something for you. Like GPT
+ 5.2. Can anyone give other examples of
+ LLMs? Can anyone here provide examples
+ of LLMs? So, GPT 5.2 is one, name
+ another, Gemini 3 Pro. Flash. And
+ Claude, and Mistral, and Sonnet—yeah,
+ Claude Sonnet, DeepSeek. DeepSeek, O.
+ Grok. Okay, okay, Llama—okay, fine.
+ So, what are all these? These are all
+ models that were trained in the past
+ using machine learning. Generative AI
+ is capable because it uses deep
+ learning. Meaning, if you say hello to
+ this model, it will reply with a hello.
+ Hello, how are you? If you ask the
+ model to please read your horoscope.
+ Then it will take some random past data
+ and tell you your horoscope. Now let me
+ tell you one thing. You should try an
+ experiment. How many people have
+ ChatGPT open in their browser right now
+? Because these days we don't really
+ talk to humans, do we? We take our
+ problems to ChatGPT, saying, "Man, I'm
+ working so hard.""Yet, I'm not getting
+ a job." Forget about the job. "She
+ isn't even giving me her number, man."
+ So how many people agree that we talk
+ to friends less? And talk to ChatGPT
+ more? Right? You agree? Now, as many of
+ you who can hear me and can type, just
+ go to ChatGPT and type "Give me any
+ random number." Okay? Now, you should
+ try an experiment. Try changing the
+ model and ask the same question. There
+ is an option to change the model in
+ there. Try changing the model. Your
+ answer will be 47, 57. 27. Wanna bet?
+ On every model, your answer will be 47,
+ 57, 27, it will come like that. How did
+ I know, brother? How did I know? Why?
+ And why is it happening that everyone
+ is getting the same thing? Why is
+ everyone getting 47? Everyone 47? Why?
+ Because you are using the same model.
+ Same past data. Do you understand? So
+ if you think ChatGPT will tell your
+ fortune, or that it tells everyone the
+ same thing...Then understand, okay, it
+ will give the same thing. Now let's
+ understand why this is a problem. Why
+ is LLM a problem? Why is this a problem
+? Why is this a problem? Why? Because
+ it's trained on past data. It is
+ trained on past data. Meaning, if I
+ open Ollama here. Open Ollama and I
+ tell it, "Give me a two-digit random
+ number." Okay? Give me a two-digit
+ random number. If I input this prompt,
+ everyone will get the same result. So,
+ there is nothing random here. Okay? It
+ will come out the same. It took a long
+ time now. Right? 67, that same 47, 57,
+ 67, 27, that's what you will get. Now
+ let me ask, what is the current date
+ and weather in Pune? What is the
+ current date and weather in Pune? Look
+ at what it's saying now. I am not able
+ to provide real-time information or
+ specific details about the current date
+ and weather in Pune. However, I can
+ suggest some ways. Why couldn't it tell
+ me? Why couldn't it tell me? Why
+ couldn't it tell me the current date,
+ time, or weather in Pune? Why? Anyone
+ who can hear me, tell me the answer.
+ Because it is trained on past data. And
+ here people realized, oh my god, how
+ are you going to take my job? Are you
+ understanding? How many of you got the
+ concept of why I called generative AI "
+old"? Why did I do that? Why did I do
+ that, brother? Why did I call
+ generative AI "old"? Did you understand
+? Getting it? It is because it is
+ trained on past data. And that's where
+ your LLM and you get into serious
+ issues, that you request it, but it
+ gives you old data in response. And
+ that is where you need you need an
+ agent. You need an agent. You need an
+ agent. Brother, what is so special
+ about an agent? What is so special
+ about an agent that you need one?
+ Because an agent is a piece of Python
+ code that has tools. It has tools, and
+ these tools are compatible with the LLM
+. Meaning, if I tell the agent, "Tell
+ me the current time." Then there will
+ be a tool named "current time" that
+ will pull the time from the system and
+ give it to you. So these are agents
+ that have tools, and you can develop
+ these tools too. You can develop these
+ tools. Now, open your mind a little bit
+. Zoom out a bit, that if you can
+ develop tools. You have an LLM that is
+ very strong, very powerful, and can
+ generate anything. Can you build a tool
+ that can run Docker commands and ask, "
+Can you tell me how many containers are
+ running?""Yes, can you see why my
+ pipeline failed?" Yes. So basically,
+ the DevOps landscape is evolving,
+ friends, and this is what I presented
+ at re: Invent. So, the problem was that
+ generative AI has limitations, and that
+ is why you need agentic AI. So DevOps
+ and SRE are seeing a new evolution with
+ AI agents, and this can increase your
+ productivity and production readiness.
+ How? How many of you go into DevOps
+ daily? You log in to the server. You
+ check by running docker ps. What are
+ the logs? How many containers have died
+? How many containers are running, and
+ do they need a restart, and all that.
+ Your productivity is being lost because
+ of that. How many of you still go to
+ the server to run commands like docker
+ ps or docker logs, and later say, "
+Brother, I can't remember the commands,
+" and do all that stuff? Great. Now,
+ how many people have pipelines that
+ fail, and they don't even know what
+ happened? Right? They don't know what
+ to do. So, you have an incident
+ response and incident analysis. Right?
+ There is incident response and incident
+ analysis. Right? I don't know how to
+ make a pipeline. Oh, then you should
+ have joined the Josh batch. Anyways,
+ intelligent automation, you do
+ automation. Many people said that I do
+ automation. But is that automation
+ powered by AI? Because AI is moving
+ forward at a high speed. The best part
+ is that DevOps is evolving at the same
+ speed as AI. And you will have to learn
+ that evolving DevOps. Let's understand
+ how I create an AI agent. How will I
+ build an AI agent? How many of you want
+ to learn how to create an AI agent?
+ Just drop an AI in the chat. Just drop
+ AI in the chat. So Rohit, Priya,
+ Vaibhav, Abhishek, Anurag, Satyam,
+ Harshvardhan, Burhan, Jitendra, Aditya,
+ Ajinkya, Snehal, Aftab, Lekhna, Rishabh
+, Hrishikesh, Prateek, Janvi, basically
+ everyone wants to learn. That's why you
+ are here. You didn't come here just to
+ waste time with us. So let's study this
+. Now, how to do this? So first of all,
+ what did I tell you? You are needed,
+ and you are very important. You are
+ very important, so don't think that AI
+ will take away your job. Because HITL,
+ HITL brother, what is HITL? HITL, Human
+ In The Loop. So Human In The Loop, you
+ are important in this whole game, so
+ you will request the LLM, and the LLM
+ won't give an old response anymore; it
+ will talk to the agent. The agent has
+ tools, and the tools, along with the
+ LLM, will do crazy things to give you
+ new responses and new productivity.
+ Right? Let's build it. Now let's close
+ this. Now I use VS Code, Visual Studio
+ Code. Right? Visual Studio Code. How
+ many people have VS Code installed? Let
+ me know quickly in the chat. It is
+ installed. Anand has it installed.
+ Vipul has it installed. Okay, very good
+. Because this was a prerequisite. So
+ the prerequisite was that you had to
+ install VS Code and bring it. Okay? You
+ had to bring VS Code installed. Now I
+ will open one here. I will open a
+ folder. I'll go to Documents, then
+ TrainWithShubham, then Josh Batch 10; I
+ will teach Josh Batch 10 separately
+ live. For now, I'll create a folder
+ here in TrainWithShubham. AI Agents for
+ DevOps Live, I will create this folder.
+ Okay? I created a folder named AI
+ Agents for DevOps Live and opened it.
+ Yes, I trust the authors because I am
+ the author. How many people know how to
+ use VS Code? Can you create folders and
+ files in VS Code? Okay, you can create
+ them. That's great. Very good. Okay.
+ Good. So create a folder. Now I will
+ open a terminal inside this here.
+ Terminal, New Terminal. So the new
+ terminal has opened up here. And this
+ terminal of mine has opened inside the
+ AI Agents for DevOps Live folder. Okay?
+ Arfat is a pro in VS Code. Amazing, man
+. Now, how many people know Python?
+ Python, how many people? Python for
+ DevOps was a part of the Josh Batch.
+ How many people were there? Okay, there
+ were a lot of people. Amazing, amazing.
+ How do we create a virtual environment
+ in Python? How do we create a virtual
+ environment in Python? All the people
+ who were in the Python batch. venv,
+ great. So Python 3, now what version do
+ I have? Of Python? Python 3.14. This is
+ the latest version of Python running.
+ Python 3.14, so python 3.14-m make a
+ virtual environment. Make a venv, which
+ is named venv. Create a virtual
+ environment, create a folder that will
+ contain the Python virtual environment.
+ Why this, brother, why are you making
+ us create a virtual environment?
+ Because you will install packages, and
+ it's best if those packages are
+ installed in a virtual environment! So
+ I will hit enter. So you can see a venv
+ folder has been created here, inside
+ which bin, include, lib, and Python are
+ installed. Okay, can someone tell me if
+ you have a notebook and pen, what
+ should you be doing right now? What I
+ am doing in front of you, what should
+ you do? If you have a notebook and pen,
+ okay, okay, you should note it down.
+ That's right. You guys are getting
+ smart, okay? Now, for those practicing
+ side-by-side or following along with me
+, if I want to activate the virtual
+ environment here, what command should I
+ type? Linux based source bin activate.
+ Okay? Source venv bin activate. Alright
+? Now my virtual environment is
+ activated. Okay? Done. Now my
+ documentation says, "How do I create an
+ AI agent for DevOps use cases?" It says
+ to use an agentic AI framework? Use an
+ agentic AI framework. Bro, what are
+ these agentic AI frameworks? What is
+ included in agentic AI frameworks?
+ There are many, and what are agentic AI
+ frameworks anyway? You can even create
+ AI agents in two to three lines. The
+ framework has that much power, and that
+ is what's called an agentic AI
+ framework. Like CrewAI, like LangChain,
+ like Strands Agents, like OpenAI Agents
+, and what else? Google ADK (Agent
+ Development Kit), and similarly OpenAI
+ ADK (Agent Development Kit). Okay,
+ there are many agentic AI frameworks.
+ We will talk about Strands Agents,
+ which is open source. You can freely
+ install it by AWS. Why AWS? Because,
+ bro, you used to work there. So ADK
+ means Agent Development Kit. Okay?
+ Understood? LlamaIndex. Okay? Does
+ everyone understand that these
+ frameworks mean pre-built code to
+ create agents? It is pre-written code.
+ You just have to use it. How many of
+ you got it? And today we will build and
+ use Strands Agent. We are using Strands
+ Agents. Okay? Got it. Come on, let me
+ install it here. pip install
+ strands-agents. Enter pip install
+ strands-agents. Bro, what is pip? Pip
+ means Python Package Installer. Yes, I
+ knew Satyata would ask this question
+ right now. What is pip? Python Package
+ Installer means it is an installer
+ where you just write pip install and
+ the package name, and it gets installed
+. Bro, share all the commands with us.
+ So I will write 'history' and I will
+ share all the commands with you. Like
+ that, but if I keep sharing them
+ repeatedly, you will get bored, right?
+ So I will share them at the end of this
+ session, is that okay? At the end of
+ this session, okay share them, even
+ though I have shared a few already, I
+ have shared them. Alright, that works.
+ Okay, I have shared it now, so that's
+ done. Now, that’s the Strands agent,
+ but what is special about an agent that
+ lets it perform so well, unlike an LLM?
+ What do agents have, like tools, or
+ maybe some amazing answer tools, or
+ maybe some great amazing tools? So
+ that’s why we will pip install
+ strands-agents-tools as well. Alright?
+ Pip install strands-agents-tools.
+ Brother, where did you find this
+ command? Look, this is what
+ documentation is for. So, this is the
+ official Strands Agents website,
+ Strands Agent SDK. Now, go to examples
+ here; the prerequisite says Python, and
+ if you look here, where did it go? You
+ can also go to the user guide; it says
+ 'pip install strands', you can see it
+ right there. Did you understand? How
+ many people here understood? It says '
+pip install strands-agents'. And that
+ same command, python-m pip install
+ strands-agents, pip install
+ strands-agents-tools, that's what I did
+, nothing else. Right? Did you
+ understand? Okay. Now, the agent
+ framework is installed. What is the
+ second step now? Using an agentic AI
+ framework is done. Build tools and
+ orchestrations. Let’s build it.
+ Let’s create a new agent. Not here,
+ we will name it agent.py. Okay, brother
+. Why did I write .py? Any reason why I
+ wrote .py? Anyone, why is it written as
+ .py? Because it is a Python file. Okay,
+ great, that is the extension for Python
+. Nice. Now, in Python, if you want to
+ import any package, what do you do? If
+ you want to import any package, you use
+ an import statement. So, from strands
+ import Agent, from strands import Agent
+, so I am importing the Agent. So
+ Strands is our framework library. Agent
+ is our what? Class. Agent is our class.
+ See this, core agent implementation; it
+ receives user input. It processes the
+ input using a language model and
+ decides whether to use the tools or not
+, and produces a final output. Look,
+ it's written right in front of you.
+ Right? So, it is a class. How did we
+ know it’s a class? Anyone here who
+ can tell why this is a class? Why is
+ this a class? How do you identify that
+ it is a class? Pratiksha said it
+ correctly, because the first letter is
+ capital, that’s why it’s a class.
+ Now, an object of the class is created.
+ How is an object created? Can anyone
+ tell me? Agent = Agent brackets are
+ done. Create an instance of Agent. Now
+ like this by creating an instance,
+ correct. Okay? Now this is AWS's. It's
+ AWS's. So By default, it runs Amazon
+ Bedrock in the background. So by
+ default, it uses Amazon Bedrock.
+ Brother, why do you need to create an
+ instance? Because to use a class, you
+ have to create an object. So you have
+ to create an object to use the class.
+ That is why we need to create an
+ instance for one. You would use the
+ class directly. It's not a good idea.
+ So you have to make an object for it.
+ So by default, it runs Amazon Bedrock
+ in the background. Brother, what is
+ Bedrock? So Amazon Bedrock is a service
+ through which you can build generative
+ AI applications and work with LLMs in
+ the background. Meaning if you look at
+ Models, which models can you use? Like
+ Nova, Mistral, Nvidia Nemotron—I
+ don't know, brother, I've never even
+ used that. Gemma, and which other
+ models can you use? GPT, OSS, Qwen,
+ Kini, Qwen, Claude Opus—so you can
+ use all these things too. But brother,
+ we don't want to use all these things,
+ we want to run it locally. How many
+ people have Ollama locally? Ollama,
+ okay. Now, if you want to run Ollama,
+ what will you do? So you will come here
+ and write, "Where did it go?" Agents
+ Model Providers. Go to Model Providers
+ and write Ollama here. Okay? Now you
+ will do pip install strands agents
+ ollama. If you run this command, you
+ will be able to run it with Ollama. So
+ I will run this command here. Pip
+ install strands agents ollama. So
+ Ollama successfully installed. Ollama
+ is successfully installed. How many
+ people understood what Ollama is? I
+ will tell you what Ollama is. These
+ LLMs, you can either run them locally
+ or you can run them on the cloud. If
+ you want to access LLMs on the cloud,
+ what is the AWS option? Amazon Bedrock!
+ Okay, did everyone understand what
+ Amazon Bedrock is? Harshvardhan, I just
+ explained this a few centuries ago.
+ Amazon Bedrock is an AWS service that
+ gives you permission to run large
+ language models on the cloud. Large
+ language models like Mistral, Nvidia,
+ Gemma, GPT-4o, Claude—is this okay?
+ Is it working with the free tier? Yes,
+ some models might work, but if some
+ don't, you can run Ollama locally too,
+ so pip install strands as in Ollama.
+ Olla...what is Ollama? You use Ollama
+ to run LLMs locally. Ollama is used to
+ run your LLMs locally. Okay? Is it
+ equal to your opinion? Yes. So, how
+ many people understood that if you want
+ to run an LLM locally, like the one we
+ just demonstrated here. I just showed
+ it to you guys, this Ollama. How many
+ people understood? If you want to run
+ an LLM locally, or run many such LLMs,
+ then you use Ollama. That was a
+ prerequisite. Okay? Understood? Now,
+ now what do I need to do? This is what
+ I need to do. Here is how you create an
+ agent using Ollama model. You need to
+ do: from strands.models.ollama import
+ OllamaModel. So you need to import
+ OllamaModel here. Okay? Done. Now, your
+ Ollama runs on localhost 11434. By the
+ way, on which port does MySQL run by
+ default? Can anyone here tell me? MySQL
+ 3306, Manoday, very good. Now, can
+ anyone tell me which port Postgres runs
+ on by default? Postgres 5432, Dishank,
+ amazing. Rupali, amazing, Keshav, great
+. Okay. Ollama runs on 11434 by default
+. Ollama runs on 11434 by default. So
+ if you want to access Ollama, just copy
+ this and paste it over here. So you can
+ access the Ollama model on this
+ specific port. Now, what is your model
+ name? Llama 3.2 1B, you can download
+ this model from here. Okay? So Llama
+ 3.2 1B, that's my model. Okay? This is
+ my model ID. Now, what is the next step
+ I need to take? I need to tell my agent
+: model = Llama model. Okay? Now tell
+ me, this line number one is in front of
+ you. How many people have line number
+ one clear? from strands import Agent.
+ If I need to get the agent code, is the
+ first line clear to me? Okay? If I need
+ to connect with Ollama, I will have to
+ write the second line: from
+ strands.models.ollama import. Now, I
+ didn't memorize this. I read it from
+ the documentation and wrote it. Okay?
+ And that is completely fine. Okay?
+ Clear? Now if I need to connect to
+ Ollama, Ollama runs on localhost. It
+ runs on 11434. Okay? It runs on
+ localhost 11434. Okay? Now, for the
+ model ID, whatever model you want to
+ use, let's say you want to use GPT-os.
+ Okay? You want to use GPT-os. So, you
+ can download GPT-os and write the model
+ ID as GPT-os here. Okay? How many
+ people understood this line? Line
+ number three. How many people
+ understood it? Line number three, that
+ the Ollama model runs on this
+ particular host. It runs on this port
+ and it will come from there. Okay? Now,
+ the agent, what is this agent doing? It
+ is using the Ollama model to create an
+ agent. I mean, what is an agent? This
+ agent is using an LLM. Which one? The
+ local one. Which one? Ollama. Did you
+ understand this diagram, that your
+ agent, which is a piece of code, is
+ using the Ollama model, and your agent
+ is created. This was your what? Line
+ number four. How many people understood
+ up to line number four? Understood. If
+ you want to run it on the cloud, wait.
+ Okay? Understood. Now tell the agent.
+ Hello. How are you? Okay. Hello. How
+ are you? This is line number five. Now
+ I will run this. I will run "Hello, how
+ are you?". Now see what happens. Python
+ agent.py. Now look, enter. I asked it,
+ "Hello, how are you?" It says, "I am
+ doing well.""Thank you for asking.""Is
+ there anything on your mind that you
+ would like to talk about?""I am here to
+ listen and provide information for
+ assistance." How many of you learned
+ how to create an agent in five lines of
+ code? How many of you can now create AI
+ agents? Like that. How many of you can
+ create agents? How many people is it
+ clear to that, oh Okay. Should I spend
+ another hour with brother? Showing off
+ the AWS club, okay no problem, we will
+ drink like this, here you go. What's on
+ it? Okay, don't spam Aditya, I will
+ kick you out. Okay? Now, how many of
+ you, how many of you can say, "I am
+ confident that I can install VS Code,
+ install Ollama, download a model,
+ install Swarms agents, write this code,
+ and create an agent." Are you confident
+? I am confident, will it be done? Will
+ it be done? It will be done. Oh, very
+ good. How many people had absolutely no
+ idea until an hour ago? No idea, like,
+ I didn't even know what this agent is.
+ I didn't even know what was happening
+ in the industry. We were among those 99
+%of people who have no clue what is
+ going on in the world. Why should we
+ care? We just want to watch Taarak
+ Mehta. When you have tea, it's like
+ this. Okay. One doubt, brother, is
+ Bedrock being used here too? No, Ollama
+ is being used here. What is Ollama?
+ It’s a local LLM. Either you use
+ local, or you use cloud. Got it? Do you
+ not pay attention? Okay. Now, brother.
+ Hey, don't ask for a 5-minute break,
+ man. Ask for something else. Ask for a
+ discount on the batch scam. That’s
+ fine. But don't ask for a break. Okay?
+ Absolutely. Now let’s understand. Now
+ let's understand a bit: if I ask this
+ agent—hey agent, let's have some fun
+ with the agent. Okay? Let's have some
+ fun with the agent. Let’s write code
+ for the agent such that the agent asks
+ us...Input enter or you you user input
+ equals you—how many people understand
+ what I have written here as user input?
+ What is written here? What does this
+ input do? What does this input do? Can
+ anyone tell me? Okay, no idea. Take—
+it's input, Python is easier than Hindi
+. It will take input, what else? So if
+ I run this, it asks "you". Tell me,
+ what, "Hello brother, how are you?"
+ Hello, hey, it became "Hell brother".
+ No problem. If there’s no
+ conversation, then we have nothing that
+ can attract us. Is our agent getting a
+ bit impatient? Don't know why it’s
+ doing that. Maybe it got a bit confused
+ by "Hell brother," so it's a bit... "
+Hello friend, how are you?" Okay? You
+ can take input, you can talk to the
+ agent, okay? Namaste, how are you? For
+ "how are you," I can understand you
+ well. Hey brother, this agent is way
+ too flirtatious. You can stop the agent
+ from being flirtatious. You can
+ literally save the agent from doing
+ such flirtatious, nasty things. Why?
+ How? You can write a system prompt for
+ the agent. System prompt, system prompt
+—that you are a respectful agent, you
+ are a respectful agent. You can train
+ the agent a bit, saying you are a
+ respectful agent. You give answers in a
+ kind and humble way. You give answers
+ in a kind and humble way. Do you
+ understand? You can use it freely. Use
+ correct data usage to give outputs.
+ Okay? You provide a system prompt like
+ this and put the system prompt into the
+ agent here. System prompt equals system
+ prompt. Now look, see how politely my
+ agent speaks now. Like he's talking to
+ people from Lucknow. Hello there. How
+ are you? Now see, he is a respectful
+ agent. Namaste, I am doing great. Thank
+ you for asking. It's lovely to connect
+ with you. How can I assist? Now see,
+ its creepiness has reduced. Why is that
+? Why? Because I have given it a system
+ prompt. The nicer the prompt you give
+ it, the better it will react. How many
+ people understood this? How many of you
+ got it? Got it. But if I ask it, "What
+ is the current time and weather in Pune
+?" What is the current time and weather
+ in Pune? However, I am a large language
+ model. I am an LLM. I don't have
+ real-time access to current information
+. But I can suggest some ways. Oh no,
+ it doesn't know. But an agent has
+ something that allows it to perform
+ actions. Just like Perplexity does.
+ What does Perplexity do? It fetches
+ data from the browser to perform
+ actions for you. What does Comet
+ Browser do? If you tell Comet Browser
+ to complete a trade in the stock market
+, it will do it. Why? Because it has
+ tools. So, what can I do? From
+ strands_tools import tools. Now, what
+ do I want? If I asked you, "Hey
+ Satyavrata, what time is it? What's the
+ weather?" Then what do you do? What do
+ you do? If I ask you what time it is,
+ what do you do? You check, you go on
+ the internet, you write something like,
+ "What is the weather in Pune?""What is
+ the weather in Gurgaon?""What is the
+ weather in Indore?" You search like
+ that, right? You perform an action.
+ Similarly, you can import HTTP requests
+ into tools. HTTP request, and you can
+ add HTTP request as a tool; tools is a
+ list, so you can add multiple tools too
+. To whom can you give the HTTP request
+ as a tool? You can give it to your
+ agent. So now, what does the agent have
+? Now what does your agent have? Now
+ your agent has an LLM, a system prompt,
+ and tools as well. So if I tell my
+ agent now What is the current time and
+ weather in Pune? Enter. Now look at
+ what my agent will do. Alright? Current
+ time and weather parameter method get.
+ Okay. Alright, no problem. Now you can
+ say on the system prompt here. You can
+ use correct data sources instead of
+ correct data sources. You can use tools
+ wherever needed and make API calls.
+ Interesting, you can use tools wherever
+ needed. And make API calls. Can you
+ train your system prompt, your agent,
+ in such a way to use tools? API calls
+ means...API calls means going to the
+ internet to fetch data. Alright?
+ Interesting. Now look, Python agent py
+ enter. What is the current time and
+ weather in Pune? What is the current
+ time and weather in Pune? Oh you should
+ replace your API key with your actual
+ API key. Now you can use tools wherever
+ needed and make API calls to free APIs
+ that don't need API keys. You can train
+ it further to use such API calls that
+ don't need any key or anything. In fact
+, if you use model Llama 3.2, check if
+ you have Llama 3.2 or not. If you use
+ Llama 3.2 which is a more powerful
+ model, then try running it. Now look,
+ you have entered a good prompt too. You
+ have also used a powerful model. Now
+ enter the prompt. What is the current
+ time and weather in Pune? Enter. Now it
+ will analyze your tools, your prompt,
+ and your model, all three. It will
+ analyze all three and process it. Let
+ it process. Can you see tool one HTTP
+ request? It seems I don't have the
+ required API key to access the internet
+. I am using Open Weather API. Can you
+ see? Can you see that it is now using
+ Open API? Now let's say I changed it
+ further. Changed the prompt even more.
+ What is the current time in Pune? Now
+ let's say I asked for the time. So with
+ every iteration, what am I doing to my
+ agent? Training it. Training it. Can
+ you see? Oh, what is it saying? 2023,
+ oh my god! What a lousy agent I have!
+ If your agent, let's say, is not
+ performing well, then 'what you can do'
+, what can you do? This model, instead
+ of using the Ollama model, 'what is the
+ best cloud service provider' that can
+ give you the best model access? Anyone?
+ Anyone?() AWS! Bro, someone is
+ definitely going to say that I just
+ wanted to flex AWS, which is why I made
+ Ollama fail. Someone will definitely
+ say it, there’s always one. So yes
+ brother, we do, we did, we work with
+ AWS. Come on, now look, 'What is the
+ current time and weather' important?
+ Alright man, 'I will help you with the
+ current time and weather information
+ for Pune'. Let me make API calls to
+ fetch this data for you. Let me try a
+ different approach for the time and get
+ weather information. Right now it is
+ using a different approach. Based on
+ the weather data I received. The
+ current time in Pune is 7:31. Current
+ weather in Pune is 22 °. Wind this,
+ pressure that, sunrise is at 7:00.
+ Weather in Pune is quite pleasant right
+ now. Drop a boom in the chat if you got
+ to know how you can build tune connect
+ with AWS, ha ha ha crazy crazy crazy
+ crazy awesome this is amazing wow, but
+ brother why didn't Ollama run? Ollama
+ didn't run because it's running locally
+, man. If your laptop isn't that
+ powerful. If your processing isn't that
+ powerful, then the LLM will give a bit
+ of a bad response. Brother, we didn't
+ mention AWS, so what did I tell you?
+ Even if you just write this and only
+ this. Just write only this. And don't
+ write anything else like this. Don't
+ write all this. Don't even write the
+ system prompt. Don't write anything at
+ all. Just write only this. That will
+ also work. Why? Because by default it
+ uses AWS Amazon Bedrock. By default it
+ uses Bedrock. Correct? Did you
+ understand? So by default it uses
+ Bedrock. But even if you don't write
+ anything, what is the time in…let's
+ do it for another city now. Current
+ weather in Bengaluru. What is the
+ current weather in Bengaluru? Okay. Yes
+. Why? Why didn't it do it? Why didn't
+ it do this? 'I don't have access to
+ real time weather data'? Why didn't it
+ do it? Can anyone tell me? Why didn't
+ this agent do it? Any, anyone, anyone,
+ let's see who says it first. Because
+ there is no tool, great! So here, '
+tools = HTTP request tool' has been
+ added. Now the same. Question tools,
+ sorry tools, Run the same question, "
+What is the weather in Bengaluru,
+ Karnataka, India?" I will help you get
+ the weather information for Bengaluru,
+ Karnataka, India. Let me make a request
+ to a weather API, to get the current
+ weather data. Now it will make the
+ request and bring back the data. How
+ many people understand how I am
+ modifying an agent? How I am modifying
+ an agent? Temperature 22 degrees, well,
+ they had the weather up to 7:18 on
+ their API, so they provided the weather
+ up to that point. And on January 21st,
+ the high is 27 ° and low is 15 °. Are
+ you having fun? Are you having fun? Are
+ you having fun? Are you learning
+ anything new? Are you learning anything
+ new? Yes, yes, we are learning
+ something good and new. How many people
+ have finished Agentic 001? Just drop a
+ zero-one in the chat. How many people
+ have understood it? Use an agentic AI
+ framework. Just drop a zero-one in the
+ chat. Okay? Now, the tools are fine. We
+ did HTTP, but how many people think
+ this agent is production-ready? How
+ many people think this AI agent is
+ production-ready? Absolutely not. It is
+ not even demo-ready. This is a really
+ useless agent. Because sometimes it
+ wouldn't even listen to me. Ollama
+ doesn't even run properly. This is a
+ nonsense agent. Exactly right. What if
+ I told you that by the end of this
+ session, I will use Strands and
+ Temporal to show you how to build AI
+ agents that can monitor Docker. We can
+ build agents for CI/CD pipelines. We
+ can build observability agents. We can
+ build Kubernetes agents. Just drop
+ Temporal in the chat. T E M P O R A L
+ in the chat. Because this is a new tool
+ in the market. It's a new tool in the
+ market. Okay, it's not Temo. It's not
+ Temo. It's called Temporal. And that is
+ the logo. Okay, great, great, great,
+ amazing. Also, if you go to this QR
+ code, you can see something interesting
+. You can see a repository that says "
+Durable Execution for AI Agents."
+ Brother, what is Temporal? What is
+ Temporal? What is Temporal? Tell me
+ about it. Now. What if your code never
+ failed? Brother, what mind-blowing
+ thing are you telling us? How many
+ people lost their minds just hearing
+ that one line—what? How many people
+ are there like that? Hari Om, Harsh,
+ Arfat, Araf, Anand, how many people
+ heard about this tool for the first
+ time? Just drop a "first" in the chat.
+ Just drop a "first" in the chat. First,
+ first, fir-By the way, in Josh Batch 10
+, I will also teach you how to use
+ Temporal. How many of you are here from
+ Batch 10? How many of you are here from
+ Batch 10? Okay. Oh, quite a lot of the
+ Batch 10 crowd is here. This is amazing
+. This is lovely. This is amazing. Let
+ me show you a quick demo. How Temporal
+ works. Let me show you a quick demo.
+ Will you listen to the song, Crease?
+ Let me show you a quick demo. Shall we
+ listen? Let's play it. So, when you go
+ to this link, how many of you have
+ opened a GH repository? How many of you
+ have opened a GH repository? Opened.
+ Opened, okay great. So now. This
+ repository must have opened for you.
+ Docker monitor, simple agent, all these
+ opened. How many of you can see this
+ page? How many of you can see this page
+? Opened. Git. Now I will take this
+ code. Go here and clone it. I will go
+ into strands-temporal-agents and clone
+ it. Right? It’s cloned. Now I will
+ check here. Strands-temporal-agent has
+ opened for me. Correct, it has cloned.
+ Is the voice breaking? Just refresh,
+ man. What's the big deal? Right? How
+ many of you can hear me clearly? All
+ good? Everything okay? Awesome. Okay,
+ very good. Now look at what I am going
+ to do. So. I will open a few tabs.
+ First, I will run a Temporal server on
+ my system, which is
+ temporal-server-start-dev. Here, I will
+ run a Temporal server. So you can see
+ the UI at localhost: 8233. Here, a
+ Temporal server is running on localhost
+: 8233. Right? Zero workflows, no
+ workflows running in this space. So for
+ now, if you are taking notes, you can
+ note it down. Right? Very clear, sir.
+ Okay, loud and clear. Great. So, I ran
+ the Temporal server in one tab. Now,
+ what will I do in the second tab? I
+ will go into strands-temporal-agents.
+ Now I have a Docker agent. The Docker
+ agent is very simple. What does the
+ Docker agent do? The Docker agent uses
+ Bedrock. It creates a tool. A tool like
+ get-container-status. Now tell me, what
+ command do you use for container status
+? Anyone from batches 1, 2, 3, 4, 5, 6,
+ 7, 8, or those who have read about how
+ if you want Docker containers...Aditya
+ says, "docker ps create". If you want
+ to do the same thing in Python, what
+ would you do? If you had to do that
+ same thing in Python, what would you do
+? It’s very simple, you use the
+ Docker client— "docker client get
+ containers". So, what is the Docker
+ client? Let me explain. When you write
+ Docker Python, when you write Docker
+ Python SDK (Software Development Kit),
+ you can run Docker through Python. How
+ many of you knew this? How many people
+ knew that if you do pip install docker,
+ import docker, you can run it like this
+? Right? Correct. Gaurav Kadam knew it.
+ Whether others knew it or not, it
+ doesn't matter. So, it's easy. Right?
+ Now, here in requirements.txt, I have
+ put everything that you need, all the
+ requirements are there. You will have
+ to install Docker as a package. Right?
+ So, if I want to install all the things
+ listed in requirements at once, what
+ will I do? If I want to install
+ everything at once, what will I do?
+ Anyone? Hey, use pip install-r, Om. pip
+ install-r requirements.txt, enter. Now
+ it will just install everything, one by
+ one, very quickly. So, whenever you
+ clone that repository, you should
+ install it like this. Right? You will
+ install it like this. In the meantime,
+ let me tell you what the Docker agent
+ does. Basically, the Docker agent
+ doesn't do much. What does it do? I
+ have imported Docker here and created a
+ few functions. Like, container_info; if
+ I need information about a container,
+ give me the ID, image, and status. Give
+ me all of this. How many people were in
+ the Python for DevOps batch? How many
+ of you were in Python for DevOps? Okay.
+ What do you call this data structure
+ that is being returned? Dictionary.
+ Okay, fair enough. Are you guys
+ understanding this? Right, good. Okay,
+ so everything is installed for me. Now,
+ Temporal says that you have to run a
+ workflow, you have to run your
+ application. But to run a workflow, I
+ need a worker, so what will I do here?
+ I will go into docker monitor, cd
+ docker monitor and python docker worker
+. What is a worker? A worker is a
+ process that keeps reading your code.
+ Enter. Enter. Okay. Worker heartbeating
+ config run time. Okay. Uh, worker is
+ not running. Why? Okay. Worker created
+ successfully. Okay. It's a warning.
+ It's just a warning. No, no worries.
+ It's just a warning. Okay? Your worker
+ has been created. Brother, why is a
+ worker needed? What did I tell you?
+ What if your code never failed? Now,
+ this isn't some magic potion where a
+ sage says "abracadabra" and it's done.
+ It's not like that. It's not like that,
+ brother. There is logic behind this;
+ you have to set up a worker to ensure
+ your code keeps running. Keeps running.
+ How many of you are getting it? It is a
+ worker that just monitors your code to
+ see if it is running or not. Okay? It
+ will keep monitoring the workflow and
+ activity. Okay? So, I started a worker
+ in one place. Now, what will I run in
+ the second tab? In the second tab, I
+ will run my agent. Okay? So, my agent
+ is in Python docker. My agent is in
+ client.py. So look, this is my agent. I
+ created this just now, I mean before
+ this demo, it's a docker container
+ health monitor agent that is monitoring
+ workflows here. So, your temporal is
+ monitoring workflows here. No workflows
+ running? What does this mean? I haven't
+ run the agent yet. How many of you want
+ me to run this agent? How many of you
+ want me to run this agent and see that
+ it never fails? An agent that will
+ never fail. Okay, come on, can you tell
+ me how many docker containers are
+ running on my system? Can you tell me
+ how many docker containers are running
+ on my system? Now, if I actually wanted
+ to run this via command, what would I
+ write? Anyone, if I want to see how
+ many containers are running, what
+ should the command be? Docker ps,
+ docker ps, cannot connect to the docker
+ daemon, is the daemon running? Okay,
+ fine. So, let's start docker first.
+ Let's start the docker daemon. Anyone
+ who can tell me how to start the docker
+ daemon? There are many ways. systemctl
+ start docker and dockerd systemctl
+ start docker correct correct Abdullah
+ absolutely right, so I have started it
+ now, let's do docker ps. Okay so I have
+ one two. How many containers are
+ running? One two three. I have three
+ containers running. Will my AI agent be
+ able to tell this? Can you tell me how
+ many Docker containers are running?
+ Enter. Now you see it is processing.
+ What does processing mean? This entire
+ workflow ran in Temporal. Input: Can
+ you tell me how many Docker containers
+ are running? Result: Found three
+ containers? Yes, yes, how many of you
+ learned something new? How many of you
+ learned something new, that you can
+ even monitor your agents with Temporal,
+ so that your input and output remain
+ monitored and are also being read. Boom
+, is it mind-blowing or not? Dangerous,
+ now can you show the logs for container
+ demo-logger? Enter. Now look here, back
+ to workflows, a second workflow was
+ created. Can you show the logs for demo
+ last 100 lines from container
+ demo-logger? Here are our logs.
+ Interesting, interesting. How many of
+ you? Now I will show you something that
+ will make you feel like Brother, this
+ content is not on any YouTube channel.
+ How many of you want to do this? Just
+ drop a 'Junoon' in the chat. Just drop
+ a 'Junoon' in the chat if you want to
+ see something crazy. Okay great. Now I
+ am going to show you something that I
+ did not even show to Junoon Batch 9.
+ And that is why I am bringing Batch 10.
+ Just drop a 'Josh' in the chat. Because
+ what am I going to do now? I am going
+ to say can you restart...look now. Can
+ you restart Redis? Okay? Can you
+ restart Redis? Can you restart
+ demo-redis container? Okay? Can you
+ restart demo-redis container? Now look,
+ watch very carefully. Enter, processing
+, Ctrl + C. What did I just do? What
+ did I just do? I pressed Ctrl + C. What
+ does this mean? I pressed Ctrl + C.
+ What does this mean? Suspended, crashed
+, it broke. What if your code suspended
+, crashed, broke, or the command was
+ cancelled? But what do you think, would
+ the demo-redis have run or not? Would
+ it have restarted or not? It would,
+ because if you go back to workflows.
+ Can you restart demo-redis,
+ successfully restarted container demo.
+ It is "drop a josh" in the chat if you
+ learned how your containers, how your
+ code, how your agents never fail, how,
+ how, how it happened? And if I go here
+ and go over here, a demo-redis 5 days
+ ago, Docker PS demo-redis status up
+ about a minute, up about a minute,
+ meaning, meaning just 1 minute ago! How
+ many people think that this level of
+ Agentic AI for DevOps is available on
+ YouTube? How many people think that
+ this level of Agentic AI for DevOps is
+ available on YouTube? Friends, it is
+ not available on YouTube. If you got to
+ learn something crazy. Take a
+ screenshot of this. Take a screenshot
+ of this. Take a screenshot. Start
+ understanding the new technology. Start
+ understanding things, start
+ understanding stuff, take notes, study.
+ And if you look closely, there is a
+ very big problem. How many percent of
+ developers in India are unemployable?
+ How many percentage of developers in
+ India are unemployable, meaning those
+ who cannot get a job? A significant
+ majority of Indian engineering
+ graduates, often cited at around 80%,
+ are considered unemployable by
+ companies facing an employability gap
+ due to a lack of job-ready skills. How
+ many of you think that this problem is
+ really big? It's a very serious problem
+. Why? Because what you read on YouTube
+ or what you read here and there about
+ what is AI or what is an AI agent? What
+ is Docker? But for job-ready skills,
+ you need your AI agents to not fail.
+ Your pipelines should not fail. So, you
+ are not even taught that. And I am on a
+ mission to upskill India. I am on a
+ mission to teach everyone how tech
+ works. How the latest DevOps things
+ work. How you can use DevOps in Agentic
+ AI. And that is why I take these live
+ masterclasses. Thank you so much,
+ friends. For staying in the video until
+ here. Thank you. Keep watching Zero to
+ Hero Josh Batch 10, thanks a lot for
+ watching.

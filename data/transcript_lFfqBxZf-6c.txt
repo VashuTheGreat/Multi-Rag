@@ -1,0 +1,2643 @@
+﻿If in the same video
+How pipelines create a devops
+How an engineer builds a CICD pipeline
+She is completely hands-on in this video.
+Important topics that are going to be discussed in
+like variable secrets
+Artify includes self-hosted runners
+Or maybe it's based on the season runners.
+The work is about to be completed, here is the video
+If you have stopped, then take up a project as well.
+Look, we are going to deploy the project.
+Via CICD pipelines in gut lab all this
+Things are going to happen in these one shot only
+If you see the video then quickly like this video.
+If you do not subscribe to two channels then that too
+Do it because we are a family of 100
+We reached one lakh subscribers just yesterday.
+I have touched the mark, so thank you so much quickly.
+Let's start reading Gut Lub for now.
+Deps is the first to understand that brother got lub
+What is Gut Lab? It is a tool that helps you
+Provides some project management capabilities
+What do you mean brother, like you read Git Hub
+You create a git repository and put
+You post your project and that project
+You manage the source code of
+You version control all these facilities
+All these capabilities are also available in Gut Lab.
+Hey guys, and what's the specialty of Gut Lab?
+integrated into it
+CICD features Integrated CICD
+The features are there brother, they are in Git Hub Actions.
+It is also absolutely there, but Git Hub Actions is a
+It came in a very later stage and is still there.
+It hasn't matured enough for people to use Git Lab.
+Skip to Git Hub Actions and go to Git
+Lab is hair since a long time, very time
+plus if we talk about the difference
+In short, you can use Git Hub as your own
+Brother, I can't run this thing on the server.
+what does this mean if
+I should go
+www.github.com
+But this opens the UI of github.com for me.
+And if I go
+w.g. k pe so this is the UI of gitlab.com to me
+It opens, there is no difference between the two.
+Both of you are wonderful in your own right.
+You can make great software here.
+You can keep many of your Git repositories
+You can do it securely.
+You can do anything but when it comes to yourself
+I took a look at the environmental letters of K
+Created an AWSP E2 instance
+Instance p me git for your company
+If you want to run a hub, I won't run it for free.
+Can that work for me? Git Hub Enterprise
+I have to take the edition, meaning if I use Git Hub
+Compare with Compare with Git Hub
+I'd recommend using Git Hub to create your own instances.
+You can't run Git Hub forever
+It will have to be run on the cloud only, which is
+github.com
+github.com
+Or you can get the paid Enterprise Edition.
+It will happen when it comes to gut love gut love you
+You can also run it on your own instance.
+You can run for teams, meaning train against
+Shum gitlab.com own instance self
+You can also make it hosted, how many people can this
+The most important difference I understood was that
+GetLub provides you with a self-hosted, on-the-go experience.
+Provides the ability to run on a server as well
+Meaning in short, if you do
+Docker
+run run git
+lab and you do docker run git hub in it
+The one with Git Lab, you can install it in the inner Docker
+Can run the container but can't run Git Hub
+Can you make Git Lab open source?
+Open to use Git Hub
+What is used by Microsoft, how many people
+I understood the difference which is the most major
+There is a difference, there is a huge difference
+Ok
+Let us go
+Now what is the difference between bid and bid bucket?
+Bucket Again is a product of Atla like Git
+Hub is the same as Bit Bucket is pretty much
+The differences aren't just in the bit bucket
+Integrations with Jira Confluent
+Cumin is used in a very seamless manner
+Integration with Git Lab and Git Hub
+It can also be done with but as many features as bid
+If you can't get what they give in a bucket, I
+Hope you all have got an idea that gut
+Lap Bitbucket Git Hub All of these
+There are platforms where you can share Git versions
+You can use the control system but some
+The platform offers good features like
+Git Lab for CICD for Dev Ops
+Awesome Features for Dev Sec Ops
+Gives Dave a great fit for sec ops
+Features also provide inbuilt capabilities
+So if you're a devops engineer
+And if you want to choose between Git Hub
+And Git Lab, where everything is up to you.
+Dependent is you are the soul owner of the
+Project Than Git Lab Is The Better Option
+How many of you understood this?
+I understood that you are the one who is responsible for your own
+You can also run it on the system
+Running through shubham's version control ua
+You can download it yourself from github.com
+You cannot run it in that system, okay?
+Come on now what is gut love its an open source
+Tools where a lot of people use them
+You are buying this thing if you can afford its pricing.
+If you see it, it is for personal use
+Completely free obviously for team use
+They charge a premium
+Plus you can self-manage and dedicated servers
+You can also take very interesting things
+It means a lot brother that you are your own
+You can also manage this option yourself, Git Up
+This option is not available for free, get up charge
+does for this thing okay let's have a
+Got the overview bhaiya git lab kya
+Okay, I've got a little overview.
+About Git Lab
+Now let's see what Bhaiya gets out of this.
+How is GitHub different from BitBucket?
+Someone has a particular characteristic called gut
+Lab is particular use for
+CICD DevOps & Dev Sec Ops Bid Bucket
+is Mostly Done for project tracking and
+Managing Git Hub Is Mostly Done for Open
+Source Contributions as many as open source
+Contributions are becoming huge
+Projects are
+Majorly git hop pe use hota hai thik
+Now how to use Gut Lab is as simple as that.
+If you want to see it directly on Google Lab
+Why get lub why get lub is very famous
+Basically you can see that it is very fast
+The amount of funding that the Gut Lab has received
+As many people are using it
+Very fast in comparison plus git lab
+A tool that has enabled AI to do very well
+It is integrated but brother, that is git
+The hub was also used in the pilot and Gith
+Copilot and came early is perfect
+But these people have started this under the name Git Lab.
+If you have removed it, then git lub
+He started his own business by the name of D Yeh Git Club D.
+An AI butt is removed that specifically
+Made for devops and development
+So they are focusing more on devops.
+Basically, if you are a Git Lab user, you can read this.
+that security deployed planning is very
+It's crazy, plus its source code is
+He has kept it open so that brother can see it.
+Mast in an open source model every time there
+Was a gap, this one, he completed it beautifully.
+If you are keeping it cool then you should definitely
+Try Git Lab
+Now how to use gutlab, we directly
+Anyone in this session watching the practical
+No theory, no PPT
+Let's sign in so let's give you a hint
+Let me tell you what I use in my company.
+Shubham, I work in my company.
+What do I use? I hope you all get the
+Ideas about what I can use in my company
+I will do it, okay, after seeing you guys
+You must have understood that my book marks
+What is right in the
+Hey, come on, this is your signing of the gang lap.
+If you want this tutorial side by side
+You can also move to the side where I will take you.
+I will tell you and you can do the same on your side also.
+Yes, you will go directly to gitlab.com
+Pay and there you can go to sign in
+As soon as you click on Sign In, you
+You will see that your username and pass are there.
+No, then you will do it, don't have an account.
+No problem, register now, click on register
+Now you can create your account.
+by first name last name or
+Directly from G, so I click on G
+I will give you my account on this email ID.
+I will create it with OK continue this email
+I created an account with my ID.
+Gave
+Now let's do some verification.
+Will feed you whether you are a human, an animal or a robot
+what ho pick the dice pair with the same
+Icon OK facing up so brother which one
+Tell me friend, I can see this fish.
+Something like this happened and this happened to both of them.
+Whatever toy it is, I can see a triangle.
+It's done pick the dice per ha
+Yes, this is triangle verification done.
+Complete you prove you are human very correct
+Youman kar diye hum log we have sent a
+Verification code to train with Shubham ok let's go
+Let's take a look at the verification
+Code OK
+0394
+OK, you will also receive such a verification code.
+First you will need to verify your email address.
+Then you have to verify your phone number.
+If you want to do it then let's do 91
+Indian this is my phone number ok remove the zero
+Give now verification please solve this puzzle so
+That we know, hey brother, get it verified again.
+which one this one
+ok now which one is this
+wala because it is free and its even
+Self-hosted is free, so everything is there.
+So that people do not misuse it, they
+This L has been kept with a very high level of security.
+Correct now Verification complete Send code
+Just send me a code
+will come on your phone number
+ok ok great
+Tell me why it is necessary to do this.
+This is important because gut labs have many
+All the features are free, so no matter how many
+Creating an account can misuse Gut Lab
+That's why they verify email and phone number.
+And within the first three days you
+This has to be verified, these people are
+Does not accept credit cards, no payments
+I only take your phone number and
+We take the email address so that it can be verified.
+Come on, welcome to Gut Lab, Shubham too
+Personalize Your Git Lab Experience Weed
+Like to know more about you now here you are
+Tell me who you are, generally Deps.
+Engineers, if you tell me then the group lab
+of
+CICD features remain those CICD
+Features include the Help Tool Kit.
+If so, your experience becomes richer.
+If yes then select role Devops Engineer you will see
+Can you be a software developer or development team?
+Lead DevOps Engineer System Administrator
+Security Analyst Data Analyst
+Product Manager Product Designer
+Saw some only and only development and
+Deployed Teams is the focus when you group
+Do you join the lab? Are you from agriculture?
+Healthcare domains around the world
+The domain this tool is specific for
+Developers and DevOps Engineers so you
+Select Devops Engineer I Am
+Signing Up for Git Lab Because I Want To
+Store my code I want to move my
+Repository from Git Hub or Bit Bucket to Git
+Well, today we will also see that gut gut
+How to move a repository from a hub to a group lab
+I want to learn the
+Basics of Gut I Want to Use Gut Labs
+I with my assisting repository general people
+For this we use gut lab ci or its
+There is a tool which is very powerful, okay?
+Basically we want to learn base this
+Basics of Git Done Store My Code
+What do you guys want to use it for?
+tell me 1 2 3 4 5 6 which one would you choose
+Wood Go For
+Four ci ok who will be using got lap my
+The company and team Just Me Just Me for now
+What would you like to do to create a new
+project and join a new join en
+Existing Project I Want to Create
+A New Project Explores Things Like
+That Email Updates I Like to Receive
+Updates about get lab yes I like it
+is to learn new things ok continue and this
+After doing it, you tell me a little bit.
+to get to know yourself so that your
+Create and import to make your experience better
+Your First Project You can start your project
+You can import from Git Hub via Bitbucket.
+You can import it from anywhere.
+You can see, first these people give an option.
+The git hub import is here.
+He used to come as an icon, but what did that achieve?
+The guy who first time about Git Lab
+I know he used to see Git Hub, then he
+These people used to run there and use the Git Hub icon.
+He removed it and what did he do?
+Repository by URL if you
+You select Repository by URL and
+The URL of the Git Hub repository in it
+Whatever you put in, the project gets done.
+If it gets imported here then there is such a scene
+Don't import us, start us
+So let me tell you a small funda
+I will tell you something that is very important for you to know.
+Hai Chalo The Concept Of
+Groups Okay the concept of groups like
+My team is where I work.
+I have a team and some groups have been formed there.
+It's like a group has formed
+Devops is a group Devops is a group
+Prepared
+is for
+The script is a group created for
+Scripts is a group created for docs
+This is groups what is a group group is
+A collection of team members and their
+Projects Theek Hai Group is a collection of
+Team members and their projects now look like
+There is a group called Deps within that group.
+There are multiple projects for example
+CI CD A Manifests
+Or Kuber
+The NITY manifesto is such projects and these
+Who will have access to the projects?
+Everyone will have what is dead in the devops group
+Like I am added in the Deb group so I
+I will have access to its projects.
+He is my friend, he is my colleague and he is also dead.
+He will have access to it from the lets you have any
+There are people who do not have access to the devops group
+They only care about scripts
+If you have access, you can create a separate group.
+If you can add them, then this Seg Gun team
+Management: This work is done by Git Lab.
+I have groups called groups like
+You won't see the name Git Lab anywhere.
+It will be visible only in and all these in Git Lab
+things are called projects okay these
+Projects That Speak All Things Git Hub
+The user name you have in the same group
+happens and is inside it
+Repositories are your groups in Git Lab.
+There are projects within that group
+So Just a Small
+Difference repository is called on Git Hub
+The project is called Git Lab Pay I Hope
+You understood the difference in an easy way.
+It must be that brother, when we talk about Git Lab
+Do
+So here we go, groups end
+projects so this is your group and its
+inside your project when you talk to Git Hub
+If you do this, here comes your username and
+Here comes how many people your repository
+I have understood the difference in how you get
+The Difference Pretty
+I hope you have come when you
+Look it's a no brainer
+Gab
+So if you talk about Gibb Co, then here
+But I saw the difference and understood it was yours.
+domain name gab.co.uk it's yours
+group or your user
+Name This is your project or your
+This thing is called a repository
+project or this thing your user says
+name this thing called group okay let's go
+Create group names Projects R
+Organize into groups late from us people
+T.W.S. Dave
+Create a group called Ops and
+Inside that, let's see the project Demo C
+I CD Demo There is a program called CI CD.
+We will make the project, okay then this
+This project in the group so our URL
+How will gitlab.com become WBS DevOps One?
+Why have I put this one because all over
+World someone and T W S Depps name
+If he had made something of it, he would have destroyed it.
+Okay, if we just change the name of the group.
+Teds put de so tw s sound un
+No, it's strange, so next it gave some numbers to itself.
+You added it, okay, I understand how.
+Ten Things Are
+Done include getting started read me okay
+Create a new project with a simple
+Create the project and you will see it now.
+Dega Gut Lab Ka UI Ok now let's say to me
+If you want to add someone, I can add them.
+Let's say here I
+Dhiru
+Yadav has been added, okay, write Dheeraj Yadav.
+If it comes then I will directly call him as a
+Guest as a reporter, as a developer
+Can I add a maintainer as an owner?
+Developer Done OK Done Expiry
+Let's keep it, okay, I'll send you an invite.
+Now Dheeraj Bhai will be invited and he will accept.
+And he will become a part of this group.
+I will go ok
+Right now if you are a beginner then if you select
+I have said that I am just learning, so you should
+All items will be visible in the Learn Git Lab set
+Up Your Code Confirm Your Project and
+things like that but how are we right now
+It's been a month since I became a pro.
+We won't read all this right now, okay?
+Go directly to your project
+ok here it is
+Project Now if you need anything on Git Lab
+push pull clone fraction things that you
+I used to do it on Git Hub also, for that you need SSA
+Or SSO Single Sign On Sale to you
+You will have to use and if you want to use HTTPS
+If you want to use it through then you have to use personal
+Access token will be the password in Group Lab
+If there is no such thing then either you have to go to SSA
+Keys will have to be used or personal
+Access token or single sign on
+What is Single Sign On? As you mentioned
+It will be done, okay, now I will do it completely.
+Today's tutorial should be done through SSA only.
+I'm going to log in to AWS.
+and create a new instance
+Okay, let me create a new instance.
+We will quickly see
+Create an instance
+K My Authenticator
+Okay, let's create an instance and
+We will play today's entire session on instances
+People
+Great Latch instances, let's call it Git Lab.
+Server test where we get together
+If you are going to make a self-hosted runner also
+That's why we do it by batch server.
+So remember to get an Ubuntu instance
+Let's take the nice x86 architecture
+Let's buy a pair of T2 micros.
+Let's take our same cool batch of Sen.
+And turn on HTTPS traffic in
+If you want a case then it is so much
+All you have to do is create a Latch instance
+Okay, what's up, that's great, so yours
+Instance is getting ready, well done
+Pending I hope you all understood
+would be how to create a group how to
+Manage Projects You Can See Gut Lab's Main Is Pe
+You will go to the home page and there you will see the project
+You will see now this demo CICD is a
+Project which is private is fine only
+Only those who are added can use it.
+It's a private project, just like you
+You can go to groups, multiple groups
+You can create a new group lately.
+I named it TWS.
+Notes okay named TW S Notes
+Whatever I created, I have now put it in the public domain.
+The group is public, anyone can come and see anything.
+Maybe okay it's done, I will be using
+My company what will you use this group for
+to store my code okay invite someone
+If you want to do it, then invite or just create it.
+Now group your taught notes.
+The group is This is Public, meaning you are from somewhere.
+You can also see this if I share the link with you.
+Even if I do it, you will still see things inside it.
+You can put a simple new one inside it.
+Create a project and name it after it.
+DevOps Notes can create DevOps Notes
+Public can keep inila is repository
+With read me create project so now group
+Your devops notes have also become public.
+It is public, now if you want, add notes in it.
+You can do whatever you want
+Let's check the instance is corrected
+or not okay our instance is running this thing
+to do
+Connect OK Great Let this be your terminal
+Already happened
+on and here's what we're going to do
+Have fun accessing your Git Lab server
+We will do it, okay, so here is our gut lab.
+Server to SSA
+Ready
+Yes, very good, this is our server.
+Ready now this server and your gitlab.com
+We have to connect all these pull push
+things have to be done randomly so that's why we
+People will do SSH ki gen SSA ki gen a
+The key will be generated and will be of ED 25519.
+We don't need any names, we also need some passphrases.
+I don't want the pass, I won't give it again.
+And your key is ready CD dot
+In SSA
+I'll go and IDD 255 this will be my
+private key and this will be my public key
+account or from this to instance to me
+If you want to push or pull code from Git Lab
+It will remain on the private instance and whatever my
+It belongs to the public, I will put it on my lips.
+copy this
+Lenge gut lab pe
+will go
+And you can't push all pull repositories using
+SSA Ants SA Key to Your Profile Add
+SSA will do
+And here the SSA keys one will come here, this
+You can also get the same thing from settings.
+You can go here very well and
+Your settings are here, it's done, OK.
+Security Settings and here are your keys
+I can't see where she lives
+yes ok
+where
+User Settings Profile Account Billing
+Chat Access Token Email SSA Key And You Can
+Just add a new SSA key and add the SSA key
+You copied from your instance
+You had copied the public, go here and
+He threw it down and picked up the title himself.
+took authentication and signing and a
+Put an expiry date on the ad, just do it.
+You will add the SSA of your SSA.
+This group is registered with a club account
+Now you are free to act as if you are the master of your own will.
+You used Git Hub, you can use Git Lab.
+Do it, push it, pull it, do it, whatever you want, pull it
+Let me show you this, your account is
+Authenticated with SSO means you g
+Let's see what is auto deps if you automatically do this
+Creating a CID CI CD for the project
+If you want, you can also enable auto deps.
+You can, but we will not take auto.
+If we build our own pipelines, then this will also be closed.
+If you do this, this auto deps feature is just
+Available only in GitLab, not on GitHub
+Come on, let's close this one too, now that's done.
+This is your project that you can code.
+Clone with SSA Pay Go Copied and
+Directly
+Here's a MKDI R Git Lab, make one.
+Create the git lab folder and cd this thing
+Agent Vivek's work is over
+We write down the gutlab and its color also.
+Let's turn it a little orange and let it go.
+and well
+So it's done git lub cd git lub and here
+But we can do git clone same command
+Same command as you used on Git Hub
+Git has the same commands as git clone or git lab
+How to clone your project's SSA
+Key command Enter are you sure you want to connect
+Yes I am pretty sure and
+Done, you have created a private repository.
+How many people have been cloned via SSA?
+Got it Setting Up a Project
+is on git lub as simple as git hub any
+It's not different, come on brother, it's the real thing.
+Where does the difference come in? What is the real thing?
+The real difference comes when
+You cannot create a demo CICD project.
+Do you
+If you import then on new project
+Go to Create a Blank Project
+What do you do instead, import the project.
+Click on Import Project Get Lab
+Bit Bucket Fog Bugs I don't even know
+Who is Fog Bucks Repository by Yarl so this
+If it is useful for you then take the train with Shubham
+Or any other open source platform.
+You have 4000 followers, come on anyone
+Pick up the repost, tell me which one to pick up.
+Notes P yesterday I did two tear flax up
+Before that I did Python Bash Blaze
+React Jungo to Do Wanderlust Micro
+Services Prem Graph Fumble Bhai Lots Of
+There are repositories you can pick up any that
+You can pick up whatever you like, let's go.
+Those with GS note pick up the most.
+Like the most used repository is the most
+There is also a more folk repository, so just its
+Grab the URL, grab the simple URL and
+Repository by URL and click on Git
+Go to the repository by URL and slam it down.
+That's it, you don't have to do anything else.
+Project name as it is no to do CI
+Everything rotten comes on its own, everything comes on its own
+It comes to you, you don't have to do anything but yes
+Under which group did you get this project?
+You have to put it, you see that you have TWA
+Whether to put it in deps or notes
+So I put it in the deps, okay, that's it.
+Visibility level makes it private
+Why are you picking up private keys from a repository?
+You are staying and your group is private.
+If so, create a project now, this thing
+It takes a minimum of 5 minutes, okay, but this
+It's a small project so it's quick.
+I went and imported 90 Days of Deps.
+It was minimum, it took me 5 minutes
+When we read Terraform, we will use Git Lab.
+We also integrate Terraform through
+I will do it, but let's close it for now.
+Okay, done, so your project was
+Here's why this no-do-CICD run ten
+Commands Note to do CICD Run this command
+As it is imported, it's okay as it is
+It has been imported, you can also do this
+If someone pushes to this repository
+So let's push here too for that thing.
+There is an option Mirror This Repository Mirror
+Meaning, you moved your hands like this in the mirror also.
+Same thing is happening there, pushing is happening here too.
+That commit will be reflected. Okay, now you
+If you have just imported it then here
+There will be changes that are not reflected here.
+okay okay it's over great
+Done, I hope you all have understood.
+How to create your own commits in Git Lab
+How to manage projects
+Projects How to Use Gut Lab How Many of
+You are finding Git Lab very easy because
+The option for everything comes in writing plus you
+If you have already read Git Hub then Git Hub
+Becomes very easy if someone gets lazy for the first time
+If he sees it, he will feel that he has understood something.
+I am not coming, I am on the side for example
+Git Pe Der is a concept of pull
+The request here is a pull request.
+No, it's called a merge request here.
+What is called a merge
+request then pull request in git hub
+Merge Request Chocolatey in Git Lab
+Eat the Eclair one or the Cadbury one
+Chocolate is chocolate, so it is like that
+Correct
+How to use Git Lab to get you to a good level
+I have understood how to create it well.
+Manage Projects and Groups You Viewed
+You can see the visibility of those groups.
+You can invite people to that group.
+You can make a project under it.
+You can create visibility and so on that too.
+You
+Now let's see The Elephant in the Room
+How Many Pipelines to Create in Git?
+of you are excited about creating a
+Pipeline in gut lub because for the same thing
+So let's see what Gut Lab is famous for.
+We are famous for the projects we have done
+I checked and also imported it from Git Hub.
+I even got it created myself through SSA.
+I cloned it too, I did everything
+Brother, please get this done, friend, then I will enjoy it again.
+It will come ok
+Now let us first see that
+how do you build the first pipeline so you're a
+Take on a project, any project.
+No to do don't take a demo CICD wala
+Take the project OK Demo CICD
+You have taken a great project, now you
+What
+Will you add a new one to this project?
+file is ok you add a new file i hope you
+People should branch me and tag me and this is the same group
+No need to teach things that are easy
+The branches are also the same as those in Git.
+There is a system in which what is tag release
+Tag version tag is also same in git hub
+There is a scene here, go to New File
+Click here and always remember if you
+Creating a CICD pipeline in the gut lab
+So you need to use a tool like Genki externally.
+No need to install
+Get all the features of Jenkins here
+Deta hai to gut lub is very famous for
+CICD and more than CICD
+CI then you don't need to install Jenkins separately
+No need CI means build your code
+It is being tested and everything
+Integration testing is happening, you can see everything here.
+You can only do what you need to remember
+Pay close attention to your file name.
+listen to what your file name should be
+Dot group
+Lub Hyn
+Sadwa A
+There should be a as soon as you wrote this
+The option called Apply a Template is unlocked.
+The option called Apply a Template has been unlocked.
+Done because gut lab only and
+Only understands this thing if you have gut lab
+If you want to create CICD pipelines then your file
+should be named dot dot meaning hidden
+Internal Gut Lab Next to Hein Next to
+CI means generally used for CI
+For code checks for testing
+Then dot emal for quality analysis
+Meaning you will get Python group or Java in it.
+You do not have to use the syntax of
+Directly Key Value Pair
+The value of this has to be entered in
+Pair definitely reminds you of Docker Compose
+Can I use ML files in Docker Compose as well?
+If this happens then first of all you should understand this
+How should the file name be?
+It is very important to be a leader now.
+Let me tell you diagrammatically.
+How Git Lab CI works
+So git lib works with CI guys
+Focus on two very important things
+Stages End
+Jobs So whenever you have a CICD on Git Lab
+build a pipeline
+Yes, you build CICD pipelines for that
+The pipeline consists of stages and
+Jobs come in stages, brother, this is it
+Something seems familiar to me
+When you build a pipeline, inside the pipeline
+Comes in stages and comes within stages
+Are
+The steps are the same as in Git Lab when you create a
+CI generally only makes C pipelines but you
+You can also do CD in this whenever you CI
+When you build pipelines, you have stages in it.
+Mention has to be made and those stages
+If we have to mention jobs then let us understand
+Bhaiya, what could be the stages?
+Let's look at yesterday's example, when we
+People had read Git Junkin, so we were
+Pipeline Start Used to Pipeline Stop
+There used to be a start and an end on this.
+How many people remember yesterday's Lingan post?
+It does not start and
+The stage used to come in view of the end pipeline
+It was not visible in the view, then what about us?
+used to come here and then a
+what would have been our
+There used to be a stage and then we used to go ahead.
+what would happen then
+Then we had another stage and then further
+We used to go, what would have happened, we would have had a stage
+and there would have been another stage here
+You can create as many stages as you want.
+Okay, so let's say this is stage one, this is
+Stage two this is stage three this is stage
+This thing is called four end
+One
+Pipelines You create pipelines from a file
+Whose name is Dot Gut
+Lab Cole
+hine ce dot wa ml means if your
+If the repository has a CI, you have a
+The pipeline will be okay simple pipeline now
+What are these Bhaya stages and what are the stages?
+What are these jobs inside, so understand it like this
+Take whatever stages you have
+This is just a stage from Let's
+Build is the second stage.
+The third stage is the test.
+push and the fourth stage is
+Defining the first in Deployed Lab
+If needed, go to Git Lab and here
+But first of all
+Define the stages if I want and
+Let me zoom in on Git Lab for you guys.
+Go in and first define the stages
+Do it now, there can be multiple stages
+So we will use a list, meaning a hein like
+Stage is build, second stage is push, not
+Test 3rd stage
+Is
+Push is the fourth stage.
+These stages define who is mine
+Which stages are going to happen already?
+I told you, okay, I told you already, now this
+Joe Stage
+Tell me what will come under this stage
+Brother, what will you get inside this stage?
+Jobs: Your jobs will appear within this stage.
+So how do you represent that?
+You have a job from Let's, okay, let's call.
+build it
+job build job now which build job is this
+Which stage does this build job fall under?
+Comes inside the stage Inside the build stage
+Now
+and which one are you working on in this build job?
+want to run the script in this build job
+I want to run in
+Echo
+This build
+is
+Don
+using docker ok docker build
+Haiti
+Using the dot command
+Please show the command something like docker build
+Hight Dot or Docker Bee
+dot hight tag whatever you can understand
+I came in, many of you got it, how many people
+It means that it has been clicked in such a way that what you
+what will you do
+will you do it
+Stages multiple stages us multiple
+Which of the stages
+stage stage build and for that build these
+one
+Job Bhaiya, then we will call it a build job.
+Can we or should we do anything to this
+Hello, you can do the job, you can definitely do it.
+It's up to you, you can name it whatever you want.
+You can give it any name, it's just on stage.
+It should be referred to which stage it is.
+and after doing this let's
+So I have to create a test job now, so you
+Create a test job
+Put the low stage, which test and for this
+put a different script, which script
+Echo in a shell script
+That this is testing of our Docker build
+Have a small test for the Docker build
+It's okay, now you can do anything similarly.
+You can also get push jobs done and
+What stage will come in the push job?
+Tell me your push stage will come, yes this if
+I
+Push Replaces
+Did a push to Docker Hub and this is what I did here
+But if it is not written, it will come
+If you get an error, you will have to go through these stages.
+Keep the name and the stage the same.
+If it is required then the build will come here.
+There is also a build here, there is a test here, so this too
+test here is push so this is also push
+And you put the script
+Bhaiya what is the script this script is a
+Keyword is in which you can shell nicely
+You can run the script, brother, like this also
+can you do that
+This is pushing
+To Docker Hub, yes you can do it like this.
+It is simple that you can also tell this directly
+Yes, multiple lines of scripts are used
+How clean are you doing it, how clean is it?
+stage script is neat you do one more thing
+Can you get a cheat sheet now what's in it
+All the keywords you have will go into it.
+You will find all of them for example
+General build tests for stages
+deployed pre dot post dot prepost
+What happens before build?
+After that you can do all these things
+If you are creating a Docker build stage
+The script in it
+Rules from all over the world, so this is your cheat sheet.
+Which you can use anywhere
+I'm just telling you how to create a pipeline.
+It's okay to make and
+Also made for diploidy palay
+Low Diploid
+Diploidy
+Palay
+Two ECT instances ok done now
+Dude, that's so neat, Jenkins.
+I had curly brackets and curly
+Open and close brackets all over the world
+There were things in it, there's nothing like that, yes
+Because this is Yaml syntax.
+I don't have curly brackets there
+end values ​​then this object ends
+its value object and its value is
+It happens in a certain way, you just do this much
+After doing this you just have to copy this file to your
+Commit to the repository Commit messages
+put it
+Edit group
+Lub Ci
+ok dead got lub ci commit kar do main me hi
+Commit it, no problem, do it in the main
+Given commit, now as soon as you commit
+Look, here the icon of Gut Lab CI has been created.
+I became an icon, I became an icon, that's all you need.
+Somehow you have to create this getlab ci file
+to your repository as soon as you
+This wrong CI file in your repository
+This option will be unlocked for you
+will go
+Build so the build option is unlocked for you
+where you can build pipelines
+What jobs are in your pipeline?
+You can also see your pipeline editor yourself.
+You don't know the syntax of let's say yall
+So the pipeline editor also gives that your
+I will also correct the syntax of yall.
+You can schedule the pipeline artificially
+You can see, you can do everything related to
+So you don't need to install Junkin tool separately.
+There is no need to put all those features here.
+If given, you go into the pipelines as soon as
+Adding a Git Lab CI file to your repository
+Email is created, then your pipelines are here
+It will start getting made, okay, here.
+Watch the pipeline being built, are you seeing what?
+is this brother what is this this is the thing
+Tooth
+Wala so as soon as you create that mml file
+Automate Your Pipeline Is Running Automatically
+So if you go here, you go to the pipeline.
+You can see that all this is automatically added as well.
+And if you pipeline this is the ID of the pipeline
+If it remains, then click on it.
+If you go then you can see build test push and
+Deployee Pay wala job is running
+How Many of You Are Enjoying Gut Labs
+Brother, I did not install a single word in it.
+Did
+Yes, I am enjoying the same Jenki ones.
+I am able to create pipelines and here
+All my things are also happening interestingly brother.
+Yes, brother
+Like we used to create agents on Jenkins
+And Jenkins was said to be
+Jenkins server
+This is the Jenkins server.
+Hey Master
+server on the master server of that Jenkins
+Vote
+Never run jobs on the deployed node
+Execute but in the gut lab, we
+If agents have not been added then this
+How is automatic deployed and where?
+Deploy when you unlock it a little below
+Go to Settings Go to Settings
+After leaving you have to go to CICD
+Click on CICD to give CI seed like
+Just click and you will see it here
+Runners
+like you had agents there
+Because there would be runners here anyway.
+Runners are the processes that pick up and
+Execute CICD Jobs for Git Lab
+Simply Expand Now Project Runners
+Meaning your self-hosted runners like now
+I can create you instance and run my own runner on it
+You will setup it and then there is an instance.
+Runners this instance runners kya hota hai all
+all over the world all over the world got lab ne some
+Servers are set up like this blue shared
+Galab Ogg Runners Manager Git Lab Such Duniya
+I have told you many such things throughout the world, how many are there now?
+How much are 101 servers for the project?
+There are 101 servers where you can upgrade for free.
+The project
+Diploidi Palay Fukat has just one thing for you
+What does it mean to be careful? Runner's Tail
+Last contact three months ago, this thing told you
+Keep in mind, it's been three months since this runner
+No one has seen this, this is what green means
+Runner is active Runner is online last
+Contact one minute ago look so many of you
+There are so many active runners nearby that it's okay.
+There are so many active runners
+You can also make your own runners and Gut Lab
+You can also use free runners of
+People understood the concept of runners.
+How many of you get the concept of runners
+Put your hand on the pipeline a little more
+I'll teach you about runners.
+Let's go to our pipeline now.
+Let's go back and I'll show you the group.
+A little more power of love, a little more power
+Let's go to Gut Lab CI now whenever you
+This is a CI file, how can you edit it?
+You can also do this in the pipeline editor.
+You can do this in the pipeline editor using lets
+If you have written stages as stage then tell it there
+He will tell you to correct the spelling of Bhaiya and
+You can also use a web IDE.
+What is a web ID, let me show you.
+ID as you use VS Code
+You can also create your own ID for Group Lab.
+You can manage your entire project there.
+What is this, look, your full ID has arrived.
+Now here is your file, it's great
+Edit: Source code control is here
+Commit here, okay, it's cool for
+Example, I went into this file, now I
+what to do
+I have
+have to keep parallel jobs have to keep parallel jobs
+Bhaiya, what is parallel jobs?
+Jobs means what should I do?
+is the stage
+I am in the testing stage.
+Testing has to be done in different environments
+I also want to get the prod test done in dev
+I also have to get it done, I also have to get it done in staging
+I need something like this for my plumbing.
+So what can I do for
+Okay, put parallel stages here.
+can I do parallel
+After the completion of Stage One of the stages
+Stage
+Two
+here sorry not parallel stages it's called
+Parallel Jobs
+S means this is the test stage.
+Three jobs will run in parallel, try this.
+Look what you do, you can do anything here.
+Create a job, okay, any job.
+Create two Let's Say Dev Tests
+Job Dave Test Job Done Now This Dave
+The stage of the test job will be given to you in that
+You have to put it in the stage where you have parallel
+I want to make jobs with let's test me
+I have to create parallel jobs and scripts for
+put that in
+Eco tested for Dave and similarly this thing
+What you can do is turn it off
+Give me a copy of this
+You can do that for production by doing
+Prod Stage Test Tested for Prod It
+You did it, now what should you do, two stage test
+OK
+this is your explorer on its y third
+go source control so what this will do is this
+can commit to your repository
+put it in the commit message
+Edit Parallel Builds
+For test you did it and commit to main
+Click on the branch and do you want to
+Commit to branch continue and you will see
+Loading Git Lab Web ID: See your chances.
+Bean Publish Now go to your project
+Demo CI SD Build on Go Pipelines
+Go automatically the pipeline is triggered too
+Look, the pipeline is triggered automatically.
+It is so true that you also care about the environment.
+Git Lab is giving you Git Lab Runner
+I am also giving you pipeline git lub
+I am giving you the code also gitlab gives you everything
+It is running brother, click on this build.
+Now let me show you how does parallel
+Build Looks Like Can You See
+This is a stage in which parallel bid is
+all three together can you see all three run together
+getting
+All three are running together, how powerful they are.
+This is okay how powerful this is that you have a
+Production Dep Staging All Three at the Same Time
+I have to get the test done, runners too, just you
+I have to build a logic and write the command
+It's up to you, okay, so be it.
+Look how beautiful the push job looks.
+not that you can do
+Multiple Multiple Jobs in a Single Stage
+OK, now you can go to any stage and click on it.
+You can and after clicking you will get that
+The output of the stage will also be visible.
+See tested for Dave okay tested for
+Dave, you can see the output now.
+Your runner, see which one was used, three green
+Mother-in-law
+linux.com so you can see one of your
+A good runner is also ready, he has
+I have told you the thing, look it is running right now.
+ok beautiful
+Funny everyone
+A CICD pipeline will be simple to create.
+At least create a demo pipeline and
+Git Lab Pe Run Kar Dega Aa I'm Pretty
+Surely all the people in this batch will do it.
+And many people may have done it too
+Because it is so easy brother, it would have been so easy
+So tell me something the whole world could have done
+If the world cannot do it, then let's talk.
+Let's talk about variables
+that if I have to use such variables in it
+Passwords are secrets, so how can they be
+I will use it, which is very important.
+So for
+Example, I went to my ID now
+I This build is done using command a but
+I need to enter my project name here.
+If there is then there are some inbuilt variables like
+what is dollar
+CI
+project
+Name: What does this mean? CI project name: This
+There are inbuilt variables, you can change it
+Galab CI project name is now predefined
+CICD variable
+Chat Channel Chat Input CI CI API
+I want to see the author of the CI commit from Lets
+that who has committed this so this is
+testing out
+Build done by and here I am mast dollar
+What can we know about the CI commit author by putting it?
+It will happen that brother this
+The testing that is being done is for this build
+Here is what this developer has committed
+For whoever committed that
+Testing is going on, how cool is that first
+The variable is defined from the commit branch itself.
+Testing for dev commit message
+There was a lot of tag title happening for this message.
+There are many, brother, you will keep searching for them.
+There are so many CI runners, which runner should I use?
+I was so cool, she's so beautiful, okay, pre
+Defined variables means too many variables
+Many have only this much so you are limited
+You can use variables
+But I hope you understand that this
+How to use it, it is inbuilt
+Variables then come your user defined
+variables that you
+Create an object with a variable name
+variable let you have a variable
+made
+Diploid A variable named Diploy et
+made it and gave it a name
+production production then you
+Created Git Hub Git
+Lob
+I used one of the user's keys and
+made
+this is my
+Secret Key Simple Now Deployed Production
+You have to use it from here.
+I am pushing to Docker Hub for then how to use it
+You will do it directly
+dollar
+Deployed now here
+Pay Tested For
+Di using dollar now what your git lab user
+That using this Git Lab user means this
+I
+I am giving you a demo on how to change the variable.
+You create your own variables
+You can also use Git Lab's built-in variables.
+Can you use it? How many people will understand it?
+I thought that to create a variable you can do this
+Now brother, create a variable and put this dash in it.
+Why not put it because you are using the variable
+You are creating an object and a list of variables.
+If you are not making it then there is no dash on 'y'.
+It will be applied directly, the same principle as
+You do this for the environment in Docker Compose
+environment and variable names
+I have written it without dash, okay put it here.
+aided
+Even
+variable for
+Pipeline Edit Some Variable for Pipeline
+Commit to Men
+Branch Success Your Chances Have Been Committed Done
+Now you will go here to the demo build in CICD
+But if you go to the pipelines, you'll see
+Automatically edit your commit.
+The variable is there before you even see it.
+The pipeline would have been checked that the brother
+You have also messed up the pipeline.
+Whether the changes are right for the project
+It runs automatically so if these shirts
+You are in 2024 and if you are looking for automation
+If you are not using Gut Lab then you are missing out.
+You are doing a lot of things, I hope this
+Everyone must have understood the thing.
+Now look how cool this platform is
+Build Job Pay
+I'll go through and find the variables I used.
+Pre defined they will appear here echo this
+CI project name build is done using
+Locker Command This Demo CICD What is
+This demo CICD is of my project
+The name is what I've created here from the variable
+Printed this demo CICD build
+Is done using command this is fine great
+Beautiful now beans I different for her
+I will see
+A pipelines fine
+Now from Let's
+I used it somewhere else as well
+Right, put your user-defined variable somewhere.
+Use that used for push
+So you can also see the variable for that push.
+will give seen
+Deploy the value entered and push the hub
+It has gone but brother, I did not enjoy it, I will enjoy it later.
+When you're here in secret
+Will you show me my password for AWS?
+The account ID is
+Or my Docker Hub username and password
+that's what I want to use in this too
+How many people do you want to know without showing them to the user?
+How to do it like you do in Jenki
+You set up credentials and that username
+And the password comes out and you can do it without
+Show me how you can run the pipeline, let's do that.
+Let's take it, you have to go to settings
+If you want to go to CICD, click on it.
+But now you have to go here to the variable.
+and do it to him
+Expand so here there are three types of variables.
+are like protected masks
+expanded expanded directly you a
+You can access another variable from a variable
+It is of no use, you look at this mask
+You are the most important, so let's go
+Start creating environment variables
+CICD Variable Add Variable
+Now do we have to keep it for the entire environment or
+For whom should it be kept visible or
+You have to keep the mast, whatever you want the meaning of mast to be.
+Do that and the value of the variable is not passed to anyone.
+Let's keep the mast looking
+Description
+This is my Docker
+Hub User
+Name Key
+Train with Shubham Sorry for the Train with
+Shubham will not come or will I come, whatever you do
+Hey, let's say Docker Hub users, tomorrow you guys
+There must have been a lot of confusion, brother Docker.
+HubCred was the credential ID.
+Variable made and in it all the world
+Directly Docker Hub User Train with Shubham
+Protect variable means you can protect this variable
+You can use it only in some branches.
+It's up to you, okay, add it, it's done.
+Docker Hub User E Protected Mask End
+Expand Now similarly you take a variable
+Take a mask for the entire environment.
+Protect it and put a description.
+This is Docker Hub pass password slush token or
+Then the personal access token is ok Docker Hub
+Get Personal Access Tokens now on Docker Hub
+But I hope everyone has understood this part.
+that on Docker Hub
+You can also create your own personal access token.
+I think everyone will know about this.
+Go to your account and go to your account settings
+Go ahead and log in if you need to.
+Using token, you can create a personal access token.
+I'll create a new token if you can.
+To whom I will give it Git Lub
+token and I will give it read, write and delete
+I will copy this token and use it in my
+Should I put its key in CI CD?
+Docker Hub
+Password OK I will enter the Docker Hub password
+I pasted this value in the value field.
+As soon as I added the environment value
+Just cancel it, now this username, this password
+someone who is not visible to anyone
+You can also use it in pipelines.
+No one will see it, it will always be mast
+The value will not always be visible
+Mast aayi ok let's done variable ho
+Now let me use this variable
+If you want to do it then come Pretty Shar, you guys understood.
+You can use the variable by dollarizing it.
+How many people can understand variables?
+I understood that you can create variables like this.
+I came in variable and let this same variable
+So I have to use it here so I
+Directly go to the ID and edit it.
+Give
+That
+Deployed Dock
+hub user docker hub user and it it docker
+Where will the hub user come from in your environment?
+get up from
+It will neither be passed to a pre-defined variable nor to the user.
+Use from a defined variable or from your secret
+be Docker Hub username s environment
+Committing the variable
+It's done, I hope you find it all easy.
+It will happen because we are on the difficult part right now.
+People have not come to the difficult part.
+People have not come, let's come, let's come.
+Difficult Part Pk
+Bhaiya, there are logs from let's in every job.
+Logs those logs to me in artifacts
+But brother, we have to store it and then our learners
+They say that brother
+We were going to artificialize, we are artifacts.
+To know in advance that
+artificial
+You ran test cases from that test
+Some log reports of cases were generated now this
+Logs and reports are downloaded to you in one file.
+To do this you need to download it
+You can share it with your team.
+and such things which you can collect from
+Your Pipeline So That It Can Be Shared With
+others are known as
+And you have to store that log somewhere.
+Where will you store the artifacts?
+You will store it like a G drive.
+You have stored some photos in the drive and
+You can always download one
+J Frog is artificial, did you say that?
+An artifact lives
+Let's from AWS Artifactory there
+If you put it in or you gut lab yourself
+You can use only that artifact
+I will show you
+Go to Settings Go to CICD Settings
+I went to CICD
+Went
+Now what did you do here
+did it here
+You went to Artifacts and expanded
+Kiya ok keep artifacts from most
+Recent Successful Jobs You Ticked
+Meaning the artflute of the jobs you will have
+It will remain simple, okay, yours already
+Now what do I have to do next?
+next what i have to do
+Simple one second
+What do I have to do next about this thing?
+How to use it in your pipeline
+I went to the ID I will use in the pipeline.
+Simple now which stage can job ki
+Artifactory You Need Late Test
+job hai test job hai jo let se
+Echo
+these are my taste
+The result is correct. My test results are ok.
+Now tell me what my test results are.
+If I want to store it in a PDF then I
+how do I do the dlog one is my file ok
+I need to get this thing stored from Let's
+Now what do I have to tell you about my pipeline?
+to know where its artifact is located
+Artsy
+Factory OK, where is the artifact factory?
+Will you call Artifactory as Artifacts?
+Where you will have to give its path
+What path will it be brother?
+It will be like this
+Paths let's say I want its paths
+Honge Builds
+slash enter whatever builds you want to enter
+Consider this to be your folder.
+Demo CD, inside it all your
+Consider these files as another folder.
+You are building a build
+Or you can make logs anything you want.
+Above is this is just the name of the folder from let's
+I named it
+Logs Now this is my logs in this folder
+Of
+Your Pdflog will go inside What is Pdflog?
+Dlog is a file which I want to
+Preserve from
+My script and from my job simple now.
+This whole deployment of late has come to something now.
+I this too
+Our
+Echo this log e from dollar ci now watch
+How to name CI stage here
+stage ha ci job stage ok hai lets se
+This is from CI job stage and this is for me
+I have to put logs
+Slush appends this to logs how many
+People know the difference between single and double
+what is the difference this double is used to
+Append and Single is used to just create
+okay log a dlog okay and also of this
+You can tell the artifact in this
+that the paths are the same above
+wala logs okay simple that I have a logs
+of the name
+I made Artfed where I keep all my
+Storing logs
+Now I want this log to be there forever.
+I don't want to keep it with me, I want the log
+be expired
+go
+Expire In
+One from Let's
+Week to Week Expires in One Week
+Correct
+So I want to call this artifactory this
+Artifacts expire after one week
+I will give it to you, okay simple, I will give it to you after a week.
+I will expire and that's it.
+I will not do much artifact
+I stored as much as I wanted.
+Stored for that many jobs only, generally people
+What do you do with the entire pipeline?
+and as with push jobs
+Even if you don't want logs, they will still come.
+goes watch is not good okay that is not
+I want to get my rights, I don't want anything like that.
+And with that being said eco tested for
+Prod Gut Lab Users It's Over Done
+commit this
+Two added artifacts
+commit to main ok
+Now watch as your success comes your way
+Change has been committed in your build
+Go where did your build go, go to the build
+go to pipelines you will see that your
+The pipeline is running but there is a lot of
+A cool thing has arrived, okay, just a little bit.
+I will show you later, it will be very cool.
+I think I'll show you when the build is finished.
+How Much Time to Build a Pipeline Takes
+No, not 6 minutes, but 1 minute 54 seconds.
+1 minute 54 takes two minutes to complete a pipeline
+It's taking about two minutes to build.
+is it fine okay for free a for free
+That's all I get We Did Create the Logos
+folder folder what is it like in that you
+Like if you give the path then that folder it auto
+CreateDrawAnaNavigator
+If you look, you will see the download folder here.
+where your two
+Artfed for Some Region Lets See Test Job
+is now felt why let's see the
+Region Log Dlog No Such File and Directory
+See this This is testing out of Docker
+Build This
+Why master, because whatever I wrote
+He's mastered it's okay
+Now yes correct if you get a pre
+Define a variable sorry not pre defined
+variable you have to create a folder whose
+You are creating the name yourself then you have
+to create a folder but here is a
+Artificial, whatever things, whatever, whatever jobs
+It ran an automatic job dialog created
+in which you can download it
+You can see it nicely but let's see you
+I want to make something of my own name with Let's
+Something called logs or something has to be made then it
+Correct you have to create that folder then
+Let's create that folder right here.
+Let's go where it is being used
+If it is being used in artifacts then here only
+Create it, okay, MKDI here.
+R Kar Do And Simple
+What is Pahan Pa? Let's give you a
+If you want to create a particular path then
+Create a Logs folder here.
+When do you have to do this when you have to do it yourself?
+Do you want to create a folder named or create your own
+If you need name logs then you have to do it.
+Added User
+Defined
+Logging folder OK commit
+Done ok now what he will do is first this folder
+He will create it and then he will run your things fine.
+will first create the folder then run things
+Come on let's go and check it out, look at this, it's added
+If the artificial pipeline fails then here
+I came as a cross if anything fails.
+She goes here and the cross comes, otherwise she
+Tick ​​comes ok now go to build
+in the pipeline
+Go, you can do one more thing late.
+If any pipeline fails, you click on it.
+By doing this you can run that thing that much
+pipeline go back okay that much pipeline
+go back you can run okay let's go now
+Let's see how our pipeline is right now.
+Performing Dev Prod Test Both of these things
+It's on, come on, let's
+C OK
+Test Job Failed Again Let's See
+what is y saying
+This lagad log no such directory why is it
+Giving No Such
+directory okay let's see that it's like this
+Why are you spelling log correctly?
+I felt
+Lock Lets
+See Let's D
+Bagsargi
+This is the thing that
+You should know before using the Logs folder.
+No, why a small mistake but very nice
+pic so it's a good thing that this thing is your
+He was detected before going into production.
+I will tell you and you can
+Directly Minor Fix To
+CI these small ones live I towards the
+End of the session my office pipeline too
+I will show you brother, I can't wait, show me now.
+Okay, so I can't show you the code, but
+Let me just show you the pipeline.
+So this is my pipeline, just to show you.
+So that you will know that brother
+How does a pipeline look like? Well, just a pipeline.
+I might not be able to show the code
+for the pipeline to build
+Pipeline aa show ya how the pipeline of my
+Project Looks
+Like Can You See This Build Test Report
+Just did a simple build, lots of testing
+We have testing all over the world.
+There are friends all over the world and then there is his
+Artifi
+Diploid Mo CICD
+Pay and see our recent pipeline
+Whether built or not, minor fixes to
+CI is currently in process late
+See OK the pipe the job has been built OK
+Come on, I have introduced you guys to my office.
+The pipeline is also shown.
+that many people ask that brother again junkin
+Why are you not using Jenkins also?
+I will show you that too, but if you
+CI has to do only one project related work
+Ka git lab ok many many organizations r
+Moving to Get Lub at the Same Time They Want
+People who have junking so that their
+It is okay if old projects are also supported.
+Let's create your entire pipeline once.
+It's complete, now you go.
+Artifacts p now you're gone Artifacts p now
+You will see that
+Deploy or whatever the test job is to files
+Which files are artifacts, zip, and
+Meta data, what should you do with it now?
+Deployed Sorry
+Deployed job and wherever from to file
+You kill him with great pleasure download
+Now I'll show you a very
+That's right
+Here's my thing
+Artifact Test Result This Log Is From
+Deploy you see all of the logs I've captured
+From my pipeline
+A very good way to manage your logs
+has captured
+I hope you get artifacts
+You must have understood how to use it
+Artificial
+Okay, how many people even understand gut lab?
+Coming up in I Can Create a Pipeline
+I can create my own variable I can
+Create My Own Secrets I Can Create
+My Own Artifacts
+Ok
+Let's go, need a break or you want me too
+Continuum
+need a break or need a break okay let's
+Take a small
+brake
+OK, let's see where we are.
+Are So We Saw How to Create Pipelines
+We Saw Variable Secret and Artifact
+V
+So just now next we will be talking about
+Self-Hosted Runners and Sus Runner OK Sus
+Runner, we have seen it, basically
+Software as Service Git Lab somewhere
+Already installed and running on your runners
+There are also known instance runners
+You get 100 plus instance nurses
+Where automatic things keep running
+Is
+Ok
+Chalo Let's Talk
+About Self-Hosted Runners and Sus Runners
+So basically these runners are your runners
+which are also instance runners, meaning you
+Will you expand this instance runner as well?
+SS runners say that there is already a gap here.
+The lab's software is installed and it will
+pipelines
+If you run it, now you will see this and you will see some
+You will also lift any pipeline
+Here you will find a little about this runner.
+You will get a lot of information like this is a pipeline
+So where did this pipeline go?
+Build Jaws
+Where did it run? It ran on this runner.
+six green sus linux sl y to it by
+By default, git is the runtime of lib but you can
+You don't want this to run on GitLab's runner
+this is our own okay this is our own
+Walk on the platform, okay, how will you run it?
+You go to the runner page, okay, go to the CICD.
+And then you go to runners now you to new
+Click on Project Runner and the three dots
+By creating with runners, creating runners
+With Runner Registration Token is disabled
+You will have to install it manually
+Click on New Project Runner Done OK One
+Click on New Project Runner and add it now.
+Tax to Specify Jobs That the Runner Can
+Run like junkin has labels that
+I put the Dave label here from Let's
+And I said that as many Daves
+All those who care about the environment will be on this runner.
+Will you run on this agent or on the runner?
+If you go, wherever you have put it in the pipeline
+Def put that on this particular runner
+You will go to the labels like you used to put in Jenkins.
+Dave would have been assigned to that particular agent
+Similarly, you can put tags here like these jobs
+Doge Dave Prod Staging and your job is
+Assigned to the agent or this runner
+I will go because in India it is called agent.
+In the gut lab, this is called the runner's fix.
+Don't put description, it's time out
+Fine, no problem, click on Create Runner.
+Just give the label and click on create runner
+Now do many different things for yourself.
+There are types of runners like you can use with Docker
+You can also run the container as a runner, Kuber
+You can also run the Nitties as a runner
+Run uxx1 so how do i install gut lab
+Click on Runner, now your architecture
+See which architecture you are working on.
+When the instance was created, the x86 version remains.
+AD x86 also remains MD64 so it
+Select Download the binary for your
+Give the system the permission to create a git lib runner
+User Install Group Lab Runner as a Service Copy
+Do it and go here sudo so user
+Become a super user, become the one who scripts
+I copied it, throw it here, okay.
+Drop it and hit enter, now that cool install
+will make your git lab runner okay he's your
+Install or download GitLabRunner
+Binary for Your System First he Binary
+Downloaded it, then gave it some permissions.
+A user of a group club runner created by user d
+A user of Git Lab Runner created and
+If you start one of his services then it will start
+Group Lab Runner
+You can start by going here and watching.
+Yes system
+ctl git
+Lob
+Runner
+Check the status, first check the command, get lab
+Runner yes let's go so got lub runner
+Status group Lab Runner Service is running OK group
+Lab Runner Services Running So how do you do this thing
+You will install it on your system and you will go to
+CICD Settings Pay Register Runner Pay
+Operating System The operating system you
+I want to make the runner run
+How to install it, click here
+All its installation methods will be available here.
+I just copied it and pasted it here.
+OK, now your Gutlab Runner is installed.
+He is done with your project.
+To register means to understand this in such a way that this
+is
+Your Machine This is your machine
+it's ok
+This is your machine
+which one is it
+Nux and its your gut lub
+Hai Galb.com what is your post on Galb.com
+Your project has been placed on your neck.
+Happened
+what is in this project what is in this project
+In my dot gut
+Lab CE Dull File
+Now this project is
+By doing this he has now become a runner here but this
+The project was not registered with this runner
+So I want to register this project now.
+How will I copy and paste the following
+command into a command line and register to a
+runner then
+gitlab.com token This is a secret token
+Okay, I went here and after going here I
+Paste that command: get lub runner register
+get lub enter now he is asking
+Let me shorten it a little bit so that
+that you have good visibility
+met okay now he's asking enter the gut
+The LB instance URL is now your
+If it is running on gitlab.com then gitlab.com
+Leave it as is Enter Verifying Runner
+It is valid okay enter a name for the runner
+Let's put its name in a
+Vivek Bhai, Vivek's message is also there brother.
+So runner Vivek is fine.
+Now Vivek has become an executor
+Bhaiya, what is an executor, like I
+Bataya Na Agents P You Multiple Builds
+You can run multiple threads just like that
+You can execute your runners on
+Jobs so I want that on my shell only
+May my job be executed
+You can also do this in Virtual Box.
+You can also do it in Docker, you can find it somewhere.
+You can also get it done, it has to be done in late shell
+So I'm going to put the shell here.
+Enter Done Runner Registered Successfully Fill
+Free to Start It But If It Is Running
+Already the confession should be automatically loaded
+Okay, it's done now, what should I do now?
+what do you have to do
+Have you registered a new runner as soon as
+You register and from there this
+project
+The connection is built because of its
+You have the tool and you can register a new one.
+Runner However, if you need to run a runner manually
+If you want to do it then you run Gut Lab Runner Run.
+get lub runner run you run okay but your
+either already registered successfully and
+Git
+Check love runner status
+Low services running, everything is going very well
+How many people think he's in just three?
+There is no step three, the third is optional.
+Step two and step one and plus
+Installation in three steps Register a runner
+how many of you can do that
+For me I want to know okay now you
+Go to CICD settings in Runners
+Get your assigned project running on Runners Def
+remained
+Now you can either send these instance runners
+Disable it, brother, give it to me for free
+We don't want the things that happened on our own runner.
+You will either do this or you will
+Keep your ego aside and run it like this brother
+If it works then it is fine, if it does not work then it works on this
+What will we do, we are Indians
+I want it for free, okay, so this is it.
+ok but if
+I do a particular job
+If I want to run on this runner then I have to
+I will have to tag how many of you got this.
+It is written in stone that if I get any job
+If you want to play it somewhere, give me this tag.
+I will have to, let's tag it, it's Dave, right?
+So let me run the build job from
+So what tax will I pay?
+Tell
+Dave now this tax Dave what does it take me
+You will find out that this particular job is Dave
+only on instances with
+The push job will run on the dev instance.
+Will run only on the deployed dev instance
+The dev test job will run on the dev instance.
+Let's do a production test job.
+I don't want to run it, let's run it for now.
+I will remove this later, okay, how many?
+Of you group this
+Tags System Tags Tags means that you
+On which executor is the particular build
+drive
+which executor to run it on
+Done went to commit
+Added a
+cuter
+Tags
+For runner okay whatever execution on runner
+I have done the tagging required and committed it.
+Diya for Your Pipeline
+Sorry, now the terminology
+Think it was like junkin' agent
+Well there's a runner here like Jenkins
+I used to have the label of agent, however here
+Pay Runner's Tag
+have commit to
+me oh yes what are you
+went fine
+Now I'm not a CI CD so I can use my
+I will go to the build, where did my build go?
+I will go to the build, I will go to the pipeline, now you
+You will see your pipeline after your commit.
+Oh, she has failed, let's see why she failed.
+see
+Whenever you need it, you can directly
+Go to the job and find out why you failed.
+Done Job Fail Prepare Environment
+status runner to mil gaya usko den wai it
+Failed Preparing Environment This is Done
+Job Field is fine, you can go and check it out here.
+Ho Got Lab
+Runner Run
+Done Run Time
+The platform is fine, the platform is also working
+come on let's
+See let's see if it is failed then let's
+Try to redeploy, let's see if there was
+Some Kind of
+Issue you can also retry failed jobs here
+you can do it okay
+Okay, brother, this can also happen.
+that your runner is about some particular thing
+Because of this he might be taking some action like I
+I'm trying to force something to run
+So it is also possible that he may take some action.
+It must be going off like right now my build
+The job is done, okay, build my job.
+Succedence
+Seeing Job Field
+Let's see how I prepare myself
+Brother, this environment is failing every time.
+But while our Joe
+build job was which build job was this one
+He was getting close, meaning there is something.
+in my particular
+instance that resets my environment
+If you go to build job here you
+You will see that the runner ran very well and got
+Sourced and everything is going well everyone
+Agree to this that runner own this GN
+BA whatever personal our own runner was
+Everything went well but brother, that's the next stage.
+I am failing what does it mean
+that whenever the runner comes here, okay, whenever
+When the runner comes up, it logs the old instance.
+means once the runner starts
+If so, log out the old instance.
+What do you have to do to make it happen?
+I know there is a particular file
+Watch CD SL Home SL Gut Lab Runner and his
+You will go inside
+LS you will not get anything if you do LS han a
+will get a bash logout bash log out meaning
+Gutlab Runner keeps logging out
+Why is Gut Lab Runner doing it, so we are
+will go em dot bash log out
+And there's something written here.
+That wherever you have to go through some particular process
+And ho ja the ye dekho when leaving the
+Console Clear the Screen to Increase
+Privacy Clearing this screen
+And the runner of my instance is
+If it's closing, tell me what's going on
+The thing needs to be logged out repeatedly
+Why is it needed? Executed by
+Bash when login shall exist when
+Leaving the Console to Clear the Screen
+increase
+Why do I need privacy? I need it.
+Not only that I keep getting logged out again and again
+Just go and comment it out, I'm not
+Wants me to log out and back in again and again
+I'll save it by doing this. Now what do I do?
+Now I'll run my runner back
+After doing this I want to run my runner again.
+I'll do it now and see what happens
+Now I am at my jobs
+I will go to the pipeline and this
+I will execute the pipeline again.
+ok sorry not download then execute
+I will do it, now see the one that is going to log out.
+The option was to log out after every build.
+I was getting logged out after every build.
+he was
+No option
+can you see this
+How many of you can a runner run from end to end?
+How to set up with real-time troubleshooting
+shooting with a
+Pipeline Done Now What Do You Do Checking For
+Failed Jobs Post Done Okay it's done
+Now you know what you will do
+Else Sorry CD Sl Home
+git lub runner builds
+CD Builds
+this this
+Whatever your entire project is,
+Your instance has arrived TW S
+devops Your entire project Your instance
+Just the way git lub on hum
+People created a home directory home
+Stutoo sl apps and a working one at that
+directory and your entire git directory was in it
+Cloned and running the project
+How many of you remember me?
+yesterday is fine
+How many people have understood that brother?
+How to do it, what to do
+Went
+Now brother, I understand the runner as well as the pipeline.
+I understood it and also understood the environment variables.
+I came and saved
+Tell me how many people understood the runner?
+what we should do
+We need to connect an instance to the Google Lab
+and on that instance we have to create a runner
+and that runner is your project
+It will run so that you can be free of gut lub.
+If you can't rely on instances, we're covered.
+Self-Hosted Runners Age Well
+Brother, please show me one deployed project also.
+Dude how many through CICD pipeline
+People want to see a project deployed.
+With a CICD pipeline, let's do this in
+One go is fine, let's do it in one go
+Let's do it in one go
+So this is your Git Lab
+hai demo ci sadi ok similary
+Similarly I cloned you a project
+made someone remember
+One of the TWSS deps
+We had the project cloned.
+right this complete this
+Project You can develop this project
+You guys will do this project okay?
+You can take diploid, I have plenty of them.
+I will show you guys
+So I don't have it anyway, if you want to
+See I have some but okay this one will do it for you
+Docker file required OK or Docker file is there
+It runs on port number 8000
+Okay, let's clone it.
+So the gate
+clone
+clone it
+Now what do I have to do with it?
+The project with the CD node here gives me a
+dot git
+Lub C
+I'd email I need to get this file okay but
+from him
+First, let me tell you a little about this
+What kind of stages should a project have?
+We are going to tell you, we will build the project
+Then we will test this project.
+will we do it or yes okay then we
+It also gives a push to the project
+Will also use Docker Hub
+I will do it, I will push it to repo, yes, okay.
+Is
+Docker and then we will build this project.
+What will remain diploid and that's it.
+If it remains, then the construction job will be there in
+What will be there in it, what will be the stage
+will remain
+Build everyone understands this.
+No, I hope this thing is going easy for you guys now.
+It must be that friend, right now you don't fancy yourself like this.
+We don't need an editor, we are great.
+I used to use Vim and it was working fine too.
+Okay, the scripts are done now.
+What do you need yourself
+Am
+Docker
+build hine t then
+What notes not
+Node Plate Test
+dot
+And the tags that remain will remain yours.
+Dave because I want to build this on Dave
+I want a test now similarly I have one
+Job
+whatever will remain
+will
+Some of it will work on stage test
+scripts
+will remain like
+What script should I keep, I don't have anything for it
+You can add it if you want
+So
+Tags Dave Okay now here you are
+The important part comes
+Push
+Job now tell me what stage I am in
+I will write push I will write or what
+tell me so that I understand that you
+I understood that I will write push no not push
+to Docker Hub whatever my stage name is
+Same stage name as defined above
+Push to Docker should also come down here.
+also come
+I should have done this now after I've done this
+What I did was yes, scripts.
+First of all what do I
+I will docker login
+Now where will my username come from? Dollar Docker
+Hub user bhaiya jainki me to vid
+Credentials and things around the world are fine.
+IIN P DOLLAR Docker Hub PASS OK LOGGED IN
+What docker image to push again?
+Tag the old image name node
+Latest old image name then new image
+Of
+Name
+Dollar Docker Hub
+user
+slash your what node pup
+Latest this will be yours and you will keep this thing
+What to do
+Do you want to push to Docker?
+You will push this same thing to Docker.
+Done, how many people have this thing clear till here?
+It is happening, meaning it has become so clear that he
+How many people can make this thing themselves?
+It is understood that he himself is also a complete
+I can make it complete, what will I do now?
+Tag this too
+I will give you Def and
+[music]
+so okay and here
+Deploy as much of the git lib as you have
+Put all the knowledge in this stage.
+Diploidy
+what is the script
+Will it be Docker Run or Docker
+Compose and if you are using Docker Compose via
+You are running it and put some tags for it.
+Give me Dave, what should I do now?
+I have
+You should check your Docker Compose yall once.
+Where in this image node p batch six
+It is written where I consider myself only and
+Just keep it that way, okay
+Done, now you have to check this once.
+Whether your runner has Docker on it or not
+Yes, that's fine, okay, wait for the error to come.
+git ok
+status on branch master modified docker
+Compose aided group lub group d dot ya fir group d
+Dakar
+Compose Group
+D Kya Dot Galb Ce
+Git
+status two file edit git
+commit hynum
+Edit CICD and Docker
+Chance Done now git push
+Origin master because it is the master branch
+is in
+Enter was also pushed
+Meaning you'll go here and hit refresh.
+You can see added CICD and Docker changes
+Changes have also come here, which means
+You also learned how to use Git Lab to create a
+Push pull through SSA with even instances
+You can also do a normal bit of a git
+There is work brother, the pipeline may fail
+It has already happened, let's see why it has failed.
+You will go to the pipeline in the build
+You will go and this has failed you, why did you fail?
+It has been seen
+There are jobs
+Build job conf should implement the
+The script run and trigger keywords mean your
+Mamal Invalid
+Bhaiya, your Yamal, you have done something wrong
+Di, let's see what's wrong
+did you mess up the script what did you do
+Diya ok validate let's validate
+Pipeline OK
+Run and trigger keywords the job build conf should
+Elite the script oh brother you have here
+messed up using scripts here
+Look, he did it, he said it directly.
+Script is not allowed okay now here
+No quick fixes right now.
+do the script
+This
+Okay then the last one will also be messed up, yes now
+After doing this, just commit the same.
+thing in the pipeline editor or in the ID
+could also do ok now checking pipeline
+Go to status Go to pipeline Now this
+Your pipeline is being checked
+is pending
+Stuck it, your pipeline is stuck it
+When does a stuck occur? When your runner is not available.
+What happens when your runner is not available?
+your stock comes okay so you
+Go to Settings in CICD
+Go Runners
+It is just available
+If it is not working then git
+Lap
+Run the runner and see, ok running in system
+Mode Try to Build Again if Still Woe
+Struck comes We'll Find What's The
+Issue Let's Try to Run
+[music]
+again
+Running, let's see that he's getting a runner
+Or if you are not able to run then it is coming
+[music]
+come on let's see what is the
+[music]
+Problem No to do CI CD has problem
+why are you coming
+Let's Run Pipeline
+Yes to Again Master if you want to change the parameters
+If you want to enter then you can enter parameters from here.
+You can also add something if you like it
+If you want to know the parameters, you can enter them from there also.
+Let's see what the problem is.
+This is happening by running the second pipeline
+Let's see if that one works or not.
+So that you can know what if
+Something in itself, something in the pipeline
+The problem is, let's try to run this.
+TW's demo CICD pipeline here
+Try running it
+OK Go to Build Pipelines
+OK Run Pipeline Lets
+See build job done but then these are
+Pending means this pipeline is running
+Your runner is active. Your runner has no
+No problem, your runner is fine.
+Is doing a good job runner, your doing well
+There is a problem with that pipeline.
+Okay, let's go to that pipeline.
+Let's see the Note2D pipeline run
+try and see
+Let's see this pipeline is
+Gating
+Stuck let's bug that why is this getting
+Stuck This Job Is Stuck Because of One of the
+Following problems there are no active
+Runners
+Online No Runner for the Protected Branch
+And no runners that match off of the tag c
+Runners look for protected branches
+It is also possible that a
+Runner No for Protected Branch
+yes we
+[music]
+Go to CI settings and see if this
+There is some problem with the particular pipeline.
+Not there.
+aa this project runner is dedicated to that
+Project Just Enables You to Know What to Do
+to do
+Now you can assign a runner to your project.
+Go to Build Pipelines
+and you
+Can o can you see the stuck part is gone now
+That's not stuck right now, your pipeline is
+Pending it's not stuck so go here and do that
+Runner Pay is connecting ok but it is not
+Stock OK
+It's being built right now, let's see.
+Go to the console log and see what it does in the build
+what's up lat
+C is still pending
+Yes, there could be one more thing, my friend.
+If you don't have Docker installed,
+Let's go and let's try to install
+Docker Okay, to be on the safe side, we're going to
+Also installs Docker on the instance
+So that there is no scope that brother
+Things are getting worse because of our Dr.
+stk sudo a pt
+Gate
+Once the update is done, we will
+Also install Docker
+will take
+[music]
+Let this be it
+Gone Sudow
+AT get install docker and come and docker
+Compose
+What do I want to do, let's see what's right for me
+You need to change the command a little bit.
+will have an error
+I will kill you, let's go
+C
+ok this will be yours install it in
+No problem, we go on our way
+line pipe
+Pay and run this pipeline back
+Are
+Okay, let's run the pipeline and let's see
+If our runner is okay, runner, I've done this job.
+Why Runner Picked Jobs Because We
+People have given runners for this project.
+I enabled it, what was it before?
+was disabled was disabled and because of this
+He couldn't pick up, that was the man.
+Problem ok I hope you all are fine with whatever problem you are facing.
+You can learn shooting from this session.
+Look, runner A, look, runner has been assigned.
+is and can you see successfully build and
+Tag Note P Job Success
+[music]
+what other jobs are doing come on
+Done, which push to docker gut failed?
+Let's see pu docker hub feld y lets see
+Why it got failed because whenever you
+There will be a problem in the pipeline, can not perform
+An Interact Login from Non TT Y
+Device OK Let's
+C Cannot perform active login
+OK Device Device
+Two
+Let's go
+We
+OK for all of you fighting with errors can't
+Perform interact login from non TT or
+Device solution was provided here
+Let's see the solution
+No solution found if your branch is not
+Protected than your variable in Git Lab
+should also be not protective o let's go
+And this is your branch.
+Let's protect it from everyone
+First let's protect our master
+Branch
+What problem is happening in Gaya branches?
+Your branch is master
+This branch is unprotected.
+So it is protected then why say this?
+I have never faced this issue, this, that, okay.
+T git lub link i down ok aa probed not
+Need the link problem was the variable was
+Not Presented for the Pipeline
+Oh, let's see what this thing of yours is
+Who is the pipeline?
+For C node CICD, whether that node
+Is that a variable for CICD?
+Let's go to Settings Let's go to
+CICD
+And let's try to get the variable
+[music]
+Come on
+God, why does this happen to us?
+How many people understand the error?
+Came
+Import
+Variable from another project Git Lab
+Let's See If We Can Do
+That's what we call project level.
+CICD variable
+OK Project Level CICD Variable
+Okay, let's see I hope each project.
+So we have to define this is
+It won't be hectic, will it be anything brother?
+There's something very powerful about it
+It will happen, we will find it, let's find it
+Looking for project level variables
+This is my project settings
+Variables store information that you
+Can use in job script j this that is fine
+Expand Tax
+ha so this is how I TW deps this
+Let me assign the variable to the project itself.
+I understood that in this project, whatever
+All of them will get these variables like this
+Let's try something and see
+Let the variable environment be all
+master description this Docker Hub password
+Key Docker Hub
+Near
+I picked up the value from here.
+Lee and passed it here as the d variable so this
+How I'm doing it at my project level
+Okay, now similarly I
+Let me do this too, this is Docker Hub
+user
+I'll put the duck in the name of
+I will put the train in the hub user end value
+With
+Shubham makes the d variable and lets see
+If hour
+Project Gets This Okay Let's See If Our
+Project Gets This and We Will Go to Nuts
+to do
+CICD and Let's Try to Build the
+line pipe
+Again, let's
+See if your project variable can pick this up.
+Run Pipeline Le Trot
+Again let's build job how many people ya side by side
+If they're doing it side by side
+I have one more wonderful thing
+For
+I have also created a project here on the jungles.
+There is also a setup for this which you can run.
+yes very
+Very interesting app with cool version
+Can you show me, I will make it public.
+So that everyone can see this, it's public
+Only See You Can Access
+this is another one I've kept hey
+Dude you failed
+Gaya why fail ho gaya ya pu job failed
+Again incorrect username and pass brother something
+put it wrong
+I have tried using the Docker Hub username or the Docker Hub username.
+I entered a wrong password but can you
+C that the problem of TT y is na
+Fixed
+So let's go to our TWS
+Docker is
+Docker pass copy value and see
+My password seems to be correct, late from Docker
+User Docker Train With
+Shubham Hey Shubham SHU BH
+I misspelled my name, wow.
+Sham Bham, I keep doing such things.
+Sometimes I spell my name wrong.
+Anything can happen, but don't worry.
+Honna Dajal Are Just
+Mistakes variable docker hub user is bean
+Updated with correct name now go and
+will not run the entire pipeline, only
+Retrying push jobs OK Push only
+Retrying the job to help yourself
+take what is happening
+Permission denied l tret connect to docker
+D Man
+What happened to the socket?
+I don't have permission to my Docker yet, what should I do?
+So should
+Dude, then why did he do this?
+How did he build it, if this
+There is no permission
+Why did it build if it had permission?
+No
+Any thoughts on this that if it has
+If he doesn't have permissions then he ran the docker build command
+How
+Run Annie
+One Any One Who Can
+think okay
+sudo user mode hine
+G.I.D. Uban to the group of
+Docker Let's
+c sudo reboot
+But I am having the same doubt that
+Think about how it would have built it.
+Let's try to connect the instance.
+Again and Let's Try to Run the Pipeline
+Finally, and this time I have very very
+Our pipeline of feeling
+Will sucked let's connect the instance
+There are instances running
+Connect
+ok git lub runner
+If you check the status then the services are running
+So come on, let's run our
+line pipe
+Again this time take the Lord's
+Naam Ganpati Bappa Morya Chalo Let's See If
+Our Pipeline Gets All of the Permissions All of the Permissions
+The Password All of the Required Tools Her
+If the thing is near the pipeline, this should
+Work fine at the same time, lose say fail
+It's done
+what are you saying brother
+Why is permission denied?
+has been
+[music]
+First of all, you can see that your
+Who is the user
+he should work
+Fine, let's see permission.
+Denied on Git Lab Runner
+Docker Let's See Why Are Docker Is
+Tried for this
+Add the user mode gitlib runner to the service
+Restart Docker and let's see.
+T
+Works OK user mode docker gut add lub runner
+done cat sl tc
+sl group lts c key
+your cut
+ssi group let's see near your docker
+Ubuntu and getline both have
+Come on now let's try to run this again and see
+If my gut lab runner required permission
+Have you got it or not? If you have got it, you can see.
+Docker build is
+Happening OK
+So you don't have to give permission to either user.
+Why because your user is a group leader
+runner name is ok so that user you have to
+You know you will have to pay 4p for it.
+Lab Runner has to see Not Your Natu User OK
+Let's test your pipeline now.
+In push to docker is done but deploy failed
+Let's See Why the Deployed Is
+What is the Docker Compose command saying failing?
+Not
+Found Chalo
+One reason for this is that brother, our
+The command of Docker Compose is something like this
+so like this
+cd git lub node a here
+Docker compose is such a command, what can we do?
+were
+Docker command was coming from compose and hence
+If not found then what will you have to do?
+I am Dot Group
+Lob
+A bit about CE and Docker Compose commands
+You have to do this by modifying and make this change
+Git
+D DUT GALBE CE GROUP
+commit hynum
+Added Docker
+Compose Command Changes
+Git
+Push
+Origin
+Master what is happening
+This is something we did on Git Lab.
+If it was pushed directly then it should have been pushed first.
+bridge tax
+Take master and rebase your branch
+Take
+What happened, have you done it? Conflex has come.
+It's over brother, this Git session should also be revised.
+Found that some conflicts occurred in Git Lab CI
+Let's see what conflict has arisen.
+Git Lab CI
+This generally happens when you
+You will also change the master branch here.
+You will also change it, yes, look at this, something here
+So where did the complex come from?
+Start scanning where
+Conflex
+No
+How many of you are getting that one?
+It's Not Very Much the Work of a DevOps Engineer
+As straight forward as you guys like
+youtube1 20 minutes we will be creating a
+If the pipeline was not like this then all this would have happened.
+You have to read things very carefully.
+Both Modified Gate
+D dot group lub CICD group commit group commit ka
+The commit message will be my
+Pass Git
+commit git push
+Origin
+Master, what happened to him?
+Now already up to date, what happened next?
+Let me git push this
+Brother
+Why If You Want to Integrate
+Come
+ok I don't know why he is doing this
+There is no such scene, we directly see it in this.
+I also change myself a bit.
+not letting things happen so a small
+There is only change, there is not much drama so V
+can directly change it in my
+The file with git lib has a small change.
+Too much time is being wasted because of
+Tha let's see pipeline e running let's
+Go to a pipeline, what does it look like this time?
+It will finally happen, it must be 12 o'clock.
+yes you are watching
+Struggle that first Yamal was wrong then your r
+I was stuck, then what about you?
+There was some error then your Docker
+There was a permission issue, then the project
+Could not find the variable then here
+But your bit in the command of Docker Compose
+A mistake had been made, so with all these
+Mistakes you make when you completely abandon your job
+The happiness that comes when you build it
+No, she is different so don't go for it
+Easy way, whenever you take any tool, always keep it
+Search end to end to see if you get any error.
+Resolving the error is occurring
+Resolving the Aya error and then
+When you go to your
+instance and then when you go to r
+security group and when you port number
+8000 where your P is running
+When you open it
+You will tell the whole world that brother
+Access Tax
+Take
+So you'll sit on your junkin' runner this git
+Lob
+Your P Should Be Running Ideally
+ok ideally your p should be
+Running Done
+How Many of You Got to Learn Git Lob in One
+Video that three hours sitting git lab still
+Batch Six brother, you guys have put in a pull request.
+It's your fault that you didn't create the batch.
+Six was not even taught to you guys, Gatal.
+Let's understand, taught
+Gaya how many of you understood
+A project deployed via a CICD
+Pipeline in Your Git
+Lap how many of you got some
+Value out of this
+session and that's it
+Same old story if you don't get it from this session
+If you have got the value then definitely share about it.
+This session is ok if you get value from this session.
+got it because you have u in the same video
+So what is Gut Love? How to Create a
+Project How to Import a Project
+from git hub and upload that project to git hub
+through
+Deployed do take a screenshot of this and
+Post on your Lincoln so that everyone
+Let us know what is gut lub
+Now how many of you want end to end notes
+For this, whatever you study today, everything
+Notes
+Brother, take it, take it
+Quick
+Excellent
+So you will get a very special note.
+Learner has that Learner Plus Community Lead
+Plus plus our brother Madhu Pandey ji whose
+Because this whole thing has become possible, it works.
+Really hard that you guys have any errors
+He was going to come, he has documented everything.
+So Madhu please do the honours and share your
+Notes with the
+Community If you are Madhup
+Where is he here, look Madhup is not there, this is him
+So this is the cow
+Created and go brother, here is my
+Not even logged in
+Well, we have different problems going on.
+Like our keyboard doesn't work sometimes.
+Chalta so dis e Madhup I hope everyone knows me
+From the Community So
+Madhup after some time said this to himself
+Joe Lincoln account which Madhu has had for a long time
+I have not kept it active there for a month.
+will post a post where he
+This will tell you that this is the repository about Git.
+So Madhu, I am looking for you on LinkedIn.
+what are you doing for a month, three months, one month
+So post this right now, all of these Git Labs.
+Notes and Let People Repost It So That End
+You Can Simply Do This Git Hub
+Repo to
+PDF is fine I hope Madhu you like the idea
+You must have known what I was talking about
+Am
+That this report that you are sending is about this thing
+I want to create a PDF, okay, I understand.
+Tool
+You can make a PDF from this, okay, and that
+Share the PDF here
+So that everyone is able to know your efforts
+s well ok
+If you want to see you can directly go
+Two
+here
+Deb's Git Lab Zero to Hero Every Day to You
+What to do is already covered
+Everything Project Everything Has Been
+Covered four kit have it as a pdf give him
+Shout-out to Lincoln. Do everything that
+Madhu will build more and more such
+Amazing tools for you ok let's go amazing
+Similarly, I would like to give another shout-out to
+To Dheeraj Bhai who
+Docker's notes from the build I have
+yes yes
+Very nice notes, you must have seen the update
+Nut Index Engine Access Controller Multi Stage
+Docker Scout is a great note taking tool.
+Proper You Know Screenshots
+So great
+work and all this notes all this pdf when
+Community gets Two Things Happen One
+They also learn and they always remember
+The Guy Who Taught Them So try to do that on your
+Don't limit your knowledge to yourself, but in the community
+Share it, okay, it will do two things for you.
+You will get to learn new things plus people from the
+Community Will Know You're Okay and That Is When
+Let's start referring you now
+Don't post with the goal of community help
+post from the goal
+Let's do that
+Don't disappoint people
+are a very nice
+Let me give you an overview about Dave Sepps
+How many of you are ready for
+Let's get a small overview about what is
+Dave Seck
+Ops, okay, before leaving, give a small overview.
+Let us understand that
+the pipeline that remains
+Okay, that's what the devops pipeline is for.
+where your
+code
+Build
+Test
+We also saw four at the Deploy Lab.
+Stages Defined Code Build Test
+Understand this way after coding here
+But you do some kind of
+code
+Quality
+Analyze whether the code you have written
+That code is correct is there any flaw in that code
+There is some vulnerability to SQL injection
+There are some bugs and everything is about code quality.
+The scan is done and then your Docker build
+Is the build image created from this correct?
+If yes, then you can do it through TV or Docker.
+Scout's
+through
+Scanning an image Scanning an image
+Then your application test will be done.
+There is some compliance which is called
+Wasp
+Maybe open source or online web application
+Security protocol is something I care about.
+I don't know its full form but if you
+If you do it, then it needs to be known.
+Wasp Open World Wide Application
+security project so this is one such
+project that sees to it that your
+All security checks done in the application
+All these things and codes have been done or not
+Quality you can do so cube to sonar
+cube okay so that first code build test
+Deployed Code Quality Analysis Build
+Image Scan Test Owas and Then
+Deployed Quality Analysis Security
+Image Scanning Security Web Security
+Project security, so whatever your
+Getting into Dev Ops first
+Another layer has been added to what was happening.
+Where you also see security and
+That is why it is known as Dave Seck
+Ops that whenever your project is created in it
+Security parameters should also be checked and
+Thatchi yer is some how a dev sec ops
+Engineer Age Well Because Whenever Your
+A pipeline will be built, you will have security in it.
+I will have to put cheques with that being said I
+Hope you enjoyed today's session here.
+Thanks for staying in the video
+Watching Train V Shubham Channel Thanks a lot
+For watching ending the session in three to one
+Bye
