@@ -295,6 +295,22 @@ Latest recorded evaluation: [metrics_results_3.json](evals/results/metrics_resul
 
 In the inspected samples, retrieved passages are often short transcript fragments that omit details listed in the references. Some generated answers then add generic or inferred details not present in those passages. This points to two areas to investigate: retrieval/context coverage and answer grounding. The zero context scores are a warning from this six-sample run, not conclusive proof of a retriever defect; verify that the evaluation references, retrieved contexts, and metric inputs are aligned before drawing a system-wide conclusion.
 
+### Guardrails Evaluation Metrics
+
+Latest recorded evaluation: [guardrails_eval_results_3.json](evals/results/guardrails_eval_results_3.json), based on six samples.
+
+| Metric | Value |
+|---|---:|
+| True positives (TP) | 4 |
+| True negatives (TN) | 2 |
+| False positives (FP) | 0 |
+| False negatives (FN) | 0 |
+| Precision | 1.0 |
+| Recall | 1.0 |
+| Accuracy | 1.0 |
+| Total | 6 |
+| Correct | 6 |
+
 ## 🧩 Key Design Decisions
 
 - **Adaptive Routing** — The orchestrator decides per-query whether vector search is needed, avoiding unnecessary DB calls for greetings/small talk.
